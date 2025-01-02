@@ -161,3 +161,9 @@ cython_debug/
 
 *.db
 large_data*.csv
+.DS_Store
+.venv
+.ipynb_checkpoints
+large_data*.csv
+__pycache__
+*.db
