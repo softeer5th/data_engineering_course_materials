@@ -76,7 +76,9 @@ docs/_build/
 target/
 
 # Jupyter Notebook
+.venv
 .ipynb_checkpoints
+.idea
 
 # IPython
 profile_default/
