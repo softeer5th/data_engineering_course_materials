@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "softeer"
+version = "0.1.0"
+description = ""
+authors = ["reudekx <reudekx@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+jupyter = "^1.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
