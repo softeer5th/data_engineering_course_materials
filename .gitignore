@@ -1,4 +1,5 @@
 .DS_Store
 .git
 .venv/
-materials/
+materials/data_engineering_course_materials/slides/
+*.pyc

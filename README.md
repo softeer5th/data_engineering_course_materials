@@ -3,11 +3,26 @@
 
 ### File Tree
 
+
 ```
 DE
+├─ .python-version
 ├─ README.md
+├─ materials
+│  └─ data_engineering_course_materials
+│     ├─ missions
+│     │  └─ W1
+│     │     └─ mtcars.csv
+│     
 ├─ missions
 │  └─ W1
+│     ├─ M1
+│     │  └─ mtcar_analysis.ipynb
+│     ├─ hello_world.ipynb
+│     └─ hello_world.py
+├─ pyproject.toml
+├─ pyvenv.cfg
+├─ requirements.txt
 └─ retrospect
    └─ 20250102.md
 
