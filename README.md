@@ -11,20 +11,6 @@ softeer
 ├─ .python-version
 ├─ README.md
 ├─ missions
-│  ├─ W0
-│  │  └─ 회고.md
-│  └─ W1
-│     ├─ M1
-│     └─ sample.md
-├─ poetry.lock
-└─ pyproject.toml
-
-```
-```
-softeer
-├─ .python-version
-├─ README.md
-├─ missions
 │  └─ W1
 │     └─ M1
 │        ├─ data_exploration.ipynb
