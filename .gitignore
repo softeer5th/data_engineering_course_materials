@@ -81,3 +81,5 @@ target/
 .idea
 .DS_Store
 *.db
+*.json
+*.txt
