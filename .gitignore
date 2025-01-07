@@ -83,3 +83,4 @@ target/
 *.db
 *.json
 *.txt
+__pycache__
