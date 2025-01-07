@@ -1,4 +1,4 @@
 .git
 .venv
-__pycahcche__
+__pycache__
 .ipynb_checkpoints
