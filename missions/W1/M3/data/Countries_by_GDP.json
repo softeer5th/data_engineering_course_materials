@@ -1,0 +1,838 @@
+{
+  "United States": {
+    "gdp": "30,337,162",
+    "year": "2025"
+  },
+  "China": {
+    "gdp": "19,534,894",
+    "year": "2025"
+  },
+  "Germany": {
+    "gdp": "4,921,563",
+    "year": "2025"
+  },
+  "Japan": {
+    "gdp": "4,389,326",
+    "year": "2025"
+  },
+  "India": {
+    "gdp": "4,271,922",
+    "year": "2025"
+  },
+  "United Kingdom": {
+    "gdp": "3,730,261",
+    "year": "2025"
+  },
+  "France": {
+    "gdp": "3,283,429",
+    "year": "2025"
+  },
+  "Italy": {
+    "gdp": "2,459,597",
+    "year": "2025"
+  },
+  "Canada": {
+    "gdp": "2,330,308",
+    "year": "2025"
+  },
+  "Brazil": {
+    "gdp": "2,307,162",
+    "year": "2025"
+  },
+  "Russia": {
+    "gdp": "2,195,708",
+    "year": "2025"
+  },
+  "South Korea": {
+    "gdp": "1,947,133",
+    "year": "2025"
+  },
+  "Australia": {
+    "gdp": "1,881,140",
+    "year": "2025"
+  },
+  "Spain": {
+    "gdp": "1,827,576",
+    "year": "2025"
+  },
+  "Mexico": {
+    "gdp": "1,817,818",
+    "year": "2025"
+  },
+  "Indonesia": {
+    "gdp": "1,492,618",
+    "year": "2025"
+  },
+  "Turkey": {
+    "gdp": "1,455,413",
+    "year": "2025"
+  },
+  "Netherlands": {
+    "gdp": "1,272,960",
+    "year": "2025"
+  },
+  "Saudi Arabia": {
+    "gdp": "1,136,580",
+    "year": "2025"
+  },
+  "Switzerland": {
+    "gdp": "999,604",
+    "year": "2025"
+  },
+  "Poland": {
+    "gdp": "915,451",
+    "year": "2025"
+  },
+  "Taiwan": {
+    "gdp": "814,438",
+    "year": "2025"
+  },
+  "Belgium": {
+    "gdp": "689,364",
+    "year": "2025"
+  },
+  "Sweden": {
+    "gdp": "638,780",
+    "year": "2025"
+  },
+  "Ireland": {
+    "gdp": "587,225",
+    "year": "2025"
+  },
+  "Argentina": {
+    "gdp": "574,201",
+    "year": "2025"
+  },
+  "United Arab Emirates": {
+    "gdp": "568,567",
+    "year": "2025"
+  },
+  "Singapore": {
+    "gdp": "561,725",
+    "year": "2025"
+  },
+  "Austria": {
+    "gdp": "559,218",
+    "year": "2025"
+  },
+  "Israel": {
+    "gdp": "550,905",
+    "year": "2025"
+  },
+  "Thailand": {
+    "gdp": "545,341",
+    "year": "2025"
+  },
+  "Norway": {
+    "gdp": "503,466",
+    "year": "2025"
+  },
+  "Malaysia": {
+    "gdp": "488,250",
+    "year": "2025"
+  },
+  "Philippines": {
+    "gdp": "471,516",
+    "year": "2025"
+  },
+  "Vietnam": {
+    "gdp": "468,400",
+    "year": "2025"
+  },
+  "Iran": {
+    "gdp": "463,747",
+    "year": "2025"
+  },
+  "Bangladesh": {
+    "gdp": "451,856",
+    "year": "2025"
+  },
+  "Denmark": {
+    "gdp": "431,228",
+    "year": "2025"
+  },
+  "Hong Kong": {
+    "gdp": "422,057",
+    "year": "2025"
+  },
+  "Colombia": {
+    "gdp": "419,331",
+    "year": "2025"
+  },
+  "South Africa": {
+    "gdp": "418,046",
+    "year": "2025"
+  },
+  "Romania": {
+    "gdp": "406,202",
+    "year": "2025"
+  },
+  "Egypt": {
+    "gdp": "380,044",
+    "year": "2025"
+  },
+  "Pakistan": {
+    "gdp": "374,595",
+    "year": "2024"
+  },
+  "Chile": {
+    "gdp": "362,240",
+    "year": "2025"
+  },
+  "Czech Republic": {
+    "gdp": "360,233",
+    "year": "2025"
+  },
+  "Finland": {
+    "gdp": "319,989",
+    "year": "2025"
+  },
+  "Portugal": {
+    "gdp": "319,934",
+    "year": "2025"
+  },
+  "Kazakhstan": {
+    "gdp": "306,629",
+    "year": "2025"
+  },
+  "Peru": {
+    "gdp": "294,898",
+    "year": "2025"
+  },
+  "Iraq": {
+    "gdp": "270,874",
+    "year": "2025"
+  },
+  "Greece": {
+    "gdp": "265,171",
+    "year": "2025"
+  },
+  "Algeria": {
+    "gdp": "264,270",
+    "year": "2025"
+  },
+  "New Zealand": {
+    "gdp": "262,924",
+    "year": "2025"
+  },
+  "Hungary": {
+    "gdp": "245,619",
+    "year": "2025"
+  },
+  "Qatar": {
+    "gdp": "226,217",
+    "year": "2025"
+  },
+  "Nigeria": {
+    "gdp": "194,955",
+    "year": "2025"
+  },
+  "Ukraine": {
+    "gdp": "189,827",
+    "year": "2025"
+  },
+  "Morocco": {
+    "gdp": "168,597",
+    "year": "2025"
+  },
+  "Kuwait": {
+    "gdp": "161,950",
+    "year": "2025"
+  },
+  "Cuba": {
+    "gdp": null,
+    "year": null
+  },
+  "Ethiopia": {
+    "gdp": "145,031",
+    "year": "2024"
+  },
+  "Slovakia": {
+    "gdp": "142,617",
+    "year": "2024"
+  },
+  "Dominican Republic": {
+    "gdp": "126,238",
+    "year": "2024"
+  },
+  "Ecuador": {
+    "gdp": "121,425",
+    "year": "2024"
+  },
+  "Puerto Rico": {
+    "gdp": "120,971",
+    "year": "2024"
+  },
+  "Kenya": {
+    "gdp": "116,321",
+    "year": "2024"
+  },
+  "Angola": {
+    "gdp": "113,286",
+    "year": "2024"
+  },
+  "Uzbekistan": {
+    "gdp": "112,653",
+    "year": "2024"
+  },
+  "Guatemala": {
+    "gdp": "112,369",
+    "year": "2024"
+  },
+  "Oman": {
+    "gdp": "109,993",
+    "year": "2024"
+  },
+  "Bulgaria": {
+    "gdp": "108,425",
+    "year": "2024"
+  },
+  "Venezuela": {
+    "gdp": "106,327",
+    "year": "2024"
+  },
+  "Costa Rica": {
+    "gdp": "95,149",
+    "year": "2024"
+  },
+  "Luxembourg": {
+    "gdp": "91,210",
+    "year": "2024"
+  },
+  "Croatia": {
+    "gdp": "89,665",
+    "year": "2024"
+  },
+  "Panama": {
+    "gdp": "87,347",
+    "year": "2024"
+  },
+  "Ivory Coast": {
+    "gdp": "86,993",
+    "year": "2024"
+  },
+  "Sri Lanka": {
+    "gdp": "74,846",
+    "year": "2022"
+  },
+  "Turkmenistan": {
+    "gdp": "83,883",
+    "year": "2024"
+  },
+  "Lithuania": {
+    "gdp": "82,789",
+    "year": "2024"
+  },
+  "Uruguay": {
+    "gdp": "82,605",
+    "year": "2024"
+  },
+  "Serbia": {
+    "gdp": "82,550",
+    "year": "2024"
+  },
+  "Tanzania": {
+    "gdp": "79,867",
+    "year": "2024"
+  },
+  "Azerbaijan": {
+    "gdp": "75,649",
+    "year": "2024"
+  },
+  "Ghana": {
+    "gdp": "75,307",
+    "year": "2024"
+  },
+  "Slovenia": {
+    "gdp": "73,198",
+    "year": "2024"
+  },
+  "Belarus": {
+    "gdp": "73,129",
+    "year": "2024"
+  },
+  "DR Congo": {
+    "gdp": "72,483",
+    "year": "2024"
+  },
+  "Myanmar": {
+    "gdp": "64,284",
+    "year": "2024"
+  },
+  "Uganda": {
+    "gdp": "55,587",
+    "year": "2024"
+  },
+  "Macau": {
+    "gdp": "53,447",
+    "year": "2024"
+  },
+  "Cameroon": {
+    "gdp": "53,391",
+    "year": "2024"
+  },
+  "Jordan": {
+    "gdp": "53,305",
+    "year": "2024"
+  },
+  "Tunisia": {
+    "gdp": "52,636",
+    "year": "2024"
+  },
+  "Bolivia": {
+    "gdp": "48,172",
+    "year": "2024"
+  },
+  "Bahrain": {
+    "gdp": "47,812",
+    "year": "2024"
+  },
+  "Cambodia": {
+    "gdp": "47,147",
+    "year": "2024"
+  },
+  "Latvia": {
+    "gdp": "45,521",
+    "year": "2024"
+  },
+  "Paraguay": {
+    "gdp": "44,937",
+    "year": "2024"
+  },
+  "Libya": {
+    "gdp": "44,812",
+    "year": "2024"
+  },
+  "Nepal": {
+    "gdp": "43,673",
+    "year": "2024"
+  },
+  "Estonia": {
+    "gdp": "43,044",
+    "year": "2024"
+  },
+  "Honduras": {
+    "gdp": "36,735",
+    "year": "2024"
+  },
+  "Zimbabwe": {
+    "gdp": "35,919",
+    "year": "2024"
+  },
+  "El Salvador": {
+    "gdp": "35,848",
+    "year": "2024"
+  },
+  "Cyprus": {
+    "gdp": "34,790",
+    "year": "2024"
+  },
+  "Senegal": {
+    "gdp": "33,685",
+    "year": "2024"
+  },
+  "Georgia": {
+    "gdp": "33,191",
+    "year": "2024"
+  },
+  "Iceland": {
+    "gdp": "32,919",
+    "year": "2024"
+  },
+  "Papua New Guinea": {
+    "gdp": "31,716",
+    "year": "2024"
+  },
+  "Zambia": {
+    "gdp": "29,872",
+    "year": "2024"
+  },
+  "Bosnia and Herzegovina": {
+    "gdp": "29,078",
+    "year": "2024"
+  },
+  "Trinidad and Tobago": {
+    "gdp": "28,365",
+    "year": "2024"
+  },
+  "Sudan": {
+    "gdp": "26,865",
+    "year": "2024"
+  },
+  "Guinea": {
+    "gdp": "25,447",
+    "year": "2024"
+  },
+  "Albania": {
+    "gdp": "25,431",
+    "year": "2024"
+  },
+  "Armenia": {
+    "gdp": "25,408",
+    "year": "2024"
+  },
+  "Haiti": {
+    "gdp": "24,046",
+    "year": "2024"
+  },
+  "Mozambique": {
+    "gdp": "22,975",
+    "year": "2024"
+  },
+  "Malta": {
+    "gdp": "22,737",
+    "year": "2024"
+  },
+  "Mongolia": {
+    "gdp": "21,943",
+    "year": "2024"
+  },
+  "Burkina Faso": {
+    "gdp": "21,902",
+    "year": "2024"
+  },
+  "Mali": {
+    "gdp": "21,662",
+    "year": "2024"
+  },
+  "Botswana": {
+    "gdp": "21,418",
+    "year": "2024"
+  },
+  "Benin": {
+    "gdp": "21,371",
+    "year": "2024"
+  },
+  "Guyana": {
+    "gdp": "21,178",
+    "year": "2024"
+  },
+  "Gabon": {
+    "gdp": "21,013",
+    "year": "2024"
+  },
+  "Jamaica": {
+    "gdp": "20,098",
+    "year": "2024"
+  },
+  "Nicaragua": {
+    "gdp": "18,829",
+    "year": "2024"
+  },
+  "Niger": {
+    "gdp": "18,816",
+    "year": "2024"
+  },
+  "Chad": {
+    "gdp": "18,697",
+    "year": "2024"
+  },
+  "Palestine": {
+    "gdp": "18,602",
+    "year": "2023"
+  },
+  "Syria": {
+    "gdp": null,
+    "year": null
+  },
+  "Moldova": {
+    "gdp": "18,356",
+    "year": "2024"
+  },
+  "Lebanon": {
+    "gdp": "21,780",
+    "year": "2022"
+  },
+  "Yemen": {
+    "gdp": "16,940",
+    "year": "2024"
+  },
+  "Madagascar": {
+    "gdp": "16,465",
+    "year": "2024"
+  },
+  "Mauritius": {
+    "gdp": "16,359",
+    "year": "2024"
+  },
+  "North Macedonia": {
+    "gdp": "15,873",
+    "year": "2024"
+  },
+  "Kyrgyzstan": {
+    "gdp": "15,770",
+    "year": "2024"
+  },
+  "Brunei": {
+    "gdp": "15,510",
+    "year": "2024"
+  },
+  "Congo": {
+    "gdp": "15,501",
+    "year": "2024"
+  },
+  "Laos": {
+    "gdp": "15,190",
+    "year": "2024"
+  },
+  "North Korea": {
+    "gdp": null,
+    "year": null
+  },
+  "Afghanistan": {
+    "gdp": "14,467",
+    "year": "2022"
+  },
+  "Bahamas": {
+    "gdp": "14,390",
+    "year": "2024"
+  },
+  "Rwanda": {
+    "gdp": "13,701",
+    "year": "2024"
+  },
+  "Tajikistan": {
+    "gdp": "13,000",
+    "year": "2024"
+  },
+  "Somalia": {
+    "gdp": "12,804",
+    "year": "2024"
+  },
+  "Namibia": {
+    "gdp": "12,765",
+    "year": "2024"
+  },
+  "Kosovo": {
+    "gdp": "11,318",
+    "year": "2024"
+  },
+  "Malawi": {
+    "gdp": "11,241",
+    "year": "2024"
+  },
+  "Equatorial Guinea": {
+    "gdp": "10,708",
+    "year": "2024"
+  },
+  "Mauritania": {
+    "gdp": "10,628",
+    "year": "2024"
+  },
+  "Togo": {
+    "gdp": "9,832",
+    "year": "2024"
+  },
+  "New Caledonia": {
+    "gdp": null,
+    "year": null
+  },
+  "Monaco": {
+    "gdp": null,
+    "year": null
+  },
+  "Montenegro": {
+    "gdp": "8,010",
+    "year": "2024"
+  },
+  "Bermuda": {
+    "gdp": null,
+    "year": null
+  },
+  "Liechtenstein": {
+    "gdp": null,
+    "year": null
+  },
+  "Maldives": {
+    "gdp": "7,199",
+    "year": "2024"
+  },
+  "Barbados": {
+    "gdp": "6,863",
+    "year": "2024"
+  },
+  "Cayman Islands": {
+    "gdp": null,
+    "year": null
+  },
+  "South Sudan": {
+    "gdp": "6,517",
+    "year": "2024"
+  },
+  "French Polynesia": {
+    "gdp": null,
+    "year": null
+  },
+  "Fiji": {
+    "gdp": "5,801",
+    "year": "2024"
+  },
+  "Eswatini": {
+    "gdp": "5,085",
+    "year": "2024"
+  },
+  "Liberia": {
+    "gdp": "4,754",
+    "year": "2024"
+  },
+  "Sierra Leone": {
+    "gdp": "4,558",
+    "year": "2024"
+  },
+  "Djibouti": {
+    "gdp": "4,364",
+    "year": "2024"
+  },
+  "Suriname": {
+    "gdp": "4,337",
+    "year": "2024"
+  },
+  "Aruba": {
+    "gdp": "4,069",
+    "year": "2024"
+  },
+  "Andorra": {
+    "gdp": "3,897",
+    "year": "2024"
+  },
+  "Belize": {
+    "gdp": "3,296",
+    "year": "2024"
+  },
+  "Bhutan": {
+    "gdp": "3,110",
+    "year": "2024"
+  },
+  "Burundi": {
+    "gdp": "3,075",
+    "year": "2024"
+  },
+  "Curaçao": {
+    "gdp": null,
+    "year": null
+  },
+  "Greenland": {
+    "gdp": null,
+    "year": null
+  },
+  "Central African Republic": {
+    "gdp": "2,810",
+    "year": "2024"
+  },
+  "Cape Verde": {
+    "gdp": "2,718",
+    "year": "2024"
+  },
+  "Gambia": {
+    "gdp": "2,694",
+    "year": "2024"
+  },
+  "Saint Lucia": {
+    "gdp": "2,582",
+    "year": "2024"
+  },
+  "Lesotho": {
+    "gdp": "2,395",
+    "year": "2024"
+  },
+  "Eritrea": {
+    "gdp": null,
+    "year": null
+  },
+  "Zanzibar": {
+    "gdp": null,
+    "year": null
+  },
+  "Seychelles": {
+    "gdp": "2,203",
+    "year": "2024"
+  },
+  "Guinea-Bissau": {
+    "gdp": "2,151",
+    "year": "2024"
+  },
+  "Antigua and Barbuda": {
+    "gdp": "2,127",
+    "year": "2024"
+  },
+  "San Marino": {
+    "gdp": "2,033",
+    "year": "2024"
+  },
+  "East Timor": {
+    "gdp": "1,992",
+    "year": "2024"
+  },
+  "Solomon Islands": {
+    "gdp": "1,707",
+    "year": "2024"
+  },
+  "Sint Maarten": {
+    "gdp": null,
+    "year": null
+  },
+  "Comoros": {
+    "gdp": "1,422",
+    "year": "2024"
+  },
+  "Grenada": {
+    "gdp": "1,406",
+    "year": "2024"
+  },
+  "Turks and Caicos Islands": {
+    "gdp": null,
+    "year": null
+  },
+  "Vanuatu": {
+    "gdp": "1,289",
+    "year": "2024"
+  },
+  "Saint Kitts and Nevis": {
+    "gdp": "1,134",
+    "year": "2024"
+  },
+  "Saint Vincent and the Grenadines": {
+    "gdp": "1,128",
+    "year": "2024"
+  },
+  "Samoa": {
+    "gdp": "1,024",
+    "year": "2024"
+  },
+  "São Tomé and Príncipe": {
+    "gdp": "751",
+    "year": "2024"
+  },
+  "Dominica": {
+    "gdp": "708",
+    "year": "2024"
+  },
+  "Tonga": {
+    "gdp": "581",
+    "year": "2024"
+  },
+  "Micronesia": {
+    "gdp": "484",
+    "year": "2024"
+  },
+  "Kiribati": {
+    "gdp": "311",
+    "year": "2024"
+  },
+  "Palau": {
+    "gdp": "308",
+    "year": "2024"
+  },
+  "Marshall Islands": {
+    "gdp": "305",
+    "year": "2024"
+  },
+  "Nauru": {
+    "gdp": "161",
+    "year": "2024"
+  },
+  "Tuvalu": {
+    "gdp": "66",
+    "year": "2024"
+  }
+}
