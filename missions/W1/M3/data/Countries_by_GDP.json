@@ -1,838 +1,1047 @@
-{
-  "United States": {
+[
+  {
+    "country": "United States",
     "gdp": "30,337,162",
     "year": "2025"
   },
-  "China": {
+  {
+    "country": "China",
     "gdp": "19,534,894",
     "year": "2025"
   },
-  "Germany": {
+  {
+    "country": "Germany",
     "gdp": "4,921,563",
     "year": "2025"
   },
-  "Japan": {
+  {
+    "country": "Japan",
     "gdp": "4,389,326",
     "year": "2025"
   },
-  "India": {
+  {
+    "country": "India",
     "gdp": "4,271,922",
     "year": "2025"
   },
-  "United Kingdom": {
+  {
+    "country": "United Kingdom",
     "gdp": "3,730,261",
     "year": "2025"
   },
-  "France": {
+  {
+    "country": "France",
     "gdp": "3,283,429",
     "year": "2025"
   },
-  "Italy": {
+  {
+    "country": "Italy",
     "gdp": "2,459,597",
     "year": "2025"
   },
-  "Canada": {
+  {
+    "country": "Canada",
     "gdp": "2,330,308",
     "year": "2025"
   },
-  "Brazil": {
+  {
+    "country": "Brazil",
     "gdp": "2,307,162",
     "year": "2025"
   },
-  "Russia": {
+  {
+    "country": "Russia",
     "gdp": "2,195,708",
     "year": "2025"
   },
-  "South Korea": {
+  {
+    "country": "South Korea",
     "gdp": "1,947,133",
     "year": "2025"
   },
-  "Australia": {
+  {
+    "country": "Australia",
     "gdp": "1,881,140",
     "year": "2025"
   },
-  "Spain": {
+  {
+    "country": "Spain",
     "gdp": "1,827,576",
     "year": "2025"
   },
-  "Mexico": {
+  {
+    "country": "Mexico",
     "gdp": "1,817,818",
     "year": "2025"
   },
-  "Indonesia": {
+  {
+    "country": "Indonesia",
     "gdp": "1,492,618",
     "year": "2025"
   },
-  "Turkey": {
+  {
+    "country": "Turkey",
     "gdp": "1,455,413",
     "year": "2025"
   },
-  "Netherlands": {
+  {
+    "country": "Netherlands",
     "gdp": "1,272,960",
     "year": "2025"
   },
-  "Saudi Arabia": {
+  {
+    "country": "Saudi Arabia",
     "gdp": "1,136,580",
     "year": "2025"
   },
-  "Switzerland": {
+  {
+    "country": "Switzerland",
     "gdp": "999,604",
     "year": "2025"
   },
-  "Poland": {
+  {
+    "country": "Poland",
     "gdp": "915,451",
     "year": "2025"
   },
-  "Taiwan": {
+  {
+    "country": "Taiwan",
     "gdp": "814,438",
     "year": "2025"
   },
-  "Belgium": {
+  {
+    "country": "Belgium",
     "gdp": "689,364",
     "year": "2025"
   },
-  "Sweden": {
+  {
+    "country": "Sweden",
     "gdp": "638,780",
     "year": "2025"
   },
-  "Ireland": {
+  {
+    "country": "Ireland",
     "gdp": "587,225",
     "year": "2025"
   },
-  "Argentina": {
+  {
+    "country": "Argentina",
     "gdp": "574,201",
     "year": "2025"
   },
-  "United Arab Emirates": {
+  {
+    "country": "United Arab Emirates",
     "gdp": "568,567",
     "year": "2025"
   },
-  "Singapore": {
+  {
+    "country": "Singapore",
     "gdp": "561,725",
     "year": "2025"
   },
-  "Austria": {
+  {
+    "country": "Austria",
     "gdp": "559,218",
     "year": "2025"
   },
-  "Israel": {
+  {
+    "country": "Israel",
     "gdp": "550,905",
     "year": "2025"
   },
-  "Thailand": {
+  {
+    "country": "Thailand",
     "gdp": "545,341",
     "year": "2025"
   },
-  "Norway": {
+  {
+    "country": "Norway",
     "gdp": "503,466",
     "year": "2025"
   },
-  "Malaysia": {
+  {
+    "country": "Malaysia",
     "gdp": "488,250",
     "year": "2025"
   },
-  "Philippines": {
+  {
+    "country": "Philippines",
     "gdp": "471,516",
     "year": "2025"
   },
-  "Vietnam": {
+  {
+    "country": "Vietnam",
     "gdp": "468,400",
     "year": "2025"
   },
-  "Iran": {
+  {
+    "country": "Iran",
     "gdp": "463,747",
     "year": "2025"
   },
-  "Bangladesh": {
+  {
+    "country": "Bangladesh",
     "gdp": "451,856",
     "year": "2025"
   },
-  "Denmark": {
+  {
+    "country": "Denmark",
     "gdp": "431,228",
     "year": "2025"
   },
-  "Hong Kong": {
+  {
+    "country": "Hong Kong",
     "gdp": "422,057",
     "year": "2025"
   },
-  "Colombia": {
+  {
+    "country": "Colombia",
     "gdp": "419,331",
     "year": "2025"
   },
-  "South Africa": {
+  {
+    "country": "South Africa",
     "gdp": "418,046",
     "year": "2025"
   },
-  "Romania": {
+  {
+    "country": "Romania",
     "gdp": "406,202",
     "year": "2025"
   },
-  "Egypt": {
+  {
+    "country": "Egypt",
     "gdp": "380,044",
     "year": "2025"
   },
-  "Pakistan": {
+  {
+    "country": "Pakistan",
     "gdp": "374,595",
     "year": "2024"
   },
-  "Chile": {
+  {
+    "country": "Chile",
     "gdp": "362,240",
     "year": "2025"
   },
-  "Czech Republic": {
+  {
+    "country": "Czech Republic",
     "gdp": "360,233",
     "year": "2025"
   },
-  "Finland": {
+  {
+    "country": "Finland",
     "gdp": "319,989",
     "year": "2025"
   },
-  "Portugal": {
+  {
+    "country": "Portugal",
     "gdp": "319,934",
     "year": "2025"
   },
-  "Kazakhstan": {
+  {
+    "country": "Kazakhstan",
     "gdp": "306,629",
     "year": "2025"
   },
-  "Peru": {
+  {
+    "country": "Peru",
     "gdp": "294,898",
     "year": "2025"
   },
-  "Iraq": {
+  {
+    "country": "Iraq",
     "gdp": "270,874",
     "year": "2025"
   },
-  "Greece": {
+  {
+    "country": "Greece",
     "gdp": "265,171",
     "year": "2025"
   },
-  "Algeria": {
+  {
+    "country": "Algeria",
     "gdp": "264,270",
     "year": "2025"
   },
-  "New Zealand": {
+  {
+    "country": "New Zealand",
     "gdp": "262,924",
     "year": "2025"
   },
-  "Hungary": {
+  {
+    "country": "Hungary",
     "gdp": "245,619",
     "year": "2025"
   },
-  "Qatar": {
+  {
+    "country": "Qatar",
     "gdp": "226,217",
     "year": "2025"
   },
-  "Nigeria": {
+  {
+    "country": "Nigeria",
     "gdp": "194,955",
     "year": "2025"
   },
-  "Ukraine": {
+  {
+    "country": "Ukraine",
     "gdp": "189,827",
     "year": "2025"
   },
-  "Morocco": {
+  {
+    "country": "Morocco",
     "gdp": "168,597",
     "year": "2025"
   },
-  "Kuwait": {
+  {
+    "country": "Kuwait",
     "gdp": "161,950",
     "year": "2025"
   },
-  "Cuba": {
+  {
+    "country": "Cuba",
     "gdp": null,
     "year": null
   },
-  "Ethiopia": {
+  {
+    "country": "Ethiopia",
     "gdp": "145,031",
     "year": "2024"
   },
-  "Slovakia": {
+  {
+    "country": "Slovakia",
     "gdp": "142,617",
     "year": "2024"
   },
-  "Dominican Republic": {
+  {
+    "country": "Dominican Republic",
     "gdp": "126,238",
     "year": "2024"
   },
-  "Ecuador": {
+  {
+    "country": "Ecuador",
     "gdp": "121,425",
     "year": "2024"
   },
-  "Puerto Rico": {
+  {
+    "country": "Puerto Rico",
     "gdp": "120,971",
     "year": "2024"
   },
-  "Kenya": {
+  {
+    "country": "Kenya",
     "gdp": "116,321",
     "year": "2024"
   },
-  "Angola": {
+  {
+    "country": "Angola",
     "gdp": "113,286",
     "year": "2024"
   },
-  "Uzbekistan": {
+  {
+    "country": "Uzbekistan",
     "gdp": "112,653",
     "year": "2024"
   },
-  "Guatemala": {
+  {
+    "country": "Guatemala",
     "gdp": "112,369",
     "year": "2024"
   },
-  "Oman": {
+  {
+    "country": "Oman",
     "gdp": "109,993",
     "year": "2024"
   },
-  "Bulgaria": {
+  {
+    "country": "Bulgaria",
     "gdp": "108,425",
     "year": "2024"
   },
-  "Venezuela": {
+  {
+    "country": "Venezuela",
     "gdp": "106,327",
     "year": "2024"
   },
-  "Costa Rica": {
+  {
+    "country": "Costa Rica",
     "gdp": "95,149",
     "year": "2024"
   },
-  "Luxembourg": {
+  {
+    "country": "Luxembourg",
     "gdp": "91,210",
     "year": "2024"
   },
-  "Croatia": {
+  {
+    "country": "Croatia",
     "gdp": "89,665",
     "year": "2024"
   },
-  "Panama": {
+  {
+    "country": "Panama",
     "gdp": "87,347",
     "year": "2024"
   },
-  "Ivory Coast": {
+  {
+    "country": "Ivory Coast",
     "gdp": "86,993",
     "year": "2024"
   },
-  "Sri Lanka": {
+  {
+    "country": "Sri Lanka",
     "gdp": "74,846",
     "year": "2022"
   },
-  "Turkmenistan": {
+  {
+    "country": "Turkmenistan",
     "gdp": "83,883",
     "year": "2024"
   },
-  "Lithuania": {
+  {
+    "country": "Lithuania",
     "gdp": "82,789",
     "year": "2024"
   },
-  "Uruguay": {
+  {
+    "country": "Uruguay",
     "gdp": "82,605",
     "year": "2024"
   },
-  "Serbia": {
+  {
+    "country": "Serbia",
     "gdp": "82,550",
     "year": "2024"
   },
-  "Tanzania": {
+  {
+    "country": "Tanzania",
     "gdp": "79,867",
     "year": "2024"
   },
-  "Azerbaijan": {
+  {
+    "country": "Azerbaijan",
     "gdp": "75,649",
     "year": "2024"
   },
-  "Ghana": {
+  {
+    "country": "Ghana",
     "gdp": "75,307",
     "year": "2024"
   },
-  "Slovenia": {
+  {
+    "country": "Slovenia",
     "gdp": "73,198",
     "year": "2024"
   },
-  "Belarus": {
+  {
+    "country": "Belarus",
     "gdp": "73,129",
     "year": "2024"
   },
-  "DR Congo": {
+  {
+    "country": "DR Congo",
     "gdp": "72,483",
     "year": "2024"
   },
-  "Myanmar": {
+  {
+    "country": "Myanmar",
     "gdp": "64,284",
     "year": "2024"
   },
-  "Uganda": {
+  {
+    "country": "Uganda",
     "gdp": "55,587",
     "year": "2024"
   },
-  "Macau": {
+  {
+    "country": "Macau",
     "gdp": "53,447",
     "year": "2024"
   },
-  "Cameroon": {
+  {
+    "country": "Cameroon",
     "gdp": "53,391",
     "year": "2024"
   },
-  "Jordan": {
+  {
+    "country": "Jordan",
     "gdp": "53,305",
     "year": "2024"
   },
-  "Tunisia": {
+  {
+    "country": "Tunisia",
     "gdp": "52,636",
     "year": "2024"
   },
-  "Bolivia": {
+  {
+    "country": "Cambodia",
+    "gdp": "51,159",
+    "year": "2025"
+  },
+  {
+    "country": "Bolivia",
     "gdp": "48,172",
     "year": "2024"
   },
-  "Bahrain": {
+  {
+    "country": "Bahrain",
     "gdp": "47,812",
     "year": "2024"
   },
-  "Cambodia": {
-    "gdp": "47,147",
-    "year": "2024"
-  },
-  "Latvia": {
+  {
+    "country": "Latvia",
     "gdp": "45,521",
     "year": "2024"
   },
-  "Paraguay": {
+  {
+    "country": "Paraguay",
     "gdp": "44,937",
     "year": "2024"
   },
-  "Libya": {
+  {
+    "country": "Libya",
     "gdp": "44,812",
     "year": "2024"
   },
-  "Nepal": {
+  {
+    "country": "Nepal",
     "gdp": "43,673",
     "year": "2024"
   },
-  "Estonia": {
+  {
+    "country": "Estonia",
     "gdp": "43,044",
     "year": "2024"
   },
-  "Honduras": {
+  {
+    "country": "Honduras",
     "gdp": "36,735",
     "year": "2024"
   },
-  "Zimbabwe": {
+  {
+    "country": "Zimbabwe",
     "gdp": "35,919",
     "year": "2024"
   },
-  "El Salvador": {
+  {
+    "country": "El Salvador",
     "gdp": "35,848",
     "year": "2024"
   },
-  "Cyprus": {
+  {
+    "country": "Cyprus",
     "gdp": "34,790",
     "year": "2024"
   },
-  "Senegal": {
+  {
+    "country": "Senegal",
     "gdp": "33,685",
     "year": "2024"
   },
-  "Georgia": {
+  {
+    "country": "Georgia",
     "gdp": "33,191",
     "year": "2024"
   },
-  "Iceland": {
+  {
+    "country": "Iceland",
     "gdp": "32,919",
     "year": "2024"
   },
-  "Papua New Guinea": {
+  {
+    "country": "Papua New Guinea",
     "gdp": "31,716",
     "year": "2024"
   },
-  "Zambia": {
+  {
+    "country": "Zambia",
     "gdp": "29,872",
     "year": "2024"
   },
-  "Bosnia and Herzegovina": {
+  {
+    "country": "Bosnia and Herzegovina",
     "gdp": "29,078",
     "year": "2024"
   },
-  "Trinidad and Tobago": {
+  {
+    "country": "Trinidad and Tobago",
     "gdp": "28,365",
     "year": "2024"
   },
-  "Sudan": {
+  {
+    "country": "Sudan",
     "gdp": "26,865",
     "year": "2024"
   },
-  "Guinea": {
+  {
+    "country": "Guinea",
     "gdp": "25,447",
     "year": "2024"
   },
-  "Albania": {
+  {
+    "country": "Albania",
     "gdp": "25,431",
     "year": "2024"
   },
-  "Armenia": {
+  {
+    "country": "Armenia",
     "gdp": "25,408",
     "year": "2024"
   },
-  "Haiti": {
+  {
+    "country": "Haiti",
     "gdp": "24,046",
     "year": "2024"
   },
-  "Mozambique": {
+  {
+    "country": "Mozambique",
     "gdp": "22,975",
     "year": "2024"
   },
-  "Malta": {
+  {
+    "country": "Malta",
     "gdp": "22,737",
     "year": "2024"
   },
-  "Mongolia": {
+  {
+    "country": "Mongolia",
     "gdp": "21,943",
     "year": "2024"
   },
-  "Burkina Faso": {
+  {
+    "country": "Burkina Faso",
     "gdp": "21,902",
     "year": "2024"
   },
-  "Mali": {
+  {
+    "country": "Mali",
     "gdp": "21,662",
     "year": "2024"
   },
-  "Botswana": {
+  {
+    "country": "Botswana",
     "gdp": "21,418",
     "year": "2024"
   },
-  "Benin": {
+  {
+    "country": "Benin",
     "gdp": "21,371",
     "year": "2024"
   },
-  "Guyana": {
+  {
+    "country": "Guyana",
     "gdp": "21,178",
     "year": "2024"
   },
-  "Gabon": {
+  {
+    "country": "Gabon",
     "gdp": "21,013",
     "year": "2024"
   },
-  "Jamaica": {
+  {
+    "country": "Jamaica",
     "gdp": "20,098",
     "year": "2024"
   },
-  "Nicaragua": {
+  {
+    "country": "Nicaragua",
     "gdp": "18,829",
     "year": "2024"
   },
-  "Niger": {
+  {
+    "country": "Niger",
     "gdp": "18,816",
     "year": "2024"
   },
-  "Chad": {
+  {
+    "country": "Chad",
     "gdp": "18,697",
     "year": "2024"
   },
-  "Palestine": {
+  {
+    "country": "Palestine",
     "gdp": "18,602",
     "year": "2023"
   },
-  "Syria": {
+  {
+    "country": "Syria",
     "gdp": null,
     "year": null
   },
-  "Moldova": {
+  {
+    "country": "Moldova",
     "gdp": "18,356",
     "year": "2024"
   },
-  "Lebanon": {
+  {
+    "country": "Lebanon",
     "gdp": "21,780",
     "year": "2022"
   },
-  "Yemen": {
+  {
+    "country": "Yemen",
     "gdp": "16,940",
     "year": "2024"
   },
-  "Madagascar": {
+  {
+    "country": "Madagascar",
     "gdp": "16,465",
     "year": "2024"
   },
-  "Mauritius": {
+  {
+    "country": "Mauritius",
     "gdp": "16,359",
     "year": "2024"
   },
-  "North Macedonia": {
+  {
+    "country": "North Macedonia",
     "gdp": "15,873",
     "year": "2024"
   },
-  "Kyrgyzstan": {
+  {
+    "country": "Kyrgyzstan",
     "gdp": "15,770",
     "year": "2024"
   },
-  "Brunei": {
+  {
+    "country": "Brunei",
     "gdp": "15,510",
     "year": "2024"
   },
-  "Congo": {
+  {
+    "country": "Congo",
     "gdp": "15,501",
     "year": "2024"
   },
-  "Laos": {
+  {
+    "country": "Laos",
     "gdp": "15,190",
     "year": "2024"
   },
-  "North Korea": {
+  {
+    "country": "North Korea",
     "gdp": null,
     "year": null
   },
-  "Afghanistan": {
+  {
+    "country": "Afghanistan",
     "gdp": "14,467",
     "year": "2022"
   },
-  "Bahamas": {
+  {
+    "country": "Bahamas",
     "gdp": "14,390",
     "year": "2024"
   },
-  "Rwanda": {
+  {
+    "country": "Rwanda",
     "gdp": "13,701",
     "year": "2024"
   },
-  "Tajikistan": {
+  {
+    "country": "Tajikistan",
     "gdp": "13,000",
     "year": "2024"
   },
-  "Somalia": {
+  {
+    "country": "Somalia",
     "gdp": "12,804",
     "year": "2024"
   },
-  "Namibia": {
+  {
+    "country": "Namibia",
     "gdp": "12,765",
     "year": "2024"
   },
-  "Kosovo": {
+  {
+    "country": "Kosovo",
     "gdp": "11,318",
     "year": "2024"
   },
-  "Malawi": {
+  {
+    "country": "Malawi",
     "gdp": "11,241",
     "year": "2024"
   },
-  "Equatorial Guinea": {
+  {
+    "country": "Equatorial Guinea",
     "gdp": "10,708",
     "year": "2024"
   },
-  "Mauritania": {
+  {
+    "country": "Mauritania",
     "gdp": "10,628",
     "year": "2024"
   },
-  "Togo": {
+  {
+    "country": "Togo",
     "gdp": "9,832",
     "year": "2024"
   },
-  "New Caledonia": {
+  {
+    "country": "New Caledonia",
     "gdp": null,
     "year": null
   },
-  "Monaco": {
+  {
+    "country": "Monaco",
     "gdp": null,
     "year": null
   },
-  "Montenegro": {
+  {
+    "country": "Montenegro",
     "gdp": "8,010",
     "year": "2024"
   },
-  "Bermuda": {
+  {
+    "country": "Bermuda",
     "gdp": null,
     "year": null
   },
-  "Liechtenstein": {
+  {
+    "country": "Liechtenstein",
     "gdp": null,
     "year": null
   },
-  "Maldives": {
+  {
+    "country": "Maldives",
     "gdp": "7,199",
     "year": "2024"
   },
-  "Barbados": {
+  {
+    "country": "Barbados",
     "gdp": "6,863",
     "year": "2024"
   },
-  "Cayman Islands": {
+  {
+    "country": "Cayman Islands",
     "gdp": null,
     "year": null
   },
-  "South Sudan": {
+  {
+    "country": "South Sudan",
     "gdp": "6,517",
     "year": "2024"
   },
-  "French Polynesia": {
+  {
+    "country": "French Polynesia",
     "gdp": null,
     "year": null
   },
-  "Fiji": {
+  {
+    "country": "Fiji",
     "gdp": "5,801",
     "year": "2024"
   },
-  "Eswatini": {
+  {
+    "country": "Eswatini",
     "gdp": "5,085",
     "year": "2024"
   },
-  "Liberia": {
+  {
+    "country": "Liberia",
     "gdp": "4,754",
     "year": "2024"
   },
-  "Sierra Leone": {
+  {
+    "country": "Sierra Leone",
     "gdp": "4,558",
     "year": "2024"
   },
-  "Djibouti": {
+  {
+    "country": "Djibouti",
     "gdp": "4,364",
     "year": "2024"
   },
-  "Suriname": {
+  {
+    "country": "Suriname",
     "gdp": "4,337",
     "year": "2024"
   },
-  "Aruba": {
+  {
+    "country": "Aruba",
     "gdp": "4,069",
     "year": "2024"
   },
-  "Andorra": {
+  {
+    "country": "Andorra",
     "gdp": "3,897",
     "year": "2024"
   },
-  "Belize": {
+  {
+    "country": "Belize",
     "gdp": "3,296",
     "year": "2024"
   },
-  "Bhutan": {
+  {
+    "country": "Bhutan",
     "gdp": "3,110",
     "year": "2024"
   },
-  "Burundi": {
+  {
+    "country": "Burundi",
     "gdp": "3,075",
     "year": "2024"
   },
-  "Curaçao": {
+  {
+    "country": "Curaçao",
     "gdp": null,
     "year": null
   },
-  "Greenland": {
+  {
+    "country": "Greenland",
     "gdp": null,
     "year": null
   },
-  "Central African Republic": {
+  {
+    "country": "Central African Republic",
     "gdp": "2,810",
     "year": "2024"
   },
-  "Cape Verde": {
+  {
+    "country": "Cape Verde",
     "gdp": "2,718",
     "year": "2024"
   },
-  "Gambia": {
+  {
+    "country": "Gambia",
     "gdp": "2,694",
     "year": "2024"
   },
-  "Saint Lucia": {
+  {
+    "country": "Saint Lucia",
     "gdp": "2,582",
     "year": "2024"
   },
-  "Lesotho": {
+  {
+    "country": "Lesotho",
     "gdp": "2,395",
     "year": "2024"
   },
-  "Eritrea": {
+  {
+    "country": "Eritrea",
     "gdp": null,
     "year": null
   },
-  "Zanzibar": {
+  {
+    "country": "Zanzibar",
     "gdp": null,
     "year": null
   },
-  "Seychelles": {
+  {
+    "country": "Seychelles",
     "gdp": "2,203",
     "year": "2024"
   },
-  "Guinea-Bissau": {
+  {
+    "country": "Guinea-Bissau",
     "gdp": "2,151",
     "year": "2024"
   },
-  "Antigua and Barbuda": {
+  {
+    "country": "Antigua and Barbuda",
     "gdp": "2,127",
     "year": "2024"
   },
-  "San Marino": {
+  {
+    "country": "San Marino",
     "gdp": "2,033",
     "year": "2024"
   },
-  "East Timor": {
+  {
+    "country": "East Timor",
     "gdp": "1,992",
     "year": "2024"
   },
-  "Solomon Islands": {
+  {
+    "country": "Solomon Islands",
     "gdp": "1,707",
     "year": "2024"
   },
-  "Sint Maarten": {
+  {
+    "country": "Sint Maarten",
     "gdp": null,
     "year": null
   },
-  "Comoros": {
+  {
+    "country": "Comoros",
     "gdp": "1,422",
     "year": "2024"
   },
-  "Grenada": {
+  {
+    "country": "Grenada",
     "gdp": "1,406",
     "year": "2024"
   },
-  "Turks and Caicos Islands": {
+  {
+    "country": "Turks and Caicos Islands",
     "gdp": null,
     "year": null
   },
-  "Vanuatu": {
+  {
+    "country": "Vanuatu",
     "gdp": "1,289",
     "year": "2024"
   },
-  "Saint Kitts and Nevis": {
+  {
+    "country": "Saint Kitts and Nevis",
     "gdp": "1,134",
     "year": "2024"
   },
-  "Saint Vincent and the Grenadines": {
+  {
+    "country": "Saint Vincent and the Grenadines",
     "gdp": "1,128",
     "year": "2024"
   },
-  "Samoa": {
+  {
+    "country": "Samoa",
     "gdp": "1,024",
     "year": "2024"
   },
-  "São Tomé and Príncipe": {
+  {
+    "country": "São Tomé and Príncipe",
     "gdp": "751",
     "year": "2024"
   },
-  "Dominica": {
+  {
+    "country": "Dominica",
     "gdp": "708",
     "year": "2024"
   },
-  "Tonga": {
+  {
+    "country": "Tonga",
     "gdp": "581",
     "year": "2024"
   },
-  "Micronesia": {
+  {
+    "country": "Micronesia",
     "gdp": "484",
     "year": "2024"
   },
-  "Kiribati": {
+  {
+    "country": "Kiribati",
     "gdp": "311",
     "year": "2024"
   },
-  "Palau": {
+  {
+    "country": "Palau",
     "gdp": "308",
     "year": "2024"
   },
-  "Marshall Islands": {
+  {
+    "country": "Marshall Islands",
     "gdp": "305",
     "year": "2024"
   },
-  "Nauru": {
+  {
+    "country": "Nauru",
     "gdp": "161",
     "year": "2024"
   },
-  "Tuvalu": {
+  {
+    "country": "Tuvalu",
     "gdp": "66",
     "year": "2024"
   }
-}
+]

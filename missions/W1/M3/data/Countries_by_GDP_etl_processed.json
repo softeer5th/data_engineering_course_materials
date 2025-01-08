@@ -1,838 +1,1256 @@
-{
-  "United States": {
+[
+  {
+    "country": "United States",
     "gdp": 30337.16,
-    "year": 2025.0
+    "year": 2025,
+    "region": "North America"
   },
-  "China": {
+  {
+    "country": "China",
     "gdp": 19534.89,
-    "year": 2025.0
+    "year": 2025,
+    "region": "East Asia"
   },
-  "Germany": {
+  {
+    "country": "Germany",
     "gdp": 4921.56,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Japan": {
+  {
+    "country": "Japan",
     "gdp": 4389.33,
-    "year": 2025.0
+    "year": 2025,
+    "region": "East Asia"
   },
-  "India": {
+  {
+    "country": "India",
     "gdp": 4271.92,
-    "year": 2025.0
+    "year": 2025,
+    "region": "South Asia"
   },
-  "United Kingdom": {
+  {
+    "country": "United Kingdom",
     "gdp": 3730.26,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "France": {
+  {
+    "country": "France",
     "gdp": 3283.43,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Italy": {
+  {
+    "country": "Italy",
     "gdp": 2459.6,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Canada": {
+  {
+    "country": "Canada",
     "gdp": 2330.31,
-    "year": 2025.0
+    "year": 2025,
+    "region": "North America"
   },
-  "Brazil": {
+  {
+    "country": "Brazil",
     "gdp": 2307.16,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Latin America"
   },
-  "Russia": {
+  {
+    "country": "Russia",
     "gdp": 2195.71,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "South Korea": {
+  {
+    "country": "South Korea",
     "gdp": 1947.13,
-    "year": 2025.0
+    "year": 2025,
+    "region": "East Asia"
   },
-  "Australia": {
+  {
+    "country": "Australia",
     "gdp": 1881.14,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Oceania"
   },
-  "Spain": {
+  {
+    "country": "Spain",
     "gdp": 1827.58,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Mexico": {
+  {
+    "country": "Mexico",
     "gdp": 1817.82,
-    "year": 2025.0
+    "year": 2025,
+    "region": "North America"
   },
-  "Indonesia": {
+  {
+    "country": "Indonesia",
     "gdp": 1492.62,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Southeast Asia"
   },
-  "Turkey": {
+  {
+    "country": "Turkey",
     "gdp": 1455.41,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "Netherlands": {
+  {
+    "country": "Netherlands",
     "gdp": 1272.96,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Saudi Arabia": {
+  {
+    "country": "Saudi Arabia",
     "gdp": 1136.58,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Switzerland": {
+  {
+    "country": "Switzerland",
     "gdp": 999.6,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Poland": {
+  {
+    "country": "Poland",
     "gdp": 915.45,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "Taiwan": {
+  {
+    "country": "Taiwan",
     "gdp": 814.44,
-    "year": 2025.0
+    "year": 2025,
+    "region": "East Asia"
   },
-  "Belgium": {
+  {
+    "country": "Belgium",
     "gdp": 689.36,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Sweden": {
+  {
+    "country": "Sweden",
     "gdp": 638.78,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Ireland": {
+  {
+    "country": "Ireland",
     "gdp": 587.22,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Argentina": {
+  {
+    "country": "Argentina",
     "gdp": 574.2,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Latin America"
   },
-  "United Arab Emirates": {
+  {
+    "country": "United Arab Emirates",
     "gdp": 568.57,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Singapore": {
+  {
+    "country": "Singapore",
     "gdp": 561.72,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Southeast Asia"
   },
-  "Austria": {
+  {
+    "country": "Austria",
     "gdp": 559.22,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Israel": {
+  {
+    "country": "Israel",
     "gdp": 550.9,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Thailand": {
+  {
+    "country": "Thailand",
     "gdp": 545.34,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Southeast Asia"
   },
-  "Norway": {
+  {
+    "country": "Norway",
     "gdp": 503.47,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Malaysia": {
+  {
+    "country": "Malaysia",
     "gdp": 488.25,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Southeast Asia"
   },
-  "Philippines": {
+  {
+    "country": "Philippines",
     "gdp": 471.52,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Southeast Asia"
   },
-  "Vietnam": {
+  {
+    "country": "Vietnam",
     "gdp": 468.4,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Southeast Asia"
   },
-  "Iran": {
+  {
+    "country": "Iran",
     "gdp": 463.75,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Bangladesh": {
+  {
+    "country": "Bangladesh",
     "gdp": 451.86,
-    "year": 2025.0
+    "year": 2025,
+    "region": "South Asia"
   },
-  "Denmark": {
+  {
+    "country": "Denmark",
     "gdp": 431.23,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Hong Kong": {
+  {
+    "country": "Hong Kong",
     "gdp": 422.06,
-    "year": 2025.0
+    "year": 2025,
+    "region": "East Asia"
   },
-  "Colombia": {
+  {
+    "country": "Colombia",
     "gdp": 419.33,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Latin America"
   },
-  "South Africa": {
+  {
+    "country": "South Africa",
     "gdp": 418.05,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Sub-Saharan Africa"
   },
-  "Romania": {
+  {
+    "country": "Romania",
     "gdp": 406.2,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "Egypt": {
+  {
+    "country": "Egypt",
     "gdp": 380.04,
-    "year": 2025.0
+    "year": 2025,
+    "region": "North Africa"
   },
-  "Pakistan": {
+  {
+    "country": "Pakistan",
     "gdp": 374.6,
-    "year": 2024.0
+    "year": 2024,
+    "region": "South Asia"
   },
-  "Chile": {
+  {
+    "country": "Chile",
     "gdp": 362.24,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Latin America"
   },
-  "Czech Republic": {
+  {
+    "country": "Czech Republic",
     "gdp": 360.23,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "Finland": {
+  {
+    "country": "Finland",
     "gdp": 319.99,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Portugal": {
+  {
+    "country": "Portugal",
     "gdp": 319.93,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Kazakhstan": {
+  {
+    "country": "Kazakhstan",
     "gdp": 306.63,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Central Asia"
   },
-  "Peru": {
+  {
+    "country": "Peru",
     "gdp": 294.9,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Latin America"
   },
-  "Iraq": {
+  {
+    "country": "Iraq",
     "gdp": 270.87,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Greece": {
+  {
+    "country": "Greece",
     "gdp": 265.17,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Western Europe"
   },
-  "Algeria": {
+  {
+    "country": "Algeria",
     "gdp": 264.27,
-    "year": 2025.0
+    "year": 2025,
+    "region": "North Africa"
   },
-  "New Zealand": {
+  {
+    "country": "New Zealand",
     "gdp": 262.92,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Oceania"
   },
-  "Hungary": {
+  {
+    "country": "Hungary",
     "gdp": 245.62,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "Qatar": {
+  {
+    "country": "Qatar",
     "gdp": 226.22,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Nigeria": {
+  {
+    "country": "Nigeria",
     "gdp": 194.96,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Sub-Saharan Africa"
   },
-  "Ukraine": {
+  {
+    "country": "Ukraine",
     "gdp": 189.83,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Eastern Europe"
   },
-  "Morocco": {
+  {
+    "country": "Morocco",
     "gdp": 168.6,
-    "year": 2025.0
+    "year": 2025,
+    "region": "North Africa"
   },
-  "Kuwait": {
+  {
+    "country": "Kuwait",
     "gdp": 161.95,
-    "year": 2025.0
+    "year": 2025,
+    "region": "Middle East"
   },
-  "Ethiopia": {
+  {
+    "country": "Ethiopia",
     "gdp": 145.03,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Slovakia": {
+  {
+    "country": "Slovakia",
     "gdp": 142.62,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Dominican Republic": {
+  {
+    "country": "Dominican Republic",
     "gdp": 126.24,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Ecuador": {
+  {
+    "country": "Ecuador",
     "gdp": 121.42,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Puerto Rico": {
+  {
+    "country": "Puerto Rico",
     "gdp": 120.97,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Kenya": {
+  {
+    "country": "Kenya",
     "gdp": 116.32,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Angola": {
+  {
+    "country": "Angola",
     "gdp": 113.29,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Uzbekistan": {
+  {
+    "country": "Uzbekistan",
     "gdp": 112.65,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Central Asia"
   },
-  "Guatemala": {
+  {
+    "country": "Guatemala",
     "gdp": 112.37,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Oman": {
+  {
+    "country": "Oman",
     "gdp": 109.99,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Middle East"
   },
-  "Bulgaria": {
+  {
+    "country": "Bulgaria",
     "gdp": 108.42,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Venezuela": {
+  {
+    "country": "Venezuela",
     "gdp": 106.33,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Costa Rica": {
+  {
+    "country": "Costa Rica",
     "gdp": 95.15,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Luxembourg": {
+  {
+    "country": "Luxembourg",
     "gdp": 91.21,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Western Europe"
   },
-  "Croatia": {
+  {
+    "country": "Croatia",
     "gdp": 89.66,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Panama": {
+  {
+    "country": "Panama",
     "gdp": 87.35,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Ivory Coast": {
+  {
+    "country": "Ivory Coast",
     "gdp": 86.99,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Turkmenistan": {
+  {
+    "country": "Turkmenistan",
     "gdp": 83.88,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Central Asia"
   },
-  "Lithuania": {
+  {
+    "country": "Lithuania",
     "gdp": 82.79,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Uruguay": {
+  {
+    "country": "Uruguay",
     "gdp": 82.6,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Serbia": {
+  {
+    "country": "Serbia",
     "gdp": 82.55,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Tanzania": {
+  {
+    "country": "Tanzania",
     "gdp": 79.87,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Azerbaijan": {
+  {
+    "country": "Azerbaijan",
     "gdp": 75.65,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Ghana": {
+  {
+    "country": "Ghana",
     "gdp": 75.31,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Sri Lanka": {
+  {
+    "country": "Sri Lanka",
     "gdp": 74.85,
-    "year": 2022.0
+    "year": 2022,
+    "region": "South Asia"
   },
-  "Slovenia": {
+  {
+    "country": "Slovenia",
     "gdp": 73.2,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Belarus": {
+  {
+    "country": "Belarus",
     "gdp": 73.13,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "DR Congo": {
+  {
+    "country": "DR Congo",
     "gdp": 72.48,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Myanmar": {
+  {
+    "country": "Myanmar",
     "gdp": 64.28,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Southeast Asia"
   },
-  "Uganda": {
+  {
+    "country": "Uganda",
     "gdp": 55.59,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Macau": {
+  {
+    "country": "Macau",
     "gdp": 53.45,
-    "year": 2024.0
+    "year": 2024,
+    "region": "East Asia"
   },
-  "Cameroon": {
+  {
+    "country": "Cameroon",
     "gdp": 53.39,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Jordan": {
+  {
+    "country": "Jordan",
     "gdp": 53.3,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Middle East"
   },
-  "Tunisia": {
+  {
+    "country": "Tunisia",
     "gdp": 52.64,
-    "year": 2024.0
+    "year": 2024,
+    "region": "North Africa"
   },
-  "Bolivia": {
+  {
+    "country": "Cambodia",
+    "gdp": 51.16,
+    "year": 2025,
+    "region": "Southeast Asia"
+  },
+  {
+    "country": "Bolivia",
     "gdp": 48.17,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Bahrain": {
+  {
+    "country": "Bahrain",
     "gdp": 47.81,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Middle East"
   },
-  "Cambodia": {
-    "gdp": 47.15,
-    "year": 2024.0
-  },
-  "Latvia": {
+  {
+    "country": "Latvia",
     "gdp": 45.52,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Paraguay": {
+  {
+    "country": "Paraguay",
     "gdp": 44.94,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Libya": {
+  {
+    "country": "Libya",
     "gdp": 44.81,
-    "year": 2024.0
+    "year": 2024,
+    "region": "North Africa"
   },
-  "Nepal": {
+  {
+    "country": "Nepal",
     "gdp": 43.67,
-    "year": 2024.0
+    "year": 2024,
+    "region": "South Asia"
   },
-  "Estonia": {
+  {
+    "country": "Estonia",
     "gdp": 43.04,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Honduras": {
+  {
+    "country": "Honduras",
     "gdp": 36.74,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Zimbabwe": {
+  {
+    "country": "Zimbabwe",
     "gdp": 35.92,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "El Salvador": {
+  {
+    "country": "El Salvador",
     "gdp": 35.85,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Cyprus": {
+  {
+    "country": "Cyprus",
     "gdp": 34.79,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Senegal": {
+  {
+    "country": "Senegal",
     "gdp": 33.68,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Georgia": {
+  {
+    "country": "Georgia",
     "gdp": 33.19,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Iceland": {
+  {
+    "country": "Iceland",
     "gdp": 32.92,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Western Europe"
   },
-  "Papua New Guinea": {
+  {
+    "country": "Papua New Guinea",
     "gdp": 31.72,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Zambia": {
+  {
+    "country": "Zambia",
     "gdp": 29.87,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Bosnia and Herzegovina": {
+  {
+    "country": "Bosnia and Herzegovina",
     "gdp": 29.08,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Trinidad and Tobago": {
+  {
+    "country": "Trinidad and Tobago",
     "gdp": 28.36,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Sudan": {
+  {
+    "country": "Sudan",
     "gdp": 26.86,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Guinea": {
+  {
+    "country": "Guinea",
     "gdp": 25.45,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Albania": {
+  {
+    "country": "Albania",
     "gdp": 25.43,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Armenia": {
+  {
+    "country": "Armenia",
     "gdp": 25.41,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Haiti": {
+  {
+    "country": "Haiti",
     "gdp": 24.05,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Mozambique": {
+  {
+    "country": "Mozambique",
     "gdp": 22.98,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Malta": {
+  {
+    "country": "Malta",
     "gdp": 22.74,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Western Europe"
   },
-  "Mongolia": {
+  {
+    "country": "Mongolia",
     "gdp": 21.94,
-    "year": 2024.0
+    "year": 2024,
+    "region": "East Asia"
   },
-  "Burkina Faso": {
+  {
+    "country": "Burkina Faso",
     "gdp": 21.9,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Lebanon": {
+  {
+    "country": "Lebanon",
     "gdp": 21.78,
-    "year": 2022.0
+    "year": 2022,
+    "region": "Middle East"
   },
-  "Mali": {
+  {
+    "country": "Mali",
     "gdp": 21.66,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Botswana": {
+  {
+    "country": "Botswana",
     "gdp": 21.42,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Benin": {
+  {
+    "country": "Benin",
     "gdp": 21.37,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Guyana": {
+  {
+    "country": "Guyana",
     "gdp": 21.18,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Gabon": {
+  {
+    "country": "Gabon",
     "gdp": 21.01,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Jamaica": {
+  {
+    "country": "Jamaica",
     "gdp": 20.1,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Nicaragua": {
+  {
+    "country": "Nicaragua",
     "gdp": 18.83,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Niger": {
+  {
+    "country": "Niger",
     "gdp": 18.82,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Chad": {
+  {
+    "country": "Chad",
     "gdp": 18.7,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Palestine": {
+  {
+    "country": "Palestine",
     "gdp": 18.6,
-    "year": 2023.0
+    "year": 2023,
+    "region": "Middle East"
   },
-  "Moldova": {
+  {
+    "country": "Moldova",
     "gdp": 18.36,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Yemen": {
+  {
+    "country": "Yemen",
     "gdp": 16.94,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Middle East"
   },
-  "Madagascar": {
+  {
+    "country": "Madagascar",
     "gdp": 16.46,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Mauritius": {
+  {
+    "country": "Mauritius",
     "gdp": 16.36,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "North Macedonia": {
+  {
+    "country": "North Macedonia",
     "gdp": 15.87,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Kyrgyzstan": {
+  {
+    "country": "Kyrgyzstan",
     "gdp": 15.77,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Central Asia"
   },
-  "Brunei": {
+  {
+    "country": "Brunei",
     "gdp": 15.51,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Southeast Asia"
   },
-  "Congo": {
+  {
+    "country": "Congo",
     "gdp": 15.5,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Laos": {
+  {
+    "country": "Laos",
     "gdp": 15.19,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Southeast Asia"
   },
-  "Afghanistan": {
+  {
+    "country": "Afghanistan",
     "gdp": 14.47,
-    "year": 2022.0
+    "year": 2022,
+    "region": "South Asia"
   },
-  "Bahamas": {
+  {
+    "country": "Bahamas",
     "gdp": 14.39,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Rwanda": {
+  {
+    "country": "Rwanda",
     "gdp": 13.7,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Tajikistan": {
+  {
+    "country": "Tajikistan",
     "gdp": 13.0,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Central Asia"
   },
-  "Somalia": {
+  {
+    "country": "Somalia",
     "gdp": 12.8,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Namibia": {
+  {
+    "country": "Namibia",
     "gdp": 12.76,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Kosovo": {
+  {
+    "country": "Kosovo",
     "gdp": 11.32,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Malawi": {
+  {
+    "country": "Malawi",
     "gdp": 11.24,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Equatorial Guinea": {
+  {
+    "country": "Equatorial Guinea",
     "gdp": 10.71,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Mauritania": {
+  {
+    "country": "Mauritania",
     "gdp": 10.63,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Togo": {
+  {
+    "country": "Togo",
     "gdp": 9.83,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Montenegro": {
+  {
+    "country": "Montenegro",
     "gdp": 8.01,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Eastern Europe"
   },
-  "Maldives": {
+  {
+    "country": "Maldives",
     "gdp": 7.2,
-    "year": 2024.0
+    "year": 2024,
+    "region": "South Asia"
   },
-  "Barbados": {
+  {
+    "country": "Barbados",
     "gdp": 6.86,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "South Sudan": {
+  {
+    "country": "South Sudan",
     "gdp": 6.52,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Fiji": {
+  {
+    "country": "Fiji",
     "gdp": 5.8,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Eswatini": {
+  {
+    "country": "Eswatini",
     "gdp": 5.08,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Liberia": {
+  {
+    "country": "Liberia",
     "gdp": 4.75,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Sierra Leone": {
+  {
+    "country": "Sierra Leone",
     "gdp": 4.56,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Djibouti": {
+  {
+    "country": "Djibouti",
     "gdp": 4.36,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Suriname": {
+  {
+    "country": "Suriname",
     "gdp": 4.34,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Aruba": {
+  {
+    "country": "Aruba",
     "gdp": 4.07,
-    "year": 2024.0
+    "year": 2024,
+    "region": "North America"
   },
-  "Andorra": {
+  {
+    "country": "Andorra",
     "gdp": 3.9,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Western Europe"
   },
-  "Belize": {
+  {
+    "country": "Belize",
     "gdp": 3.3,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Bhutan": {
+  {
+    "country": "Bhutan",
     "gdp": 3.11,
-    "year": 2024.0
+    "year": 2024,
+    "region": "South Asia"
   },
-  "Burundi": {
+  {
+    "country": "Burundi",
     "gdp": 3.08,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Central African Republic": {
+  {
+    "country": "Central African Republic",
     "gdp": 2.81,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Cape Verde": {
+  {
+    "country": "Cape Verde",
     "gdp": 2.72,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Gambia": {
+  {
+    "country": "Gambia",
     "gdp": 2.69,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Saint Lucia": {
+  {
+    "country": "Saint Lucia",
     "gdp": 2.58,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Lesotho": {
+  {
+    "country": "Lesotho",
     "gdp": 2.4,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Seychelles": {
+  {
+    "country": "Seychelles",
     "gdp": 2.2,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Guinea-Bissau": {
+  {
+    "country": "Guinea-Bissau",
     "gdp": 2.15,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Antigua and Barbuda": {
+  {
+    "country": "Antigua and Barbuda",
     "gdp": 2.13,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "San Marino": {
+  {
+    "country": "San Marino",
     "gdp": 2.03,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Western Europe"
   },
-  "East Timor": {
+  {
+    "country": "East Timor",
     "gdp": 1.99,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Southeast Asia"
   },
-  "Solomon Islands": {
+  {
+    "country": "Solomon Islands",
     "gdp": 1.71,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Comoros": {
+  {
+    "country": "Comoros",
     "gdp": 1.42,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Grenada": {
+  {
+    "country": "Grenada",
     "gdp": 1.41,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Vanuatu": {
+  {
+    "country": "Vanuatu",
     "gdp": 1.29,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Saint Vincent and the Grenadines": {
+  {
+    "country": "Saint Vincent and the Grenadines",
     "gdp": 1.13,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Saint Kitts and Nevis": {
+  {
+    "country": "Saint Kitts and Nevis",
     "gdp": 1.13,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Samoa": {
+  {
+    "country": "Samoa",
     "gdp": 1.02,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "São Tomé and Príncipe": {
+  {
+    "country": "São Tomé and Príncipe",
     "gdp": 0.75,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
   },
-  "Dominica": {
+  {
+    "country": "Dominica",
     "gdp": 0.71,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Latin America"
   },
-  "Tonga": {
+  {
+    "country": "Tonga",
     "gdp": 0.58,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Micronesia": {
+  {
+    "country": "Micronesia",
     "gdp": 0.48,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Kiribati": {
+  {
+    "country": "Kiribati",
     "gdp": 0.31,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Palau": {
+  {
+    "country": "Palau",
     "gdp": 0.31,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Marshall Islands": {
+  {
+    "country": "Marshall Islands",
     "gdp": 0.3,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Nauru": {
+  {
+    "country": "Nauru",
     "gdp": 0.16,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Tuvalu": {
+  {
+    "country": "Tuvalu",
     "gdp": 0.07,
-    "year": 2024.0
+    "year": 2024,
+    "region": "Oceania"
   },
-  "Cuba": {
+  {
+    "country": "Cuba",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Latin America"
   },
-  "Syria": {
+  {
+    "country": "Syria",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Middle East"
   },
-  "North Korea": {
+  {
+    "country": "North Korea",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "East Asia"
   },
-  "New Caledonia": {
+  {
+    "country": "New Caledonia",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Oceania"
   },
-  "Monaco": {
+  {
+    "country": "Monaco",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Western Europe"
   },
-  "Bermuda": {
+  {
+    "country": "Bermuda",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "North America"
   },
-  "Liechtenstein": {
+  {
+    "country": "Liechtenstein",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Western Europe"
   },
-  "Cayman Islands": {
+  {
+    "country": "Cayman Islands",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "North America"
   },
-  "French Polynesia": {
+  {
+    "country": "French Polynesia",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Oceania"
   },
-  "Curaçao": {
+  {
+    "country": "Curaçao",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "North America"
   },
-  "Greenland": {
+  {
+    "country": "Greenland",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "North America"
   },
-  "Eritrea": {
+  {
+    "country": "Eritrea",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Sub-Saharan Africa"
   },
-  "Zanzibar": {
+  {
+    "country": "Zanzibar",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "Sub-Saharan Africa"
   },
-  "Sint Maarten": {
+  {
+    "country": "Sint Maarten",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "North America"
   },
-  "Turks and Caicos Islands": {
+  {
+    "country": "Turks and Caicos Islands",
     "gdp": null,
-    "year": null
+    "year": null,
+    "region": "North America"
   }
-}
+]
