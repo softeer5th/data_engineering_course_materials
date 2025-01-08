@@ -1,0 +1,74 @@
+2025-01-08 17:08:06 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:08:06 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:08:07 - ETLLogger - ERROR - Error occurred during data extraction: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2025-01-08 17:08:07 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-08 17:09:07 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:09:07 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:09:10 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:09:10 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:10:42 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:10:42 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:10:45 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:10:45 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:22:40 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:22:40 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:22:53 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:22:53 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:24:36 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:24:36 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:24:49 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:24:49 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:28:48 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:28:48 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:28:59 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:28:59 - ETLLogger - INFO - Transforming data...
+2025-01-08 17:29:00 - ETLLogger - INFO - Data transformed successfully.
+2025-01-08 17:29:00 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:30:05 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:30:05 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:30:18 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:30:18 - ETLLogger - INFO - Transforming data...
+2025-01-08 17:30:18 - ETLLogger - INFO - Data transformed successfully.
+2025-01-08 17:30:18 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:33:44 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:33:44 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:33:56 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:33:56 - ETLLogger - INFO - Transforming data...
+2025-01-08 17:33:56 - ETLLogger - INFO - Data transformed successfully.
+2025-01-08 17:33:56 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 17:41:56 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 17:41:56 - ETLLogger - INFO - Extracting data...
+2025-01-08 17:42:06 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 17:42:06 - ETLLogger - INFO - Transforming data...
+2025-01-08 17:42:06 - ETLLogger - INFO - Data transformed successfully.
+2025-01-08 17:42:06 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 18:20:15 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:20:15 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:20:26 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 18:20:26 - ETLLogger - INFO - Transforming data...
+2025-01-08 18:20:26 - ETLLogger - INFO - Data transformed successfully.
+2025-01-08 18:20:26 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 18:21:48 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:21:48 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:21:59 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 18:21:59 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 18:22:11 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:22:11 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:22:25 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 18:22:25 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 18:22:27 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:22:27 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:22:42 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 18:22:42 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-08 18:24:29 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:24:29 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:24:32 - ETLLogger - ERROR - Error occurred during data extraction: name 'df' is not defined
+2025-01-08 18:24:32 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-08 18:25:05 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:25:05 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:25:06 - ETLLogger - ERROR - Error occurred during data extraction: Invalid file path or buffer object type: <class 'dict'>
+2025-01-08 18:25:06 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-08 18:28:06 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-08 18:28:06 - ETLLogger - INFO - Extracting data...
+2025-01-08 18:28:19 - ETLLogger - INFO - Data extracted successfully.
+2025-01-08 18:28:19 - ETLLogger - INFO - ======== ETL Process Completed ========
