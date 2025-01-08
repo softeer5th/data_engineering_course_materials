@@ -21,20 +21,35 @@ if __name__ == "__main__":
 
     # Extract data
     logger.info("Extracting data...")
-    extracted_data = extractor.extract(WIKI_URL)
-    io_handler.save_dict_to_json(extracted_data, EXTRACTED_DATA_PATH)
-    logger.info("Data extracted successfully.")
+    try:
+        extracted_data = extractor.extract(WIKI_URL)
+        io_handler.save_dict_to_json(extracted_data, EXTRACTED_DATA_PATH)
+        logger.info("Data extracted successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data extraction: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        exit()
 
     # Transform data
     logger.info("Transforming data...")
-    df = io_handler.open_json_as_df(EXTRACTED_DATA_PATH)
-    df = transformer.transform(df)
-    logger.info("Data transformed successfully.")
+    try:
+        df = io_handler.open_json_as_df(EXTRACTED_DATA_PATH)
+        df = transformer.transform(df)
+        logger.info("Data transformed successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data transformation: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        exit()
 
     # Load data
     logger.info("Loading data...")
-    json_loader.load(df, PROCESSED_DATA_PATH)
-    logger.info("Data loaded successfully.")
+    try:
+        json_loader.load(df, PROCESSED_DATA_PATH)
+        logger.info("Data loaded successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data loading: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        exit()
 
     # End ETL process
     logger.info("======== ETL Process Completed ========")

@@ -23,22 +23,37 @@ if __name__ == "__main__":
 
     # Extract data
     logger.info("Extracting data...")
-    extracted_data = extractor.extract(WIKI_URL)
-    io_handler.save_dict_to_sqlite(
-        extracted_data, DATABASE_PATH, EXTRACTED_DATA_TABLE
-    )
-    logger.info("Data extracted successfully.")
+    try:
+        extracted_data = extractor.extract(WIKI_URL)
+        io_handler.save_dict_to_sqlite(
+            extracted_data, DATABASE_PATH, EXTRACTED_DATA_TABLE
+        )
+        logger.info("Data extracted successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data extraction: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        exit()
 
     # Transform data
     logger.info("Transforming data...")
-    df = io_handler.open_sqlite_as_df(DATABASE_PATH, EXTRACTED_DATA_TABLE)
-    df = transformer.transform(df)
-    logger.info("Data transformed successfully.")
+    try:
+        df = io_handler.open_sqlite_as_df(DATABASE_PATH, EXTRACTED_DATA_TABLE)
+        df = transformer.transform(df)
+        logger.info("Data transformed successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data transformation: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        exit()
 
     # Load data
     logger.info("Loading data...")
-    sqlite_loader.load(df, DATABASE_PATH, PROCESSED_DATA_TABLE)
-    logger.info("Data loaded successfully.")
+    try:
+        sqlite_loader.load(df, DATABASE_PATH, PROCESSED_DATA_TABLE)
+        logger.info("Data loaded successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data loading: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        exit()
 
     # End ETL process
     logger.info("======== ETL Process Completed ========")
