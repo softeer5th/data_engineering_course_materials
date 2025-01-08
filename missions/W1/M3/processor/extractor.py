@@ -1,4 +1,6 @@
 import json
+import sqlite3
+from typing import Callable
 import requests
 from bs4 import BeautifulSoup, element
 import re
@@ -103,16 +105,15 @@ def _get_imf_data(gdp_table: BeautifulSoup) -> dict:
     return data
 
 
-def extract(url: str, data_path: str) -> None:
+def extract(wiki_url: str) -> dict:
     """
     Extract GDP data from Wikipedia page.
-    :param url: str: Wikipedia URL.
-    :param data_path: str: Extracted data JSON file path.
+    :param wiki_url: str: Wikipedia URL.
+    :return: dict: Extracted data.
     """
-    html = _fetch_page(url)
+    html = _fetch_page(wiki_url)
     soup = _parse_html(html)
     gdp_table = _find_gdp_table(soup)
     extracted_data = _get_imf_data(gdp_table)
 
-    with open(data_path, "w") as file:
-        json.dump(extracted_data, file, ensure_ascii=False, indent=2)
+    return extracted_data

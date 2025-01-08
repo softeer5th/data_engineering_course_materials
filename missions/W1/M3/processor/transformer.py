@@ -6,19 +6,6 @@ import pandas as pd
 COUNTY_REGIONS_DATA_PATH = "data/country_regions.json"
 
 
-def _open_json_to_df(json_path: str) -> pd.DataFrame:
-    """
-    Open JSON file and convert it to DataFrame.
-    :param json_path: str: JSON file path.
-    :return: pd.DataFrame: DataFrame.
-    """
-    with open(json_path, "r") as file:
-        data = json.load(file)
-
-    df = pd.DataFrame.from_dict(data)
-    return df
-
-
 def _parse_gdp_strings(series: pd.Series) -> pd.Series:
     """
     Parse GDP strings to numeric values.
@@ -52,17 +39,26 @@ def _add_country_regions(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def transform(json_path) -> pd.DataFrame:
+def _sort_by_gdp(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Sort DataFrame by GDP in descending order.
+    :param df: pd.DataFrame: DataFrame.
+    :return: pd.DataFrame: Sorted DataFrame.
+    """
+    return df.sort_values(by="gdp", ascending=False)
+
+
+def transform(df: pd.DataFrame) -> pd.DataFrame:
     """
     Transform extracted data.
-    :param json_path: str: Extracted data JSON file path.
+    :param df: pd.DataFrame: Extracted DataFrame.
     :return: pd.DataFrame: Transformed DataFrame.
     """
-    df = _open_json_to_df(json_path)
-
     df["gdp"] = _parse_gdp_strings(df["gdp"])
     df["gdp"] = (df["gdp"] / 1000).round(2)
     df["year"] = _parse_year_strings(df["year"])
 
     df = _add_country_regions(df)
+    df = _sort_by_gdp(df)
+
     return df
