@@ -1,4 +1,4 @@
-from processor import extractor, transformer, io_handler, json_loader
+from processor import wiki_extractor, transformer, io_handler, json_loader
 from utils.logging import Logger
 
 # Wikipedia URL
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # Extract data
     logger.info("Extracting data...")
     try:
-        extracted_data = extractor.extract(WIKI_URL)
+        extracted_data = wiki_extractor.extract(WIKI_URL)
         io_handler.save_dict_to_json(extracted_data, EXTRACTED_DATA_PATH)
         logger.info("Data extracted successfully.")
     except Exception as e:

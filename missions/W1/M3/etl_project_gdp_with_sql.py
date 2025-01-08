@@ -1,4 +1,4 @@
-from processor import extractor, transformer, io_handler, sqlite_loader
+from processor import wiki_extractor, transformer, io_handler, sqlite_loader
 from utils.logging import Logger
 
 # Wikipedia URL
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # Extract data
     logger.info("Extracting data...")
     try:
-        extracted_data = extractor.extract(WIKI_URL)
+        extracted_data = wiki_extractor.extract(WIKI_URL)
         io_handler.save_dict_to_sqlite(
             extracted_data, DATABASE_PATH, EXTRACTED_DATA_TABLE
         )
