@@ -1,9 +1,17 @@
 def numstr2num(numstr: str) -> float:
     if numstr is None:
-        return None
+        return None # Load 시에 transform에서 None으로 가능할 지 생각.
     temp = numstr
     temp = temp.replace(",", "")
     temp = float(temp)
+    return temp
+
+def gdpstr2billions(numstr: str) -> float:
+    if numstr is None:
+        return None # Load 시에 transform에서 None으로 가능할 지 생각.
+    temp = numstr
+    temp = temp.replace(",", "")
+    temp = round(float(temp) / 1000, 2) # 이것을 해도, DB상에서는 float으로 저장되어 Round 처리가 안되어 있음.
     return temp
 
 country2region = {
