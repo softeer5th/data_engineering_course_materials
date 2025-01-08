@@ -4,3 +4,4 @@
 materials/data_engineering_course_materials/slides/
 *.pyc
 .vscode/
+.env
