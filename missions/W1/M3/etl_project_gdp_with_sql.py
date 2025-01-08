@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # Initialize logger
     logger = Logger(LOG_FILE_PATH)
 
-    # Strart ETL process
+    # Start ETL process
     logger.info("======== Starting ETL Process ========")
 
     # Extract data
