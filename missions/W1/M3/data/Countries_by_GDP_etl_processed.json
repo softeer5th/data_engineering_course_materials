@@ -144,16 +144,16 @@
     "region": "Western Europe"
   },
   {
+    "country": "Argentina",
+    "gdp": 604.2,
+    "year": 2025,
+    "region": "Latin America"
+  },
+  {
     "country": "Ireland",
     "gdp": 587.22,
     "year": 2025,
     "region": "Western Europe"
-  },
-  {
-    "country": "Argentina",
-    "gdp": 574.2,
-    "year": 2025,
-    "region": "Latin America"
   },
   {
     "country": "United Arab Emirates",
@@ -217,9 +217,15 @@
   },
   {
     "country": "Bangladesh",
-    "gdp": 451.86,
+    "gdp": 455.86,
     "year": 2025,
     "region": "South Asia"
+  },
+  {
+    "country": "Czech Republic",
+    "gdp": 452.23,
+    "year": 2025,
+    "region": "Eastern Europe"
   },
   {
     "country": "Denmark",
@@ -270,12 +276,6 @@
     "region": "Latin America"
   },
   {
-    "country": "Czech Republic",
-    "gdp": 360.23,
-    "year": 2025,
-    "region": "Eastern Europe"
-  },
-  {
     "country": "Finland",
     "gdp": 319.99,
     "year": 2025,
@@ -286,6 +286,12 @@
     "gdp": 319.93,
     "year": 2025,
     "region": "Western Europe"
+  },
+  {
+    "country": "Hungary",
+    "gdp": 312.62,
+    "year": 2025,
+    "region": "Eastern Europe"
   },
   {
     "country": "Kazakhstan",
@@ -324,20 +330,20 @@
     "region": "Oceania"
   },
   {
-    "country": "Hungary",
-    "gdp": 245.62,
-    "year": 2025,
-    "region": "Eastern Europe"
-  },
-  {
     "country": "Qatar",
-    "gdp": 226.22,
+    "gdp": 240.22,
     "year": 2025,
     "region": "Middle East"
   },
   {
+    "country": "Ethiopia",
+    "gdp": 230.03,
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
+  },
+  {
     "country": "Nigeria",
-    "gdp": 194.96,
+    "gdp": 199.72,
     "year": 2025,
     "region": "Sub-Saharan Africa"
   },
@@ -360,12 +366,6 @@
     "region": "Middle East"
   },
   {
-    "country": "Ethiopia",
-    "gdp": 145.03,
-    "year": 2024,
-    "region": "Sub-Saharan Africa"
-  },
-  {
     "country": "Slovakia",
     "gdp": 142.62,
     "year": 2024,
@@ -376,6 +376,18 @@
     "gdp": 126.24,
     "year": 2024,
     "region": "Latin America"
+  },
+  {
+    "country": "Uzbekistan",
+    "gdp": 125.51,
+    "year": 2024,
+    "region": "Central Asia"
+  },
+  {
+    "country": "Bulgaria",
+    "gdp": 123.42,
+    "year": 2024,
+    "region": "Eastern Europe"
   },
   {
     "country": "Ecuador",
@@ -402,12 +414,6 @@
     "region": "Sub-Saharan Africa"
   },
   {
-    "country": "Uzbekistan",
-    "gdp": 112.65,
-    "year": 2024,
-    "region": "Central Asia"
-  },
-  {
     "country": "Guatemala",
     "gdp": 112.37,
     "year": 2024,
@@ -415,15 +421,9 @@
   },
   {
     "country": "Oman",
-    "gdp": 109.99,
+    "gdp": 110.99,
     "year": 2024,
     "region": "Middle East"
-  },
-  {
-    "country": "Bulgaria",
-    "gdp": 108.42,
-    "year": 2024,
-    "region": "Eastern Europe"
   },
   {
     "country": "Venezuela",
@@ -541,7 +541,7 @@
   },
   {
     "country": "Macau",
-    "gdp": 53.45,
+    "gdp": 55.45,
     "year": 2024,
     "region": "East Asia"
   },
@@ -660,6 +660,12 @@
     "region": "Oceania"
   },
   {
+    "country": "Sudan",
+    "gdp": 30.87,
+    "year": 2024,
+    "region": "Sub-Saharan Africa"
+  },
+  {
     "country": "Zambia",
     "gdp": 29.87,
     "year": 2024,
@@ -676,12 +682,6 @@
     "gdp": 28.36,
     "year": 2024,
     "region": "Latin America"
-  },
-  {
-    "country": "Sudan",
-    "gdp": 26.86,
-    "year": 2024,
-    "region": "Sub-Saharan Africa"
   },
   {
     "country": "Guinea",
@@ -822,6 +822,12 @@
     "region": "Sub-Saharan Africa"
   },
   {
+    "country": "Brunei",
+    "gdp": 15.99,
+    "year": 2024,
+    "region": "Southeast Asia"
+  },
+  {
     "country": "North Macedonia",
     "gdp": 15.87,
     "year": 2024,
@@ -832,12 +838,6 @@
     "gdp": 15.77,
     "year": 2024,
     "region": "Central Asia"
-  },
-  {
-    "country": "Brunei",
-    "gdp": 15.51,
-    "year": 2024,
-    "region": "Southeast Asia"
   },
   {
     "country": "Congo",

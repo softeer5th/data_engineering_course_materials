@@ -120,13 +120,13 @@
     "year": "2025"
   },
   {
-    "country": "Ireland",
-    "gdp": "587,225",
+    "country": "Argentina",
+    "gdp": "604,201",
     "year": "2025"
   },
   {
-    "country": "Argentina",
-    "gdp": "574,201",
+    "country": "Ireland",
+    "gdp": "587,225",
     "year": "2025"
   },
   {
@@ -181,7 +181,12 @@
   },
   {
     "country": "Bangladesh",
-    "gdp": "451,856",
+    "gdp": "455,856",
+    "year": "2025"
+  },
+  {
+    "country": "Czech Republic",
+    "gdp": "452,233",
     "year": "2025"
   },
   {
@@ -225,11 +230,6 @@
     "year": "2025"
   },
   {
-    "country": "Czech Republic",
-    "gdp": "360,233",
-    "year": "2025"
-  },
-  {
     "country": "Finland",
     "gdp": "319,989",
     "year": "2025"
@@ -237,6 +237,11 @@
   {
     "country": "Portugal",
     "gdp": "319,934",
+    "year": "2025"
+  },
+  {
+    "country": "Hungary",
+    "gdp": "312,619",
     "year": "2025"
   },
   {
@@ -270,18 +275,18 @@
     "year": "2025"
   },
   {
-    "country": "Hungary",
-    "gdp": "245,619",
+    "country": "Qatar",
+    "gdp": "240,217",
     "year": "2025"
   },
   {
-    "country": "Qatar",
-    "gdp": "226,217",
-    "year": "2025"
+    "country": "Ethiopia",
+    "gdp": "230,031",
+    "year": "2024"
   },
   {
     "country": "Nigeria",
-    "gdp": "194,955",
+    "gdp": "199,720",
     "year": "2025"
   },
   {
@@ -305,11 +310,6 @@
     "year": null
   },
   {
-    "country": "Ethiopia",
-    "gdp": "145,031",
-    "year": "2024"
-  },
-  {
     "country": "Slovakia",
     "gdp": "142,617",
     "year": "2024"
@@ -317,6 +317,16 @@
   {
     "country": "Dominican Republic",
     "gdp": "126,238",
+    "year": "2024"
+  },
+  {
+    "country": "Uzbekistan",
+    "gdp": "125,511",
+    "year": "2024"
+  },
+  {
+    "country": "Bulgaria",
+    "gdp": "123,425",
     "year": "2024"
   },
   {
@@ -340,23 +350,13 @@
     "year": "2024"
   },
   {
-    "country": "Uzbekistan",
-    "gdp": "112,653",
-    "year": "2024"
-  },
-  {
     "country": "Guatemala",
     "gdp": "112,369",
     "year": "2024"
   },
   {
     "country": "Oman",
-    "gdp": "109,993",
-    "year": "2024"
-  },
-  {
-    "country": "Bulgaria",
-    "gdp": "108,425",
+    "gdp": "110,993",
     "year": "2024"
   },
   {
@@ -456,7 +456,7 @@
   },
   {
     "country": "Macau",
-    "gdp": "53,447",
+    "gdp": "55,447",
     "year": "2024"
   },
   {
@@ -555,6 +555,11 @@
     "year": "2024"
   },
   {
+    "country": "Sudan",
+    "gdp": "30,873",
+    "year": "2024"
+  },
+  {
     "country": "Zambia",
     "gdp": "29,872",
     "year": "2024"
@@ -567,11 +572,6 @@
   {
     "country": "Trinidad and Tobago",
     "gdp": "28,365",
-    "year": "2024"
-  },
-  {
-    "country": "Sudan",
-    "gdp": "26,865",
     "year": "2024"
   },
   {
@@ -695,6 +695,11 @@
     "year": "2024"
   },
   {
+    "country": "Brunei",
+    "gdp": "15,988",
+    "year": "2024"
+  },
+  {
     "country": "North Macedonia",
     "gdp": "15,873",
     "year": "2024"
@@ -702,11 +707,6 @@
   {
     "country": "Kyrgyzstan",
     "gdp": "15,770",
-    "year": "2024"
-  },
-  {
-    "country": "Brunei",
-    "gdp": "15,510",
     "year": "2024"
   },
   {
