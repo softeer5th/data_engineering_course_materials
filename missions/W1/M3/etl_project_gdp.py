@@ -3,6 +3,7 @@ import datetime as dt
 import json
 import pandas as pd
 from bs4 import BeautifulSoup
+import sqlite3
 
 class Extract:
     def __init__(self, url, path):
@@ -170,7 +171,7 @@ class TransformGDP(Transform):
         writeLog('Transform Start', PATH_LOG)
         # 부모 클래스의 run 메서드 호출 시 매개변수 전달
         self.df = super().run(
-            css_selector_type=css_selector_type,
+            css_selector_type=css_selector_type, # 셀렉터 타입: tag_name, class, ID
             css_selector=css_selector,
             droplevel=droplevel,
             column_nums=column_nums,
@@ -192,6 +193,7 @@ def get_GDP_over_100B(df):
 
 # 지역별 GDP 탑 5 국가의 GDP 평균
 def get_top_n_avg_gdp_by_region(df, top_n=5):
+    print("지역별 탑 5의 GDP 평균")
     sorted_df = df.sort_values(by=['Region', 'GDP_USD_billion'], ascending=[True, False])
     top_GDP = sorted_df.groupby('Region').head(top_n)
     avg_GDP = top_GDP.groupby('Region')['GDP_USD_billion'].mean().reset_index()
@@ -208,11 +210,13 @@ def writeLog(log, path_log):
 
 # const block
 URL = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29'
-PATH_RAW_DATA = 'missions/W1/M3/data/raw_data.json'
-PATH_REGION = '/Users/speowo/workspace/Wiki-HMG/missions/W1/M3/data/region.csv'
-PATH_LOG = '/Users/speowo/workspace/Wiki-HMG/missions/W1/M3/data/etl_project_log.txt'
+PATH_RAW_DATA = 'missions/W1/M3/data/Countries_by_GDP.json'
+PATH_REGION = 'missions/W1/M3/data/region.csv'
+PATH_LOG = 'missions/W1/M3/data/etl_project_log.txt'
+PATH_DB = 'missions/W1/M3/data/World_Economies.db'
 CSS_SELECTOR_TYPE = 'class'
 CSS_SELECTOR = 'wikitable sortable sticky-header-multi static-row-numbers'
+TABLE_NAME = 'Countries_by_GDP'
 
 # main
 
