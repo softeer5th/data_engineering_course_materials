@@ -11,7 +11,7 @@ from bs4.element import(
 
 from missions.W1.M3.log.log import Logger
 
-logger = Logger.get_logger()
+logger = Logger.get_logger("parser")
 
 
 def fetch_wikipedia_page(url: str) -> Optional[BeautifulSoup]:
