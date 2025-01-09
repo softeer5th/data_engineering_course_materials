@@ -167,3 +167,5 @@ large_data*.csv
 large_data*.csv
 __pycache__
 *.db
+*.json
+*.log
