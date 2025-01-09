@@ -14,3 +14,313 @@
 
 2025-01-08 17:05:56.295416 Load finish 
 
+2025-01-09 17:38:47.489527 Extract start 
+
+2025-01-09 17:38:48.160920 Extract finish 
+
+2025-01-09 17:38:48.160995 Transform start 
+
+2025-01-09 17:38:48.165628 Transform finish 
+
+2025-01-09 17:38:48.167670 Load start 
+
+2025-01-09 17:40:50.529365 Extract start 
+
+2025-01-09 17:40:51.140889 Extract finish 
+
+2025-01-09 17:40:51.140961 Transform start 
+
+2025-01-09 17:40:51.143609 Transform finish 
+
+2025-01-09 17:40:51.143665 Load start 
+
+2025-01-09 17:42:45.143571 Extract start 
+
+2025-01-09 17:42:45.834777 Extract finish 
+
+2025-01-09 17:43:30.471941 Extract start 
+
+2025-01-09 17:43:31.067667 Extract finish 
+
+2025-01-09 17:43:31.067735 Transform1 start 
+
+2025-01-09 17:43:31.070224 Transform1 finish 
+
+2025-01-09 17:43:31.070279 Transform2 start 
+
+2025-01-09 17:43:31.070608 Transform2 finish 
+
+2025-01-09 17:43:31.070647 Transform3 start 
+
+2025-01-09 17:43:31.070876 Transform3 finish 
+
+2025-01-09 17:43:31.070924 Transform4 start 
+
+2025-01-09 17:43:31.071223 Transform4 Fail 
+
+2025-01-09 17:43:31.071268 Load start 
+
+2025-01-09 17:44:23.204604 Extract start 
+
+2025-01-09 17:44:23.805458 Extract finish 
+
+2025-01-09 17:44:23.805572 Transform1 start 
+
+2025-01-09 17:44:23.807939 Transform1 finish 
+
+2025-01-09 17:44:23.808009 Transform2 start 
+
+2025-01-09 17:44:23.808316 Transform2 finish 
+
+2025-01-09 17:44:23.808376 Transform3 start 
+
+2025-01-09 17:44:23.808526 Transform3 finish 
+
+2025-01-09 17:44:23.808580 Transform4 start 
+
+2025-01-09 17:44:23.808737 Transform4 Fail 
+
+2025-01-09 17:44:23.808969 Load start 
+
+2025-01-09 17:47:26.124981 Transform4 start 
+
+2025-01-09 17:47:26.126783 Transform4 Fail 
+
+2025-01-09 18:04:56.494571 Extract start 
+
+2025-01-09 18:04:57.108046 Extract finish 
+
+2025-01-09 18:04:57.108132 Transform1 start 
+
+2025-01-09 18:04:57.110622 Transform1 finish 
+
+2025-01-09 18:04:57.110665 Transform2 start 
+
+2025-01-09 18:04:57.111053 Transform2 finish 
+
+2025-01-09 18:04:57.111105 Transform3 start 
+
+2025-01-09 18:04:57.111274 Transform3 finish 
+
+2025-01-09 18:04:57.111311 Transform4 start 
+
+2025-01-09 18:04:57.111402 Transform4 Fail 
+
+2025-01-09 18:05:15.971179 Transform4 start 
+
+2025-01-09 18:05:15.973114 Transform4 Fail 
+
+2025-01-09 18:06:04.592381 Transform4 start 
+
+2025-01-09 18:06:04.593959 Transform4 Fail 
+
+2025-01-09 18:06:10.742251 Transform4 start 
+
+2025-01-09 18:06:10.744268 Transform4 Fail 
+
+2025-01-09 18:07:22.811530 Transform4 start 
+
+2025-01-09 18:07:22.813804 Transform4 Fail 
+
+2025-01-09 18:09:03.086258 Extract start 
+
+2025-01-09 18:09:03.717710 Extract finish 
+
+2025-01-09 18:09:03.717774 Transform1 start 
+
+2025-01-09 18:09:03.720256 Transform1 finish 
+
+2025-01-09 18:09:03.720306 Transform2 start 
+
+2025-01-09 18:09:03.720637 Transform2 finish 
+
+2025-01-09 18:09:03.720674 Transform3 start 
+
+2025-01-09 18:09:03.720846 Transform3 finish 
+
+2025-01-09 18:09:03.720887 Transform4 start 
+
+2025-01-09 18:09:03.721033 Transform4 Fail 
+
+2025-01-09 18:09:05.084341 Transform4 start 
+
+2025-01-09 18:09:05.086243 Transform4 Fail 
+
+2025-01-09 18:09:21.913556 Extract start 
+
+2025-01-09 18:09:22.919381 Extract finish 
+
+2025-01-09 18:09:22.919457 Transform1 start 
+
+2025-01-09 18:09:22.921592 Transform1 finish 
+
+2025-01-09 18:09:22.921651 Transform2 start 
+
+2025-01-09 18:09:22.921977 Transform2 finish 
+
+2025-01-09 18:09:22.922021 Transform3 start 
+
+2025-01-09 18:09:22.922175 Transform3 finish 
+
+2025-01-09 18:09:22.922215 Transform4 start 
+
+2025-01-09 18:09:22.922298 Transform4 Fail 
+
+2025-01-09 18:10:07.399165 Extract start 
+
+2025-01-09 18:10:07.996949 Extract finish 
+
+2025-01-09 18:10:07.997011 Transform1 start 
+
+2025-01-09 18:10:07.999663 Transform1 finish 
+
+2025-01-09 18:10:07.999715 Transform2 start 
+
+2025-01-09 18:10:08.000062 Transform2 finish 
+
+2025-01-09 18:10:08.000104 Transform3 start 
+
+2025-01-09 18:10:08.000331 Transform3 finish 
+
+2025-01-09 18:10:08.000379 Transform4 start 
+
+2025-01-09 18:10:08.000500 Transform4 Fail 
+
+2025-01-09 18:10:09.514221 Transform4 start 
+
+2025-01-09 18:10:09.516618 Transform4 Fail 
+
+2025-01-09 18:43:03.588222 Extract start 
+
+2025-01-09 18:43:04.234054 Extract finish 
+
+2025-01-09 18:43:04.234141 Transform1 start 
+
+2025-01-09 18:43:04.236990 Transform1 finish 
+
+2025-01-09 18:43:04.237045 Transform2 start 
+
+2025-01-09 18:43:04.237429 Transform2 finish 
+
+2025-01-09 18:43:04.237477 Transform3 start 
+
+2025-01-09 18:43:04.237674 Transform3 finish 
+
+2025-01-09 18:43:04.237717 Transform4 start 
+
+2025-01-09 18:43:29.874021 Extract start 
+
+2025-01-09 18:43:30.469712 Extract finish 
+
+2025-01-09 18:43:30.469814 Transform1 start 
+
+2025-01-09 18:43:30.472264 Transform1 finish 
+
+2025-01-09 18:43:30.472316 Transform2 start 
+
+2025-01-09 18:43:30.472631 Transform2 finish 
+
+2025-01-09 18:43:30.472671 Transform3 start 
+
+2025-01-09 18:43:30.472816 Transform3 finish 
+
+2025-01-09 18:43:30.472853 Transform4 start 
+
+2025-01-09 18:43:30.482456 Transform4 finish 
+
+2025-01-09 18:43:43.710875 Extract start 
+
+2025-01-09 18:43:44.375045 Extract finish 
+
+2025-01-09 18:43:44.375115 Transform1 start 
+
+2025-01-09 18:43:44.377478 Transform1 finish 
+
+2025-01-09 18:43:44.377526 Transform2 start 
+
+2025-01-09 18:43:44.377831 Transform2 finish 
+
+2025-01-09 18:43:44.377875 Transform3 start 
+
+2025-01-09 18:43:44.378078 Transform3 finish 
+
+2025-01-09 18:43:44.378127 Transform4 start 
+
+2025-01-09 18:43:44.378463 Transform4 finish 
+
+2025-01-09 18:43:44.378502 Load start 
+
+2025-01-09 18:43:44.378912 Load finish 
+
+2025-01-09 18:44:17.762331 Extract start 
+
+2025-01-09 18:44:18.368391 Extract finish 
+
+2025-01-09 18:44:18.368496 Transform1 start 
+
+2025-01-09 18:44:18.370882 Transform1 finish 
+
+2025-01-09 18:44:18.370938 Transform2 start 
+
+2025-01-09 18:44:18.371325 Transform2 finish 
+
+2025-01-09 18:44:18.371376 Transform3 start 
+
+2025-01-09 18:44:18.371522 Transform3 finish 
+
+2025-01-09 18:44:18.371566 Transform4 start 
+
+2025-01-09 18:44:18.371917 Transform4 finish 
+
+2025-01-09 18:44:18.371957 Load start 
+
+2025-01-09 18:44:18.372336 Load finish 
+
+2025-01-09 18:44:31.266488 Extract start 
+
+2025-01-09 18:44:31.928526 Extract finish 
+
+2025-01-09 18:44:31.928617 Transform1 start 
+
+2025-01-09 18:44:31.931256 Transform1 finish 
+
+2025-01-09 18:44:31.931318 Transform2 start 
+
+2025-01-09 18:44:31.931648 Transform2 finish 
+
+2025-01-09 18:44:31.931701 Transform3 start 
+
+2025-01-09 18:44:31.931874 Transform3 finish 
+
+2025-01-09 18:44:31.931923 Transform4 start 
+
+2025-01-09 18:44:31.932295 Transform4 finish 
+
+2025-01-09 18:44:31.932347 Load start 
+
+2025-01-09 18:44:31.932733 Load finish 
+
+2025-01-09 18:44:47.587618 Extract start 
+
+2025-01-09 18:44:48.195371 Extract finish 
+
+2025-01-09 18:44:48.195443 Transform1 start 
+
+2025-01-09 18:44:48.197946 Transform1 finish 
+
+2025-01-09 18:44:48.197995 Transform2 start 
+
+2025-01-09 18:44:48.198352 Transform2 finish 
+
+2025-01-09 18:44:48.198397 Transform3 start 
+
+2025-01-09 18:44:48.198568 Transform3 finish 
+
+2025-01-09 18:44:48.198610 Transform4 start 
+
+2025-01-09 18:44:48.198966 Transform4 finish 
+
+2025-01-09 18:44:48.199010 Load start 
+
+2025-01-09 18:44:48.199393 Load finish 
+
