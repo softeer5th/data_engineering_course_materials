@@ -23,7 +23,7 @@ if __name__ == "__main__":
     logger.info("Extracting data...")
     try:
         for year in YEAR_RANGE:
-            extractor.extract(API_URL, year, EXTRACTED_DATA_DIR)
+            extractor._extract(API_URL, year, EXTRACTED_DATA_DIR)
         logger.info("Data extracted successfully.")
     except Exception as e:
         logger.error(f"Error occurred during data extraction: {e}")

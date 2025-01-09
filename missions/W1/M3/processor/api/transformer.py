@@ -4,14 +4,14 @@ from multiprocessing import Pool
 
 EXTRACTED_DATA_PATH = "data/api/extracted/gdp_%d.parquet"
 
-def read_parquet_chunk(file_path: str, offset: int, size: int) -> pd.DataFrame:
-    return pd.read_parquet(
-        file_path,
-        offset=offset,
-        rows=size
-    )
 
-def read_country_chunk(data_path: str, year_range: range, offset: int, size: int) -> pd.DataFrame:
+def read_parquet_chunk(file_path: str, offset: int, size: int) -> pd.DataFrame:
+    return pd.read_parquet(file_path, offset=offset, rows=size)
+
+
+def read_country_chunk(
+    data_path: str, year_range: range, offset: int, size: int
+) -> pd.DataFrame:
     chunk_parts = []
 
     for year in year_range:
