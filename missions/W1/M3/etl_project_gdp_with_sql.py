@@ -192,7 +192,7 @@ sql = """SELECT * FROM Countries_by_GDP
 WHERE GDP_USD_billion >= 100
 """
 print(sendQuery(sql))
-
+#
 ##### 각 Region별로 top5 국가의 GDP 평균을 구해서 화면에 출력해야 합니다.
 sql = """
 SELECT region, AVG(GDP_USD_billion) AS avg_gdp_top5
@@ -203,4 +203,4 @@ FROM (
 ) AS ranked
 WHERE rnk <= 5
 GROUP BY region;"""
-print(sendQuery(sql))
+print(sendQuery(sql)) 
