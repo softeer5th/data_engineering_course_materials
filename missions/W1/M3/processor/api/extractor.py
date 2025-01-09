@@ -11,7 +11,13 @@ def extract(api_url: str, year: int, save_dir: str) -> None:
     """
     response = requests.get(f"{api_url}?periods={year}")
     data = response.json()
-    df = pd.json_normalize(data)  # Flatten nested JSON, if necessary
+    data = data['values']['NGDPD']
+
+    df = pd.DataFrame(data).T
+    df.index.name = 'country_code'
+    df = df.reset_index()
+
+    print(df.head(3))
     
     # Save to Parquet file
     df.to_parquet(f"{save_dir}/gdp_{year}.parquet", engine='pyarrow')
