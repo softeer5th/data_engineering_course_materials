@@ -1,0 +1,166 @@
+2025-January-09-10-31-28, extract start
+2025-January-09-10-31-31, extract end. in 0:00:02.442829
+2025-January-09-10-31-31, transform start
+2025-January-09-10-31-31, transform end. in 0:00:00.031419
+2025-January-09-10-31-31, transformGDPTable start
+2025-January-09-10-31-31, transformGDPTable end. in 0:00:00.001730
+2025-January-09-10-31-31, extract start
+2025-January-09-10-31-32, extract end. in 0:00:00.797043
+2025-January-09-10-31-32, transform start
+2025-January-09-10-31-32, transform end. in 0:00:00.056680
+2025-January-09-10-31-32, transformConjungrate start
+2025-January-09-10-31-32, transformConjungrate end. in 0:00:00.000994
+2025-January-09-10-31-32, load start
+2025-January-09-10-31-32, load end. in 0:00:00.001180
+2025-January-09-10-32-02, extract start
+2025-January-09-10-32-02, extract end. in 0:00:00.437395
+2025-January-09-10-32-02, transform start
+2025-January-09-10-32-02, transform end. in 0:00:00.026475
+2025-January-09-10-32-02, transformGDPTable start
+2025-January-09-10-32-02, transformGDPTable end. in 0:00:00.001049
+2025-January-09-10-32-02, extract start
+2025-January-09-10-32-03, extract end. in 0:00:00.478198
+2025-January-09-10-32-03, transform start
+2025-January-09-10-32-03, transform end. in 0:00:00.054273
+2025-January-09-10-32-03, transformConjungrate start
+2025-January-09-10-32-03, transformConjungrate end. in 0:00:00.000838
+2025-January-09-10-32-03, load start
+2025-January-09-10-32-03, load end. in 0:00:00.000653
+2025-January-09-10-32-05, extract start
+2025-January-09-10-32-06, extract end. in 0:00:00.450219
+2025-January-09-10-32-06, transform start
+2025-January-09-10-32-06, transform end. in 0:00:00.027074
+2025-January-09-10-32-06, transformGDPTable start
+2025-January-09-10-32-06, transformGDPTable end. in 0:00:00.001063
+2025-January-09-10-32-06, extract start
+2025-January-09-10-32-06, extract end. in 0:00:00.504902
+2025-January-09-10-32-06, transform start
+2025-January-09-10-32-06, transform end. in 0:00:00.054658
+2025-January-09-10-32-06, transformConjungrate start
+2025-January-09-10-32-06, transformConjungrate end. in 0:00:00.000830
+2025-January-09-10-32-06, load start
+2025-January-09-10-32-06, load end. in 0:00:00.000624
+2025-January-09-10-36-48, extract start
+2025-January-09-10-36-48, extract end. in 0:00:00.463370
+2025-January-09-10-36-48, transform start
+2025-January-09-10-36-48, transform end. in 0:00:00.027571
+2025-January-09-10-36-48, transformGDPTable2 start
+2025-January-09-10-36-48, transformGDPTable2 end. in 0:00:00.001118
+2025-January-09-10-36-48, extract start
+2025-January-09-10-36-49, extract end. in 0:00:00.478205
+2025-January-09-10-36-49, transform start
+2025-January-09-10-36-49, transform end. in 0:00:00.055208
+2025-January-09-10-36-49, transformConjungrate start
+2025-January-09-10-36-49, transformConjungrate end. in 0:00:00.001169
+2025-January-09-10-36-49, load start
+2025-January-09-10-36-49, load end. in 0:00:00.000722
+2025-January-09-10-36-50, extract start
+2025-January-09-10-36-50, extract end. in 0:00:00.472532
+2025-January-09-10-36-50, transform start
+2025-January-09-10-36-51, transform end. in 0:00:00.027022
+2025-January-09-10-36-51, transformGDPTable2 start
+2025-January-09-10-36-51, transformGDPTable2 end. in 0:00:00.001014
+2025-January-09-10-36-51, extract start
+2025-January-09-10-36-51, extract end. in 0:00:00.461288
+2025-January-09-10-36-51, transform start
+2025-January-09-10-36-51, transform end. in 0:00:00.054987
+2025-January-09-10-36-51, transformConjungrate start
+2025-January-09-10-36-51, transformConjungrate end. in 0:00:00.001016
+2025-January-09-10-36-51, load start
+2025-January-09-10-36-51, load end. in 0:00:00.000610
+2025-January-09-10-36-52, extract start
+2025-January-09-10-36-53, extract end. in 0:00:00.472520
+2025-January-09-10-36-53, transform start
+2025-January-09-10-36-53, transform end. in 0:00:00.028330
+2025-January-09-10-36-53, transformGDPTable2 start
+2025-January-09-10-36-53, transformGDPTable2 end. in 0:00:00.000990
+2025-January-09-10-36-53, extract start
+2025-January-09-10-36-53, extract end. in 0:00:00.463316
+2025-January-09-10-36-53, transform start
+2025-January-09-10-36-53, transform end. in 0:00:00.056974
+2025-January-09-10-36-53, transformConjungrate start
+2025-January-09-10-36-53, transformConjungrate end. in 0:00:00.001037
+2025-January-09-10-36-53, load start
+2025-January-09-10-36-53, load end. in 0:00:00.000673
+2025-January-09-10-39-24, extract start
+2025-January-09-10-39-25, extract end. in 0:00:00.489819
+2025-January-09-10-39-25, transform start
+2025-January-09-10-39-25, transform end. in 0:00:00.027504
+2025-January-09-10-39-25, transformGDPTable start
+2025-January-09-10-39-25, transformGDPTable end. in 0:00:00.001106
+2025-January-09-10-39-25, extract start
+2025-January-09-10-39-25, extract end. in 0:00:00.474192
+2025-January-09-10-39-25, transform start
+2025-January-09-10-39-25, transform end. in 0:00:00.056353
+2025-January-09-10-39-25, transformConjungrate start
+2025-January-09-10-39-25, transformConjungrate end. in 0:00:00.000881
+2025-January-09-10-39-25, load start
+2025-January-09-10-39-25, load end. in 0:00:00.000722
+2025-January-09-10-39-26, extract start
+2025-January-09-10-39-27, extract end. in 0:00:00.474093
+2025-January-09-10-39-27, transform start
+2025-January-09-10-39-27, transform end. in 0:00:00.026555
+2025-January-09-10-39-27, transformGDPTable start
+2025-January-09-10-39-27, transformGDPTable end. in 0:00:00.001018
+2025-January-09-10-39-27, extract start
+2025-January-09-10-39-27, extract end. in 0:00:00.468414
+2025-January-09-10-39-27, transform start
+2025-January-09-10-39-27, transform end. in 0:00:00.057214
+2025-January-09-10-39-27, transformConjungrate start
+2025-January-09-10-39-27, transformConjungrate end. in 0:00:00.001012
+2025-January-09-10-39-27, load start
+2025-January-09-10-39-27, load end. in 0:00:00.000657
+2025-January-09-10-39-28, extract start
+2025-January-09-10-39-28, extract end. in 0:00:00.441134
+2025-January-09-10-39-28, transform start
+2025-January-09-10-39-29, transform end. in 0:00:00.028792
+2025-January-09-10-39-29, transformGDPTable start
+2025-January-09-10-39-29, transformGDPTable end. in 0:00:00.001164
+2025-January-09-10-39-29, extract start
+2025-January-09-10-39-29, extract end. in 0:00:00.493732
+2025-January-09-10-39-29, transform start
+2025-January-09-10-39-29, transform end. in 0:00:00.057368
+2025-January-09-10-39-29, transformConjungrate start
+2025-January-09-10-39-29, transformConjungrate end. in 0:00:00.001152
+2025-January-09-10-39-29, load start
+2025-January-09-10-39-29, load end. in 0:00:00.000690
+2025-January-09-11-13-15, extract_IMF_GDP start
+2025-January-09-11-13-17, extract_IMF_GDP end. in 0:00:02.130097
+2025-January-09-11-13-17, transform_IMF_GDP start
+2025-January-09-11-13-17, transform_IMF_GDP end. in 0:00:00.015385
+2025-January-09-11-13-17, load start
+2025-January-09-11-13-17, load end. in 0:00:00.010482
+2025-January-09-11-13-17, load start
+2025-January-09-11-13-17, load end. in 0:00:00.003514
+2025-January-09-11-28-09, extract_IMF_GDP start
+2025-January-09-11-28-12, extract_IMF_GDP end. in 0:00:03.133695
+2025-January-09-11-28-12, transform_IMF_GDP start
+2025-January-09-11-28-12, transform_IMF_GDP end. in 0:00:00.015813
+2025-January-09-11-28-12, load start
+2025-January-09-11-28-12, load end. in 0:00:00.009465
+2025-January-09-11-28-12, load start
+2025-January-09-11-28-12, load end. in 0:00:00.003693
+2025-January-09-11-31-00, extract_IMF_GDP start
+2025-January-09-11-31-03, extract_IMF_GDP end. in 0:00:03.136226
+2025-January-09-11-31-03, transform_IMF_GDP start
+2025-January-09-11-31-03, transform_IMF_GDP end. in 0:00:00.016387
+2025-January-09-11-31-03, load start
+2025-January-09-11-31-03, load end. in 0:00:00.010069
+2025-January-09-11-31-03, load start
+2025-January-09-11-31-03, load end. in 0:00:00.003505
+2025-January-09-11-31-38, extract_IMF_GDP start
+2025-January-09-11-31-41, extract_IMF_GDP end. in 0:00:03.098975
+2025-January-09-11-31-41, transform_IMF_GDP start
+2025-January-09-11-31-41, transform_IMF_GDP end. in 0:00:00.015369
+2025-January-09-11-31-41, load start
+2025-January-09-11-31-41, load end. in 0:00:00.009812
+2025-January-09-11-31-41, load start
+2025-January-09-11-31-41, load end. in 0:00:00.003465
+2025-January-09-11-34-06, extract_IMF_GDP start
+2025-January-09-11-34-08, extract_IMF_GDP end. in 0:00:02.426283
+2025-January-09-11-34-08, transform_IMF_GDP start
+2025-January-09-11-34-08, transform_IMF_GDP end. in 0:00:00.015665
+2025-January-09-11-34-08, load start
+2025-January-09-11-34-08, load end. in 0:00:00.009707
+2025-January-09-11-34-08, load start
+2025-January-09-11-34-08, load end. in 0:00:00.003544
