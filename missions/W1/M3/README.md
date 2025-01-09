@@ -231,6 +231,10 @@ df["GDP"] = (df["GDP"].str.replace(",", "").astype(float) / 1000).round(2)
 
 ## Parallel/Distributed Processing
 
+Main idea: 
+- Split file and process each file in parallel
+- Store data seperately by region
+
 See detail in `etl_project_gdp_parallel.py`.
 
 ### Steps

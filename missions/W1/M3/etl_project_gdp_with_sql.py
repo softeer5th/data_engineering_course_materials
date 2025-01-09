@@ -1,11 +1,12 @@
 import sqlite3
-
+from pathlib import Path
 from modules.logger import logger, init_logger
 from modules.importer import WikiWebImporter
 from modules.exporter import SqliteExporter
 
-LOG_FILE_PATH = "etl_project_log.txt"
-DB_PATH = "World_Economies.db"
+HOME_DIR = Path(__file__).resolve().parent
+LOG_FILE_PATH = HOME_DIR / "log/etl_project_log.txt"
+DB_PATH = HOME_DIR / "data/World_Economies.db"
 TABLE_NAME = "Countries_by_GDP"
 
 QUERY_1 = """
@@ -34,8 +35,7 @@ def transfrom_df(df):
     Transformation function
     """
     # Million -> Billion
-    df["GDP"] = df["GDP"].apply(lambda x: x.replace(",", ""))
-    df["GDP"] = df["GDP"].apply(lambda x: round(float(x) / 1000, 2))
+    df["GDP"] = (df["GDP"].str.replace(",", "").astype(float) / 1000).round(2)
 
     # Sort by GDP
     df = df.sort_values(by="GDP", ascending=False)

@@ -168,4 +168,4 @@ large_data*.csv
 __pycache__
 *.db
 *.json
-*.log
+*log.txt

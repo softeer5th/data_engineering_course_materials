@@ -1,4 +1,5 @@
 import datetime
+import time
 from pathlib import Path
 
 DEFAULT_LOG_FILE_PATH = Path(__file__).resolve().parent / "../log/log.txt"
@@ -36,3 +37,21 @@ logger = Logger()
 
 def init_logger(log_file_path: str):
     logger.log_file_path = log_file_path
+
+
+class LogExecutionTime:
+    """
+    Execution time logger
+    """
+
+    def __init__(self, description: str):
+        self.description = description
+
+    def __enter__(self):
+        self.start_time = time.time()
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.end_time = time.time()
+        self.execution_time = self.end_time - self.start_time
+        logger.info(f"{self.description} took {self.execution_time:.2f} seconds")

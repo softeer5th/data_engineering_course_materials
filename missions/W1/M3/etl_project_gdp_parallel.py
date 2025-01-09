@@ -1,16 +1,16 @@
 import sqlite3
 import time
 import pandas as pd
-from modules.logger import logger, init_logger
+from pathlib import Path
+from modules.logger import logger, init_logger, LogExecutionTime
 from multiprocessing import Pool
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 
-LOG_FILE_PATH = "etl_project_log.txt"
-# DB_PATH = "World_Economies_1B.db"
-DB_NAME = "World_Economies_10M"
+HOME_DIR = Path(__file__).resolve().parent
+LOG_FILE_PATH = HOME_DIR / "log/etl_project_log.txt"
+DB_NAME = "World_Economies"
 TABLE_NAME = "Countries_by_GDP"
-# INPUT_FILE_PATH = "large_data_1B.csv"
-INPUT_FILE_PATH = "large_data_10M.csv"
+INPUT_FILE_PATH = HOME_DIR / "data/large_data.csv"
 DATA_SIZE = 10_000_000  # 10M rows
 CHUNK_SIZE = 1_000_000  # 100K rows per chunk
 NUM_CHUNKS = DATA_SIZE // CHUNK_SIZE  # 100 chunks
@@ -43,9 +43,6 @@ def transfrom_df(df: pd.DataFrame) -> pd.DataFrame:
 
     df["GDP"] = (df["GDP"].str.replace(",", "").astype(float) / 1000).round(2)
 
-    # Sort by GDP
-    # df = df.sort_values(by="GDP", ascending=False)
-
     # Rename GDP column to GDP_USD_billion
     df.rename(columns={"GDP": "GDP_USD_billion"}, inplace=True)
 
@@ -68,12 +65,12 @@ def process_chunk(index: int):
         skiprows=index * CHUNK_SIZE,
         nrows=CHUNK_SIZE,
     )
-    df.to_csv(f"data/large_data_10M_{index}.csv", index=False)
+    df.to_csv(f"data/large_data_{index}.csv", index=False)
 
 
 def process_chunk2(index: int, chunk: pd.DataFrame):
     print(f"Processing chunk {index}")
-    chunk.to_csv(f"data/large_data_10M_{index}.csv", index=False)
+    chunk.to_csv(f"data/large_data_{index}.csv", index=False)
 
 
 def extract_data_from_source():
@@ -103,28 +100,28 @@ def transform_chunk(index: int):
     """
     (Transform - Preprocess) Transform each small file
     """
-    df = pd.read_csv(f"data/large_data_10M_{index}.csv", dtype=schema)
-    df = transfrom_df(df)  # 기존 transform 함수 사용
-    df.to_csv(f"data/large_data_10M_{index}_transformed.csv", index=False)
+    df = pd.read_csv(f"data/large_data_{index}.csv", dtype=schema)
+    df = transfrom_df(df)
+    df.to_csv(f"data/large_data_{index}_transformed.csv", index=False)
 
 
 def map_by_region(index: int):
     """
     (Transform - Map) Separate each small file by region
     """
-    df = pd.read_csv(f"data/large_data_10M_{index}_transformed.csv")
+    df = pd.read_csv(f"data/large_data_{index}_transformed.csv")
     regions = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"]
 
     for region in regions:
         region_df = df[df["Region"] == region]
-        region_df.to_csv(f"data/large_data_10M_{index}_{region}.csv", index=False)
+        region_df.to_csv(f"data/large_data_{index}_{region}.csv", index=False)
 
 
 def reduce_by_region(region: str):
     """
     (Transform - Reduce) Merge all files for each region
     """
-    all_files = [f"data/large_data_10M_{i}_{region}.csv" for i in range(NUM_CHUNKS)]
+    all_files = [f"data/large_data_{i}_{region}.csv" for i in range(NUM_CHUNKS)]
     dfs = []
 
     for file in all_files:
@@ -136,16 +133,16 @@ def reduce_by_region(region: str):
 
     if dfs:
         combined_df = pd.concat(dfs, ignore_index=True)
-        combined_df.to_csv(f"data/large_data_10M_{region}.csv", index=False)
+        combined_df.to_csv(f"data/large_data_{region}.csv", index=False)
 
 
 def sort_by_gdp(region: str):
     """
     (Transform - Sort) Sort each region file by GDP
     """
-    df = pd.read_csv(f"data/large_data_10M_{region}.csv")
+    df = pd.read_csv(f"data/large_data_{region}.csv")
     df = df.sort_values(by="GDP_USD_billion", ascending=False)
-    df.to_csv(f"data/large_data_10M_{region}_sorted.csv", index=False)
+    df.to_csv(f"data/large_data_{region}_sorted.csv", index=False)
 
 
 def load_to_database(region: str):
@@ -153,7 +150,7 @@ def load_to_database(region: str):
     (Load) Export each region file to sqlite
     """
     conn = sqlite3.connect(f"data/{DB_NAME}_{region}.db")
-    df = pd.read_csv(f"data/large_data_10M_{region}_sorted.csv")
+    df = pd.read_csv(f"data/large_data_{region}_sorted.csv")
     df.to_sql(TABLE_NAME, conn, if_exists="append", index=False)
     conn.close()
 
@@ -174,62 +171,54 @@ def main():
     logger.info("Starting the Parallel ETL process")
 
     # 1. Extract
-    time_start = time.time()
-    # extract_data_from_source()
-    with Pool() as pool:
-        pool.map(process_chunk, range(NUM_CHUNKS))
-    # with ThreadPoolExecutor() as executor:
-    #     executor.map(process_chunk, range(NUM_CHUNKS))
-    # with ProcessPoolExecutor() as executor:
-    #     executor.map(process_chunk, range(NUM_CHUNKS))
-    time_end = time.time()
-    logger.info(f"Extract data: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Extract data"):
+        # extract_data_from_source()
+        with Pool() as pool:
+            pool.map(process_chunk, range(NUM_CHUNKS))
+        # with ThreadPoolExecutor() as executor:
+        #     executor.map(process_chunk, range(NUM_CHUNKS))
+        # with ProcessPoolExecutor() as executor:
+        #     executor.map(process_chunk, range(NUM_CHUNKS))
 
     # 2. Transform - Preprocess
-    time_start = time.time()
-    with Pool() as pool:
-        pool.map(transform_chunk, range(NUM_CHUNKS))
-    time_end = time.time()
-    logger.info(f"Transform chunks: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Transform chunks"):
+        with Pool() as pool:
+            pool.map(transform_chunk, range(NUM_CHUNKS))
 
     # 3. Transform - Map
-    time_start = time.time()
-    with Pool() as pool:
-        pool.map(map_by_region, range(NUM_CHUNKS))
-    time_end = time.time()
-    logger.info(f"Map by region: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Map by region"):
+        with Pool() as pool:
+            pool.map(map_by_region, range(NUM_CHUNKS))
 
     # 4. Transform - Reduce
-    time_start = time.time()
-    regions = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"]
-    with Pool() as pool:
-        pool.map(reduce_by_region, regions)
-    time_end = time.time()
-    logger.info(f"Reduce by region: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Reduce by region"):
+        regions = [
+            "Asia",
+            "Europe",
+            "Africa",
+            "North America",
+            "South America",
+            "Oceania",
+        ]
+        with Pool() as pool:
+            pool.map(reduce_by_region, regions)
 
     # 5. Sort
-    time_start = time.time()
-    with Pool() as pool:
-        pool.map(sort_by_gdp, regions)
-    time_end = time.time()
-    logger.info(f"Sort by GDP: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Sort by GDP"):
+        with Pool() as pool:
+            pool.map(sort_by_gdp, regions)
 
     # 6. Load
-    time_start = time.time()
-    with Pool() as pool:
-        pool.map(load_to_database, regions)
-    time_end = time.time()
-    logger.info(f"Load to database: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Load to database"):
+        with Pool() as pool:
+            pool.map(load_to_database, regions)
 
     # 7. Query
-    time_start = time.time()
     regions = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"]
-    with Pool() as pool:
-        results = pool.map(query_by_region, regions)
-        print(results)
-
-    time_end = time.time()
-    logger.info(f"Query: {time_end - time_start:.2f} seconds")
+    with LogExecutionTime("Query by region"):
+        with Pool() as pool:
+            results = pool.map(query_by_region, regions)
+            print(results)
 
 
 if __name__ == "__main__":

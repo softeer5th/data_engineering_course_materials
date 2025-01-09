@@ -14,8 +14,7 @@ def transform_df(df):
     Transformation function
     """
     # Million -> Billion
-    df["GDP"] = df["GDP"].apply(lambda x: x.replace(",", ""))
-    df["GDP"] = df["GDP"].apply(lambda x: round(float(x) / 1000, 2))
+    df["GDP"] = (df["GDP"].str.replace(",", "").astype(float) / 1000).round(2)
 
     # Sort by GDP
     df = df.sort_values(by="GDP", ascending=False)

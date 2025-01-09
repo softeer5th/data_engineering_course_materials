@@ -41,6 +41,12 @@ def main():
             country_region_table[countryName] = region
             country_region_table[countryNameAlias] = region
 
+    # manually add
+    country_region_table["DR Congo"] = "Africa"
+    country_region_table["Congo"] = "Africa"
+    country_region_table["Bahamas"] = "North America"
+    country_region_table["Gambia"] = "Africa"
+
     save_to_json(country_region_table, OUTPUT_FILE_PATH)
 
 
