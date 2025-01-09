@@ -133,11 +133,23 @@ def _create_table(db_name:str)-> None:
                 Country TEXT,
                 GDP_USD_billion REAL,
                 Year TEXT,
+                Type TEXT,
                 Region TEXT
             )
             '''
             cursor.execute(create_query)
     logger.info("[COMPLETE] Successfuly created a SQLite DB Table.")
+
+def _mapping_colums(df: pd.DataFrame, db_name:str):
+    with sqlite3.connect(db_name) as conn:
+            cursor = conn.cursor()
+
+            cursor.execute("PRAGMA table_info(Countries_by_GDP);")
+            table_info = cursor.fetchall()
+
+            table_columns = [info[1] for info in table_info]
+            column_mapping = {df_col: tbl_col for df_col, tbl_col in zip(df.columns, table_columns)}
+            return df.rename(columns=column_mapping)
 
 def _insert_all_into_table(df: pd.DataFrame, db_name: str)-> None:
     """
@@ -153,7 +165,15 @@ def _insert_all_into_table(df: pd.DataFrame, db_name: str)-> None:
 
     logger.info("[START] Inserting all data into the SQLite DB Table ...")
     with sqlite3.connect(db_name) as conn:
-            df.to_sql("Countries_by_GDP", conn, if_exists="replace", index=False)
+            
+            cursor = conn.cursor()
+            cursor.execute("PRAGMA table_info(Countries_by_GDP);")
+            table_info = cursor.fetchall()
+            table_columns = [info[1] for info in table_info]
+            column_mapping = {df_col: tbl_col for df_col, tbl_col in zip(df.columns, table_columns)}
+            df = df.rename(columns=column_mapping)
+
+            df.to_sql("Countries_by_GDP", conn, if_exists="append", index=False)
     logger.info("[COMPLETE] Successfuly inserted all data into the SQLite DB Table.")
 
 def load_to_sqlite(df_gdp: pd.DataFrame, db_name:str ="missions/W1/M3/data/Countries_by_GDP.db")-> None:
@@ -167,7 +187,8 @@ def load_to_sqlite(df_gdp: pd.DataFrame, db_name:str ="missions/W1/M3/data/Count
     try:
         logger.info("[START] Starting GDP Load process into SQLite DB...")
         _create_table(db_name)
-        _insert_all_into_table(df_gdp, db_name)
+        mapping_df_gdp = _mapping_colums(df_gdp, db_name)
+        _insert_all_into_table(mapping_df_gdp, db_name)
         logger.info("[COMPLETE] GDP Load process completed successfully.")
     except Exception as e:
         logger.warn("[FAIL] GDP Load process failed.")
