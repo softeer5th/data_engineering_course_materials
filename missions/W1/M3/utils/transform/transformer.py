@@ -1,3 +1,11 @@
+import json
+import traceback
+from typing import List, Dict, Optional
+
+from missions.W1.M3.log.log import Logger
+
+logger = Logger.get_logger()
+
 def numstr2num(numstr: str) -> float:
     if numstr is None:
         return None # Load 시에 transform에서 None으로 가능할 지 생각.
@@ -13,7 +21,7 @@ def gdpstr2billions(numstr: str) -> float:
     temp = temp.replace(",", "")
     temp = round(float(temp) / 1000, 2) # 이것을 해도, DB상에서는 float으로 저장되어 Round 처리가 안되어 있음.
     return temp
-
+ 
 country2region = {
     "China": "East Asia",
     "Japan": "East Asia",
@@ -226,9 +234,61 @@ country2region = {
     "Zanzibar": "Sub-Saharan Africa"
 }
 
+def transform_gdp_data(data: List[Dict]) -> Optional[List[Dict]]:
+    """
+    Transform the data.
+
+    Return the transformed data.
+    1. 'gdp' column is converted to float and divided by 1000 and rounded to 2 decimal places.
+    2. 'year' column is converted to int.
+    3. 'region' column is added based on the 'country' column. If the country is not in the country2region dictionary, 'Unknown' is added.
+
+    """
+    try:
+        logger.info("데이터 변환 시도")
+        transformed_data = []
+        recent_row = None
+        for row in data:
+            recent_row = row
+            transformed_data.append(
+                {
+                    'Country': row['country'],
+                    'GDP_USD_billion': gdpstr2billions(row['gdp']),
+                    'Year': int(row['year']) if row['year'] else None,
+                    'Type': row['type'],
+                    'Region': country2region.get(row['country'], "Unknown")
+                }
+            )
+        return transformed_data
+       
+    except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'데이터 변환 중 에러 발생: {e} / recent_row: {recent_row}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
+        return None
+    
+def load_gdp_json(json_path: str) -> Optional[List[Dict]]:
+    """
+    JSON file load.
+
+    Return the loaded data.
+    """
+    try:
+        logger.info("GDP JSON 로드 시도")
+        with open(json_path, 'r') as json_file:
+            gdp_data = json.load(json_file)
+        return gdp_data
+    
+    except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'GDP JSON 로드 중 에러 발생: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
+        return None
+            
+
 if __name__ == "__main__":
     print(numstr2num("2,100"))
-
-
-
-

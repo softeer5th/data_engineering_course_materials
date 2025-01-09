@@ -1,6 +1,7 @@
 import requests
 import json
 from typing import Optional, List, Dict
+import traceback
 
 from bs4 import BeautifulSoup
 from bs4.element import( 
@@ -10,7 +11,7 @@ from bs4.element import(
 
 from missions.W1.M3.log.log import Logger
 
-logger = Logger.get_logger()
+logger = Logger.get_logger("parser")
 
 
 def fetch_wikipedia_page(url: str) -> Optional[BeautifulSoup]:
@@ -31,7 +32,11 @@ def fetch_wikipedia_page(url: str) -> Optional[BeautifulSoup]:
         logger.info('페이지 파싱 완료')
         return soup
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'위키피디아 페이지 로딩 오류: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
 
 def get_gdp_table(soup: BeautifulSoup) -> Optional[Tag]:
@@ -58,7 +63,11 @@ def get_gdp_table(soup: BeautifulSoup) -> Optional[Tag]:
         return gdp_table
     
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'테이블 찾기 오류: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
     
 def get_thead(table: Tag) -> Optional[Tag]:
@@ -81,7 +90,11 @@ def get_thead(table: Tag) -> Optional[Tag]:
         return th_values
     
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'테이블 헤더 찾는 중 오류: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
 
 def get_clean_tbody(table: Tag) -> Optional[Tag]:
@@ -99,7 +112,7 @@ def get_clean_tbody(table: Tag) -> Optional[Tag]:
             logger.info('테이블 바디를 찾을 수 없습니다.') 
             raise ValueError("No tbody found")
         
-        for tr in tbody.find_all('tr'):
+        for tr in tbody.find_all('tr'): # static-row-header 개선.
             tds = tr.find_all('td')
             # 빈 리스트가 아니고, 첫 번째 td가 "World"를 포함하고 있으면 삭제 후 break
             if tds and "World" in tr.find_all('td')[0]:
@@ -114,7 +127,11 @@ def get_clean_tbody(table: Tag) -> Optional[Tag]:
         return tbody
     
     except Exception as e:
-        logger.info(f'에러 발생: {e}')
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'테이블 바디 찾는 중 오류: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
     
 def get_parsed_data(tbody: Tag, thead: Tag = None) -> Optional[List[Dict]]:
@@ -156,7 +173,11 @@ def get_parsed_data(tbody: Tag, thead: Tag = None) -> Optional[List[Dict]]:
         return parsed_data
         
     except Exception as e:
-        logger.info(f'에러 발생: {e}')
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'테이블 데이터 파싱 중 오류: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
 
 def dump_json(data: list, file_path: str) -> Optional[bool]:
@@ -175,5 +196,9 @@ def dump_json(data: list, file_path: str) -> Optional[bool]:
         return True
 
     except Exception as e:
-        logger.info(f'에러 발생: {e}')
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'JSON 변환 중 오류: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
