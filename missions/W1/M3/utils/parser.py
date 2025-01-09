@@ -1,0 +1,179 @@
+import requests
+import json
+from typing import Optional, List, Dict
+
+from bs4 import BeautifulSoup
+from bs4.element import( 
+    ResultSet, 
+    Tag,
+    )
+
+from missions.W1.M3.log.log import Logger
+
+logger = Logger.get_logger()
+
+
+def fetch_wikipedia_page(url: str) -> Optional[BeautifulSoup]:
+    """
+    Fetch html from wikipedia gdp page.
+
+    Return BeautifulSoup object.
+    """
+    try:
+        logger.info('페이지 요청 시작')
+        r = requests.get(url)
+        if r.status_code != 200:
+            logger.info(f'페이지를 찾을 수 없습니다 :status_code: {r.status_code}')
+            raise ValueError("No page found")
+        logger.info('페이지 요청 완료')
+        logger.info('페이지 파싱 시작')
+        soup = BeautifulSoup(r.text, 'html.parser')
+        logger.info('페이지 파싱 완료')
+        return soup
+    except Exception as e:
+        logger.info(f'위키피디아 페이지 로딩 오류: {e}')
+        return None
+
+def get_gdp_table(soup: BeautifulSoup) -> Optional[Tag]:
+    """
+    Get GDP table from wikipedia page.
+
+    Return the first table that has caption "GDP (million US$) by country".
+    """
+    try:
+        logger.info('테이블 찾기 시작')
+        tables = soup.find_all('table', class_=['wikitable', 'sortable'])
+
+        gdp_table = None
+        for table in tables:
+            if table.caption and "GDP (million US$) by country" in table.caption.text:                
+                gdp_table = table
+                break
+
+        if gdp_table is None:
+            logger.info('테이블을 찾을 수 없습니다.') 
+            raise ValueError("No table found")
+        
+        logger.info('테이블 찾기 완료')
+        return gdp_table
+    
+    except Exception as e:
+        logger.info(f'테이블 찾기 오류: {e}')
+        return None
+    
+def get_thead(table: Tag) -> Optional[Tag]:
+    """
+    Get thead from the table.
+
+    **[WARNING!] Not used in this project!**
+    """
+    try:
+        logger.info('테이블 헤더 찾기 시작')
+        th_values = table.find_all('th')
+        for th in th_values:
+            logger.info(th.text)
+        if th_values is None:
+            logger.info('테이블 헤더를 찾을 수 없습니다.') 
+            raise ValueError("No thead found")
+        
+        logger.info('테이블 헤더 찾기 완료')
+        # 이후 추가 처리 필요...
+        return th_values
+    
+    except Exception as e:
+        logger.info(f'테이블 헤더 찾는 중 오류: {e}')
+        return None
+
+def get_clean_tbody(table: Tag) -> Optional[Tag]:
+    """
+    Get tbody from the table.
+
+    Parse tbody and remove unnecessary rows.
+    """
+
+    try:
+        logger.info('테이블 바디 찾기 시작')
+        tbody = table.tbody
+        # tbody 내부에 th가 있음.
+        if tbody is None:
+            logger.info('테이블 바디를 찾을 수 없습니다.') 
+            raise ValueError("No tbody found")
+        
+        for tr in tbody.find_all('tr'):
+            tds = tr.find_all('td')
+            # 빈 리스트가 아니고, 첫 번째 td가 "World"를 포함하고 있으면 삭제 후 break
+            if tds and "World" in tr.find_all('td')[0]:
+                logger.info(f"최종 tr 스킵: {tr.text.strip()}")
+                tr.decompose()
+                logger.info(f"tr 스킵 완료")
+                break
+            logger.info(f"tr 스킵 중... {tr.text.strip()}")
+            tr.decompose()
+
+        logger.info('테이블 바디 찾기 완료')
+        return tbody
+    
+    except Exception as e:
+        logger.info(f'에러 발생: {e}')
+        return None
+    
+def get_parsed_data(tbody: Tag, thead: Tag = None) -> Optional[List[Dict]]:
+    """
+    Parse tbody and return parsed data.
+
+    [IMPORTANT] Only use IMF data in this project
+
+    Return a list of dictionaries. 
+
+    **[WARNING!] thead not used in this project!**   
+    """
+    try:
+        logger.info('테이블 파싱 시작')
+        parsed_data = []
+        for tbody in tbody.find_all('tr'):
+            td_values = tbody.find_all('td')
+            
+            for i in range(len(td_values)):
+                sup_tags = td_values[i].find_all('sup')
+                for sup in sup_tags:
+                    logger.info(f"delete sup tag in Country: {td_values[0].text}")
+                    sup.decompose()
+
+            null_flag = False
+            # table-na 클래스가 있으면 null data
+            if td_values[1].attrs.get('class') and 'table-na' in td_values[1].attrs.get('class'):
+                null_flag = True
+                logger.info(f"null data in Country: {td_values[0].text}")
+
+            parsed_data.append({
+                'country': td_values[0].text.strip(),
+                'gdp': td_values[1].text.strip() if not null_flag else None,
+                'year': td_values[2].text.strip() if not null_flag else None,
+                'type': "IMF",
+            })
+        
+        logger.info('테이블 파싱 완료')        
+        return parsed_data
+        
+    except Exception as e:
+        logger.info(f'에러 발생: {e}')
+        return None
+
+def dump_json(data: list, file_path: str) -> Optional[bool]:
+    """
+    dump data to json file.
+
+    Return True if success.
+
+    else return None.
+    """
+    try:
+        logger.info(f'JSON으로 변환 시작 / 경로: {file_path}')
+        with open(file_path, 'w') as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        logger.info('JSON으로 변환 완료')
+        return True
+
+    except Exception as e:
+        logger.info(f'에러 발생: {e}')
+        return None

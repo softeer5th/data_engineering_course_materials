@@ -1,4 +1,10 @@
-# Byte-compiled / optimized / DLL files
+.DS_Store
+.git
+.venv/
+materials/data_engineering_course_materials/slides/
+*.pyc
+.vscode/
+.env# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
