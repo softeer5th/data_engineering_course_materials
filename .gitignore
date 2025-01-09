@@ -1,6 +1,7 @@
 # yjy323 own
 *.db
 *.sql
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
