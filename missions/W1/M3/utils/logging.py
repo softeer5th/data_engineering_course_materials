@@ -24,7 +24,7 @@ class Logger:
 
         # Create console handler
         ch = logging.StreamHandler()
-        ch.setLevel(logging.ERROR)
+        ch.setLevel(logging.DEBUG)
 
         # Create formatter
         formatter = logging.Formatter(
