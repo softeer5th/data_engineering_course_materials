@@ -1,5 +1,6 @@
 from typing import List, Dict, Optional
 import json
+import traceback
 
 import sqlite3
 from missions.W1.M3.log.log import Logger
@@ -32,7 +33,11 @@ def create_gdp_table(db_path: str, sql_path: str) -> Optional[bool]:
         return True
 
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'테이블 생성 시 에러 발생: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
 
 def load_gdp_json(json_path: str) -> Optional[List[Dict]]:
@@ -48,7 +53,11 @@ def load_gdp_json(json_path: str) -> Optional[List[Dict]]:
         return gdp_data
     
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'GDP JSON 로드 중 에러 발생: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
     
 def transform_gdp_data(data: List[Dict]) -> Optional[List[Dict]]:
@@ -79,7 +88,11 @@ def transform_gdp_data(data: List[Dict]) -> Optional[List[Dict]]:
         return transformed_data
     
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'데이터 변환 중 에러 발생: {e} / recent_row: {recent_row}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
             
 def insert_one_gdp_data(db_path, transformed_data: List[Dict]) -> Optional[bool]:
@@ -104,6 +117,10 @@ def insert_one_gdp_data(db_path, transformed_data: List[Dict]) -> Optional[bool]
             return True
         
     except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'데이터 삽입 중 에러 발생: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
         return None
     

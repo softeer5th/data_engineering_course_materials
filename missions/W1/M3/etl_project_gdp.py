@@ -51,7 +51,9 @@ def etl_project_gdp():
         
         # 데이터 JSON으로 저장
         logger.info("데이터 저장 시작")
-        res = dump_json(parsed_data, 'missions/W1/M3/data/Countries_by_GDP.json')
+
+        json_path = 'missions/W1/M3/data/Countries_by_GDP.json'
+        res = dump_json(parsed_data, json_path)
         if res is None:
             raise ValueError("JSON 형식 저장 실패")
         else:
