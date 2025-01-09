@@ -12,6 +12,7 @@ EXTRACTED_DATA_PATH = "data/Countries_by_GDP.json"
 # Processed data path
 PROCESSED_DATA_PATH = "data/Countries_by_GDP_etl_processed.json"
 
+
 def print_menu():
     """
     Print ETL process menu.
@@ -22,6 +23,7 @@ def print_menu():
     print("3. Run Full ETL Process")
     print("4. Exit")
     print("========================")
+
 
 def get_user_choice():
     """
@@ -36,6 +38,7 @@ def get_user_choice():
             print("Invalid input. Please enter a number between 1 and 4.")
         except ValueError:
             print("Invalid input. Please enter a number.")
+
 
 if __name__ == "__main__":
     # Initialize logger
@@ -59,7 +62,9 @@ if __name__ == "__main__":
             logger.info("Extracting data...")
             try:
                 extracted_data = extractor.extract(WIKI_URL)
-                io_handler.save_dict_to_json(extracted_data, EXTRACTED_DATA_PATH)
+                io_handler.save_dict_to_json(
+                    extracted_data, EXTRACTED_DATA_PATH
+                )
                 logger.info("Data extracted successfully.")
             except Exception as e:
                 logger.error(f"Error occurred during data extraction: {e}")

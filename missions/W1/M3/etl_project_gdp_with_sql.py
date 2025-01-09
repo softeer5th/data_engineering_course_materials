@@ -14,6 +14,7 @@ EXTRACTED_DATA_TABLE = "Countries_by_GDP"
 # Processed data table name
 PROCESSED_DATA_TABLE = "Countries_by_GDP_etl_processed"
 
+
 def print_menu():
     """
     Print ETL process menu.
@@ -24,6 +25,7 @@ def print_menu():
     print("3. Run Full ETL Process")
     print("4. Exit")
     print("========================")
+
 
 def get_user_choice():
     """
@@ -75,7 +77,9 @@ if __name__ == "__main__":
             # Transform data
             logger.info("Transforming data...")
             try:
-                df = io_handler.open_sqlite_as_df(DATABASE_PATH, EXTRACTED_DATA_TABLE)
+                df = io_handler.open_sqlite_as_df(
+                    DATABASE_PATH, EXTRACTED_DATA_TABLE
+                )
                 df = transformer.transform(df)
                 logger.info("Data transformed successfully.")
             except Exception as e:

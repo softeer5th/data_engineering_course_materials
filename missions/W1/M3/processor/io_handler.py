@@ -21,8 +21,14 @@ def save_dict_to_sqlite(data: dict, db_path: str, table_name: str) -> None:
     :param db_path: str: SQLite database path.
     :param table_name: str: Table name.
     """
+
     with sqlite3.connect(db_path) as conn:
         df = pd.DataFrame.from_dict(data)
+
+        df = df.rename(
+            columns={"country": "Country", "gdp": "GDP_USD_billion"}
+        )
+
         df.to_sql(table_name, conn, if_exists="replace", index=False)
 
 
@@ -46,7 +52,12 @@ def open_sqlite_as_df(db_path: str, table_name: str) -> pd.DataFrame:
     :param table_name: str: Table name.
     :return: pd.DataFrame: DataFrame.
     """
+
     with sqlite3.connect(db_path) as conn:
         df = pd.read_sql_query(f"SELECT * FROM {table_name}", conn)
+
+        df = df.rename(
+            columns={"Country": "country", "GDP_USD_billion": "gdp"}
+        )
 
     return df
