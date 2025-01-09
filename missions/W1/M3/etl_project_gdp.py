@@ -91,11 +91,19 @@ def extract_data():
 # 각 나라의 Region을 찾아 입력
 def transform_data(df):
     print("transform_data : PID {pid}".format(pid = os.getpid()))
-    df["GDP_USD_billion"] = df["GDP_USD_million"].replace(",","",regex = True).astype(float, errors="ignore").div(1000).round(2)
-    df["Region"] = df["Country"].apply(convert_name_to_continent)
+    df = transform_conversion_unit(df)
+    df = transform_find_region(df)
+    return df
 
+def transform_conversion_unit(df) :
+    df["GDP_USD_billion"] = df["GDP_USD_million"].replace(",","",regex = True).astype(float, errors="ignore").div(1000).round(2)
     df = df.drop("GDP_USD_million", axis = 1)
     return df
+
+
+def transform_find_region(df) :
+    df["Region"] = df["Country"].apply(convert_name_to_continent)
+    return df 
 
 def convert_name_to_continent(country_name):
     try :
@@ -153,12 +161,18 @@ def parallel_dataframe(df, func, num_cores = 8):
 # 데이터의 사이즈가 클 경우를 대비해 parallel_dataframe 메소드를 사용하여 
 # 멀티프로세싱으로 데이터 transform을 진행
 def ETL():
+    file_name = 'Countries_by_GDP.json'
     logger = Logger()
     logger.start()
 
-    logger.info("Extract started")
-    # extract_data()
-    logger.info("Extract completed")
+    try :
+        if not os.path.exists(file_name):
+            raise FileNotFoundError()
+    except :
+        # raw_data 파일이 없으면 extract 시작
+        logger.info("Extract started")
+        extract_data()
+        logger.info("Extract completed")
     
     logger.info("Transform started")
     start = time.time()
@@ -175,6 +189,52 @@ def ETL():
     logger.info("Load completed")
 
     logger.end()
+
+
+# IMF API 사용하기 
+# 각 나라별 GDP를 추출하는 함수
+def getIMFGdpByCountry(period = 2025):
+    url = "https://www.imf.org/external/datamapper/api/v1/NGDPD?periods={pr}".format(pr = period)
+    response = requests.get(url)
+    raw_data = []
+    
+    if response.status_code == 200:
+        gdp_data = response.json()
+        for country, data in gdp_data["values"]["NGDPD"].items():
+            for year, gdp in data.items():
+                raw_data.append({"Country": country, "Year" : int(year), "GDP" : gdp})
+
+    df = pd.DataFrame(raw_data)
+    return df
+
+# 각 지역별 GDP를 추출하는 함수
+def getIMFGdpByRegion():
+    region_code_url = "https://www.imf.org/external/datamapper/api/v1/regions"
+    response = requests.get(region_code_url)
+    code_raw_data = dict()
+
+    if response.status_code == 200:
+        code_data = response.json()
+        for code, data in code_data["regions"].items():
+            code_raw_data[code] = data["label"]
+
+    raw_data = []
+
+    region_code_url = "https://www.imf.org/external/datamapper/api/v1/NGDPD?periods=2025".format(RCODE = code)
+    response = requests.get(region_code_url)
+
+    if response.status_code == 200:
+        gdp_data = response.json()
+
+        if "values" in gdp_data :
+            for region, data in gdp_data["values"]["NGDPD"].items():
+                if region in code_raw_data.keys():
+                    for year, gdp in data.items():
+                        raw_data.append({"Region": code_raw_data[region], "Year" : int(year), "GDP" : gdp})
+        
+    df = pd.DataFrame(raw_data)
+    return df
+    
 
 if __name__ == "__main__":
     ETL()
