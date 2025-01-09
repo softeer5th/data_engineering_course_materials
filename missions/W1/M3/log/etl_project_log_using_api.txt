@@ -136,3 +136,11 @@
 2025-01-09 11:36:22 - ETLLogger - INFO - Extracting data...
 2025-01-09 11:36:38 - ETLLogger - INFO - Data extracted successfully.
 2025-01-09 11:36:38 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-09 18:35:16 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-09 18:35:16 - ETLLogger - INFO - Extracting data...
+2025-01-09 18:35:30 - ETLLogger - INFO - Data extracted successfully.
+2025-01-09 18:35:30 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-09 18:36:06 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-09 18:36:06 - ETLLogger - INFO - Extracting data...
+2025-01-09 18:36:17 - ETLLogger - INFO - Data extracted successfully.
+2025-01-09 18:36:17 - ETLLogger - INFO - ======== ETL Process Completed ========
