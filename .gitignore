@@ -3,6 +3,7 @@
 *.sql
 .DS_Store
 .git
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
