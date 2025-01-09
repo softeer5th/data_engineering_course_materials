@@ -16,7 +16,7 @@ gdp_url = "https://www.imf.org/external/datamapper/api/v1/NGDPD?periods=2025,202
 group_url = "https://www.imf.org/external/datamapper/api/v1/groups"
 region_url = "https://www.imf.org/external/datamapper/api/v1/regions"
 
-path = "./W1/M3/data/"
+path = "./missions/W1/M3/data/"
 db_name = "team_World_Economies.db"
 region_data_name = "region.csv"
 log_name = "team_etl_project_with_sql_log.txt"

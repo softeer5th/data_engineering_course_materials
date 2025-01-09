@@ -15,7 +15,7 @@ class Mode(Enum):
 
 state = Mode.EXTRACT
 url = "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29"
-path = "./W1/M3/data/"
+path = "./missions/W1/M3/data/"
 db_name = "World_Economies.db"
 region_data_name = "region.csv"
 log_name = "etl_project_with_sql_log.txt"
