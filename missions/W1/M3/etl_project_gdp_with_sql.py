@@ -194,12 +194,23 @@ class TransformGDP(Transform):
         self.df = pd.merge(df, region_df, how='left', on='Country').dropna()
         return self.df
 
-    # Name: run
+    # Name: run_html
     # Parameter: self, path_region (str), css_selector_type (str), css_selector (str), **filter_args
     # Return: DataFrame
     def run_html(self, path_region, css_selector_type, css_selector, **filter_args):
         writeLog('Transform Start', PATH_LOG)
         self.df = super().run_html(css_selector_type, css_selector, **filter_args)
+        self.bil_to_mil()
+        self.add_region_column(self.df, path_region)
+        writeLog('Transform Finished', PATH_LOG)
+        return self.df
+    
+    # Name: run
+    # Parameter self, js, unarchive, **filter_args
+    # Return: DataFrame
+    def run_js(self, path_region, js, unarchive, **filter_args):
+        writeLog('Transform Start', PATH_LOG)
+        self.df = super().run_js(js, unarchive ,**filter_args)
         self.bil_to_mil()
         self.add_region_column(self.df, path_region)
         writeLog('Transform Finished', PATH_LOG)
@@ -333,13 +344,16 @@ def writeLog(log, path_log):
 
 # const block
 URL = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29'
+CSS_SELECTOR_TYPE = 'class'
+CSS_SELECTOR = 'wikitable sortable sticky-header-multi static-row-numbers'
 PATH_RAW_DATA = 'missions/W1/M3/data/Countries_by_GDP.json'
 PATH_REGION = 'missions/W1/M3/data/region.csv'
 PATH_LOG = 'missions/W1/M3/data/etl_project_log.txt'
 PATH_DB = 'missions/W1/M3/data/World_Economies.db'
-CSS_SELECTOR_TYPE = 'class'
-CSS_SELECTOR = 'wikitable sortable sticky-header-multi static-row-numbers'
 TABLE_NAME = 'Countries_by_GDP'
+
+# URL = 'https://www.imf.org/external/datamapper/api/v1/NGDPD'
+
 
 # main
 
@@ -349,7 +363,7 @@ raw_data = e.run()
 
 # Transform
 t = TransformGDP(raw_data, PATH_REGION)
-df = t.run_html(path_region = PATH_REGION, css_selector_type= CSS_SELECTOR_TYPE, css_selector = CSS_SELECTOR, 
+df = t.run_html(PATH_REGION, CSS_SELECTOR_TYPE, CSS_SELECTOR, 
             droplevel = 0, 
             column_nums = [0, 1], 
             row_dropna= True, 
@@ -357,6 +371,16 @@ df = t.run_html(path_region = PATH_REGION, css_selector_type= CSS_SELECTOR_TYPE,
             column_names=['Country', 'GDP_USD_billion'], 
             astype={'GDP_USD_billion' : 'float'},
             reset_index = True)
+
+# Transform(js)
+# df = t.run_js(PATH_REGION, raw_data, 2,
+#             droplevel = None, 
+#             column_nums = [0, 1], 
+#             row_dropna= True, 
+#             row_drophyphen = True, 
+#             column_names=['Country', 'GDP_USD_billion'], 
+#             astype={'GDP_USD_billion' : 'float'},
+#             reset_index = True)
 
 # Load
 l = LoadGDP(df, PATH_DB)

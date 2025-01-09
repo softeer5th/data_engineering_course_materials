@@ -324,3 +324,9 @@
 2025-Jan-09-18-24-41, Transform Finished
 2025-Jan-09-18-24-41, Load Start
 2025-Jan-09-18-24-41, Load finished
+2025-Jan-09-18-41-08, Extract Start
+2025-Jan-09-18-41-08, Extract Finished
+2025-Jan-09-18-41-08, Transform Start
+2025-Jan-09-18-41-09, Transform Finished
+2025-Jan-09-18-41-09, Load Start
+2025-Jan-09-18-41-09, Load finished
