@@ -1,296 +1,115 @@
-import requests
-import datetime as dt
-import json
+# 기본 설계
+# ETL class와 E, T, L 메서드
+# E, T, L을 수행하는 run 메서드
+# run 메서드에서 E는 스레딩, T는 프로세싱으로 실행
+# queue get, put을 이용하여 E가 완료되면 T가 겟으로 가져가게 함
+
+# Extract 흐름
+# 1. raw_data 만들기
+# 1-1. url로부터 리스폰스 받아옴
+# 1-2. 추출한 시간 now
+# 1-3. json(url, text, date) 만들기
+# 2. raw_data 저장 ()
+
+# Transform 흐름
+# 1. 테이블 찾기
+# 2. 테이블 to DF
+# 3. 원하는 데이터 뽑기
+
 import pandas as pd
 from bs4 import BeautifulSoup
+import extract as e
+from io import StringIO
 import sqlite3
+from multiprocessing import Process, Queue
+import datetime as dt
 
 
-class Extract:
-    def __init__(self, url, path):
-        self.url = url
-        self.path = path
-        self.response = None
-        self.raw_data = None
+# 1
+class ET:
+    def Extract(self, url, path_raw_data, path_log):
+        write_log("Extract start", path_log)
+        # url에서 raw data 가져오기
+        js = e.get_raw_data(url)
 
-    # Name: run
-    # Parameter: Extract self
-    # return: raw data extracted
-    def run(self):
-        writeLog("Extract Start", PATH_LOG)
-        self.response = Extract.get_response_from_url(self.url)
-        self.raw_data = Extract.save_raw_data(self.response, self.path, self.url)
-        writeLog("Extract finished", PATH_LOG)
-        return self.raw_data
+        # raw data 저장
+        e.save_raw_data(js, path_raw_data)
+        write_log("Extract finished", path_log)
+        return js
 
-    # Name: get_response_from_url
-    # Parameter: url to get response
-    # Return: response
-    def get_response_from_url(url):
-        try:
-            response = requests.get(url)  # Request from url
-            response.raise_for_status()  # Response status chekcing
-            return response
-        except requests.RequestException as e:  # 리스폰스 에러 처리
-            print(f"Error: request: {e}")
-            return None
+    def Transform(self, raw_data, path_region, css_selector, path_log):
+        write_log("Transform start", path_log)
 
-    # Name: save_raw_data
-    # Parameter: response to save, path to save, url extracted
-    # Return: dict raw_data
-    def save_raw_data(response, path, url):
-        # response check
-        if response == None:
-            print("Error: response is None")
-            return None
+        # 1. 테이블 찾기
+        soup = BeautifulSoup(raw_data["text"], "lxml")  # html 파싱
+        table = soup.select_one(css_selector)  # fmt:skip
 
-        now = dt.datetime.now().strftime("%Y-%b-%d-%H-%M-%S")  # 현재 시간 문자열로 저장
-        # raw data: url, text, date
-        raw_data = {"url": url, "text": response.text, "date": now}
+        # 2. Tablwrite_log('Extract finished')e to DF
+        df = pd.read_html(StringIO(str(table)))[0]
 
-        # try to save raw data on path
-        try:
-            with open(path, "w") as f:  # path에 raw_data json형식으로 덤프
-                json.dump(raw_data, f)
-            return raw_data
-        except Exception as e:
-            print(f"Error: raw data: {e}")
-            return None
+        # 3. formatting
+        # 3-1. 멀티인덱스 제거
+        df = df.droplevel(0, axis=1)
 
+        # 4. filtering
+        # 4-1. 원하는 열 선택
+        df = df[["Country/Territory", "Forecast"]]
+        # 4-2. 열 이름 변경
+        df.columns = ["Country", "GDP_USD_billion"]
+        # 4-3. 값이 이상한 행 제거(NaN)
+        df = df[df["GDP_USD_billion"].str.isdigit()]
+        # 4-4  astype
+        df = df.astype({"GDP_USD_billion": "float"})
+        # 4-5 지역 추가
+        with open(path_region, "r") as f:
+            region_df = pd.read_csv(f)
+        region_df = region_df[["name", "region"]]  # 국가명, 지역 선택
+        region_df.columns = ["Country", "Region"]  # 열 이름 변경
+        df = pd.merge(
+            df, region_df, how="left", on="Country"
+        )  # Country 이름 기준으로 merge
+        # 4-5. 국가가 아닌 행 제거(국가-지역 대조하면서 국가가 아닌 행은 지역에 NaN이 붙음)
+        df = df.dropna()
+        # 4-6. 단위 1B로 변환
+        df["GDP_USD_billion"] = (df["GDP_USD_billion"] / 1000).round(2)
 
-# Transform
-# 포매팅. 테이블을 뽑아내자
-class Transform:
-
-    # Name: Transform
-    # Parameter: dictionary raw data
-    # Return: Transform
-    def __init__(self, raw_data):
-        self.raw_data = raw_data
-        self.table = None
-        self.soup = None
-        self.df = None
-
-    # Name: get_soup
-    # Parameter: raw data
-    # Return: soup parsed by lxml
-    def get_soup(raw_data):
-        soup = BeautifulSoup(raw_data["text"], "lxml")  # lxml로 raw data 파싱
-        return soup
-
-    # Name: get_table
-    # Parameter: soup, css_selector_type, css_selector
-    # Return: Table(bs4 object)
-    def get_table(soup, css_selector_type, css_selector):
-        type_dict = {"class": ".", "ID": "#", "tag_name": ""}  # css Selector dictionary
-
-        # 타입 유효성 검사
-        if css_selector_type not in type_dict:
-            print("Error: css_selector_type: Wrong css_selector_type")
-            return None
-
-        # 타겟 타입 클래스인 경우 스페이스바 다 '.'으로 바꾸어서 셀렉트
-        if css_selector_type == "class":
-            css_selector = css_selector.replace(" ", ".")
-
-        # 타입 셀렉터로 셀렉트
-        table = soup.select_one(type_dict[css_selector_type] + css_selector)
-        return table
-
-    def get_dataframe(table):
-        df = pd.read_html(str(table))[
-            0
-        ]  # read_html은 list 반환해서 첫 번쨰 테이블 지정
+        write_log("Transform finished", path_log)
         return df
 
-    def filter_dataframe(
-        df,
-        droplevel=None,
-        column_nums=[],
-        row_dropna=False,
-        row_drophyphen=False,
-        column_names=[],
-        astype={},
-        reset_index=False,
-    ):
-
-        # column droplevel
-        if droplevel is not None:
-            df.columns = df.columns.droplevel(droplevel)
-
-        # 선택할 열을 리스트로 받아 해당 열만 남김
-        if column_nums:
-            df = df.iloc[:, (column_nums)]
-
-        # row_dropna True면 NaN 로우 다 제거
-        if row_dropna:
-            df.dropna(axis=0, inplace=True)
-
-        # hyphen 값을 가지는 모든 로우 제거
-        if row_drophyphen:
-            df.replace("—", pd.NA, inplace=True)
-            df.dropna(axis=0, inplace=True)
-
-        # 열 이름 받으면 리네임
-        if column_names:
-            df.columns = column_names
-
-        # 열 타입 지정
-        if astype:
-            df = df.astype(astype)
-
-        # reset index
-        if reset_index:
-            df = df.reset_index(drop=True)
-
+    def run(self, url, path_raw_data, path_region, path_log, css_selector, table_name):
+        raw_data = self.Extract(url, path_raw_data, path_log)
+        df = self.Transform(raw_data, path_region, css_selector, path_log)
         return df
 
-    # 변환 수행
-    def run(
-        self,
-        css_selector_type,
-        css_selector,
-        raw_data=None,
-        droplevel=None,
-        column_nums=[],
-        row_dropna=False,
-        row_drophyphen=False,
-        column_names=[],
-        astype={},
-        reset_index=False,
-    ):
-        if raw_data:
-            self.raw_data = raw_data
-        self.soup = Transform.get_soup(self.raw_data)
-        self.table = Transform.get_table(self.soup, css_selector_type, css_selector)
-        self.df = Transform.get_dataframe(self.table)
-        self.df = Transform.filter_dataframe(
-            self.df,
-            droplevel=droplevel,
-            column_nums=column_nums,
-            row_dropna=row_dropna,
-            row_drophyphen=row_drophyphen,
-            column_names=column_names,
-            astype=astype,
-            reset_index=reset_index,
-        )
-        return self.df
 
-
-class TransformGDP(Transform):
-    # Transform 클래스를 상속받음
-
-    # 생성자.
-    def __init__(self, raw_data, path_region):
-        self.path_region = path_region
-        super().__init__(raw_data)
-
-    # 단위 변환
-    def bil_to_mil(self):
-        self.df["GDP_USD_billion"] = (self.df["GDP_USD_billion"] / 1000).round(2)
-        return self.df
-
-    # 지역 열 추가
-    def add_region_column(self, df, path_region):
-        region_df = pd.read_csv(path_region)
-        region_df = pd.DataFrame(
-            {"Country": region_df["name"], "Region": region_df["region"]}
-        )
-        self.df = pd.merge(df, region_df, how="left", on="Country")
-        self.df = self.df.dropna()  # 지역이 없는 행 제거
-        return self.df
-
-    # 변환 수행
-    def run(
-        self,
-        path_region,
-        css_selector_type,
-        css_selector,
-        droplevel=None,
-        column_nums=[],
-        row_dropna=False,
-        row_drophyphen=False,
-        column_names=[],
-        astype={},
-        reset_index=False,
-    ):
-        writeLog("Transform Start", PATH_LOG)
-        # 부모 클래스의 run 메서드 호출 시 매개변수 전달
-        self.df = super().run(
-            css_selector_type=css_selector_type,  # 셀렉터 타입: tag_name, class, ID
-            css_selector=css_selector,
-            droplevel=droplevel,
-            column_nums=column_nums,
-            row_dropna=row_dropna,
-            row_drophyphen=row_drophyphen,
-            column_names=column_names,
-            astype=astype,
-            reset_index=reset_index,
-        )
-        self.bil_to_mil()
-        self.add_region_column(self.df, path_region)
-        writeLog("Transform Finished", PATH_LOG)
-        return self.df
-
-
-# GDP 100B 이상인 국가 데이터프레임
-def get_GDP_over_100B(df):
-    df = df[df.GDP_USD_billion > 100]
-    return df
-
-
-# 지역별 GDP 탑 5 국가의 GDP 평균
-def get_top_n_avg_gdp_by_region(df, top_n=5):
-    print("지역별 탑 5의 GDP 평균")
-    sorted_df = df.sort_values(
-        by=["Region", "GDP_USD_billion"], ascending=[True, False]
-    )
-    top_GDP = sorted_df.groupby("Region").head(top_n)
-    avg_GDP = top_GDP.groupby("Region")["GDP_USD_billion"].mean().reset_index()
-    avg_GDP.sort_values(by=["GDP_USD_billion"], ascending=False, inplace=True)
-    return avg_GDP
-
-
-# writeLog
-def writeLog(log, path_log):
+# write_log
+def write_log(log, path_log):
     now = dt.datetime.now()
     log = now.strftime("%Y-%b-%d-%H-%M-%S, ") + log + "\n"
     with open(path_log, "a") as f:
         f.write(log)
 
 
-# const block
+# Const block
 URL = "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29"
-# URL = 'https://www.imf.org/external/datamapper/api/v1/NGDPD'
 PATH_RAW_DATA = "missions/W1/M3/data/Countries_by_GDP.json"
 PATH_REGION = "missions/W1/M3/data/region.csv"
 PATH_LOG = "missions/W1/M3/data/etl_project_log.txt"
-PATH_DB = "missions/W1/M3/data/World_Economies.db"
-CSS_SELECTOR_TYPE = "class"
-CSS_SELECTOR = "wikitable sortable sticky-header-multi static-row-numbers"
+CSS_SELECTOR = ".wikitable.sortable.sticky-header-multi.static-row-numbers"
 TABLE_NAME = "Countries_by_GDP"
 
 # main
+process = ET()
+df = process.run(URL, PATH_RAW_DATA, PATH_REGION, PATH_LOG, CSS_SELECTOR, TABLE_NAME)
 
-# Extract
-e = Extract(URL, PATH_RAW_DATA)
-raw_data = e.run()
+# 주어진 문제 해결하기 without sql
+# 1. GDP가 100B 이상인 국가
+print("GDP over 100B")
+print(df[["Country", "GDP_USD_billion"]][df["GDP_USD_billion"] > 100])
 
-# Transform
-t = TransformGDP(raw_data, PATH_REGION)
-df = t.run(
-    PATH_REGION,
-    CSS_SELECTOR_TYPE,
-    CSS_SELECTOR,
-    droplevel=0,
-    column_nums=[0, 1],
-    row_dropna=True,
-    row_drophyphen=True,
-    column_names=["Country", "GDP_USD_billion"],
-    astype={"GDP_USD_billion": "float"},
-    reset_index=True,
-)
-
-# Result
-print(get_GDP_over_100B(df))
-print(get_top_n_avg_gdp_by_region(df))
+# 2. 지역별 GDP 탑 5의 평균
+print("GDP avg of Top 5 by region")
+regions = set(df["Region"])
+for region in regions:
+    top = df[df["Region"] == region]["GDP_USD_billion"].head()
+    print(region, top.mean())
