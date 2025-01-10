@@ -33,7 +33,7 @@ def _fetch_web(url: str)-> str:
     except requests.exceptions.HTTPError as e:
         logger.error(f"[FAIL] Failed to fetch the webpage: {url}. Status Code: {response.status_code}")
         raise
-    except requests.exceptions.RequestException as e:
+    except Exception as e:
         logger.error(f"[FAIL] Failed to fetch the webpage: {url}. Exception: {e.__class__.__name__}")
         raise
     return response.text

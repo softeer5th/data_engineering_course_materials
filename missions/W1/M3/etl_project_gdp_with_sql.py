@@ -165,14 +165,6 @@ def _insert_all_into_table(df: pd.DataFrame, db_name: str)-> None:
 
     logger.info("[START] Inserting all data into the SQLite DB Table ...")
     with sqlite3.connect(db_name) as conn:
-            
-            cursor = conn.cursor()
-            cursor.execute("PRAGMA table_info(Countries_by_GDP);")
-            table_info = cursor.fetchall()
-            table_columns = [info[1] for info in table_info]
-            column_mapping = {df_col: tbl_col for df_col, tbl_col in zip(df.columns, table_columns)}
-            df = df.rename(columns=column_mapping)
-
             df.to_sql("Countries_by_GDP", conn, if_exists="append", index=False)
     logger.info("[COMPLETE] Successfuly inserted all data into the SQLite DB Table.")
 
