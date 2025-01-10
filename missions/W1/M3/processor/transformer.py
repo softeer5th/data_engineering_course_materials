@@ -1,4 +1,5 @@
 import json
+
 import numpy as np
 import pandas as pd
 
@@ -12,9 +13,7 @@ def _parse_gdp_strings(series: pd.Series) -> pd.Series:
     :param series: pd.Series: Series with GDP strings.
     :return: pd.Series: Series with parsed GDP values.
     """
-    return pd.to_numeric(
-        series.astype(str).str.replace(",", ""), errors="coerce"
-    )
+    return pd.to_numeric(series.str.replace(",", ""), errors="coerce")
 
 
 def _parse_year_strings(series: pd.Series) -> pd.Series:
@@ -23,7 +22,7 @@ def _parse_year_strings(series: pd.Series) -> pd.Series:
     :param series: pd.Series: Series with year strings.
     :return: pd.Series: Series with parsed year values.
     """
-    return pd.to_numeric(series, errors="coerce").astype("Int32")
+    return pd.to_numeric(series, errors="coerce").astype("Int16")
 
 
 def _add_country_regions(df: pd.DataFrame) -> pd.DataFrame:
