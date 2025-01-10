@@ -144,3 +144,139 @@
 2025-01-09 18:36:06 - ETLLogger - INFO - Extracting data...
 2025-01-09 18:36:17 - ETLLogger - INFO - Data extracted successfully.
 2025-01-09 18:36:17 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 15:18:50 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 15:18:50 - ETLLogger - INFO - Extracting data...
+2025-01-10 15:18:50 - ETLLogger - ERROR - Error occurred during data extraction: Synchronized objects should only be shared between processes through inheritance
+2025-01-10 15:18:50 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-10 15:21:35 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 15:21:35 - ETLLogger - INFO - Extracting data...
+2025-01-10 15:21:35 - ETLLogger - ERROR - Error occurred during data extraction: Synchronized objects should only be shared between processes through inheritance
+2025-01-10 15:21:35 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-10 15:26:03 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 15:26:03 - ETLLogger - INFO - Extracting data...
+2025-01-10 15:26:03 - ETLLogger - ERROR - Error occurred during data extraction: Synchronized objects should only be shared between processes through inheritance
+2025-01-10 15:26:03 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-10 15:28:12 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 15:28:12 - ETLLogger - INFO - Extracting data...
+2025-01-10 15:28:28 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 15:28:28 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 15:30:14 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 15:30:14 - ETLLogger - INFO - Extracting data...
+2025-01-10 15:30:21 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 15:30:21 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:10:21 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:10:21 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:10:31 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:10:31 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:11:02 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:11:02 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:11:11 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:11:11 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:11:21 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:11:21 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:11:30 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:11:30 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:13:03 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:13:03 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:13:12 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:13:12 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:29:18 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:29:18 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:29:27 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:29:27 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:32:06 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:32:06 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:32:13 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:32:13 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:33:04 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:33:04 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:33:10 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:33:10 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:34:54 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:34:54 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:35:02 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:35:02 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:36:01 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:36:01 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:36:09 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:36:09 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:36:17 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:36:17 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:36:24 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:36:24 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:37:54 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:37:54 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:38:00 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:38:00 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:38:37 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:38:37 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:38:44 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:38:44 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:39:31 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:39:31 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:39:38 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:39:38 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:39:54 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:39:54 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:40:00 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:40:00 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:40:08 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:40:08 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:40:15 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:40:15 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 17:46:34 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:46:34 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:46:37 - ETLLogger - ERROR - Error occurred during data extraction: No active exception to reraise
+2025-01-10 17:46:37 - ETLLogger - INFO - ======== ETL Process Aborted ========
+2025-01-10 17:47:20 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 17:47:20 - ETLLogger - INFO - Extracting data...
+2025-01-10 17:47:28 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 17:47:28 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:01:40 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:01:40 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:01:49 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:01:49 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:07:34 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:07:34 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:07:42 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:07:42 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:08:05 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:08:05 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:08:14 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:08:14 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:08:22 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:08:22 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:08:28 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:08:28 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:09:11 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:09:11 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:09:20 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:09:20 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:09:58 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:09:58 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:10:05 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:10:05 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:10:27 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:10:27 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:10:36 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:10:36 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:10:52 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:10:52 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:11:00 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:11:00 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:13:03 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:13:03 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:13:23 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:13:23 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:18:45 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:18:45 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:18:53 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:18:53 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:20:05 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:20:05 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:20:13 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:20:13 - ETLLogger - INFO - ======== ETL Process Completed ========
+2025-01-10 18:20:30 - ETLLogger - INFO - ======== Starting ETL Process ========
+2025-01-10 18:20:30 - ETLLogger - INFO - Extracting data...
+2025-01-10 18:20:37 - ETLLogger - INFO - Data extracted successfully.
+2025-01-10 18:20:37 - ETLLogger - INFO - ======== ETL Process Completed ========
