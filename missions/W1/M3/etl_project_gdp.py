@@ -93,12 +93,14 @@ def transformGDPTable(df):
     cols = df.columns
 
     # for year columns, transform the data to integer
-    for col in cols[2::2]: 
-        df[col] = df[col].apply(lambda x: int(x) if x.isdigit() else -1)
+    for col in cols[1:]: 
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+    df = df.fillna(0)
+    for col in cols[2::2]:
+        df[col] = df[col].astype(int)
     # for GDP data, make billion unit and float
     for col in cols[1::2]:
-        df[col] = df[col].apply(lambda x: round(float(x)/1000.0, 2) if x.isdigit() else 0.0)
-
+        df[col] = round(df[col] / 1000.0, 2)
     df = df.drop(index = [0])
             
     return df
@@ -128,8 +130,7 @@ def printOver100B(gdpData):
     print(gdpData[gdpData['IMF Forecast'] >= 100.0]['Country/Territory'])
 
 def printTop5(gdpData):
-    top5 = gdpData.groupby('Geographical subregion').apply(lambda x: x.sort_values('IMF Forecast').head(5))
-    top5 = top5.reset_index(level = 0, drop=True)
+    top5 = gdpData.groupby('Geographical subregion',).head(5)
     top5 = top5.groupby('Geographical subregion')['IMF Forecast'].mean()
     print(top5)
 

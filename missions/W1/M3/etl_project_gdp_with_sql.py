@@ -137,11 +137,12 @@ def printAll(year, regionIdxSel):
             GROUP BY "{regionIdxSel}"
             ORDER BY avg_gdp DESC;
         """
-    print("\nAll country's GDP means:")
+    print(f"\nAll {regionIdxSel}'s GDP means:")
     sqlResp = sendQuery(sql)
     for i in sqlResp:
         print(f"\t{i[0]}'s top{i[1]} GDP mean: {i[2]}")
-    print("")
+    
+    print("Unit: Billion USD")
 
 # print a information in one region
 def printOneRegion(year, regionIdxSel, regionSel):
@@ -187,6 +188,8 @@ def printOneRegion(year, regionIdxSel, regionSel):
     sqlResp = sendQuery(sql)
     for data in sqlResp:
         print(f"\t{data[0]}: {data[1]}")
+
+    print("Unit: Billion USD")
 
 # main
 
