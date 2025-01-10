@@ -10,7 +10,9 @@ from modules.logger import logger
 class ImporterInterface(ABC):
     """
     General Data importer interface.
-    Importer Rule: import data from source and return dataframe. The dataframe should have the following columns:
+    Importer Rule: import data from source and parse it to dataframe.
+
+    The dataframe should have the following columns:
     - Country
     - GDP
     - Region
@@ -22,16 +24,15 @@ class ImporterInterface(ABC):
     @abstractmethod
     def import_data(self) -> pd.DataFrame:
         """
-        Import raw data from the source
+        Import raw data from the source and parse it to dataframe.
         """
         pass
 
 
 class WebImporterInterface(ImporterInterface):
     """
-    Web Crawler interface. request -> parse -> return
+    Web Crawler interface. request(extract) -> parse(transform) -> return
     Subclass should implement _parse_html method.
-    Web importer는 HTML을 파싱하여 중간 데이터를 만들기 때문에(일종의 Tranform 작업) 중간 데이터를 저장할 수 있는 옵션을 둔다.
     """
 
     def __init__(self, source: str, raw_data_file_path: str = None):
@@ -144,7 +145,8 @@ class WikiWebImporter(WebImporterInterface):
 class FileImporter(ImporterInterface):
     """
     File data importer
-    File importer는 별도의 trasnform 작업이 없으니 중간 데이터가 없다.
+
+    Read file and parse it to dataframe.
     """
 
     def import_data(self) -> pd.DataFrame:

@@ -1,62 +1,9 @@
-import sqlite3
-import time
-import pandas as pd
+from config import LOG_FILE_PATH, DB_PATH, TABLE_NAME, CSV_INPUT_FILE_PATH
 from modules.logger import logger, init_logger, LogExecutionTime
 from modules.importer import CsvFileImporter
+from modules.transformer import transform_gdp, rename_columns
 from modules.exporter import SqliteExporter
-from pathlib import Path
-
-HOME_DIR = Path(__file__).resolve().parent
-LOG_FILE_PATH = HOME_DIR / "log/etl_project_log.txt"
-DB_PATH = HOME_DIR / "data/World_Economies.db"
-INPUT_FILE_PATH = HOME_DIR / "data/large_data.csv"
-TABLE_NAME = "Countries_by_GDP"
-
-QUERY_1 = """
-SELECT Country, GDP_USD_billion
-FROM Countries_by_GDP
-WHERE GDP_USD_billion > 100 
-ORDER BY GDP_USD_billion DESC
-"""
-QUERY_2 = """
-SELECT Region, AVG(GDP_USD_billion) FROM 
-(
-    SELECT
-        Country,
-        GDP_USD_billion,
-        Region,
-        ROW_NUMBER() OVER (PARTITION BY Region ORDER BY GDP_USD_billion DESC) AS row_num
-    FROM Countries_by_GDP
-)
-WHERE row_num <= 5
-GROUP BY Region
-"""
-
-
-def transfrom_df(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Transformation function
-    """
-    # Million -> Billion
-    # df["GDP"] = df["GDP"].apply(lambda x: x.replace(",", ""))
-    # df["GDP"] = df["GDP"].apply(lambda x: round(float(x) / 1000, 2))
-
-    # df["GDP"] = df["GDP"].apply(lambda x: round(float(x.replace(",", "")) / 1000, 2))
-    # df["GDP"] = (df["GDP"].replace(",", "", regex=True).astype(float) / 1000).round(2)
-    df["GDP"] = (df["GDP"].str.replace(",", "").astype(float) / 1000).round(2)
-    # df["GDP"] = (
-    #     pd.to_numeric(df["GDP"].str.replace(",", ""), errors="coerce")
-    #     .div(1000)
-    #     .round(2)
-    # )
-
-    # Sort by GDP
-    df = df.sort_values(by="GDP", ascending=False)
-
-    # Rename GDP column to GDP_USD_billion
-    df.rename(columns={"GDP": "GDP_USD_billion"}, inplace=True)
-
-    return df
+from modules.query_helper import print_top5_avg_gdp_by_region_sql
 
 
 def main():
@@ -64,36 +11,21 @@ def main():
     logger.print_separator()
     logger.info("Starting the ETL process")
 
-    # Extract
     with LogExecutionTime("Extract"):
-        csv_importer = CsvFileImporter(INPUT_FILE_PATH)
-        df = csv_importer.import_data()
+        importer = CsvFileImporter(CSV_INPUT_FILE_PATH)
+        df = importer.import_data()
 
-    # Transform
     with LogExecutionTime("Transform"):
-        df = transfrom_df(df)
+        df = transform_gdp(df)
+        df = rename_columns(df, "GDP", "GDP_USD_billion")
 
-    # Load
     with LogExecutionTime("Load"):
-        sqlite_exporter = SqliteExporter(DB_PATH, table_name=TABLE_NAME)
-        sqlite_exporter.export_data(df)
+        exporter = SqliteExporter(DB_PATH, table_name=TABLE_NAME)
+        exporter.export_data(df)
 
     logger.info("ETL process completed successfully")
 
-    # Query
-    print("Top 5 Average GDP by Region:")
-
-    df_groupby_top5 = df.groupby("Region").head(5)
-    avg_gdp = df_groupby_top5.groupby("Region")["GDP_USD_billion"].mean()
-    for region, gdp in avg_gdp.items():
-        print(f"{region:<15} {gdp:.2f}")
-
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute(QUERY_2)
-    for row in cursor:
-        print(f"{row[0]:<15} {row[1]:.2f}")
-    conn.close()
+    print_top5_avg_gdp_by_region_sql(DB_PATH, TABLE_NAME)
 
 
 if __name__ == "__main__":

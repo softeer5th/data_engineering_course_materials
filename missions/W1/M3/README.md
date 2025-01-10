@@ -16,7 +16,7 @@ Common analysis use cases are as follows:
 - [GDP ETL Project](#gdp-etl-project)
   - [Business Requirements](#business-requirements)
     - [Contents](#contents)
-  - [Definition of ETL Process](#definition-of-etl-process)
+  - [ETL Process Overview](#etl-process-overview)
     - [1. Extract](#1-extract)
     - [2. Transform](#2-transform)
     - [3. Load](#3-load)
@@ -24,8 +24,10 @@ Common analysis use cases are as follows:
     - [ETL Process](#etl-process)
     - [Modules](#modules)
       - [**`importer.py`**](#importerpy)
+      - [**`transformer.py`**](#transformerpy)
       - [**`exporter.py`**](#exporterpy)
       - [**`logger.py`**](#loggerpy)
+      - [**`query_helper.py`**](#query_helperpy)
     - [Utils](#utils)
       - [**`create_country_region_table.py`**](#create_country_region_tablepy)
       - [**`create_large_data_csv.py`**](#create_large_data_csvpy)
@@ -35,11 +37,15 @@ Common analysis use cases are as follows:
   - [Parallel/Distributed Processing](#paralleldistributed-processing)
     - [Steps](#steps)
 
-## Definition of ETL Process
+## ETL Process Overview
 
 ### 1. Extract
-- Parse html or read csv file.
-- After extraction, the data should follow the format: 
+- Move data from external system to workspace
+- This process will be abstracted in `importer.py` along with parsing process.
+
+### 2. Transform
+- Prasing raw data to structured format
+  - After parsing, the data should follow the format:
     ```json
     [
         {
@@ -47,11 +53,10 @@ Common analysis use cases are as follows:
             "GDP": "30,337,162",
             "Region": "North America"
         },
-        ...
+        // ...
     ]
     ```
-
-### 2. Transform
+  - This process will be abstracted in `importer.py` along with extracting process.
 - Transform GDP value
   1. Convert GDP value string to float
   2. Convert GDP value to billion
@@ -64,7 +69,7 @@ Common analysis use cases are as follows:
             "GDP":30337.16,
             "Region":"North America"
         },
-        ...
+        // ...
     ]
     ```
 
@@ -85,7 +90,7 @@ Common analysis use cases are as follows:
 ### Modules
 
 #### **`importer.py`**
-Extracts data from Wikipedia and saves it to a JSON file.  
+Extracts data from data source and parse it to structured format.  
     
 Supported Data Source:
 - Wikipedia
@@ -98,6 +103,15 @@ Seperate Interface and Implementation to support multiple data source.
     - `WikiWebImporter`
   - `FileImporterInterface`
     - `CsvFileImporter`
+
+`ImporterInterface` defines the interface for all importers.
+`WebImporterInterface` and `FileImporterInterface` defines how to extract data from data source.
+`WikiWebImporter` and `CsvFileImporter` defines how to parse data from data source.
+
+---
+
+#### **`transformer.py`**
+Functions for transforming data.
 
 ---
 
@@ -121,6 +135,11 @@ Logs the data to a file.
 Supported Log Level:
 - info
 - error
+
+---
+
+#### **`query_helper.py`**
+Functions for querying data.
 
 ---
 
