@@ -5,12 +5,11 @@ import json # to json file
 import datetime # logging
 import sqlite3 # DB
 import re
-import datetime
 import logging
 from functools import wraps
 from itertools import islice
 import os
-
+from io import StringIO
 # logger setting
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -210,7 +209,7 @@ class Extract:
             url (str)
         '''
         # 첫 번째 테이블을 가져옵니다 (여러 테이블이 있을 수 있으므로 인덱스로 선택)
-        df = pd.read_html(url, attrs={"class": "wikitable"})[0]
+        df = pd.read_html(StringIO(url), attrs={"class": "wikitable"})[0]
          
         # MultiIndex 생성
         columns = [

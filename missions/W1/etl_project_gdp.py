@@ -5,12 +5,11 @@ import json # to json file
 import datetime # logging
 import sqlite3 # DB
 import re
-import datetime
 import logging
 from functools import wraps
 from itertools import islice
 import os
-
+from io import StringIO
 # logger setting
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -218,7 +217,7 @@ class Extract:
         Args: url: str
         '''
         # 첫 번째 테이블을 가져옵니다 (여러 테이블이 있을 수 있으므로 인덱스로 선택)
-        df = pd.read_html(url, attrs={"class": "wikitable"})[0]
+        df = pd.read_html(StringIO(url), attrs={"class": "wikitable"})[0]
          
         # MultiIndex 생성
         columns = [
@@ -301,7 +300,7 @@ class Transform:
         GDP_data.sort_values(by=('GDP_USD_bilion'), ascending=False, inplace=True)
         
         # 소수점 둘째자리까지 보이기   
-        GDP_data['GDP_USD_bilion'] = GDP_data['GDP_USD_bilion'].apply(lambda x: round(x / 1000, 2))
+        GDP_data['GDP_USD_bilion'] = (GDP_data['GDP_USD_bilion'] / 1000).round(2)
         
         return GDP_data      
 
@@ -424,7 +423,7 @@ def visualze_GDP_DESC_Over_100(gdp_data: dict):
     df = pd.DataFrame(gdp_data)
     df.sort_values('GDP_USD_bilion', ascending=False, inplace=True)
     df = df[df['GDP_USD_bilion'] >= 100]
-    df['GDP_USD_bilion'] = df['GDP_USD_bilion'].apply(lambda x: round(x / 1000, 2))
+    df['GDP_USD_bilion'] = df['GDP_USD_bilion'].round(2)
     
     print(df)
 
@@ -462,7 +461,7 @@ def visualize_avg_GDP_by_Region(gdp_data:dict):
     )
     
     # Step 5: Region 별 상위 5개 GDP 평균 구하기
-    region_avg_gdp = top_5_by_region.groupby("Region")["GDP_USD_bilion"].mean().reset_index().apply(lambda x: round(x, 2))
+    region_avg_gdp = top_5_by_region.groupby("Region")["GDP_USD_bilion"].mean().reset_index().round(2)
     region_avg_gdp.columns = ["Region", "@5_GDP_Avg"]
     
     print(region_avg_gdp)
