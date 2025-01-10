@@ -1,9 +1,12 @@
 import json
+import re
 import sqlite3
 from typing import Callable
+
 import requests
 from bs4 import BeautifulSoup, element
-import re
+
+FOOTNOTE_PATTERN = re.compile(r"\[[^\]]*\]")
 
 
 def _fetch_page(url: str) -> str | None:
@@ -58,7 +61,7 @@ def _strip_footnotes(text: str) -> str:
     :param text: str: Text.
     :return: str: Text without footnotes.
     """
-    return re.sub(r"\[[^\]]*\]", "", text)
+    return FOOTNOTE_PATTERN.sub("", text)
 
 
 def _get_imf_data(gdp_table: BeautifulSoup) -> dict:
