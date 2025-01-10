@@ -3,7 +3,7 @@ from typing import List, Dict, Optional
 import sqlite3
 
 from missions.W1.M3.utils.load.loader import (
-    insert_one_gdp_data,
+    bulk_insert_gdp_data,
     create_gdp_table,
 )
 from missions.W1.M3.log.log import Logger
@@ -26,7 +26,8 @@ def loader_main(db_path: str, sql_path: str, transformed_data: List[Dict]) -> Op
                 logger.info("DB 테이블 생성 성공")
             
             # 데이터 삽입
-            res = insert_one_gdp_data(conn, transformed_data)
+            # TODO: bulk insert지만 chunk 단위로 나눠서 insert하여 로깅 및 에러 핸들링이 가능하도록 개선 가능
+            res = bulk_insert_gdp_data(conn, transformed_data)
             if res is None:
                 raise ValueError("gdp 테이블에 데이터 삽입 실패")
             else:

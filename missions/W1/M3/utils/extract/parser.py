@@ -23,9 +23,7 @@ def fetch_wikipedia_page(url: str) -> Optional[BeautifulSoup]:
     try:
         logger.info('페이지 요청 시작')
         r = requests.get(url)
-        if r.status_code != 200:
-            logger.info(f'페이지를 찾을 수 없습니다 :status_code: {r.status_code}')
-            raise ValueError("No page found")
+        r.raise_for_status() # 로 대체 가능.
         logger.info('페이지 요청 완료')
         logger.info('페이지 파싱 시작')
         soup = BeautifulSoup(r.text, 'html.parser')
@@ -112,14 +110,7 @@ def get_clean_tbody(table: Tag) -> Optional[Tag]:
             logger.info('테이블 바디를 찾을 수 없습니다.') 
             raise ValueError("No tbody found")
         
-        for tr in tbody.find_all('tr'): # static-row-header 개선.
-            tds = tr.find_all('td')
-            # 빈 리스트가 아니고, 첫 번째 td가 "World"를 포함하고 있으면 삭제 후 break
-            if tds and "World" in tr.find_all('td')[0]:
-                logger.info(f"최종 tr 스킵: {tr.text.strip()}")
-                tr.decompose()
-                logger.info(f"tr 스킵 완료")
-                break
+        for tr in tbody.find_all('tr', class_=['static-row-header']): # static-row-header 개선.
             logger.info(f"tr 스킵 중... {tr.text.strip()}")
             tr.decompose()
 
@@ -133,7 +124,7 @@ def get_clean_tbody(table: Tag) -> Optional[Tag]:
         logger.info(f'Full message: {full_err_msg}')
         logger.info(f'Short message: {err_msg}')
         return None
-    
+
 def get_parsed_data(tbody: Tag, thead: Tag = None) -> Optional[List[Dict]]:
     """
     Parse tbody and return parsed data.
@@ -189,13 +180,14 @@ def dump_json(data: list, file_path: str) -> Optional[bool]:
     else return None.
     """
     try:
-        logger.info(f'JSON으로 변환 시작 / 경로: {file_path}')
+        logger.info(f'JSON으로 변환 시작 / 경로: {file_path}') # jsonl
         with open(file_path, 'w') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
         logger.info('JSON으로 변환 완료')
         return True
 
     except Exception as e:
+        # MARK: exception 클래스를 만들고, 파라메터로 메세지 넣기.
         full_err_msg = traceback.format_exc(chain=True)
         err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'JSON 변환 중 오류: {e}')
