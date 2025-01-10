@@ -3,7 +3,6 @@ import requests
 import pandas as pd
 from datetime import datetime
 import pycountry_convert
-import pycountry
 import sqlite3
 
 # datetime을 활용하여 구현한 log 파일을 찍는 클래스

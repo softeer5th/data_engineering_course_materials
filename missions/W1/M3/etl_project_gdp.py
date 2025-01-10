@@ -3,11 +3,8 @@ import requests
 import pandas as pd
 from datetime import datetime
 import pycountry_convert
-import pycountry
 import time
 from multiprocessing import Pool
-from multiprocessing import set_start_method
-import multiprocessing as mp
 import numpy as np
 import os
 
