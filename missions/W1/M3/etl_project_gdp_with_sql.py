@@ -16,20 +16,20 @@ def etl_project_gdp_with_sql():
         res = extractor_main(gdp_html_url, json_path)
         if res is None:
             raise ValueError("Extract 실패")
-        else:
-            logger.info('Extract 성공')
+        
+        logger.info('Extract 성공')
 
         transformed_data = transformer_main(json_path)
         if transformed_data is None:
             raise ValueError("Transform 실패")
-        else:
-            logger.info('Transform 성공')
+        
+        logger.info('Transform 성공')
 
         res = loader_main(db_path, sql_path, transformed_data)
         if res is None:
             raise ValueError("Load 실패")
-        else:
-            logger.info('Load 성공')
+        
+        logger.info('Load 성공')
 
     except Exception as e:
         logger.info(f'에러 발생: {e}')
