@@ -1,4 +1,4 @@
-from processor import extractor, transformer, io_handler, sqlite_loader
+from processor import extractor, io_handler, sqlite_loader, transformer
 from utils.logging import Logger
 
 # Wikipedia URL

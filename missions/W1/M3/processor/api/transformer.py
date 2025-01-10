@@ -1,6 +1,7 @@
 from functools import partial
-import pandas as pd
 from multiprocessing import Pool
+
+import pandas as pd
 
 EXTRACTED_DATA_PATH = "data/api/extracted/gdp_%d.parquet"
 

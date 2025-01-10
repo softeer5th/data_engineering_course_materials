@@ -1,5 +1,6 @@
-import pandas as pd
 import sqlite3
+
+import pandas as pd
 
 
 def load(df: pd.DataFrame, db_path: str, table_name: str) -> None:

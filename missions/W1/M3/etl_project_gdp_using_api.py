@@ -2,9 +2,7 @@ from processor.api import extractor, transformer
 from utils.logging import Logger
 
 # API URL
-API_URL = (
-    "https://www.imf.org/external/datamapper/api/v1/NGDPD"
-)
+API_URL = "https://www.imf.org/external/datamapper/api/v1/NGDPD"
 # Log file path
 LOG_FILE_PATH = "log/etl_project_log_using_api.txt"
 # Extracted data directory

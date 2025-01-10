@@ -1,4 +1,4 @@
-from processor import extractor, transformer, io_handler, json_loader
+from processor import extractor, io_handler, json_loader, transformer
 from utils.logging import Logger
 
 # Wikipedia URL

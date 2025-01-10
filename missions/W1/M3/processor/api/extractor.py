@@ -1,6 +1,7 @@
+import multiprocessing as mp
+
 import pandas as pd
 import requests
-import multiprocessing as mp
 
 
 def _extract(api_url: str, year: int, save_dir: str) -> None:
