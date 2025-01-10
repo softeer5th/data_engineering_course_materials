@@ -54,7 +54,7 @@ def get_gdp_by_country():
     # DataFrame 생성 시 바로 DataFrame에 리스트 컴프리헨션 적용
     df = pd.DataFrame(
         [[col.text.strip() for col in row.find_all(['th', 'td'])][:3] for row in rows],
-        columns=['Country', 'GDP_USD_billion', 'year']
+        columns=['Country', 'GDP_USD_million', 'year']
     )
 
     # 첫 번째 헤더 행 및 불필요한 행 제거
@@ -87,8 +87,8 @@ def save_rawfile():
 
 # '-' 처리 함수
 def remove_bar(df):
-    mask = df['GDP_USD_billion'] == '—' 
-    df.loc[mask, ['GDP_USD_billion', 'year']] = None  #GDP가 '-'라면 GDP와 year은 None으로 처리
+    mask = df['GDP_USD_million'] == '—' 
+    df.loc[mask, ['GDP_USD_million', 'year']] = None  #GDP가 '-'라면 GDP와 year은 None으로 처리
     print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 데이터 결측치 처리", file=log_file)
     return df
 
@@ -100,10 +100,11 @@ def remove_wiki_annotations(df):
 
 #단위 변경 함수(million -> billion)
 def million_to_billion(df):
-    df['GDP_USD_billion'] = (
-        df['GDP_USD_billion'].str.replace(',', '', regex=False)  # 쉼표 제거
+    df.insert(
+        df.columns.get_loc('GDP_USD_million') + 1,  'GDP_USD_billion',  # 'GDP_USD_million' 열의 바로 다음 위치에 'GDP_USD_billion' 컬럼 추가
+        df['GDP_USD_million'].str.replace(',', '', regex=False)  # 쉼표 제거
         .astype(float, errors='ignore')  # 문자열을 float로 변환
-        .div(1000).round(2)  # billion 단위로 변환, 소수점 2자리까지
+        .div(1000).round(2)  # billion 단위로 변환
     )
     print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 데이터 단위 변경", file=log_file)
     return df
