@@ -20,23 +20,11 @@ if __name__ == "__main__":
     # Extract data
     logger.info("Extracting data...")
     try:
-        for year in YEAR_RANGE:
-            extractor._extract(API_URL, year, EXTRACTED_DATA_DIR)
+        extractor.extract(API_URL, 1980, EXTRACTED_DATA_DIR)
         logger.info("Data extracted successfully.")
     except Exception as e:
         logger.error(f"Error occurred during data extraction: {e}")
         logger.info("======== ETL Process Aborted ========")
-        exit()
+        raise e
 
-    # Transform data
-    # logger.info("Transforming data...")
-    # try:
-    #     transformer.analyze_gdp_data(EXTRACTED_DATA_DIR, 2024)
-    #     logger.info("Data transformed successfully.")
-    # except Exception as e:
-    #     logger.error(f"Error occurred during data transformation: {e}")
-    #     logger.info("======== ETL Process Aborted ========")
-    #     exit()
-
-    # End ETL process
     logger.info("======== ETL Process Completed ========")
