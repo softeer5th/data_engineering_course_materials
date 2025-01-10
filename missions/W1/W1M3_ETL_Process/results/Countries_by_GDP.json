@@ -1,7 +1,7 @@
 [
     {
         "Country":"World",
-        "GDP_USD_billion":"115,494,312",
+        "GDP_USD_billion":"1115,494,312",
         "Year":"2025"
     },
     {
@@ -125,13 +125,13 @@
         "Year":"2025"
     },
     {
-        "Country":"Ireland",
-        "GDP_USD_billion":"587,225",
+        "Country":"Argentina",
+        "GDP_USD_billion":"604,201",
         "Year":"2025"
     },
     {
-        "Country":"Argentina",
-        "GDP_USD_billion":"574,201",
+        "Country":"Ireland",
+        "GDP_USD_billion":"587,225",
         "Year":"2025"
     },
     {
@@ -186,7 +186,12 @@
     },
     {
         "Country":"Bangladesh",
-        "GDP_USD_billion":"451,856",
+        "GDP_USD_billion":"455,856",
+        "Year":"2025"
+    },
+    {
+        "Country":"Czech Republic",
+        "GDP_USD_billion":"452,233",
         "Year":"2025"
     },
     {
@@ -230,11 +235,6 @@
         "Year":"2025"
     },
     {
-        "Country":"Czech Republic",
-        "GDP_USD_billion":"360,233",
-        "Year":"2025"
-    },
-    {
         "Country":"Finland",
         "GDP_USD_billion":"319,989",
         "Year":"2025"
@@ -242,6 +242,11 @@
     {
         "Country":"Portugal",
         "GDP_USD_billion":"319,934",
+        "Year":"2025"
+    },
+    {
+        "Country":"Hungary",
+        "GDP_USD_billion":"312,619",
         "Year":"2025"
     },
     {
@@ -275,18 +280,18 @@
         "Year":"2025"
     },
     {
-        "Country":"Hungary",
-        "GDP_USD_billion":"245,619",
+        "Country":"Qatar",
+        "GDP_USD_billion":"240,217",
         "Year":"2025"
     },
     {
-        "Country":"Qatar",
-        "GDP_USD_billion":"226,217",
-        "Year":"2025"
+        "Country":"Ethiopia",
+        "GDP_USD_billion":"230,031",
+        "Year":"2024"
     },
     {
         "Country":"Nigeria",
-        "GDP_USD_billion":"194,955",
+        "GDP_USD_billion":"199,720",
         "Year":"2025"
     },
     {
@@ -310,11 +315,6 @@
         "Year":"\u2014"
     },
     {
-        "Country":"Ethiopia",
-        "GDP_USD_billion":"145,031",
-        "Year":"2024"
-    },
-    {
         "Country":"Slovakia",
         "GDP_USD_billion":"142,617",
         "Year":"2024"
@@ -322,6 +322,16 @@
     {
         "Country":"Dominican Republic",
         "GDP_USD_billion":"126,238",
+        "Year":"2024"
+    },
+    {
+        "Country":"Uzbekistan",
+        "GDP_USD_billion":"125,511",
+        "Year":"2024"
+    },
+    {
+        "Country":"Bulgaria",
+        "GDP_USD_billion":"123,425",
         "Year":"2024"
     },
     {
@@ -345,23 +355,13 @@
         "Year":"2024"
     },
     {
-        "Country":"Uzbekistan",
-        "GDP_USD_billion":"112,653",
-        "Year":"2024"
-    },
-    {
         "Country":"Guatemala",
         "GDP_USD_billion":"112,369",
         "Year":"2024"
     },
     {
         "Country":"Oman",
-        "GDP_USD_billion":"109,993",
-        "Year":"2024"
-    },
-    {
-        "Country":"Bulgaria",
-        "GDP_USD_billion":"108,425",
+        "GDP_USD_billion":"110,993",
         "Year":"2024"
     },
     {
@@ -461,7 +461,7 @@
     },
     {
         "Country":"Macau",
-        "GDP_USD_billion":"53,447",
+        "GDP_USD_billion":"55,447",
         "Year":"2024"
     },
     {
@@ -560,6 +560,11 @@
         "Year":"2024"
     },
     {
+        "Country":"Sudan",
+        "GDP_USD_billion":"30,873",
+        "Year":"2024"
+    },
+    {
         "Country":"Zambia",
         "GDP_USD_billion":"29,872",
         "Year":"2024"
@@ -572,11 +577,6 @@
     {
         "Country":"Trinidad and Tobago",
         "GDP_USD_billion":"28,365",
-        "Year":"2024"
-    },
-    {
-        "Country":"Sudan",
-        "GDP_USD_billion":"26,865",
         "Year":"2024"
     },
     {
@@ -700,6 +700,11 @@
         "Year":"2024"
     },
     {
+        "Country":"Brunei",
+        "GDP_USD_billion":"15,988",
+        "Year":"2024"
+    },
+    {
         "Country":"North Macedonia",
         "GDP_USD_billion":"15,873",
         "Year":"2024"
@@ -707,11 +712,6 @@
     {
         "Country":"Kyrgyzstan",
         "GDP_USD_billion":"15,770",
-        "Year":"2024"
-    },
-    {
-        "Country":"Brunei",
-        "GDP_USD_billion":"15,510",
         "Year":"2024"
     },
     {
