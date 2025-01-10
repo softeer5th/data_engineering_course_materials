@@ -97,34 +97,3 @@ def transform(data_path: str, year: int) -> pd.DataFrame:
 
     for p in processes:
         p.join()
-
-
-"""
-인터페이스 정의
-    transform
-        특정 연도의 데이터를 가공하여 DataFrame 객체로 반환
-
-        여러 _worker를 호출하여 결과를 종합한다.
-            _worker 호출 시 parquet 파일들의 연도를 직접 확인해야 한다.
-            data_path 내부의 parquet 파일들의 연도 범위를 구해야 한다.
-
-내부 함수 정의
-    _worker
-        하나의 _worker는 k개의 국가에 대한 처리를 담당한다.
-        물론 국가별로 따로 연산을 수행해야 한다.
-
-    _process_country
-        단일 국가에 대해 특정 year에 대한 연산을 수행한다.
-            형 변환, 결측치 처리
-
-    _read_country_chunk
-        여러 parquet 파일에서 특정 범위의 행을 읽는다.
-        어차피 여러 프로세스가 병렬적으로 실행되고 있으므로, I/O에 대한 추가적인 병렬 처리는 필요 없다.
-
-    _read_parquet_chunk
-        단일 parquet 파일에서 특정 범위의 행을 읽는다.
-        
-    _process_country
-        단일 국가에 대해 특정 year에 대한 연산을 수행한다.
-            형 변환, 결측치 처리
-"""
