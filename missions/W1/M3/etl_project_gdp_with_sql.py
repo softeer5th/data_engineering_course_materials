@@ -38,29 +38,28 @@ def create_logfile():
 def get_gdp_by_country():
     url = "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29"
 
-    response = requests.get(url)
+    response = requests.get(url) #응답 성공 시 html 텍스트(문자열 형태) 가져롬
     if response.status_code == 200:
         html = response.text
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, 'html.parser') #파싱된 soup객체로 변환
         print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "웹에서 HTTP응답 받음", file=log_file)
     else:
         print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "웹에서 HTTP응답 받지 못함. 응답 코드: {0}".format(response.status_code), file=log_file)
         print(response.status_code)
-
-    response = requests.get(url).text #응답 성공 시 html 텍스트(문자열 형태) 가져롬
-    soup = BeautifulSoup(response, "html.parser") #파싱된 soup객체로 변환
+        return None
 
     table = soup.select_one('table.wikitable') #선택자로 table찾기
     rows = table.find_all('tr')
-    data = []
-    for row in rows:
-        cols = row.find_all(['th', 'td']) #헤더와 데이터 모두 가져오기
-        cols = [col.text.strip() for col in cols][:3] #텍스트만 추출하여 리스트로 변환
-        data.append(cols[:3])
-        
-    df = pd.DataFrame(data[3:], columns=['Country', 'GDP_USD_billion', 'year'])
-    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Extract) raw gdp 데이터 추출", file=log_file)
 
+    # DataFrame 생성 시 바로 DataFrame에 리스트 컴프리헨션 적용
+    df = pd.DataFrame(
+        [[col.text.strip() for col in row.find_all(['th', 'td'])][:3] for row in rows],
+        columns=['Country', 'GDP_USD_billion', 'year']
+    )
+
+    # 첫 번째 헤더 행 및 불필요한 행 제거
+    df = df[3:].reset_index(drop=True)
+    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Extract) raw GDP 데이터 추출", file=log_file)
     return df
 
 ### 국가별 Region 추출 함수
@@ -88,34 +87,26 @@ def save_rawfile():
 
 # '-' 처리 함수
 def remove_bar(df):
-    for i in range(len(df)):
-        if df.loc[i]['GDP_USD_billion'] == '—': # GDP가 '-'라면 GDP와 year은 None으로 처리
-            df.loc[i, 'GDP_USD_billion'] = None
-            df.loc[i, 'year'] = None
+    mask = df['GDP_USD_billion'] == '—' 
+    df.loc[mask, ['GDP_USD_billion', 'year']] = None  #GDP가 '-'라면 GDP와 year은 None으로 처리
     print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 데이터 결측치 처리", file=log_file)
     return df
 
 #위키피디아 주석 제거 함수
 def remove_wiki_annotations(df):
-    def remove(text):
-        if pd.isna(text):
-            return text
-        return re.sub(r'\[.*?\]', '', text).strip()  # [...] 형태의 주석 제거
-    df = df.applymap(remove)
-    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 불필요한 주석 제거", file=log_file)       
+    df['year'] = df['year'].str.replace(r'\[.*?\]', '', regex=True).str.strip()  # 'year' 열에만 적용
+    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 불필요한 주석 제거", file=log_file)
     return df
 
+
 #단위 변경 함수(million -> billion)
-def million_to_billion(gdp):
-    def remove(gdp):
-        try:
-            gdp = gdp.replace(',', '')
-            gdp = round(int(gdp) / 1000, 2) #소수점 2자리까지
-            return gdp 
-        except Exception:
-            return gdp
-    df['GDP_USD_billion'] = df['GDP_USD_billion'].apply(remove)
-    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 데이터 단위 변경", file=log_file)       
+def million_to_billion(df):
+    df['GDP_USD_billion'] = (
+        df['GDP_USD_billion'].str.replace(',', '', regex=False)  # 쉼표 제거
+        .astype(float, errors='ignore')  # 문자열을 float로 변환
+        .div(1000).round(2)  # billion 단위로 변환, 소수점 2자리까지
+    )
+    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Transform) 데이터 단위 변경", file=log_file)
     return df
 
 #----------------------------------------------------------------
@@ -141,14 +132,11 @@ def connect_and_load(df):
     try:
         with sqlite3.connect("missions/W1/M3/World_Economies.db") as conn: #db와 연결 - 없으면 새로 생성됨
             print(f"Opened SQLite database with version {sqlite3.sqlite_version} successfully.")
+            df.to_sql('Countries_by_GDP', conn, if_exists='replace') #이미 있던 테이블 제거 후 저장
+            print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Load) 변환된 데이터 Load", file=log_file)       
 
     except sqlite3.OperationalError as e:
         print("Failed to open database:", e)
-
-    cursor = conn.cursor()
-    df.to_sql('Countries_by_GDP', conn, if_exists='replace') #이미 있던 테이블 제거 후 저장
-    print(datetime.datetime.now().strftime('%Y-%B-%d-%H-%M-%S,'), "(Load) 변환된 데이터 Load", file=log_file)       
-
 
 #---------------------------------------------------------------
 #메인
@@ -192,7 +180,7 @@ sql = """SELECT * FROM Countries_by_GDP
 WHERE GDP_USD_billion >= 100
 """
 print(sendQuery(sql))
-#
+
 ##### 각 Region별로 top5 국가의 GDP 평균을 구해서 화면에 출력해야 합니다.
 sql = """
 SELECT region, AVG(GDP_USD_billion) AS avg_gdp_top5
@@ -203,4 +191,4 @@ FROM (
 ) AS ranked
 WHERE rnk <= 5
 GROUP BY region;"""
-print(sendQuery(sql)) 
+print(sendQuery(sql))
