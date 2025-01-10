@@ -15,13 +15,17 @@ missions
 │     └─ M3
 │        ├─ analys_gdp.ipynb
 │        ├─ data
+│        │  ├─ Countries_by_GDP.json
 │        │  ├─ cultural-geo-mapper.json
+│        │  ├─ imf_NGDPD.jsonl
 │        │  └─ iso-geo-mapper.json
 │        ├─ etl_project_gdp.py
+│        ├─ etl_project_gdp_api.py
 │        ├─ etl_project_gdp_with_sql.py
-│        └─ log
-│           ├─ etl_project_log.txt
-│           └─ log.py
+│        ├─ log
+│        │  ├─ etl_project_log.txt
+│        │  └─ log.py
+│        └─ refactor.ipynb
 └─ slides
    ├─ W1 Introduction to Data Engineering.pdf
    ├─ W2 Introduction to Big Data.pdf
