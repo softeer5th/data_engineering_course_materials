@@ -1,4 +1,5 @@
 from multiprocessing import Queue
+# empty : poll 할때 buffer가 제대로 도착했는지 여부는 확인하지 않는듯 하다.
 
 def put(color : str, q : Queue, number : int):
     q.put(color)
