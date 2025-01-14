@@ -15,6 +15,11 @@ black = {extras = ["jupyter"], version = "^24.10.0"}
 beautifulsoup4 = "^4.12.3"
 pyarrow = "^18.1.0"
 wordcloud = "^1.9.4"
+google-api-python-client = "^2.158.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.1"
+konlpy = "^0.6.0"
+spacy = "^3.8.3"
 
 
 [tool.poetry.group.dev.dependencies]
