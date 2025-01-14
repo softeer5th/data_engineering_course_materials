@@ -85,7 +85,7 @@ def _parse_html(url: str, raw_html: str)-> Optional[dict]:
         try:
             review_data.append(_parse_review(review))
         except:
-            logger.info(f'[PARSE] 웹페이지 파싱 중 실패: idx: {review})')
+            logger.info(f'[PARSE] 웹페이지 파싱 중 실패: idx: {idx} {review})')
             return None
         
     end_time = time.time()
@@ -133,19 +133,26 @@ def main():
     save_path = 'missions/W2/M5/data/blind_hyundai_motors.json'
 
     MAX_TOTAL_LINE = 30
+    MAX_RETRIES = 5
 
     logger.info(f'[EXTRACT] 추출 시작: 목표 row 수: {MAX_TOTAL_LINE}')
     start_time = time.time()
 
     page_no = 1
     total_rows = 0
-    while total_rows <= MAX_TOTAL_LINE:
+    retries = 0
+    while total_rows < MAX_TOTAL_LINE and retries < MAX_RETRIES:
         url = base_url.format('현대자동차', page_no)
+
         raw_html = _fetch_web(url)
         review_data = _parse_html(url, raw_html)
-        rows = _save2json_append(review_data, save_path)
+        if review_data is None:
+            retries += 1
+            continue
 
+        rows = _save2json_append(review_data, save_path)
         if not rows:
+            retries += 1
             continue
         page_no += 1
         total_rows += rows
