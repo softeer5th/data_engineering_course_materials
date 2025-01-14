@@ -14,6 +14,7 @@ matplotlib = "^3.10.0"
 black = {extras = ["jupyter"], version = "^24.10.0"}
 beautifulsoup4 = "^4.12.3"
 pyarrow = "^18.1.0"
+wordcloud = "^1.9.4"
 
 
 [tool.poetry.group.dev.dependencies]
