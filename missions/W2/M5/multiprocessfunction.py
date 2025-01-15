@@ -29,14 +29,11 @@ def splitDataFrame(df:pd.DataFrame, cnt:int) -> list:
     return res
 
 def countWord(df:pd.DataFrame, target:int)->dict:
-    # print(f'{mp.current_process().name} started')
     # split
-    # word_df = df[df['target'] == target].loc[:,'text'].str.split()
     word_df = df[df['target'] == target].loc[:,'text'].apply(mySplit)
     # 소문자
     word_exp_df = word_df.explode().str.lower()
-    # 기호 제거, strip
-    # dict? -> count 해서 더하기
+    # to dict
     word_cnt_dict = word_exp_df.value_counts().to_dict()
     # 쓸데없는 단어 제거
     for s_word in STOPWORDS:
