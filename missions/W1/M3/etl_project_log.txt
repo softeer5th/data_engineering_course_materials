@@ -142,3 +142,10 @@
 2025-January-10-14-17-44, (Transform) 불필요한 주석 제거
 2025-January-10-14-17-44, (Transform) 데이터 단위 변경
 2025-January-10-14-17-44, (Load) 변환된 데이터 Load
+2025-January-15-16-41-01, 웹에서 HTTP응답 받음
+2025-January-15-16-41-01, (Extract) raw GDP 데이터 추출
+2025-January-15-16-41-01, (Extract) raw region 데이터 추출
+2025-January-15-16-41-01, raw 데이터 로드: missions/W1/M3/Countries_by_GDP.json
+2025-January-15-16-41-01, (Transform) 데이터 결측치 처리
+2025-January-15-16-41-01, (Transform) 불필요한 주석 제거
+2025-January-15-16-41-01, (Transform) 데이터 단위 변경
