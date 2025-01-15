@@ -10,7 +10,7 @@ RUN pip install jupyter==1.1.1
 WORKDIR /M6
 
 # hello.py와 userdata.txt를 컨테이너에 복사
-# COPY ../M5 /M6/src
-# COPY hello.py /M6/
+COPY /src /M6/src
+COPY hello.py /M6/
 
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root"]
