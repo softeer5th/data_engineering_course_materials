@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# 스테이징된 Python 파일들만 가져오기
+files=$(git diff --cached --name-only --diff-filter=d | grep '\.py$')
+
+if [ -z "$files" ]; then
+    echo "No Python files to check"
+    exit 0
+fi
+
+echo "Starting code checks..."
+
+# 각 명령어의 실행 결과를 체크
+if ! poetry run isort $files; then
+    echo "isort failed"
+    exit 1
+fi
+
+if ! poetry run black $files; then
+    echo "black failed"
+    exit 1
+fi
+
+# 수정된 파일들 다시 스테이징
+git add $files
+echo "Code checks completed successfully"
+
+exit 0
