@@ -1,3 +1,7 @@
+"""
+현재 사용하지 않는 코드입니다.
+"""
+
 import multiprocessing as mp
 from multiprocessing.sharedctypes import Synchronized
 from multiprocessing.synchronize import Event

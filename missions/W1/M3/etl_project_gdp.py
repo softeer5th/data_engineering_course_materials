@@ -1,3 +1,4 @@
+import pandas as pd
 from processor import extractor, io_handler, json_loader, transformer
 from utils.logging import Logger
 
@@ -40,6 +41,44 @@ def get_user_choice():
             print("Invalid input. Please enter a number.")
 
 
+def extract() -> bool:
+    logger.info("Extracting data...")
+    try:
+        extracted_data = extractor.extract(WIKI_URL)
+        io_handler.save_dict_to_json(extracted_data, EXTRACTED_DATA_PATH)
+        logger.info("Data extracted successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data extraction: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        return False
+    return True
+
+
+def transform() -> pd.DataFrame | None:
+    logger.info("Transforming data...")
+    try:
+        df = io_handler.open_json_as_df(EXTRACTED_DATA_PATH)
+        df = transformer.transform(df)
+        logger.info("Data transformed successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data transformation: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        return None
+    return df
+
+
+def load(df: pd.DataFrame) -> bool:
+    logger.info("Loading data...")
+    try:
+        json_loader.load(df, PROCESSED_DATA_PATH)
+        logger.info("Data loaded successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data loading: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        return False
+    return True
+
+
 if __name__ == "__main__":
     # Initialize logger
     logger = Logger(LOG_FILE_PATH)
@@ -59,39 +98,17 @@ if __name__ == "__main__":
 
         if user_choice == 1 or user_choice == 3:
             # Extract data
-            logger.info("Extracting data...")
-            try:
-                extracted_data = extractor.extract(WIKI_URL)
-                io_handler.save_dict_to_json(
-                    extracted_data, EXTRACTED_DATA_PATH
-                )
-                logger.info("Data extracted successfully.")
-            except Exception as e:
-                logger.error(f"Error occurred during data extraction: {e}")
-                logger.info("======== ETL Process Aborted ========")
+            is_success = extract()
+            if not is_success:
                 continue
-
         if user_choice == 2 or user_choice == 3:
-
             # Transform data
-            logger.info("Transforming data...")
-            try:
-                df = io_handler.open_json_as_df(EXTRACTED_DATA_PATH)
-                df = transformer.transform(df)
-                logger.info("Data transformed successfully.")
-            except Exception as e:
-                logger.error(f"Error occurred during data transformation: {e}")
-                logger.info("======== ETL Process Aborted ========")
+            df = transform()
+            if df is None:
                 continue
-
             # Load data
-            logger.info("Loading data...")
-            try:
-                json_loader.load(df, PROCESSED_DATA_PATH)
-                logger.info("Data loaded successfully.")
-            except Exception as e:
-                logger.error(f"Error occurred during data loading: {e}")
-                logger.info("======== ETL Process Aborted ========")
+            is_success = load(df)
+            if not is_success:
                 continue
 
         # End ETL process

@@ -1,3 +1,4 @@
+import pandas as pd
 from processor import extractor, io_handler, sqlite_loader, transformer
 from utils.logging import Logger
 
@@ -42,6 +43,46 @@ def get_user_choice():
             print("Invalid input. Please enter a number.")
 
 
+def extract() -> bool:
+    logger.info("Extracting data...")
+    try:
+        extracted_data = extractor.extract(WIKI_URL)
+        io_handler.save_dict_to_sqlite(
+            extracted_data, DATABASE_PATH, EXTRACTED_DATA_TABLE
+        )
+        logger.info("Data extracted successfully.")
+    except Exception as e:
+        logger.error(f"Error occurred during data extraction: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        return False
+    return True
+
+
+def transform() -> pd.DataFrame | None:
+    logger.info("Transforming data...")
+    try:
+        df = io_handler.open_sqlite_as_df(DATABASE_PATH, EXTRACTED_DATA_TABLE)
+        df = transformer.transform(df)
+        logger.info("Data transformed successfully.")
+        return df
+    except Exception as e:
+        logger.error(f"Error occurred during data transformation: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        return None
+
+
+def load(df: pd.DataFrame) -> bool:
+    logger.info("Loading data...")
+    try:
+        sqlite_loader.load(df, DATABASE_PATH, PROCESSED_DATA_TABLE)
+        logger.info("Data loaded successfully.")
+        return True
+    except Exception as e:
+        logger.error(f"Error occurred during data loading: {e}")
+        logger.info("======== ETL Process Aborted ========")
+        return False
+
+
 if __name__ == "__main__":
     # Initialize logger
     logger = Logger(LOG_FILE_PATH)
@@ -61,41 +102,19 @@ if __name__ == "__main__":
 
         if user_choice == 1 or user_choice == 3:
             # Extract data
-            logger.info("Extracting data...")
-            try:
-                extracted_data = extractor.extract(WIKI_URL)
-                io_handler.save_dict_to_sqlite(
-                    extracted_data, DATABASE_PATH, EXTRACTED_DATA_TABLE
-                )
-                logger.info("Data extracted successfully.")
-            except Exception as e:
-                logger.error(f"Error occurred during data extraction: {e}")
-                logger.info("======== ETL Process Aborted ========")
-                exit()
+            is_success = extract()
+            if not is_success:
+                continue
 
         if user_choice == 2 or user_choice == 3:
             # Transform data
-            logger.info("Transforming data...")
-            try:
-                df = io_handler.open_sqlite_as_df(
-                    DATABASE_PATH, EXTRACTED_DATA_TABLE
-                )
-                df = transformer.transform(df)
-                logger.info("Data transformed successfully.")
-            except Exception as e:
-                logger.error(f"Error occurred during data transformation: {e}")
-                logger.info("======== ETL Process Aborted ========")
-                exit()
-
+            df = transform()
+            if df is None:
+                continue
             # Load data
-            logger.info("Loading data...")
-            try:
-                sqlite_loader.load(df, DATABASE_PATH, PROCESSED_DATA_TABLE)
-                logger.info("Data loaded successfully.")
-            except Exception as e:
-                logger.error(f"Error occurred during data loading: {e}")
-                logger.info("======== ETL Process Aborted ========")
-                exit()
+            is_success = load(df)
+            if not is_success:
+                continue
 
         # End ETL process
         logger.info("======== ETL Process Completed ========")
