@@ -1,6 +1,5 @@
 import pandas as pd
-import multiprocessing as mp
-from wordcloud import WordCloud, STOPWORDS
+from wordcloud import STOPWORDS
 
 def myFilter(s:str)-> str:
     if s[0] == '@':
