@@ -7,13 +7,14 @@ WORKDIR /app
 USER root
 
 # 시스템 패키지 설치
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt update && \
+    apt install -y --no-install-recommends \
     g++ \
-    openjdk-8-jdk \
+    default-jre-headless \
     curl \
-    && apt-get clean \
+    && apt clean \
     && rm -rf /var/lib/apt/lists/*
+
 
 # 사용자 권한으로 전환
 USER ${NB_UID}
@@ -22,10 +23,7 @@ USER ${NB_UID}
 COPY requirements.txt .
 
 # Python 패키지 설치
-RUN pip install --prefer-binary -r requirements.txt
-    
-# spacy 설치
-RUN conda install -y -c conda-forge spacy
+RUN pip install -r requirements.txt
 
 # 프로젝트 파일 복사
 COPY . .
