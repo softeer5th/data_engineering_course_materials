@@ -182,11 +182,13 @@ class Extract:
 
     #     return gdp_rows
     
-    def data_from_IMF(self, year = now_year):
+    def data_from_IMF(self, year = now_year): # 추출 방식 1.
         '''
         현재 년도의 IMF의 API를 이용하여 데이터를 추출합니다.
-        Args: year: int (현재년도)
-        return: gdps: dict {country : GDP}
+        Args: 
+            year: int (현재년도)
+        return: 
+            gdps: dict {country : GDP (단위: Bilion)}
         '''
         year = year
         nameURL = 'https://www.imf.org/external/datamapper/api/v1/countries'
@@ -206,15 +208,18 @@ class Extract:
         for k, v in gdpdict.items():
             if k in namedict.keys(): # gdpdict에는 국가 이외의 대륙 분류 등이 섞여있음
                 # if year in v.keys():
-                gdps[namedict[k]['label']] = round(v[year], 2)
+                # gdps[namedict[k]['label']] = round(v[year], 2)  <<< 코드 리뷰: round처리도 Transform의 일종이다. 진짜 찐 원본만 다루게 하자
+                gdps[namedict[k]['label']] = v[year]
                 # else:
                     # gdps[namedict[k]['label']] = -1
         return gdps
     
-    def save_json(self, url: str):
+    def save_json(self, url: str): # 추출 방식 2.
         '''
-        웹 상의 테이블 데이터 '원본'을 JSON 형식으로 저장합니다.
-        Args: url: str
+        웹 상의 테이블 데이터 '원본'을 추출하여 JSON 형식으로 저장합니다.
+        GDP 단위: Million
+        Args: 
+            url: str
         '''
         # 첫 번째 테이블을 가져옵니다 (여러 테이블이 있을 수 있으므로 인덱스로 선택)
         df = pd.read_html(StringIO(url), attrs={"class": "wikitable"})[0]
@@ -253,7 +258,8 @@ class Transform:
         링크를 지우고 문자열로 된 숫자를 정수로 변환합니다.
         '-'로 표기된 데이터는 None 을 기입합니다.
         
-        return: country: List, gdp: List
+        return: 
+            country: List, gdp: List
         '''
         og_data = pd.read_json(raw_json_file_path)
         columns = [
@@ -294,13 +300,16 @@ class Transform:
         '''
         country = self.country
         gdp = self.gdp
-        GDP_data = pd.DataFrame({'Country':country, 'GDP_USD_bilion':gdp})
+        # 이하 return문 까지의 수정사항: 1000으로 나눠 단위가 바뀌기 전까진 Million이다. 단위를 유지하라
+        # 단위 바꾸기는 
+        GDP_data = pd.DataFrame({'Country':country, 'GDP_USD_Million':gdp})
         
         # GDP 내림차순 정렬
-        GDP_data.sort_values(by=('GDP_USD_bilion'), ascending=False, inplace=True)
+        GDP_data.sort_values(by=('GDP_USD_Million'), ascending=False, inplace=True)
         
         # 소수점 둘째자리까지 보이기   
-        GDP_data['GDP_USD_bilion'] = (GDP_data['GDP_USD_bilion'] / 1000).round(2)
+        GDP_data['GDP_USD_Million'] = (GDP_data['GDP_USD_Million'] / 1000).round(2)
+        GDP_data.columns = ['Country', 'GDP_USD_bilion']
         
         return GDP_data      
 
