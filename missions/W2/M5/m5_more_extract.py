@@ -26,6 +26,7 @@ def extract_reviews():
     rt_cursors = [
         "eyJyZWFsbV91c2VySWQiOiJSVF8xZGVhYmYwMi01MzlkLTQ2MTEtYmFhNS1kY2NlYzJjNmRhNTYiLCJlbXNJZCI6ImMxNTZkYWQzLWVjMDYtM2IzNi04ZGQ2LTkzNjhiNDEyODRlNCIsImVtc0lkX2hhc1Jldmlld0lzVmlzaWJsZSI6ImMxNTZkYWQzLWVjMDYtM2IzNi04ZGQ2LTkzNjhiNDEyODRlNF9UIiwiY3JlYXRlRGF0ZSI6IjIwMjQtMDItMTdUMjI6NDk6MzQuNzU2WiJ9",
     ]
+    # RT 리뷰 크롤링
     total_reviews.extend(extract_reviews_from_rt(rt_program_ids, rt_cursors, max_page=200))
 
     ### IMDB 추가 예정
