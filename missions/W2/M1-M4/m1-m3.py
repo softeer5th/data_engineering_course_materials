@@ -62,7 +62,10 @@ def m3():
         # Note that this may raise NotImplementedError on Unix platforms like macOS where sem_getvalue() is not implemented.
         # qsize, empty, full 등을 
         # 다중 스레딩/ 다중 프로세스 환경에서 신뢰할 수 없음.
-    q.put(None) # None을 넣어서 큐에 더 이상 들어오는 아이템이 없다는 것을 알림.
+    
+    # None을 넣어서 큐에 더 이상 들어오는 아이템이 없다는 것을 알림. 
+    # 단일 프로세스여서 가능한 일.
+    q.put(None) 
 
     # Pop operation
     print("Popping items from queue:")
