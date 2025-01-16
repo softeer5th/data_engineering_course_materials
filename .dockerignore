@@ -2,3 +2,4 @@ materials/data_engineering_course_materials/slides
 retrospect/
 .venv/
 .vscode/
+**/*.pyc
