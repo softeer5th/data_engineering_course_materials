@@ -3,6 +3,7 @@ FROM quay.io/jupyter/base-notebook:latest
 # 작업 디렉터리 설정
 WORKDIR /app
 
+# Python 패키지 목록 복사
 COPY requirements.txt .
 
 # Python 패키지 설치
