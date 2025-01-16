@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # 파이썬 라이브러리 설치
 RUN pip install --upgrade pip
-RUN pip install jupyterlab notebook pandas numpy matplotlib wordcloud requests beautifulsoup4
+RUN pip install jupyterlab notebook pandas numpy matplotlib wordcloud requests beautifulsoup4 nltk
 
 # Jupyter Notebook을 설치하고, Jupyter config 초기화
 RUN jupyter notebook --generate-config
