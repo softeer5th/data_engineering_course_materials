@@ -1,4 +1,21 @@
 import pandas as pd
+from konlpy.tag import Kkma
+import nltk
+from nltk.corpus import stopwords
+def myFilter(s:str)-> str:
+    if s[0] == '@':
+        return ''
+    elif len(s) == 1:
+        return ''
+    else:
+        return s.strip("!@#$%^&*()-=;'\",.")
+
+def mySplit(text:str)->list:
+    nltk.download('stopwords')
+    stopwords_kr = stopwords.words('korean')
+    res = [word[0] for word in Kkma().pos(text) if word[1] not in filter_type]
+    return res
+
 def splitDataFrame(df:pd.DataFrame, cnt:int) -> list:
     res = []
     idx = 0
@@ -14,7 +31,8 @@ def splitDataFrame(df:pd.DataFrame, cnt:int) -> list:
 
 def countWord(df:pd.DataFrame, target:str)->dict:
     # split
-    word_df = df[df['teacher_name'] == target].loc[:,'text'].str.split()
+    word_df = df[df['teacher_name'] == target].loc[:,'text'].apply(mySplit)
+    # word_df = df[df['teacher_name'] == target].loc[:,'text'].str.split()
     # 소문자
     word_exp_df = word_df.explode().str.lower()
     # to dict
