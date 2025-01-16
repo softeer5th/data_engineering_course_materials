@@ -1,7 +1,5 @@
-# # 879381276318.dkr.ecr.ap-northeast-2.amazonaws.com/ket0825/jupyterlab
-
 FROM quay.io/jupyter/base-notebook:python-3.11
-# USER root
+USER root
 # RUN apt-get update && \
 #     apt-get install -y --no-install-recommends \
 #     build-essential \
@@ -11,23 +9,28 @@ FROM quay.io/jupyter/base-notebook:python-3.11
 #     pkg-config \
 #     && rm -rf /var/lib/apt/lists/*
 
-# USER ${NB_UID}
-
 WORKDIR /app
 
 COPY . /app
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    gcc && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 USER root
 COPY missions/W2/M6/jupyter_server_config.py ~/.jupyter
 RUN chown jovyan:users ~/.jupyter/jupyter_server_config.py
-USER ${NB_UID}
 
 
+RUN pip install pandas matplotlib numpy jupyter-server requests nltk wordcloud
 
 # RUN pip install --upgrade pip && \
 #     pip install pyzmq && \
 #     pip install -r missions/W2/requirements.txt
-
+USER ${NB_UID}
 EXPOSE 10000
 
 ENV PYTHONPATH="${PYTHONPATH}:/app" JUPYTER_PASSWORD=
