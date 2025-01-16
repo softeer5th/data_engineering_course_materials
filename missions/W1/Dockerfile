@@ -1,7 +1,9 @@
-FROM jupyter/base-notebook:latest
+FROM quay.io/jupyter/base-notebook:latest
 
 # 작업 디렉터리 설정
 WORKDIR /app
+
+COPY requirements.txt .
 
 # Python 패키지 설치
 RUN pip install -r requirements.txt
