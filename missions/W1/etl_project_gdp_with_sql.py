@@ -1,3 +1,7 @@
+'''
+해당 파일의 코드 구성 방향과 이유는 W1M3 - ETL 프로세스 구현하기.ipynb를 참고.
+'''
+
 # ETL 프로세스 과정에서 사용되는 패키지
 import requests
 from bs4 import BeautifulSoup
@@ -41,7 +45,7 @@ def transform1_gdp(raw_data_file_name):
     df_gdp = df_gdp.iloc[:,[0,1]].drop(0)
 
     # 열 이름 변경
-    df_gdp.columns = ['country', 'gdp']
+    df_gdp.columns = ['country', 'GDP_USD_Million']
 
     # 해당 단계에서 Transform된 데이터 json 저장
     df_gdp.to_json('transform_gdp.json')
@@ -55,10 +59,14 @@ def transform2_gdp():
     df_gdp = pd.read_json('transform_gdp.json')
 
     # gdp열의 자료형을 object에서 float로 변경
-    df_gdp['gdp'] = df_gdp['gdp'].apply(lambda x : float(x) if x != '—' else None)
+    df_gdp['GDP_USD_Million'] = df_gdp['GDP_USD_Million'].apply(lambda x : float(x) if x != '—' else None)
 
     # 단위 변경
-    df_gdp['gdp'] = round(df_gdp['gdp']/1000, 2)
+    df_gdp['GDP_USD_Billion'] = round(df_gdp['GDP_USD_Million']/1000, 2)
+
+    # Million 열 제거
+    df_gdp = df_gdp.drop('GDP_USD_Million', axis = 1)
+
     df_gdp.to_json('transform_gdp.json')
     log("Transform2 finish")
 
@@ -69,7 +77,7 @@ def transform3_gdp():
     df_gdp = pd.read_json('transform_gdp.json')
 
     # 정렬
-    df_gdp = df_gdp.sort_values('gdp', ascending = False)
+    df_gdp = df_gdp.sort_values('GDP_USD_Billion', ascending = False)
     df_gdp.to_json('transform_gdp.json')
     log("Transform3 finish")
 
@@ -96,6 +104,13 @@ def transform4_gdp():
 
     df_gdp.to_json('transform_gdp.json')
     log("Transform4 finish")
+
+# GDP data Transform
+def transform_gdp(raw_data_file_name) :
+    transform1_gdp(raw_data_file_name)
+    transform2_gdp()
+    transform3_gdp()
+    transform4_gdp()
 
 # GDP data Load
 def load_gdp() :
@@ -151,9 +166,8 @@ def display() :
 # GDP ETL process
 def ETL_gdp(raw_data_file_name) :
     extract_gdp(raw_data_file_name)
-    transform1_gdp(raw_data_file_name)
-    transform2_gdp()
-    transform3_gdp()
-    transform4_gdp()
+    transform_gdp(raw_data_file_name)
     load_gdp()
     display()
+
+ETL_gdp('raw_data_gdp.json')
