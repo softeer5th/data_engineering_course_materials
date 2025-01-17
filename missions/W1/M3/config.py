@@ -2,7 +2,8 @@ from pathlib import Path
 
 HOME_DIR = Path(__file__).resolve().parent
 LOG_FILE_PATH = HOME_DIR / "log/etl_project_log.txt"
-RAW_DATA_FILE_PATH = HOME_DIR / "data/Countries_by_GDP.json"
+# RAW_DATA_FILE_PATH = HOME_DIR / "data/Countries_by_GDP.json"
+RAW_DATA_FILE_PATH = HOME_DIR / "data/Countries_by_GDP.html"
 OUTPUT_FILE_PATH = HOME_DIR / "data/Countries_by_GDP_Transformed.json"
 DB_NAME = "World_Economies"
 TABLE_NAME = "Countries_by_GDP"

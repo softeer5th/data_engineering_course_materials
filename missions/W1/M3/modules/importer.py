@@ -42,9 +42,9 @@ class WebImporterInterface(ImporterInterface):
     def import_data(self) -> pd.DataFrame:
         logger.info(f"Importing data from {self.source}...")
         html = self._get_html()
-        df = self._parse_html(html)
         if self.raw_data_file_path:
-            self._store_raw_data(self.raw_data_file_path, df)
+            self._store_raw_data(self.raw_data_file_path, html)
+        df = self._parse_html(html)
         logger.info(f"Data imported successfully")
         return df
 
@@ -68,11 +68,12 @@ class WebImporterInterface(ImporterInterface):
         """
         pass
 
-    def _store_raw_data(self, path: str, df: pd.DataFrame):
+    def _store_raw_data(self, path: str, data: str):
         """
         Store raw data to the given file
         """
-        df.to_json(path, orient="records", indent=2)
+        with open(path, "w") as file:
+            file.write(data)
 
 
 class WikiWebImporter(WebImporterInterface):
@@ -129,16 +130,12 @@ class WikiWebImporter(WebImporterInterface):
         Map region to the given country
         """
 
-        def parse_json(file_path):
-            """
-            Read JSON file
-            """
-            with open(file_path, "r") as file:
-                data = json.load(file)
-            return data
+        country_region_df = pd.read_json(self.COUNTRY_REGION_TABLE_PATH, orient="index")
+        country_region_df = country_region_df.reset_index()
+        country_region_df.columns = ["Country", "Region"]
 
-        country_region_table = parse_json(self.COUNTRY_REGION_TABLE_PATH)
-        df["Region"] = df["Country"].map(country_region_table)
+        df = df.merge(country_region_df, on="Country", how="left")
+
         return df
 
 

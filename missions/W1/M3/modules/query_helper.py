@@ -6,10 +6,10 @@ def print_gdp_over_100_countries_df(df: pd.DataFrame) -> pd.DataFrame:
     """
     (Pandas) Print countries with GDP > 100B.
     """
-    df_over_100 = df[df["GDP"] > 100]
+    df_over_100 = df[df["GDP_USD_billion"] > 100]
     print("Countries with GDP > 100B:")
     for _, row in df_over_100.iterrows():
-        print(f"{row['Country']:<20} {row['GDP']}")
+        print(f"{row['Country']:<20} {row['GDP_USD_billion']}")
 
 
 def print_gdp_over_100_countries_sql(db_path: str, table_name: str):
@@ -38,7 +38,7 @@ def print_top5_avg_gdp_by_region_df(df: pd.DataFrame) -> pd.DataFrame:
     Print top 5 average GDP by region.
     """
     df_groupby_top5 = df.groupby("Region").head(5)
-    avg_gdp = df_groupby_top5.groupby("Region")["GDP"].mean()
+    avg_gdp = df_groupby_top5.groupby("Region")["GDP_USD_billion"].mean()
     print("Top 5 Average GDP by Region:")
     for region, gdp in avg_gdp.items():
         print(f"{region:<15} {gdp:.2f}")

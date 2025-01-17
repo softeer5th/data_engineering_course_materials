@@ -11,6 +11,7 @@ from config import (
     CSV_INPUT_FILE_PATH,
 )
 
+# TODO: 동적으로 가져와야한다.
 DATA_SIZE = 10_000_000  # 10M rows
 CHUNK_SIZE = 1_000_000  # 100K rows per chunk
 NUM_CHUNKS = DATA_SIZE // CHUNK_SIZE  # 100 chunks

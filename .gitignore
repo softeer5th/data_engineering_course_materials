@@ -159,13 +159,14 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-*.db
-large_data*.csv
 .DS_Store
 .venv
 .ipynb_checkpoints
-large_data*.csv
 __pycache__
 *.db
 *.json
-*log.txt
+*.txt
+*.html
+*.csv
+*.json
+*.sql

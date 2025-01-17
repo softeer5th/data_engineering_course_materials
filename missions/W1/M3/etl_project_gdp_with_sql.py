@@ -1,7 +1,7 @@
 from config import LOG_FILE_PATH, DB_PATH, TABLE_NAME
 from modules.logger import logger, init_logger
 from modules.importer import WikiWebImporter
-from modules.transformer import transform_gdp, rename_columns
+from modules.transformer import transform_gdp
 from modules.exporter import SqliteExporter
 from modules.query_helper import (
     print_gdp_over_100_countries_sql,
@@ -18,7 +18,6 @@ def main():
     df = importer.import_data()
 
     df = transform_gdp(df)
-    df = rename_columns(df, "GDP", "GDP_USD_billion")
 
     exporter = SqliteExporter(DB_PATH, table_name=TABLE_NAME)
     exporter.export_data(df)

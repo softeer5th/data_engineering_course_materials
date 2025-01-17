@@ -1,7 +1,7 @@
 from config import LOG_FILE_PATH, DB_PATH, TABLE_NAME, CSV_INPUT_FILE_PATH
 from modules.logger import logger, init_logger, LogExecutionTime
 from modules.importer import CsvFileImporter
-from modules.transformer import transform_gdp, rename_columns
+from modules.transformer import transform_gdp
 from modules.exporter import SqliteExporter
 from modules.query_helper import print_top5_avg_gdp_by_region_sql
 
@@ -17,7 +17,6 @@ def main():
 
     with LogExecutionTime("Transform"):
         df = transform_gdp(df)
-        df = rename_columns(df, "GDP", "GDP_USD_billion")
 
     with LogExecutionTime("Load"):
         exporter = SqliteExporter(DB_PATH, table_name=TABLE_NAME)
