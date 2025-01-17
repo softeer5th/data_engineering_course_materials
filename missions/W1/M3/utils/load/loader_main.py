@@ -10,7 +10,7 @@ from missions.W1.M3.log.log import Logger
 
 logger  = Logger.get_logger()
 
-def loader_main(db_path: str, sql_path: str, transformed_data: List[Dict]) -> Optional[bool]:
+def loader_main(db_path: str, sql_path: str, transformed_df) -> Optional[bool]:
     try:
         logger.info('데이터 로드 시작')
         logger.info("데이터베이스 연결 시도")
@@ -27,7 +27,7 @@ def loader_main(db_path: str, sql_path: str, transformed_data: List[Dict]) -> Op
             
             # 데이터 삽입
             # TODO: bulk insert지만 chunk 단위로 나눠서 insert하여 로깅 및 에러 핸들링이 가능하도록 개선 가능
-            res = bulk_insert_gdp_data(conn, transformed_data)
+            res = bulk_insert_gdp_data(conn, transformed_df)
             if res is None:
                 raise ValueError("gdp 테이블에 데이터 삽입 실패")
             else:
