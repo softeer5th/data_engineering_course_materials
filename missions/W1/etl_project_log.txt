@@ -1,0 +1,10 @@
+2025-January-10-17-28-11, Started, do_Extract
+2025-January-10-17-28-12, Finished, do_Extract
+2025-January-10-17-28-12, Started, do_Transform
+2025-January-10-17-28-12, Finished, do_Transform
+2025-January-10-17-28-12, Started, do_Load
+2025-January-10-17-28-14, Finished, do_Load
+2025-January-10-17-28-35, Started, do_Transform
+2025-January-10-17-28-35, Finished, do_Transform
+2025-January-10-17-30-03, Started, do_Transform
+2025-January-10-17-30-03, Finished, do_Transform
