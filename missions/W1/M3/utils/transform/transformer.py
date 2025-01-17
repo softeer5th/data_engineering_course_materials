@@ -2,6 +2,9 @@ import json
 import traceback
 from typing import List, Dict, Optional
 
+import pandas as pd
+import numpy as np
+
 from missions.W1.M3.log.log import Logger
 
 logger = Logger.get_logger()
@@ -14,7 +17,7 @@ def numstr2num(numstr: str) -> float:
     temp = float(temp)
     return temp
 
-def gdpstr2billions(numstr: str) -> float:
+def gdpstr_mil2bil(numstr: str) -> float:
     if numstr is None:
         return None # Load 시에 transform에서 None으로 가능할 지 생각.
     temp = numstr
@@ -253,7 +256,7 @@ def transform_gdp_data(data: List[Dict]) -> Optional[List[Dict]]:
             transformed_data.append(
                 {
                     'Country': row['country'],
-                    'GDP_USD_billion': gdpstr2billions(row['gdp']),
+                    'GDP_USD_billion': gdpstr_mil2bil(row['gdp']),
                     'Year': int(row['year']) if row['year'] else None,
                     'Type': row['type'],
                     'Region': country2region.get(row['country'], "Unknown")
@@ -265,6 +268,59 @@ def transform_gdp_data(data: List[Dict]) -> Optional[List[Dict]]:
         full_err_msg = traceback.format_exc(chain=True)
         err_msg = full_err_msg.split('\n')[-2]
         logger.info(f'데이터 변환 중 에러 발생: {e} / recent_row: {recent_row}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
+        return None
+
+def transform_gdp_df(gdp_df: pd.DataFrame) -> Optional[List[Dict]]:
+    """
+    Transform the data.
+
+    Return the transformed df.
+    1. 'gdp' column (USD_Million) is converted to float and divided by 1000 (USD_Billion)and rounded to 2 decimal places.
+    2. 'year' column is converted to int.
+    3. 'region' column is added based on the 'country' column. If the country is not in the country2region dictionary, 'Unknown' is added.
+
+    """
+    try:
+        logger.info("데이터 변환 시도")
+    
+        # Column rename
+        gdp_df.rename(columns={
+            'country': 'Country', 
+            'gdp_usd_million': 'GDP_USD_Million', 
+            'year': 'Year',
+            'type': 'Type',
+            }, inplace=True)        
+        
+        # Convert GDP_USD_Million to GDP_USD_Billion
+        gdp_billion_series = pd.to_numeric(
+            np.char.replace(gdp_df['GDP_USD_Million'].values.astype(str), ',', '')
+            , errors='coerce'   # ignore를 사용하는 것도 좋아보임. None으로 처리됨.
+            ) / 1000
+        gdp_df["GDP_USD_Million"] = gdp_billion_series.round(2)
+        gdp_df.rename(columns={'GDP_USD_Million': 'GDP_USD_Billion'}, inplace=True)
+
+        # Convert Year to Int16
+        gdp_df["Year"] = gdp_df["Year"].astype("Int16")
+
+        # Make country2region df
+        country2region_df = pd.DataFrame(
+            list(country2region.items()), 
+            columns=['Country', 'Region']
+            )
+        
+        # Merge
+        gdp_df = pd.merge(gdp_df, country2region_df, on='Country', how='left')
+        # 없는 경우는 NaN으로 처리됨.
+        gdp_df["Region"] = gdp_df["Region"].fillna("Unknown")
+
+        return gdp_df
+       
+    except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'데이터 변환 중 에러 발생: {e}')
         logger.info(f'Full message: {full_err_msg}')
         logger.info(f'Short message: {err_msg}')
         return None
@@ -280,6 +336,25 @@ def load_gdp_json(json_path: str) -> Optional[List[Dict]]:
         with open(json_path, 'r') as json_file:
             gdp_data = json.load(json_file)
         return gdp_data
+    
+    except Exception as e:
+        full_err_msg = traceback.format_exc(chain=True)
+        err_msg = full_err_msg.split('\n')[-2]
+        logger.info(f'GDP JSON 로드 중 에러 발생: {e}')
+        logger.info(f'Full message: {full_err_msg}')
+        logger.info(f'Short message: {err_msg}')
+        return None
+
+def load_df_from_json(json_path: str) -> Optional[pd.DataFrame]:
+    """
+    JSON file load.
+
+    Return the dataframe.
+    """
+    try:
+        logger.info("GDP JSON 로드 시도")
+        df = pd.read_json(json_path, orient='records', encoding='utf-8')
+        return df
     
     except Exception as e:
         full_err_msg = traceback.format_exc(chain=True)

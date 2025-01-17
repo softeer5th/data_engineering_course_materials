@@ -28,7 +28,7 @@ def extract_reviews():
     ]
     # RT 리뷰 크롤링
     total_reviews.extend(extract_reviews_from_rt(rt_program_ids, rt_cursors, max_page=200))
-
+    
     ### IMDB 추가 예정
     ### 리뷰 포맷팅 과정 필수 (json 형식 통일시켜야 함)
     json_path = "missions/W2/M5/reviews.jsonl"
