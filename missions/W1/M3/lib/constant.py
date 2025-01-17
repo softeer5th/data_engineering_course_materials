@@ -1,0 +1,6 @@
+PATH = "./missions/W1/M3/data/"
+URL = "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29"
+LOG_NAME = "etl_project_with_sql_log.txt"
+DB_NAME = "World_Economies.db"
+REGION_NAME = "region.csv"
+JSON_NAME = "Countries_by_GDP_with_sql.json"
