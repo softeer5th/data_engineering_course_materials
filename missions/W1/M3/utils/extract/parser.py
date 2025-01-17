@@ -155,7 +155,7 @@ def get_parsed_data(tbody: Tag, thead: Tag = None) -> Optional[List[Dict]]:
 
             parsed_data.append({
                 'country': td_values[0].text.strip(),
-                'gdp': td_values[1].text.strip() if not null_flag else None,
+                'gdp_usd_million': td_values[1].text.strip() if not null_flag else None,
                 'year': td_values[2].text.strip() if not null_flag else None,
                 'type': "IMF",
             })

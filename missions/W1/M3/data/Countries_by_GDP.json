@@ -1,1255 +1,1255 @@
 [
     {
         "country": "United States",
-        "gdp": "30,337,162",
+        "gdp_usd_million": "30,337,162",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "China",
-        "gdp": "19,534,894",
+        "gdp_usd_million": "19,534,894",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Germany",
-        "gdp": "4,921,563",
+        "gdp_usd_million": "4,921,563",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Japan",
-        "gdp": "4,389,326",
+        "gdp_usd_million": "4,389,326",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "India",
-        "gdp": "4,271,922",
+        "gdp_usd_million": "4,271,922",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "United Kingdom",
-        "gdp": "3,730,261",
+        "gdp_usd_million": "3,730,261",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "France",
-        "gdp": "3,283,429",
+        "gdp_usd_million": "3,283,429",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Italy",
-        "gdp": "2,459,597",
+        "gdp_usd_million": "2,459,597",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Canada",
-        "gdp": "2,330,308",
+        "gdp_usd_million": "2,330,308",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Brazil",
-        "gdp": "2,307,162",
+        "gdp_usd_million": "2,307,162",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Russia",
-        "gdp": "2,195,708",
+        "gdp_usd_million": "2,195,708",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "South Korea",
-        "gdp": "1,947,133",
+        "gdp_usd_million": "1,947,133",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Australia",
-        "gdp": "1,881,140",
+        "gdp_usd_million": "1,881,140",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Spain",
-        "gdp": "1,827,576",
+        "gdp_usd_million": "1,827,576",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Mexico",
-        "gdp": "1,817,818",
+        "gdp_usd_million": "1,817,818",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Indonesia",
-        "gdp": "1,492,618",
+        "gdp_usd_million": "1,492,618",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Turkey",
-        "gdp": "1,455,413",
+        "gdp_usd_million": "1,455,413",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Netherlands",
-        "gdp": "1,272,960",
+        "gdp_usd_million": "1,272,960",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Saudi Arabia",
-        "gdp": "1,136,580",
+        "gdp_usd_million": "1,136,580",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Switzerland",
-        "gdp": "999,604",
+        "gdp_usd_million": "999,604",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Poland",
-        "gdp": "915,451",
+        "gdp_usd_million": "915,451",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Taiwan",
-        "gdp": "814,438",
+        "gdp_usd_million": "814,438",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Belgium",
-        "gdp": "689,364",
+        "gdp_usd_million": "689,364",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Sweden",
-        "gdp": "638,780",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Ireland",
-        "gdp": "587,225",
+        "gdp_usd_million": "638,780",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Argentina",
-        "gdp": "574,201",
+        "gdp_usd_million": "604,201",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Ireland",
+        "gdp_usd_million": "587,225",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "United Arab Emirates",
-        "gdp": "568,567",
+        "gdp_usd_million": "568,567",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Singapore",
-        "gdp": "561,725",
+        "gdp_usd_million": "561,725",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Austria",
-        "gdp": "559,218",
+        "gdp_usd_million": "559,218",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Israel",
-        "gdp": "550,905",
+        "gdp_usd_million": "550,905",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Thailand",
-        "gdp": "545,341",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Norway",
-        "gdp": "503,466",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Malaysia",
-        "gdp": "488,250",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Philippines",
-        "gdp": "471,516",
+        "gdp_usd_million": "545,341",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Vietnam",
-        "gdp": "468,400",
+        "gdp_usd_million": "506,426",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Norway",
+        "gdp_usd_million": "503,466",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Malaysia",
+        "gdp_usd_million": "488,250",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Philippines",
+        "gdp_usd_million": "507,670",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Iran",
-        "gdp": "463,747",
+        "gdp_usd_million": "463,747",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Bangladesh",
-        "gdp": "451,856",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Denmark",
-        "gdp": "431,228",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Hong Kong",
-        "gdp": "422,057",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Colombia",
-        "gdp": "419,331",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "South Africa",
-        "gdp": "418,046",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Romania",
-        "gdp": "406,202",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Egypt",
-        "gdp": "380,044",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Pakistan",
-        "gdp": "374,595",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Chile",
-        "gdp": "362,240",
+        "gdp_usd_million": "455,856",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Czech Republic",
-        "gdp": "360,233",
+        "gdp_usd_million": "452,233",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Denmark",
+        "gdp_usd_million": "431,228",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Hong Kong",
+        "gdp_usd_million": "422,057",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Colombia",
+        "gdp_usd_million": "419,331",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "South Africa",
+        "gdp_usd_million": "418,046",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Romania",
+        "gdp_usd_million": "406,202",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Egypt",
+        "gdp_usd_million": "380,044",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Pakistan",
+        "gdp_usd_million": "374,595",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Chile",
+        "gdp_usd_million": "362,240",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Finland",
-        "gdp": "319,989",
+        "gdp_usd_million": "319,989",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Portugal",
-        "gdp": "319,934",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Kazakhstan",
-        "gdp": "306,629",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Peru",
-        "gdp": "294,898",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Iraq",
-        "gdp": "270,874",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Greece",
-        "gdp": "265,171",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "Algeria",
-        "gdp": "264,270",
-        "year": "2025",
-        "type": "IMF"
-    },
-    {
-        "country": "New Zealand",
-        "gdp": "262,924",
+        "gdp_usd_million": "319,934",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Hungary",
-        "gdp": "245,619",
+        "gdp_usd_million": "312,619",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Kazakhstan",
+        "gdp_usd_million": "306,629",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Peru",
+        "gdp_usd_million": "294,898",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Iraq",
+        "gdp_usd_million": "270,874",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Greece",
+        "gdp_usd_million": "265,171",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Algeria",
+        "gdp_usd_million": "264,270",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "New Zealand",
+        "gdp_usd_million": "262,924",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Qatar",
-        "gdp": "226,217",
+        "gdp_usd_million": "240,217",
         "year": "2025",
         "type": "IMF"
     },
     {
+        "country": "Ethiopia",
+        "gdp_usd_million": "230,031",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
         "country": "Nigeria",
-        "gdp": "194,955",
+        "gdp_usd_million": "199,720",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Ukraine",
-        "gdp": "189,827",
+        "gdp_usd_million": "189,827",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Morocco",
-        "gdp": "168,597",
+        "gdp_usd_million": "168,597",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Kuwait",
-        "gdp": "161,950",
+        "gdp_usd_million": "161,950",
         "year": "2025",
         "type": "IMF"
     },
     {
         "country": "Cuba",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
-        "country": "Ethiopia",
-        "gdp": "145,031",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
         "country": "Slovakia",
-        "gdp": "142,617",
+        "gdp_usd_million": "142,617",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Dominican Republic",
-        "gdp": "126,238",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Ecuador",
-        "gdp": "121,425",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Puerto Rico",
-        "gdp": "120,971",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Kenya",
-        "gdp": "116,321",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Angola",
-        "gdp": "113,286",
+        "gdp_usd_million": "126,238",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Uzbekistan",
-        "gdp": "112,653",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Guatemala",
-        "gdp": "112,369",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Oman",
-        "gdp": "109,993",
+        "gdp_usd_million": "125,511",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Bulgaria",
-        "gdp": "108,425",
+        "gdp_usd_million": "123,425",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Ecuador",
+        "gdp_usd_million": "121,425",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Puerto Rico",
+        "gdp_usd_million": "120,971",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Kenya",
+        "gdp_usd_million": "116,321",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Angola",
+        "gdp_usd_million": "113,286",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Guatemala",
+        "gdp_usd_million": "112,369",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Oman",
+        "gdp_usd_million": "110,993",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Venezuela",
-        "gdp": "106,327",
+        "gdp_usd_million": "106,327",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Costa Rica",
-        "gdp": "95,149",
+        "gdp_usd_million": "95,149",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Luxembourg",
-        "gdp": "91,210",
+        "gdp_usd_million": "91,210",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Croatia",
-        "gdp": "89,665",
+        "gdp_usd_million": "89,665",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Panama",
-        "gdp": "87,347",
+        "gdp_usd_million": "87,347",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Ivory Coast",
-        "gdp": "86,993",
+        "gdp_usd_million": "86,993",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Sri Lanka",
-        "gdp": "74,846",
+        "gdp_usd_million": "74,846",
         "year": "2022",
         "type": "IMF"
     },
     {
         "country": "Turkmenistan",
-        "gdp": "83,883",
+        "gdp_usd_million": "83,883",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Lithuania",
-        "gdp": "82,789",
+        "gdp_usd_million": "82,789",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Uruguay",
-        "gdp": "82,605",
+        "gdp_usd_million": "82,605",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Serbia",
-        "gdp": "82,550",
+        "gdp_usd_million": "82,550",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Tanzania",
-        "gdp": "79,867",
+        "gdp_usd_million": "79,867",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Azerbaijan",
-        "gdp": "75,649",
+        "gdp_usd_million": "75,649",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Ghana",
-        "gdp": "75,307",
+        "gdp_usd_million": "75,307",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Slovenia",
-        "gdp": "73,198",
+        "gdp_usd_million": "73,198",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Belarus",
-        "gdp": "73,129",
+        "gdp_usd_million": "73,129",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "DR Congo",
-        "gdp": "72,483",
+        "gdp_usd_million": "72,483",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Myanmar",
-        "gdp": "64,284",
+        "gdp_usd_million": "64,284",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Uganda",
-        "gdp": "55,587",
+        "gdp_usd_million": "55,587",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Macau",
-        "gdp": "53,447",
+        "gdp_usd_million": "55,447",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Cameroon",
-        "gdp": "53,391",
+        "gdp_usd_million": "53,391",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Jordan",
-        "gdp": "53,305",
+        "gdp_usd_million": "53,305",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Tunisia",
-        "gdp": "52,636",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Bolivia",
-        "gdp": "48,172",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Bahrain",
-        "gdp": "47,812",
+        "gdp_usd_million": "52,636",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Cambodia",
-        "gdp": "47,147",
+        "gdp_usd_million": "51,159",
+        "year": "2025",
+        "type": "IMF"
+    },
+    {
+        "country": "Bolivia",
+        "gdp_usd_million": "48,172",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Bahrain",
+        "gdp_usd_million": "47,812",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Latvia",
-        "gdp": "45,521",
+        "gdp_usd_million": "45,521",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Paraguay",
-        "gdp": "44,937",
+        "gdp_usd_million": "44,937",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Libya",
-        "gdp": "44,812",
+        "gdp_usd_million": "44,812",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Nepal",
-        "gdp": "43,673",
+        "gdp_usd_million": "43,673",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Estonia",
-        "gdp": "43,044",
+        "gdp_usd_million": "43,044",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Honduras",
-        "gdp": "36,735",
+        "gdp_usd_million": "36,735",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Zimbabwe",
-        "gdp": "35,919",
+        "gdp_usd_million": "35,919",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "El Salvador",
-        "gdp": "35,848",
+        "gdp_usd_million": "35,848",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Cyprus",
-        "gdp": "34,790",
+        "gdp_usd_million": "34,790",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Senegal",
-        "gdp": "33,685",
+        "gdp_usd_million": "33,685",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Georgia",
-        "gdp": "33,191",
+        "gdp_usd_million": "33,191",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Iceland",
-        "gdp": "32,919",
+        "gdp_usd_million": "32,919",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Papua New Guinea",
-        "gdp": "31,716",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Zambia",
-        "gdp": "29,872",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Bosnia and Herzegovina",
-        "gdp": "29,078",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Trinidad and Tobago",
-        "gdp": "28,365",
+        "gdp_usd_million": "31,716",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Sudan",
-        "gdp": "26,865",
+        "gdp_usd_million": "30,873",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Zambia",
+        "gdp_usd_million": "29,872",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "gdp_usd_million": "29,078",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "gdp_usd_million": "28,365",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Guinea",
-        "gdp": "25,447",
+        "gdp_usd_million": "25,447",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Albania",
-        "gdp": "25,431",
+        "gdp_usd_million": "25,431",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Armenia",
-        "gdp": "25,408",
+        "gdp_usd_million": "25,408",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Haiti",
-        "gdp": "24,046",
+        "gdp_usd_million": "24,046",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Mozambique",
-        "gdp": "22,975",
+        "gdp_usd_million": "22,975",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Malta",
-        "gdp": "22,737",
+        "gdp_usd_million": "22,737",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Mongolia",
-        "gdp": "21,943",
+        "gdp_usd_million": "21,943",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Burkina Faso",
-        "gdp": "21,902",
+        "gdp_usd_million": "21,902",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Mali",
-        "gdp": "21,662",
+        "gdp_usd_million": "21,662",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Botswana",
-        "gdp": "21,418",
+        "gdp_usd_million": "21,418",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Benin",
-        "gdp": "21,371",
+        "gdp_usd_million": "21,371",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Guyana",
-        "gdp": "21,178",
+        "gdp_usd_million": "21,178",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Gabon",
-        "gdp": "21,013",
+        "gdp_usd_million": "21,013",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Jamaica",
-        "gdp": "20,098",
+        "gdp_usd_million": "20,098",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Nicaragua",
-        "gdp": "18,829",
+        "gdp_usd_million": "18,829",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Niger",
-        "gdp": "18,816",
+        "gdp_usd_million": "18,816",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Chad",
-        "gdp": "18,697",
+        "gdp_usd_million": "18,697",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Palestine",
-        "gdp": "18,602",
+        "gdp_usd_million": "18,602",
         "year": "2023",
         "type": "IMF"
     },
     {
         "country": "Syria",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Moldova",
-        "gdp": "18,356",
+        "gdp_usd_million": "18,356",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Lebanon",
-        "gdp": "21,780",
+        "gdp_usd_million": "21,780",
         "year": "2022",
         "type": "IMF"
     },
     {
         "country": "Yemen",
-        "gdp": "16,940",
+        "gdp_usd_million": "16,940",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Madagascar",
-        "gdp": "16,465",
+        "gdp_usd_million": "16,465",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Mauritius",
-        "gdp": "16,359",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "North Macedonia",
-        "gdp": "15,873",
-        "year": "2024",
-        "type": "IMF"
-    },
-    {
-        "country": "Kyrgyzstan",
-        "gdp": "15,770",
+        "gdp_usd_million": "16,359",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Brunei",
-        "gdp": "15,510",
+        "gdp_usd_million": "15,988",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "North Macedonia",
+        "gdp_usd_million": "15,873",
+        "year": "2024",
+        "type": "IMF"
+    },
+    {
+        "country": "Kyrgyzstan",
+        "gdp_usd_million": "15,770",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Congo",
-        "gdp": "15,501",
+        "gdp_usd_million": "15,501",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Laos",
-        "gdp": "15,190",
+        "gdp_usd_million": "15,190",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "North Korea",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Afghanistan",
-        "gdp": "14,467",
+        "gdp_usd_million": "14,467",
         "year": "2022",
         "type": "IMF"
     },
     {
         "country": "Bahamas",
-        "gdp": "14,390",
+        "gdp_usd_million": "14,390",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Rwanda",
-        "gdp": "13,701",
+        "gdp_usd_million": "13,701",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Tajikistan",
-        "gdp": "13,000",
+        "gdp_usd_million": "13,000",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Somalia",
-        "gdp": "12,804",
+        "gdp_usd_million": "12,804",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Namibia",
-        "gdp": "12,765",
+        "gdp_usd_million": "12,765",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Kosovo",
-        "gdp": "11,318",
+        "gdp_usd_million": "11,318",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Malawi",
-        "gdp": "11,241",
+        "gdp_usd_million": "11,241",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Equatorial Guinea",
-        "gdp": "10,708",
+        "gdp_usd_million": "10,708",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Mauritania",
-        "gdp": "10,628",
+        "gdp_usd_million": "10,628",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Togo",
-        "gdp": "9,832",
+        "gdp_usd_million": "9,832",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "New Caledonia",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Monaco",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Montenegro",
-        "gdp": "8,010",
+        "gdp_usd_million": "8,010",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Bermuda",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Liechtenstein",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Maldives",
-        "gdp": "7,199",
+        "gdp_usd_million": "7,199",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Barbados",
-        "gdp": "6,863",
+        "gdp_usd_million": "6,863",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Cayman Islands",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "South Sudan",
-        "gdp": "6,517",
+        "gdp_usd_million": "6,517",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "French Polynesia",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Fiji",
-        "gdp": "5,801",
+        "gdp_usd_million": "5,801",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Eswatini",
-        "gdp": "5,085",
+        "gdp_usd_million": "5,085",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Liberia",
-        "gdp": "4,754",
+        "gdp_usd_million": "4,754",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Sierra Leone",
-        "gdp": "4,558",
+        "gdp_usd_million": "4,558",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Djibouti",
-        "gdp": "4,364",
+        "gdp_usd_million": "4,364",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Suriname",
-        "gdp": "4,337",
+        "gdp_usd_million": "4,337",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Aruba",
-        "gdp": "4,069",
+        "gdp_usd_million": "4,069",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Andorra",
-        "gdp": "3,897",
+        "gdp_usd_million": "3,897",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Belize",
-        "gdp": "3,296",
+        "gdp_usd_million": "3,296",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Bhutan",
-        "gdp": "3,110",
+        "gdp_usd_million": "3,110",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Burundi",
-        "gdp": "3,075",
+        "gdp_usd_million": "3,075",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Curaçao",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Greenland",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Central African Republic",
-        "gdp": "2,810",
+        "gdp_usd_million": "2,810",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Cape Verde",
-        "gdp": "2,718",
+        "gdp_usd_million": "2,718",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Gambia",
-        "gdp": "2,694",
+        "gdp_usd_million": "2,694",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Saint Lucia",
-        "gdp": "2,582",
+        "gdp_usd_million": "2,582",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Lesotho",
-        "gdp": "2,395",
+        "gdp_usd_million": "2,395",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Eritrea",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Zanzibar",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Seychelles",
-        "gdp": "2,203",
+        "gdp_usd_million": "2,203",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Guinea-Bissau",
-        "gdp": "2,151",
+        "gdp_usd_million": "2,151",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Antigua and Barbuda",
-        "gdp": "2,127",
+        "gdp_usd_million": "2,127",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "San Marino",
-        "gdp": "2,033",
+        "gdp_usd_million": "2,033",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "East Timor",
-        "gdp": "1,992",
+        "gdp_usd_million": "1,992",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Solomon Islands",
-        "gdp": "1,707",
+        "gdp_usd_million": "1,707",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Sint Maarten",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Comoros",
-        "gdp": "1,422",
+        "gdp_usd_million": "1,422",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Grenada",
-        "gdp": "1,406",
+        "gdp_usd_million": "1,406",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Turks and Caicos Islands",
-        "gdp": null,
+        "gdp_usd_million": null,
         "year": null,
         "type": "IMF"
     },
     {
         "country": "Vanuatu",
-        "gdp": "1,289",
+        "gdp_usd_million": "1,289",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Saint Kitts and Nevis",
-        "gdp": "1,134",
+        "gdp_usd_million": "1,134",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Saint Vincent and the Grenadines",
-        "gdp": "1,128",
+        "gdp_usd_million": "1,128",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Samoa",
-        "gdp": "1,024",
+        "gdp_usd_million": "1,024",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "São Tomé and Príncipe",
-        "gdp": "751",
+        "gdp_usd_million": "751",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Dominica",
-        "gdp": "708",
+        "gdp_usd_million": "708",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Tonga",
-        "gdp": "581",
+        "gdp_usd_million": "581",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Micronesia",
-        "gdp": "484",
+        "gdp_usd_million": "484",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Kiribati",
-        "gdp": "311",
+        "gdp_usd_million": "311",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Palau",
-        "gdp": "308",
+        "gdp_usd_million": "308",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Marshall Islands",
-        "gdp": "305",
+        "gdp_usd_million": "305",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Nauru",
-        "gdp": "161",
+        "gdp_usd_million": "161",
         "year": "2024",
         "type": "IMF"
     },
     {
         "country": "Tuvalu",
-        "gdp": "66",
+        "gdp_usd_million": "66",
         "year": "2024",
         "type": "IMF"
     }

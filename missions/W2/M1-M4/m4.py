@@ -15,29 +15,36 @@ def execute_task(
     
     None 등을 사용하여 모든 작업이 끝났다고 하면 안되는 이유: 다른 프로세스는 그것을 빼내지 못하면 종료되지 않음.
     """
-
     while True:
         try:
             # queue가 비어있을 때까지 받아옴.
             task_name = tasks_to_accomplish.get_nowait() # non-blocking
             print(f"Task no {task_name}")
-            time.sleep(0.5)
+            # time.sleep(0.5)
             tasks_that_are_done.put(f"Task no {task_name} is done by Process-{pid}")
         except Empty:
             # queue가 비어있으면 프로세스 종료
-            print(f"Process-{pid} is empty.")
-            break
+            if tasks_to_accomplish.empty():
+                print(f"Process-{pid} is empty.")
+                break
             # exit(0) 사용해도 상관없음. 비어있으면 종료.
         except Full: # tasks_that_are_done이 꽉 차있을 때.
             print(f"Process-{pid} is full.")
             break
             # exit(1) 이상한 상황. 예견되지 않은 상황.
+        except Exception as e:
+            print(f"Process-{pid} has an error: {e}")
+            break
+            # exit(1) 이상한 상황. 예견되지 않은 상황.
 
 def main():
+    # manager = mp.Manager()
+    # tasks_to_accomplish = manager.Queue()
+    # tasks_that_are_done = manager.Queue()
     tasks_to_accomplish = mp.Queue()
     tasks_that_are_done = mp.Queue()
 
-    for i in range(10):
+    for i in range(10000):
         tasks_to_accomplish.put(i)
     
     processes = [mp.Process(target=execute_task, 
@@ -50,14 +57,16 @@ def main():
     for p in processes:
         p.join()
 
+    count = 0
     while True:
         try:
             msg = tasks_that_are_done.get_nowait()
+            count += 1
         except Empty:
             break
         else:
             print(msg)
-
+    print(count)
     
 
 if __name__ == "__main__":
