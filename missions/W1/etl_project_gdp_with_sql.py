@@ -8,7 +8,7 @@ import sqlite3
 import pycountry_convert as pc
 
 ## 로그 기록 함수
-def log_message(message, log_file="./Missions/Week01/etl_project_log.txt"):
+def log_message(message, log_file="./etl_project_log.txt"):
     # 현재 시간 가져오기
     current_time = datetime.now().strftime('%Y-%B-%d-%H-%M-%S')
     
@@ -24,6 +24,7 @@ def log_message(message, log_file="./Missions/Week01/etl_project_log.txt"):
 
 
 ## 웹에서 정보 가져와서 json 파일로 저장
+## 파라미터: 크롤링할 웹페이지의 url과 raw data저장할 파일명 
 def extract_json(url, file_name):
 
     # URL에서 HTML 문서 가져오기
@@ -45,10 +46,10 @@ def extract_json(url, file_name):
 
     # 테이블 행과 열 추출
     rows = []
-    for tr in table.find_all('tr')[3:]:  # 첫 번째 행은 헤더이므로 제외
+    for tr in table.find_all('tr')[3:]:  # 헤더 행들 제외
         cells = [td.text.strip() for td in tr.find_all('td')]
         if cells:  # 빈 행 건너뛰기
-            rows.append(cells[0:2])
+            rows.append(cells[0:2]) #원하는 데이터만 가져오기
     log_message(f"Extracted {len(rows)} rows from the table.")
 
     # 데이터를 JSON 형태로 변환
@@ -70,11 +71,11 @@ def transform_data(file_name):
     df['GDP'] = df['GDP'].replace('—', '0')
     df['GDP'] = df['GDP'].astype(int)
     df['GDP'] = df['GDP'].replace(0, np.nan)
-    df['GDP'] = round(df['GDP'] * 0.001, 2)
-    df.columns = ['Country', 'GDP_USD_billion']
+    df['GDP_USD_billion'] = np.nan
+    df['GDP_USD_billion'] = round(df['GDP'] * 0.001, 2)
  
     log_message("Cleaned and transformed the GDP data.")
-    return df
+    return df[['Country','GDP_USD_billion']] #단위 바꾼 GDP만 반환한다.
 
 
 # 나라->Region 변환 함수
@@ -131,24 +132,21 @@ def show_data2(db_name):
     log_message(f"result2 dataset contains {len(result2)} rows.")
     conn.close()
 
-def main():
+if __name__ == '__main__':
 
     log_message("Start ETL Process")
 
     #url->html 파싱->table 에서 원하는 정보 추출하여 json 파일로 저장
-    extract_json(url = "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29", file_name="./Missions/Week01/Countries_by_GDP.json")
+    extract_json(url = "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29", file_name="./Countries_by_GDP.json")
 
     #json 파일 내용 불러와서 데이터 정제
-    df = transform_data("./Missions/Week01/Countries_by_GDP.json")
+    df = transform_data("./Countries_by_GDP.json")
 
     #정제한 df 데이터를 db에 저장
-    load_data(df, "./Missions/Week01/World_Economies.db")
+    load_data(df, "./World_Economies.db")
 
     #db에서 Sql을 사용하여 데이터 처리하여 출력
-    show_data1("./Missions/Week01/World_Economies.db")
-    show_data2("./Missions/Week01/World_Economies.db")
+    show_data1("./World_Economies.db")
+    show_data2("./World_Economies.db")
 
     log_message("ETL process completed successfully.")
-
-
-main()
