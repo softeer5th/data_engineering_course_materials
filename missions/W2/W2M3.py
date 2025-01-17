@@ -1,20 +1,18 @@
-from multiprocessing import Process
-import time
 from multiprocessing import Queue
-
 
 def push(pid, q, item):
     """아이템을 큐에 추가하는 함수."""
     q.put(item)
     print(f'item No: {pid} {item}')
-     
+
 
 def pop(q):
     i = 0
-    while(q):
-        print(f'item No: {i} {q.get()}')
-        i+=1
+    while not q.empty(): #while(q)로 조건 확인하면, q 객체는 항상 있기 때문에 프로그램이 끝나지 않는다. -> q가 비었는지 안 비었는지로 확인해야 함
+        a = q.get()
 
+        print(f'item No: {i} {a}')
+        i+=1
 
 if __name__ == '__main__':
     items = ['red','blue','green','black']
