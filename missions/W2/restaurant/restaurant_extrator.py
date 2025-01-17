@@ -1,13 +1,12 @@
 import requests
-import os
 import time
-import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+import restaurant_util as ut
 
 # returns a list of restaurants located within a r from the coordinates x and y
 # parameters: x, y, r, Kakao developer API key
@@ -80,43 +79,30 @@ def get_review_html(url):
         next_page.send_keys(Keys.ENTER)
         time.sleep(0.1)
 
+    view_more_buttons = []
+    comments = driver.find_elements(By.CLASS_NAME, 'txt_comment txt_fold')
+    for comment in comments:
+        view_more_buttons.append(comment.find_element(By.CLASS_NAME, 'btn_fold'))
+
+    if view_more_buttons != []:
+        for view_more_button in view_more_buttons:
+            view_more_button.send_keys(Keys.ENTER)
+            time.sleep(0.1)
+
     html = driver.page_source
     # 드라이버 종료
     driver.close()
     return html
 
-# saves the receive data to a json file
-# data: data to save, path: path to save, filename: filename.
-# return: Succes code or Error code
-
-def save_data_to_file(data, path, filename, mode):
-    # 디렉터리 확인 및 생성
-    if not os.path.exists(path):
-        os.makedirs(path)
-    
-    # 파일 저장
-    file_path = os.path.join(path, filename)
-    file_name, file_ext = os.path.splitext(filename)
-    try:
-        with open(file_path, mode) as file:
-            if  file_ext == 'json':
-                json.dump(data, file, ensure_ascii=False, indent=4)
-            elif file_ext == 'html':
-                file.write(data)
-            else:
-                raise Exception('Wrong file type')
-    except Exception as e:
-        return e
-    
 def extract(x, y, radius, api_key, path, restaurants_filename, reviews_filename):
     restaurants_json = get_restaurants(x, y, radius, api_key)
-    save_data_to_file(restaurant_json, path, restaurants_filename, 'w')
+    ut.save_data_to_file(restaurant_json, path, restaurants_filename, 'w')
     reviews_json = {}
     try:
         for restaurant_json in restaurants_json['documents']:
             restaurant_id = restaurant_json['id']
             url = restaurant_json['url']
-            reviews_json[id] = get_review_data(url)
-            save_data_to_file(reviews_json, path, reviews_filename, 'a')
+            reviews_json[id] = get_review_html(url)
+            ut.save_data_to_file(reviews_json, path, reviews_filename, 'a')
     except:
         pass
