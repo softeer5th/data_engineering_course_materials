@@ -162,3 +162,5 @@ cython_debug/
 missions/W0/
 missions/W1/
 slides/
+temp/
+*.json
