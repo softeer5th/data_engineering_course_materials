@@ -33,7 +33,7 @@ def create_gdp_table(conn: sqlite3.Connection, sql_path: str) -> Optional[bool]:
         logger.info(f'Short message: {err_msg}')
         return None
 
-def bulk_insert_gdp_data(conn: sqlite3.Connection, transformed_data: List[Dict]) -> Optional[bool]:
+def bulk_insert_gdp_data(conn: sqlite3.Connection, transformed_df) -> Optional[bool]:
     """
     Insert GDP data into DB
     """
@@ -46,7 +46,7 @@ def bulk_insert_gdp_data(conn: sqlite3.Connection, transformed_data: List[Dict])
             INSERT INTO gdp (Country, GDP_USD_billion, Year, Type, Region)
             VALUES (?, ?, ?, ?, ?)
             ''',
-            [tuple(row.values()) for row in transformed_data]
+            [row for row in transformed_df.to_records(index=False).tolist()]
         )
         # 도중에 에러가 발생하지 않으면 한 번에 commit
         conn.commit()
