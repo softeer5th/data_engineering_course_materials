@@ -1,0 +1,16 @@
+2025-January-17-14-23-48, 로그 파일 생성
+2025-January-17-14-23-49, 웹에서 HTTP응답 받음
+2025-January-17-14-23-49, (Extract) raw GDP 데이터 추출
+2025-January-17-14-23-49, (Extract) raw region 데이터 추출
+2025-January-17-14-23-49, raw 데이터 로드: missions/W1/M3/Countries_by_GDP.json
+2025-January-17-14-23-49, (Transform) 데이터 결측치 처리
+2025-January-17-14-23-49, (Transform) 불필요한 주석 제거
+2025-January-17-14-23-49, (Transform) 데이터 단위 변경
+2025-January-17-14-24-09, 웹에서 HTTP응답 받음
+2025-January-17-14-24-09, (Extract) raw GDP 데이터 추출
+2025-January-17-14-24-09, (Extract) raw region 데이터 추출
+2025-January-17-14-24-09, raw 데이터 로드: missions/W1/M3/Countries_by_GDP.json
+2025-January-17-14-24-09, (Transform) 데이터 결측치 처리
+2025-January-17-14-24-09, (Transform) 불필요한 주석 제거
+2025-January-17-14-24-09, (Transform) 데이터 단위 변경
+2025-January-17-14-24-09, (Load) 변환된 데이터 Load
