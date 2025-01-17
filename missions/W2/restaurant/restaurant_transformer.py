@@ -19,7 +19,9 @@ def get_reviews_from_json(reviews_json):
             span = comment.find('span').text 
             if span:
                 reviews.append(span)
-                
+
         # reviews에 comments text 다 들어가 있다.
         # {'id' = id, 'comments' = [comments]}
         ids_reviews.append({'id': id, 'reviews': reviews})
+
+    return ids_reviews
