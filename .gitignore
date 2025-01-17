@@ -160,3 +160,7 @@ cython_debug/
 #.idea/
 missions/W2/data/training.1600000.processed.noemoticon.csv
 missions/W2/W2M6/training.1600000.processed.noemoticon.csv
+missions/W2/data/korean_stopwords.txt
+
+missions/W1/M3/region.csv
+mission/W1/mtcars.csv
