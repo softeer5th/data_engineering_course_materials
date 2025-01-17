@@ -20,6 +20,7 @@ google-auth-httplib2 = "^0.2.0"
 google-auth-oauthlib = "^1.2.1"
 konlpy = "^0.6.0"
 spacy = "^3.8.3"
+pytest = "^8.3.4"
 
 
 [tool.poetry.group.dev.dependencies]
