@@ -67,8 +67,8 @@ def test_process_pool():
 
     with ExtractorContext(
         ProcessPool(3, None, Extractor, input_queue, output_queue)
-    ) as thread_pool:
-        thread_pool.execute()
+    ) as process_pool:
+        process_pool.execute()
 
     print(f"Output queue size: {output_queue.size}")
     while not output_queue.empty():
