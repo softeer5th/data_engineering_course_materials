@@ -9,9 +9,12 @@ def push_to_queue(q, colors):
 
 def pop_from_queue(q):
     print("popping items from queue: ")
-    while not q.empty():
-        i, color = q.get()
-        print(f"item no: {i} {color}")
+    while True:
+        try:
+            i, color = q.get_nowait()  # 큐에서 항목 가져오기, 비어 있으면 예외 발생
+            print(f"Item no: {i}, {color}")
+        except Exception as e:
+            break
 
 
 if __name__ == "__main__":
