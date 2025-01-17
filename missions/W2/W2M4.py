@@ -1,20 +1,29 @@
 from multiprocessing import Queue, Process
 from multiprocessing import current_process
 import time
+from queue import Empty
 
 def processing(tasks_to_accomplish, tasks_that_are_done ) :
     while True:
         try :
             num = tasks_to_accomplish.get_nowait()
+        except Empty:
+            # get_nowait() 함수로 인해 큐가 비어있다는 예외가 발생한다면(더 진행할 테스크가 없다면) 중단.
+            break
+        except Exception as e :
+            # 큐가 비어있는 상황 이외에 예외가 get_nowait에서 발생하였을 때 처리.
+            print(f"Unexpected Exception of get_nowait() : {e}")
+        
+        try :
             # 테스크가 시작될 때 테스크 번호 출력
             print(f"Task no {num}")
             time.sleep(0.5)
             tasks_that_are_done.put(num)
             # 테스크가 끝났을 때 테스크 번호와 프로세스 번호 출력
             print(f"Task no {num} is done by {current_process().name}")
-        except :
-            # get_nowait() 함수로 인해 예외가 발생한다면(더 진행할 테스크가 없다면) 중단
-            break
+        except Exception as e :
+            # 예상치 못한 예외가 발생되었을 때 처리.
+            print(f"Unexpected Exception : {e}")
 
 def main() :
 
