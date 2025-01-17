@@ -37,8 +37,13 @@ if __name__ == "__main__":
         process.join()
     
     # 완료메시지 큐에서 완료 메시지 출력
-    while not tasks_that_are_done.empty():
-        print(tasks_that_are_done.get())
+    while True:
+        try:
+            # 큐에서 항목 가져오기
+            message = tasks_that_are_done.get_nowait()
+            print(message)
+        except Exception as e:
+            break
 
     # 큐 닫고 관련 스레드 종료 대기
     tasks_to_accomplish.close()  
