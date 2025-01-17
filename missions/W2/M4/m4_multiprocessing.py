@@ -8,6 +8,7 @@ import time
 def run(que_to : Queue, que_done : Queue, processNumber : int):
     while True:
         try :
+            # 원자성을 지키기 위해서 while 에 True를 넣고, get_nowait()를 쓰는 것도 좋다.
             task = que_to.get_nowait()
             print(task)
             time.sleep(0.5)
