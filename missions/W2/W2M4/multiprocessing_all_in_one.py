@@ -6,6 +6,7 @@ def do_work(tasks_to_accomplish, tasks_that_are_done, worker_id):
         try:
             task = tasks_to_accomplish.get_nowait()
         except Exception as e:
+            print(f"Process-{worker_id} 작업 완료")
             break
         print(f"작업 번호 {task}")
         # 작업 완료 메시지 입력
@@ -17,7 +18,7 @@ def main():
     tasks_to_accomplish = Queue()
     tasks_that_are_done = Queue()
 
-    for i in range(10):
+    for i in range(100):
         tasks_to_accomplish.put(i)
 
     processes = []
