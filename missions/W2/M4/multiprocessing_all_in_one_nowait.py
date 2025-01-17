@@ -6,10 +6,11 @@ def work(todo:Queue, done:Queue):
     while not todo.empty():
         try:
             data = todo.get_nowait()
-            done.put(f'Task no {data} is done by {current_process().name}')
-            time.sleep(0.5)
         except queue.Empty as e:
-            print(f"{current_process().name} error")
+            print(f"{current_process().name} get_nowait error")
+        else:
+            time.sleep(0.5)
+            done.put(f'Task no {data} is done by {current_process().name}')
     return
 
 if __name__ == '__main__':
