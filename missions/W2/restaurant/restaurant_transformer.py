@@ -12,7 +12,8 @@ def get_reviews_from_json(reviews_json):
 
     for id_text in ids_texts:  # 리스트 내의 딕셔너리
         id_rating_reviews = get_id_reviews_from_id_text(id_text)
-        ids_reviews.append(id_rating_reviews)
+        if id_rating_reviews is not None:
+            ids_reviews.append(id_rating_reviews)
 
     return ids_reviews
 
@@ -30,7 +31,10 @@ def get_id_reviews_from_id_text(id_text):
 
     rating_tag = soup.find(class_='color_b')
     if rating_tag is None:
-        return
+        return None
     rating = rating_tag.text
 
     return {'id': id, 'rating': rating, 'reviews': reviews}
+
+def get_df_from_ids_reviews(ids_reviews):
+    return pd.DataFrame(ids_reviews)
