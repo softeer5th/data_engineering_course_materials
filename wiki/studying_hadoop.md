@@ -37,7 +37,7 @@ HDFS > YARN > MapReduce
 MapReduce는 Hadoop을 최종적으로 사용할 때 수행되는 연산일테니, 결국 Hadoop 클러스터의 컨트롤 센터는 YARN이다.
 
 > 흐름을 생각해보자.
-```
+
 1. 최초에 hadoop을 설치한다.
 2. 물리 서버들을 클러스터에 참가시킨다.
     * docker compose를 이용하도록 하고, 각 컨테이너가 어떤 역할을 지녔는지는 xml 파일에 드러난다. (물론 각자의 역할에 맞는 프로세스를 실행해야 함)
@@ -66,6 +66,6 @@ MapReduce는 Hadoop을 최종적으로 사용할 때 수행되는 연산일테�
                 echo "hadoop ALL=(ALL) NOPASSWD: /usr/sbin/useradd, /usr/sbin/usermod" >> /etc/sudoers
             ```
 5. 이렇게 세팅이 완료되었으면, 어플리케이션 코드를 작성하여 hadoop에게 Map/Reduce 연산 수행을 적절히 요청하면 된다.
-```
+
 
 Kerberos 라는 것으로 YARN layer (아마도..?)에서의 계정 관리를 할 수 있다는데 이것도 찾아보자.
