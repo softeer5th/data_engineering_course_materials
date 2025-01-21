@@ -15,6 +15,7 @@ ENV YARN_NODEMANAGER_USER=yarn
 # Create Hadoop users and give them sudo privileges
 RUN useradd -ms /bin/bash hdfs && \
     useradd -ms /bin/bash yarn  && \
+    passwd -d hdfs && passwd -d yarn && \
     echo "hdfs ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
     echo "yarn ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
@@ -30,10 +31,9 @@ RUN tar -xvzf /opt/hadoop-${HADOOP_VERSION}-aarch64.tar.gz -C /opt/ && \
     rm /opt/hadoop-${HADOOP_VERSION}-aarch64.tar.gz
 
 # Step 5: Copy Hadoop configuration files
-COPY core-site.xml ${HADOOP_HOME}/etc/hadoop/core-site.xml
-COPY hdfs-site.xml ${HADOOP_HOME}/etc/hadoop/hdfs-site.xml
-COPY mapred-site.xml ${HADOOP_HOME}/etc/hadoop/mapred-site.xml
-COPY yarn-site.xml ${HADOOP_HOME}/etc/hadoop/yarn-site.xml
+COPY configs/* ${HADOOP_HOME}/etc/hadoop/
+COPY scripts/* /usr/local/bin/
+
 
 USER hdfs
 RUN ssh-keygen -t rsa -P '' -f /home/hdfs/.ssh/id_rsa && \
@@ -66,12 +66,14 @@ RUN ${HADOOP_HOME}/bin/hdfs namenode -format -force
 
 # Step 8: Copy start script and make executable
 USER hdfs
-COPY --chown=hdfs:hdfs start-hadoop.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/start-hadoop.sh
+COPY --chown=hdfs:hdfs scripts/start-hadoop.sh /usr/local/bin/
+
+USER root
+RUN chmod +x /usr/local/bin/*.sh
 
 
 # Step 10: Expose necessary ports (for web interface)
-EXPOSE 9870 8088 9000 9864
+EXPOSE 9870 8088 9000 9864 8020 8042
 
 # Set Hadoop user environment variables
 # ENV HDFS_NAMENODE_USER=root
@@ -81,5 +83,5 @@ EXPOSE 9870 8088 9000 9864
 # ENV YARN_NODEMANAGER_USER=root
 
 # Step 11: Run Hadoop services on container startup
-USER root
-CMD ["start-hadoop.sh"]
+
+CMD ["/usr/local/bin/start-hadoop.sh"]
