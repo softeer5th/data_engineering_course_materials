@@ -4,10 +4,13 @@ FROM ubuntu:20.04
 ARG HADOOP_DOWNLOAD_URL=https://dlcdn.apache.org/hadoop/common
 ARG HADOOP_VERSION=3.4.1
 
+ARG HADOOP_HOME=/usr/local/hadoop
+ARG HADOOP_DATA=/usr/local/hadoop_data
+
 # 환경 변수 설정
-ENV HADOOP_HOME=${HADOOP_HOME_ARG}
-ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-ENV HADOOP_DATA=${HADOOP_DATA_ARG}
+ENV HADOOP_HOME=${HADOOP_HOME}
+ENV HADOOP_DATA=${HADOOP_DATA}
+ENV PATH=${PATH}:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Seoul
@@ -26,37 +29,31 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
 # 하둡 다운로드 및 설치
-RUN curl -O ${HADOOP_DOWNLOAD_URL}/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz
-
-RUN tar -xzvf hadoop-${HADOOP_VERSION}.tar.gz && \
-    mv hadoop-${HADOOP_VERSION} $HADOOP_HOME && \
-    rm hadoop-${HADOOP_VERSION}.tar.gz
-
-# hadoop 유저 생성 및 권한 설정
-RUN groupadd hadoop && \
-    useradd -m -s /bin/bash -g hadoop hadoop && \
-    echo "hadoop ALL=(ALL) NOPASSWD: /usr/sbin/useradd, /usr/sbin/usermod, /usr/bin/passwd" >> /etc/sudoers
-
-RUN mkdir -p $HADOOP_DATA
-
-RUN chown -R hadoop:hadoop $HADOOP_HOME
-RUN chown -R hadoop:hadoop $HADOOP_DATA
-
-# hadoop 유저로 전환
-USER hadoop
-
-WORKDIR /home/hadoop
+RUN curl -O ${HADOOP_DOWNLOAD_URL}/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz && \
+    tar -xzvf hadoop-${HADOOP_VERSION}.tar.gz && \
+    rm hadoop-${HADOOP_VERSION}.tar.gz && \
+    mv hadoop-${HADOOP_VERSION} ${HADOOP_HOME}
 
 # 하둡 설정 파일 복사
-COPY --chown=hadoop:hadoop config/ $HADOOP_HOME/etc/hadoop/
+COPY config/ ${HADOOP_HOME}/etc/hadoop/
 
 # start-hadoop.sh 복사
-COPY --chown=hadoop:hadoop start-hadoop.sh /start-hadoop.sh
+COPY start-hadoop.sh /start-hadoop.sh
 RUN chmod +x /start-hadoop.sh
 
+# manager-start.sh, worker-start.sh 복사
+COPY manager-start.sh /manager-start.sh
+RUN chmod +x /manager-start.sh
+
+COPY worker-start.sh /worker-start.sh
+RUN chmod +x /worker-start.sh
+
 # 포트 노출
-EXPOSE 9870 9864 8088 9000
+EXPOSE 9870 9864 8088 8042
 
 # 컨테이너 실행 시 start-hadoop.sh 실행
 CMD ["/start-hadoop.sh"]

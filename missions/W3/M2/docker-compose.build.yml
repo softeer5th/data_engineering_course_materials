@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    env_file:
-      - .env
+      args:
+        HADOOP_HOME: ${HADOOP_HOME}
+        HADOOP_DATA: ${HADOOP_DATA}
     image: hadoop-image:latest

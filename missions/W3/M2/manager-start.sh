@@ -7,9 +7,7 @@ sed -i "s#\${HADOOP_DATA}#$HADOOP_DATA#g" $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 
 # NameNode HDFS 디렉터리
 dfs_namenode_name_dir=$(hdfs getconf -confKey dfs.namenode.name.dir)
-# file:// 프로토콜 제거
 dfs_namenode_name_dir=${dfs_namenode_name_dir#file://}
-
 
 # HDFS NameNode 포맷 (최초 1회만)
 if [ ! -d "$dfs_namenode_name_dir/current" ]; then
@@ -17,9 +15,7 @@ if [ ! -d "$dfs_namenode_name_dir/current" ]; then
   hdfs namenode -format
 fi
 
-# Hadoop 서비스 시작
-start-dfs.sh
-start-yarn.sh
+hdfs --daemon start namenode
+yarn --daemon start resourcemanager
 
-# 컨테이너가 계속 실행되도록 대기
 tail -f /dev/null
