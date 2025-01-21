@@ -36,12 +36,6 @@ HDFS > YARN > MapReduce
 
 MapReduce는 Hadoop을 최종적으로 사용할 때 수행되는 연산일테니, 결국 Hadoop 클러스터의 컨트롤 센터는 YARN이다.
 
-찾아보니까 Kerberos라는 게 있다. 서비스 계층에서의 계정 및 권한을 관리하는 건가?
-네트워크 계층에서의 보안은 TLS, SSH 등으로 달성되어야 할 것 같기도 한데, 이걸 Hadoop 관리자가 각 노드 별로 키를 교환하고.. 이런 걸 할 것 같진 않음.
--> 결국 YARN이 제어하는 건가?
-
-위 질문을 AI에게 하니 그렇다고 한다.
-
 > 흐름을 생각해보자.
 ```
 1. 최초에 hadoop을 설치한다.
@@ -51,7 +45,7 @@ MapReduce는 Hadoop을 최종적으로 사용할 때 수행되는 연산일테�
     * 컨테이너 초기 생성 시 각 컨테이너 간 ssh 키를 생성한 뒤 교환하는 과정이 필요하다. (스크립트로 자동화..)
     * 당연히 아무 서버나 접속하고 그럴 순 없으니까 필요함.
     * Host OS에서도 접속을 해야하니까 (최소한 ResourceManager 컨테이너?) 마찬가지로 키 교환 해준다.
-5. 또한 각 노드(도커 환경을 사용한다면 도커 컨테이너, 그렇지 않다면 하나의 OS가 설치된 물리 서버)에 HDFS 유저를 생성해야 한다.
+4. 또한 각 노드(도커 환경을 사용한다면 도커 컨테이너, 그렇지 않다면 하나의 OS가 설치된 물리 서버)에 HDFS 유저를 생성해야 한다.
     * Dockerfile을 작성할 때 hadoop 데몬을 실행하는 superuser를 hadoop으로 지정한다.
         * root를 그대로 쓰지 않는 이유는.. hadoop 외의 구성 요소에 대한 권한까지 가지고 있기 때문에 
         * 그리고 다들 hadoop이라는 이름으로 superuser를 생성하는 게 관례인 듯.
@@ -71,5 +65,7 @@ MapReduce는 Hadoop을 최종적으로 사용할 때 수행되는 연산일테�
             RUN useradd -m -s /bin/bash hadoop && \
                 echo "hadoop ALL=(ALL) NOPASSWD: /usr/sbin/useradd, /usr/sbin/usermod" >> /etc/sudoers
             ```
-6. 이렇게 세팅이 완료되었으면, 어플리케이션 코드를 작성하여 hadoop에게 Map/Reduce 연산 수행을 적절히 요청하면 된다.
+5. 이렇게 세팅이 완료되었으면, 어플리케이션 코드를 작성하여 hadoop에게 Map/Reduce 연산 수행을 적절히 요청하면 된다.
 ```
+
+Kerberos 라는 것으로 YARN layer (아마도..?)에서의 계정 관리를 할 수 있다는데 이것도 찾아보자.
