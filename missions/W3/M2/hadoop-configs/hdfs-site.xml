@@ -19,7 +19,7 @@
 <configuration>
     <property>
         <name>dfs.replication</name>
-        <value>1</value>
+        <value>2</value>
     </property>
 
     <property>
@@ -38,7 +38,7 @@
         <value>/hadoop/dfs/data</value>
     </property>
 
-    <property>
+     <property>
         <name>dfs.webhdfs.enabled</name>
         <value>true</value>
     </property>
@@ -49,6 +49,10 @@
     <property>
         <name>dfs.namenode.http-address</name>
         <value>0.0.0.0:9870</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address</name>
+        <value>namenode:9000</value>
     </property>
 
 </configuration>
