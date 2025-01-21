@@ -193,5 +193,3 @@ docker system prune -af
 | Stop Hadoop Cluster      | `docker-compose down`                      |
 | Access Hadoop Container  | `docker exec -it hadoop-cluster bash`      |
 | Format HDFS Namenode     | `hdfs namenode -format`                     |
-| Start HDFS Services      | `start-dfs.sh`                             |
-| Start YARN Services      | `start-yarn.sh`                            |
