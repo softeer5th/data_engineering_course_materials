@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- MapReduce 프레임워크로 YARN 사용 지정 -->
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+
+    <!-- MapReduce JobHistory Server 주소 -->
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>resourcemanager:10020</value>
+    </property>
+
+    <!-- JobHistory Server Web UI 주소 -->
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>resourcemanager:19888</value>
+    </property>
+
+    <!-- Map 태스크의 Java 힙 크기 설정 -->
+    <property>
+        <name>mapreduce.map.memory.mb</name>
+        <value>1024</value>
+    </property>
+
+    <!-- Reduce 태스크의 Java 힙 크기 설정 -->
+    <property>
+        <name>mapreduce.reduce.memory.mb</name>
+        <value>2048</value>
+    </property>
+
+    <!-- Map 태스크의 Java 옵션 -->
+    <property>
+        <name>mapreduce.map.java.opts</name>
+        <value>-Xmx1638m</value>
+    </property>
+
+    <!-- Reduce 태스크의 Java 옵션 -->
+    <property>
+        <name>mapreduce.reduce.java.opts</name>
+        <value>-Xmx3278m</value>
+    </property>
+
+    <!-- 셔플 서비스 설정 -->
+    <property>
+        <name>mapreduce.job.reduce.shuffle.consumer.plugin.class</name>
+        <value>org.apache.hadoop.mapreduce.task.reduce.Shuffle</value>
+    </property>
+
+    <!-- 작업 실행 시간 제한 -->
+    <!-- <property>
+        <name>mapreduce.task.timeout</name>
+        <value>600000</value>
+    </property> -->
+
+    <!-- 작업당 최대 Map 태스크 수 -->
+    <!-- <property>
+        <name>mapreduce.job.maps</name>
+        <value>2</value>
+    </property> -->
+
+    <!-- 작업당 최대 Reduce 태스크 수 -->
+    <!-- <property>
+        <name>mapreduce.job.reduces</name>
+        <value>2</value>
+    </property> -->
+
+</configuration>
