@@ -191,5 +191,5 @@ docker system prune -af
 | Build Docker Image       | `docker-compose build`                    |
 | Start Hadoop Cluster     | `docker-compose up -d`                     |
 | Stop Hadoop Cluster      | `docker-compose down`                      |
-| Access Hadoop Container  | `docker exec -it hadoop-cluster bash`      |
+| Access Hadoop Container  | `docker exec -it hadoop-docker-hadoop-cluster-1 bash`      |
 | Format HDFS Namenode     | `hdfs namenode -format`                     |
