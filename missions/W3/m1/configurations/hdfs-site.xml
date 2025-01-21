@@ -1,0 +1,17 @@
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+        <final>true</final>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/opt/hadoop_home/namenode_home</value>
+        <final>true</final>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/opt/hadoop_home/datanode_home</value>
+        <final>true</final>
+    </property>
+</configuration>
