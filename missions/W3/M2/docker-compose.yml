@@ -1,0 +1,48 @@
+services:
+  manager:
+    container_name: hadoop-manager
+    image: hadoop-image:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${HOME}/docker/volumes/hadoop/data/manager:${HADOOP_DATA_ARG}
+    env_file:
+      - .env
+    networks:
+      - hadoop-network
+    restart: unless-stopped
+  worker1:
+    container_name: hadoop-worker1
+    image: hadoop-image:latest
+    volumes:
+      - ${HOME}/docker/volumes/hadoop/data/worker1:${HADOOP_DATA_ARG}
+    env_file:
+      - .env
+    networks:
+      - hadoop-network
+    restart: unless-stopped
+  worker2:
+    container_name: hadoop-worker2
+    image: hadoop-image:latest
+    volumes:
+      - ${HOME}/docker/volumes/hadoop/data/worker2:${HADOOP_DATA_ARG}
+    env_file:
+      - .env
+    networks:
+      - hadoop-network
+    restart: unless-stopped
+  worker3:
+    container_name: hadoop-worker3
+    image: hadoop-image:latest
+    volumes:
+      - ${HOME}/docker/volumes/hadoop/data/worker3:${HADOOP_DATA_ARG}
+    env_file:
+      - .env
+    networks:
+      - hadoop-network
+    restart: unless-stopped
+
+networks:
+  hadoop-network:
+    driver: bridge
+    name: hadoop-network
