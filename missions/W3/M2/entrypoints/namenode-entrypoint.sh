@@ -4,7 +4,15 @@ set -e
 # ssh 서비스 시작
 sudo service ssh start
 
-# namenode 디렉토리가 비어있으면 포맷 실행
+sudo mkdir -p /hadoop/dfs/name
+sudo chown -R hduser:hduser /hadoop && \
+sudo chmod -R 755 /hadoop
+
+
+echo "datanode1" > $HADOOP_HOME/etc/hadoop/workers && \
+echo "datanode2" >> $HADOOP_HOME/etc/hadoop/workers
+
+# namenode 디렉토리의 버젼이 존재하지 않으면 namenode를 포맷
 if [ ! -f "/hadoop/dfs/name/current/VERSION" ]; then
     $HADOOP_HOME/bin/hdfs namenode -format
     echo "Successfully formatted namenode"
@@ -21,12 +29,14 @@ if [ ! -f "/hadoop/dfs/name/current/VERSION" ]; then
 
 fi
 
+# worker 파일 복사
+# workers 파일에 혹시 모를 localhost 제거를 위함
+echo "datanode1" > $HADOOP_HOME/etc/hadoop/workers && \
+echo "datanode2" >> $HADOOP_HOME/etc/hadoop/workers
+
 # HDFS 시작
 $HADOOP_HOME/sbin/start-dfs.sh
-
-echo "YARNSTART = $YARNSTART"
-
-# YARNSTART가 설정되지 않았거나 0이 아니면 yarn도 시작.
+# yarn 시작
 if [[ -z $YARNSTART || $YARNSTART -ne 0 ]]; then
         echo "running start-yarn.sh"
         $HADOOP_HOME/sbin/start-yarn.sh
