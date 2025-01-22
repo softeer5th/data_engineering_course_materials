@@ -1,9 +1,0 @@
-services:
-  hadoop:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        HADOOP_HOME: ${HADOOP_HOME}
-        HADOOP_DATA: ${HADOOP_DATA}
-    image: hadoop-image:latest
