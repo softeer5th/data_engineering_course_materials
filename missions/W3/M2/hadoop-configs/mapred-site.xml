@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
-    <!-- MapReduce 프레임워크로 YARN 사용 지정 -->
     <property>
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
+    </property>
+    <property>
+        <name>yarn.app.mapreduce.am.env</name>
+        <value>HADOOP_MAPRED_HOME=/home/hduser/hadoop-3.3.3</value>
+    </property>
+    <property>
+        <name>mapreduce.map.env</name>
+        <value>HADOOP_MAPRED_HOME=/home/hduser/hadoop-3.3.3</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.env</name>
+        <value>HADOOP_MAPRED_HOME=/home/hduser/hadoop-3.3.3</value>
+    </property>
+    <!-- MapReduce 프레임워크로 YARN 사용 지정 -->
+
+    <!-- Map 출력과 정렬이 메모리에서 이뤄짐 -->
+    <!-- 이것이 80% 초과되는 경우가 spill, 정렬된 데이터를 디스크에 임시로 쓰는 과정임 -->
+    <!-- 블록 크기보다는 적어도 80% 이상인 것이 좋을 듯. 현재는 50% -->
+    <property>
+        <name>mapreduce.task.io.sort.mb</name>
+        <value>256</value>
     </property>
 
     <!-- MapReduce JobHistory Server 주소 -->

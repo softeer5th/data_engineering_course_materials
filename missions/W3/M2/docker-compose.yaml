@@ -6,46 +6,45 @@ services:
     volumes:
       - hadoop_namenode1:/hadoop/dfs/name
     ports:
-      - "9870:9870" # Web UI
+      - "9870:9870" # HDFS Web UI
       - "8020:8020" # RPC
-      - "9000:9000" # HDFS
-    environment:
-      - HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
+      - "8088:8088" # Yarn WEB UI
+      - "9000:9000" # HDFS IPC
       # - ENSURE_NAMENODE_DIR=/tmp/hadoop-root/dfs/name
     hostname: namenode
     container_name: namenode
-    depends_on:
-      - datanode1
-      - datanode2
-    command: ["~/entrypoints/namenode-entrypoint.sh"]  # namenode 컨테이너 실행 시 실행할 명령어.
+    # command: ["/bin/bash"]  # namenode 컨테이너 실행 시 실행할 명령어.
+    command: ["./namenode-entrypoint.sh"]  # namenode 컨테이너 실행 시 실행할 명령어.
     networks:
       - hadoop_network
-
+        
   datanode1:
     image: hadoop-base:latest
     user: hduser
     volumes:
       - hadoop_datanode1:/hadoop/dfs/data
       # 다른 볼륨 설정...
-    environment:
-      - HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
     container_name: datanode1
-    command: ["~/entrypoints/datanode-entrypoint.sh"]  # datanode 컨테이너 실행 시 실행할 명령어.
+    depends_on:
+      - namenode
+    # command: ["/bin/bash"]  # datanode 컨테이너 실행 시 실행할 명령어.
+    command: ["./datanode-entrypoint.sh"]  # datanode 컨테이너 실행 시 실행할 명령어.
     networks:
       - hadoop_network
-  
+
   datanode2:
     container_name: datanode2   
     user: hduser
     image: hadoop-base:latest
     volumes:
       - hadoop_datanode2:/hadoop/dfs/data
-    command: ["~/entrypoints/datanode-entrypoint.sh"]  # datanode 컨테이너 실행 시 실행할 명령어.
-    environment:
-      - HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
+    # command: [""]  # datanode 컨테이너 실행 시 실행할 명령어.
+    depends_on:
+      - namenode
+    command: ["./datanode-entrypoint.sh"]  # datanode 컨테이너 실행 시 실행할 명령어.
     networks:
-    - hadoop_network
-     
+      - hadoop_network
+
 volumes:
   hadoop_namenode1:
   hadoop_datanode1:
@@ -53,7 +52,5 @@ volumes:
 
 networks:
   hadoop_network:
-      name: hadoop_network
-      external: true
-
+    driver: bridge
   

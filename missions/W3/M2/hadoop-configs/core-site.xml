@@ -21,5 +21,22 @@
         <name>fs.defaultFS</name>
         <value>hdfs://namenode:9000</value>
     </property>
+    <!-- 하둡에서 임시 파일을 처리할 때 사용함. 영구적인 것이 좋음 -->
+    <!-- 만약 mapreduce 과정에서 메모리가 초과되면 여기를 사용함 -->
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/hadoop/tmp</value>
+    </property>
+    <!-- IO 버퍼 크기. 단일 파일의 성능 극대화 -> 128kb -->
+    <property>
+        <name>io.file.buffer.size</name>
+        <value>131072</value>
+    </property>
+
+    <!-- 하둡에서 사용하는 파일 시스템의 휴지통 비우기 주기 (분)-->
+    <property>
+        <name>fs.trash.interval</name>
+        <value>1440</value>
+    </property>
 </configuration>
 
