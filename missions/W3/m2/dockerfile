@@ -1,0 +1,35 @@
+FROM ubuntu:20.04
+
+ENV HADOOP_HOME=/usr/local/hadoop
+ENV PATH=$PATH:$HADOOP_HOME/bin
+ENV PATH=$PATH:$HADOOP_HOME/sbin
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
+
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk ssh;
+
+RUN apt-get install -y sudo vim
+
+RUN apt-get clean
+
+COPY hadoop-3.4.1.tar.gz /hadoop-3.4.1.tar.gz
+RUN tar -zxf hadoop-3.4.1.tar.gz && \
+    mv hadoop-3.4.1 $HADOOP_HOME && \
+    rm hadoop-3.4.1.tar.gz
+
+RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P ''; \
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; \
+    chmod 400 ~/.ssh/id_rsa; \
+    echo "Host *\n  StrictHostKeyChecking no" > ~/.ssh/config;
+    
+RUN echo "export JAVA_HOME=$JAVA_HOME" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh; \
+    echo "export HDFS_NAMENODE_USER=root" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh; \
+    echo "export HDFS_DATANODE_USER=root" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh; \
+    echo "export HDFS_SECONDARYNAMENODE_USER=root" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh;\
+    echo "export YARN_RESOURCEMANAGER_USER=root" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh; \
+    echo "export YARN_NODEMANAGER_USER=root" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh;
+
+COPY core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
+COPY hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+COPY mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
+COPY yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml

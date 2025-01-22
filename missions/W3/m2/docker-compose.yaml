@@ -1,0 +1,55 @@
+version: '3'
+services:
+  namenode:
+    platform: linux/arm64
+    image: hadoop_fully:0.1.0
+    environment:
+      - HADOOP_HOME=/usr/local/hadoop
+    container_name: namenode
+    hostname: namenode
+    ports:
+      - "9870:9870"    # namenode webui
+      - "8020:8020"    # namenode RPC
+      - "8088:8088"    # Resource manager WebUI
+      - "8032:8032"    # Resource manager RPC
+      - "8090:8090"    # application master WebUI
+      - "19888:19888"  # Job history Server WebUI
+      - "10020:10020"  # Job history Server RPC
+    command: /bin/bash -c "
+      rm -f /usr/local/hadoop/etc/hadoop/workers &&
+      touch /usr/local/hadoop/etc/hadoop/workers &&
+      echo 'datanode-1' >> /usr/local/hadoop/etc/hadoop/workers && 
+      echo 'datanode-2' >> /usr/local/hadoop/etc/hadoop/workers && 
+      echo 'datanode-3' >> /usr/local/hadoop/etc/hadoop/workers && 
+      service ssh start && 
+      /usr/local/hadoop/bin/hdfs namenode -format && 
+      /usr/local/hadoop/sbin/start-dfs.sh && 
+      /usr/local/hadoop/sbin/start-yarn.sh &&
+      tail -f /dev/null"
+
+  datanode-1:
+    platform: linux/arm64
+    image: hadoop_fully:0.1.0
+    environment:
+      - HADOOP_HOME=/usr/local/hadoop
+    container_name: datanode-1
+    hostname: datanode-1
+    command: /bin/bash -c "service ssh start && tail -f /dev/null"
+
+  datanode-2:
+    platform: linux/arm64
+    image: hadoop_fully:0.1.0
+    environment:
+      - HADOOP_HOME=/usr/local/hadoop
+    container_name: datanode-2
+    hostname: datanode-2
+    command: /bin/bash -c "service ssh start && tail -f /dev/null"
+
+  datanode-3:
+    platform: linux/arm64
+    image: hadoop_fully:0.1.0
+    environment:
+      - HADOOP_HOME=/usr/local/hadoop
+    container_name: datanode-3
+    hostname: datanode-3
+    command: /bin/bash -c "service ssh start && tail -f /dev/null"
