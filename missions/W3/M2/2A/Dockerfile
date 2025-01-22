@@ -36,6 +36,7 @@ COPY core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
 COPY hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 COPY mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
 COPY yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+COPY workers $HADOOP_HOME/etc/hadoop/workers
 
 # SSH키 생성 및 인증
 # RSA키 생성
