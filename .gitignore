@@ -2,8 +2,10 @@
 .DS_Store
 .vscode
 # data 디렉토리의 모든 파일 무시
-data
-!data/.gitkeep
+**/data/**
+!**/data/*/
+**/data/*/*
+!**/data/*/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
