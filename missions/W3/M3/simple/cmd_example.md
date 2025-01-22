@@ -22,3 +22,10 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
     -input /user/root/input/book.txt \
     -output /user/root/output
 ```
+
+결과 확인
+
+```bash
+# 상위 10개 결과 출력
+hadoop fs -cat /user/root/output/part-* | sort -k2 -nr | head -n 10
+```
