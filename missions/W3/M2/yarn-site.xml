@@ -1,0 +1,75 @@
+<configuration>
+    <!-- ResourceManager 호스트명 -->
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>master</value>
+    </property>
+
+     <!--  ResourceManager 주소 -->
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>master:8032</value>
+    </property>
+
+    <!-- ResourceManager Scheduler 주소 -->
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>master:8030</value>
+    </property>
+
+    <!-- ResourceManager Web UI 주소 -->
+    <property>
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>master:8088</value>
+    </property>
+
+    <!-- NodeManager 로컬 디렉토리 -->
+    <property>
+        <name>yarn.nodemanager.local-dirs</name>
+        <value>/opt/hadoop_data/yarn/local</value>
+    </property>
+
+    <!-- NodeManager 로그 디렉토리 -->
+    <property>
+        <name>yarn.nodemanager.log-dirs</name>
+        <value>/opt/hadoop_data/yarn/logs</value>
+    </property>
+
+    <!-- NodeManager가 사용할 리소스 -->
+    <property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>4096</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.resource.cpu-vcores</name>
+        <value>2</value>
+    </property>
+
+    <!-- 클러스터 디폴트 큐 설정 -->
+    <property>
+        <name>yarn.scheduler.capacity.root.default.capacity</name>
+        <value>100</value>
+    </property>
+
+    <!-- HDFS 클러스터의 파일 시스템 주소 -->
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+
+    <!-- MapReduce Shuffle 서비스 설정 -->
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.minimum-allocation-mb</name>
+        <value>1024</value>
+    </property>
+    <property>
+        <name>yarn.scheduler.maximum-allocation-mb</name>
+        <value>4096</value>
+    </property>
+</configuration>
