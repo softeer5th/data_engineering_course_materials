@@ -39,8 +39,9 @@ ENV YARN_NODEMANAGER_USER=hduser
 
 # 할 필요 없음
 # COPY . /app
-COPY missions/W3/M2/ssh_config /etc/ssh/ssh_config
 
+COPY missions/W3/M2/ssh_config /etc/ssh/ssh_config
+ENV JAVA_HOME=/opt/java/openjdk/
 RUN echo "export JAVA_HOME=/opt/java/openjdk/" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 # mount로 대체
 # COPY missions/W3/M1/core-site.xml $HADOOP_HOME/etc/hadoop/
@@ -48,13 +49,24 @@ RUN echo "export JAVA_HOME=/opt/java/openjdk/" >> $HADOOP_HOME/etc/hadoop/hadoop
 # COPY missions/W3/M1/yarn-site.xml $HADOOP_HOME/etc/hadoop/
 
 COPY missions/W3/M2/entrypoints/ /home/hduser/
-COPY missions/W3/M2/hadoop-configs/ /opt/hadoop/etc/hadoop
+COPY missions/W3/M2/hadoop-configs/* $HADOOP_HOME/etc/hadoop/
 
-ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$JAVA_HOME/bin
 ENV LD_LIBRARY_PATH=$HADOOP_HOME/lib/native
 
 EXPOSE 50070 50075 50010 50020 50090 8020 9000 9864 9870 10020 19888 8088 8030 8031 8032 8033 8040 8042 22
 
+USER root
+RUN echo "export JAVA_HOME=/opt/java/openjdk" > /etc/profile.d/java.sh && \
+    echo "export PATH=\${JAVA_HOME}/bin:\${PATH}" >> /etc/profile.d/java.sh && \
+    chmod +x /etc/profile.d/java.sh && \
+    echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config && \
+    mkdir -p /home/hduser/.ssh && \
+    echo "JAVA_HOME=/opt/java/openjdk" >> /home/hduser/.ssh/environment && \
+    chown -R hduser:hduser /home/hduser/.ssh && \
+    chmod 600 /home/hduser/.ssh/environment
+
+USER hduser
 WORKDIR /usr/local/bin
 WORKDIR /home/hduser
 
