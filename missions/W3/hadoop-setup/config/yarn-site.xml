@@ -1,0 +1,22 @@
+<configuration>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>manager</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>4096</value>
+    </property>
+    <property>
+        <name>yarn.scheduler.minimum-allocation-mb</name>
+        <value>2048</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+</configuration>
