@@ -8,8 +8,20 @@ fi
 
 CONFIG_DIR=$1
 
+# 인자 체크
+if [ -z "$CONF_DIR" ]; then
+  echo "[ERROR] Usage: $0 /path/to/hadoop/etc/hadoop"
+  exit 1
+fi
+
+# 디렉터리 존재 여부 확인
+if [ ! -d "$CONF_DIR" ]; then
+  echo "[ERROR] Hadoop configuration directory '$CONF_DIR' not found."
+  exit 1
+fi
+
 create_directories() {
-    local directories=("/hadoop/tmp" "/hadoop/dfs/name" "/hadoop/dfs/data")
+    local directories=("/hadoop/tmp" "/hadoopdata/hdfs/namenode" "/hadoopdata/hdfs/datanode")
     for dir in "${directories[@]}"; do
         if [ ! -d "$dir" ]; then
             mkdir -p $dir

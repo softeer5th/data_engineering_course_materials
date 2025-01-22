@@ -33,4 +33,9 @@
         <name>dfs.datanode.http.address</name>
         <value>0.0.0.0:9864</value>
     </property>
+
+    <property>
+        <name>dfs.blocksize</name>
+        <value>134217728</value>
+    </property>
 </configuration>

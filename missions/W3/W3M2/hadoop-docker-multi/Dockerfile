@@ -55,6 +55,7 @@ RUN mkdir -p /hadoopdata/hdfs/namenode && \
     chown -R hdfs:hdfs /opt/hadoop-${HADOOP_VERSION} /hadoopdata && \
     chmod -R 755 /opt/hadoop-${HADOOP_VERSION} /hadoopdata && \
     sudo chown -R hdfs:hdfs /opt/hadoop-3.4.0/logs && \
+    chmod -R 777 ${HADOOP_HOME}/logs && \
     chown -R hdfs:hdfs /hadoopdata/hdfs && \
     chown -R yarn:yarn /home/yarn/.ssh
 

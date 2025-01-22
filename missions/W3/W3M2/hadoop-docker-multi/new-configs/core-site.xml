@@ -12,4 +12,12 @@
         <name>dfs.datanode.hostname</name>
         <value>localhost</value>
     </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/hadoop/tmp</value>
+    </property>
+    <property>
+        <name>io.file.buffer.size</name>
+        <value>131072</value>
+    </property>
 </configuration>

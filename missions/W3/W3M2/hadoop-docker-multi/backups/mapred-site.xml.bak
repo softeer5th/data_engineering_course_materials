@@ -19,5 +19,4 @@
         <name>mapreduce.job.maps</name>
         <value>5</value>
     </property>
-
 </configuration>
