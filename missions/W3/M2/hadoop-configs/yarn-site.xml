@@ -27,13 +27,18 @@
     <!-- ResourceManager 설정 -->
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>resourcemanager</value>
+        <value>namenode</value>
+    </property>    
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>namenode:8032</value>
     </property>
+    
 
     <!-- NodeManager 리소스 설정 -->
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>2048</value>
+        <value>8192</value>
     </property>
 
     <property>
