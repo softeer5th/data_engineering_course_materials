@@ -2208,6 +2208,27 @@ files = [
 ]
 
 [[package]]
+name = "mrjob"
+version = "0.7.4"
+description = "Python MapReduce framework"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mrjob-0.7.4-py2.py3-none-any.whl", hash = "sha256:d8fa1bafcada0ffe3e7166896a27e996815e2cb835088aec025e3dd12c7146ce"},
+    {file = "mrjob-0.7.4.tar.gz", hash = "sha256:2c8d8dc8aa4b354a97de18d0260f551f018693af74af104b3d41daf165eebdd4"},
+]
+
+[package.dependencies]
+PyYAML = ">=3.10"
+
+[package.extras]
+aws = ["boto3 (>=1.10.0)", "botocore (>=1.13.26)"]
+google = ["google-cloud-dataproc (>=0.3.0,<=1.1.0)", "google-cloud-logging (>=1.9.0)", "google-cloud-storage (>=1.13.1)"]
+rapidjson = ["python-rapidjson"]
+simplejson = ["simplejson"]
+ujson = ["ujson"]
+
+[[package]]
 name = "murmurhash"
 version = "1.0.11"
 description = "Cython bindings for MurmurHash"
@@ -4578,4 +4599,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12,<3.13"
-content-hash = "8b471789203235a4bb939e0a6a905e259a500b12c19bb77251282609643980a1"
+content-hash = "9dc9a50742257680a5bd514af2f1a7089d15f8b069ae3f37907081f95fe21a34"
