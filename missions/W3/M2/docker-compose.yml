@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  namenode:
+    build: .
+    container_name: namenode
+    hostname: namenode
+    ports:
+      - "9870:9870" # HDFS Web UI
+      - "9000:9000" # HDFS Namenode RPC
+      - "8088:8088" # YARN ResourceManager Web UI
+      - "8032:8032" # YARN ResourceManager RPC
+    volumes:
+      - ./data/namenode:/hadoop/dfs/name
+    networks:
+      - hadoop_network
+    command: >
+      sh -c "service ssh start; /usr/local/hadoop/sbin/start-dfs.sh && /usr/local/hadoop/sbin/start-yarn.sh; tail -f /dev/null"
+
+  hadoop-worker1:
+    build: .
+    container_name: hadoop-worker1
+    hostname: hadoop-worker1
+    ports:
+      - "9864:9864" # Datanode Web UI
+      - "9891:9891" # Data Transfer
+    volumes:
+      - ./data/datanode1:/hadoop/dfs/data
+    networks:
+      - hadoop_network
+
+  hadoop-worker2:
+    build: .
+    container_name: hadoop-worker2
+    hostname: hadoop-worker2
+    ports:
+      - "9865:9864"
+      - "9892:9892"
+    volumes:
+      - ./data/datanode2:/hadoop/dfs/data
+    networks:
+      - hadoop_network
+    command: >
+      sh -c "sed -i 's/9891/9892/g' /usr/local/hadoop/etc/hadoop/hdfs-site.xml && service ssh start; tail -f /dev/null"
+
+  hadoop-worker3:
+    build: .
+    container_name: hadoop-worker3
+    hostname: hadoop-worker3
+    ports:
+      - "9866:9864"
+      - "9893:9893"
+    volumes:
+      - ./data/datanode3:/hadoop/dfs/data
+    networks:
+      - hadoop_network
+    command: >
+      sh -c "sed -i 's/9891/9893/g' /usr/local/hadoop/etc/hadoop/hdfs-site.xml && service ssh start; tail -f /dev/null"
+
+networks:
+  hadoop_network:
+    driver: bridge
