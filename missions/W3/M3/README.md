@@ -1,8 +1,9 @@
 # Hadoop Word Count 프로젝트
 
-이 문서는 Python Mapper와 Reducer 스크립트를 사용하여 텍스트 파일에서 단어 발생 빈도를 세는 Hadoop Streaming 작업을 설정하고 실행하는 방법에 대한 전체 가이드를 제공한다.
-
-MapReduce WordCount는 W2M2에서 구성한 마스터1, 워커2의 멀티 노드 클러스터 환경에서 실행한다.
+- 이 문서는 Python Mapper와 Reducer 스크립트를 사용하여 텍스트 파일에서 단어 발생 빈도를 세는 Hadoop Streaming 작업을 설정하고 실행하는 방법에 대한 전체 가이드를 제공한다.
+- MapReduce WordCount는 W2M2에서 구성한 마스터1, 워커2의 멀티 노드 클러스터 환경에서 실행한다.
+- WordCount 테스트를 위해 사용된 전자책은 다음과 같다. 
+[모비딕](https://www.gutenberg.org/ebooks/2701) - plain text UTF-8, 1.2MB
 
 ---
 
@@ -25,7 +26,7 @@ MapReduce WordCount는 W2M2에서 구성한 마스터1, 워커2의 멀티 노드
    - 모든 Hadoop 노드에 Python 3이 설치되어 있어야 함.
 
 3. **입력 파일**:
-   - 텍스트 파일(`testfile.txt`)이 HDFS에 업로드되어 있어야 함.
+   - 텍스트 파일(`moby_dick.txt`)이 HDFS에 업로드되어 있어야 함.
 
 4. **Python 스크립트**:
    - `mapper.py`와 `reducer.py` 스크립트.
@@ -34,109 +35,140 @@ MapReduce WordCount는 W2M2에서 구성한 마스터1, 워커2의 멀티 노드
 
 ## **실행 단계**
 
-### **1. HDFS 환경 준비**
+### **1. 멀티 노드 클러스터 환경 세팅**
+- W3M2a에서 빌드한 멀티 노드 클러스터 환경을 그대로 사용
+- 마스터 노드 하나, 워커 노드 둘을 docker-compose로 실행
 
-#### **1.1 HDFS 입력 디렉토리 생성**
+
+웹 상의 전자책 파일 다운로드를 위해 Dockerfile에 코드 추가
+```
+RUN wget https://www.gutenberg.org/cache/epub/2701/pg2701.txt -O moby_dick.txt
+```
+---
+
+### **2. HDFS 환경 준비**
+
+#### **2.1 HDFS 입력 디렉토리 생성**
 ```bash
+hdfs dfs -mkdir -p /user
 hdfs dfs -mkdir -p /user/test
 ```
 
-#### **1.2 입력 파일 업로드**
+#### **2.2  파일 업로드**
 ```bash
-hdfs dfs -put testfile.txt /user/test/
+hdfs dfs -put moby_dick.txt /user/test/
 ```
 
-#### **1.3 업로드 확인**
+#### **2.3 업로드 확인**
 ```bash
 hdfs dfs -ls /user/test
 ```
 
 ---
 
-### **2. Python 스크립트**
+### **3. Python 스크립트**
 
-#### **2.1 Mapper 스크립트 (`mapper.py`)**
+#### **3.1 Mapper 스크립트 (`mapper.py`)**
 ```python
 import sys
 
 for line in sys.stdin:
-    line = line.strip()
-    words = line.split()
-    for word in words:
-        print(f"{word}\t1")
+    try:
+        line = line.strip()  # 공백 제거
+        words = line.split()  # 단어 분리
+        for word in words:
+            print(f"{word}\t1")  # 각 단어를 '단어\t1' 형식으로 출력
+    except:
+        continue
 ```
 
-#### **2.2 Reducer 스크립트 (`reducer.py`)**
+#### **3.2 Reducer 스크립트 (`reducer.py`)**
 ```python
 import sys
 
-current_word = None
-current_count = 0
+current_word = None #현재 단어
+current_count = 0 #현재 단어의 누적 개수
+word = None #입력에서 가져온 단어
 
 for line in sys.stdin:
     line = line.strip()
-    word, count = line.split('\t', 1)
-    count = int(count)
-
+    word, count = line.split('\t', 1) #탭을 기준으로 최대 한번만 분리
+    try: 
+        count = int(count)
+    except ValueError:
+        continue
+    
+    #현재 단어와 이전 단어가 같다면 개수 누적
     if current_word == word:
         current_count += count
+    #새로운 단어가 등장하면 이전 단어와 개수를 출력
     else:
         if current_word:
-            print(f"{current_word}\t{current_count}")
+            print(f"{current_word}\t{current_count}")  # 이전 단어의 결과 출력
         current_word = word
         current_count = count
 
+# 마지막 단어 출력
 if current_word == word:
     print(f"{current_word}\t{current_count}")
 ```
 
 ---
 
-### **3. Hadoop Streaming 작업 실행**
+### **4. Hadoop Streaming 작업 실행**
 
-#### **3.1 명령어 실행**
+#### **4.1 MapReduce WordCount 실행**
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
--input /user/test/testfile.txt \
+-input /user/test/moby_dick.txt \
 -output /user/test/outputs \
 -mapper "python3 /usr/local/hadoop/mapper.py" \
 -reducer "python3 /usr/local/hadoop/reducer.py"
 ```
 
-#### **3.2 작업 완료 확인**
-- `_SUCCESS` 파일 확인:
+#### **4.2 작업 완료 확인**
+`_SUCCESS` 파일 확인:
   ```bash
   hdfs dfs -ls /user/test/outputs
   ```
 
----
-
-### **4. 출력 확인**
-
-#### **4.1 HDFS에서 출력 표시**
+#### **4.3 HDFS에서 출력 표시**
 ```bash
 hdfs dfs -cat /user/test/outputs/part-00000
 ```
 
-#### **4.2 출력 파일 로컬로 다운로드**
+#### **4.4 출력 파일 로컬로 다운로드**
 ```bash
 hdfs dfs -get /user/test/outputs ./local_outputs
 cat ./local_outputs/part-00000
 ```
 
-#### **4.3 단어 개수로 출력 정렬**
+#### **4.5 상위 10개 단어 확인(내림차순)**
 ```bash
-hdfs dfs -cat /user/test/outputs/part-00000 | sort -k2 -n
+hdfs dfs -cat /user/test/outputs/part-00000 | sort -k2 -nr | head -n 10
+```
+moby_dick.txt로 테스트한 결과는 아래와 같다. 
+```
+the     13862
+of      6642
+and     5997
+a       4549
+to      4531
+in      3908
+that    2691
+his     2428
+I       1723
+with    1695
 ```
 
 ---
 
-### **5. 문제 해결**
+### **5. 트러블슈팅**
 
-#### **일반적인 문제**:
 1. **출력 디렉토리 존재**:
    - 오류: `Output directory already exists`.
-   - 해결 방법:
+   - 아웃풋 파일을 넣고자 하는 경로가 이미 존재함
+   - 해결 방법 - 경로 삭제 후 다시 시도
      ```bash
      hdfs dfs -rm -r /user/test/outputs
      ```
@@ -157,37 +189,18 @@ hdfs dfs -cat /user/test/outputs/part-00000 | sort -k2 -n
 
 ---
 
-### **6. 출력 예제**
-
-#### **HDFS 출력**:
-```plaintext
-word1	2
-word2	3
-word3	1
-```
-
-#### **빈도별 정렬 출력**:
-```plaintext
-word3	1
-word1	2
-word2	3
-```
-
----
-
-### **7. 정리 작업**
+### **6. 정리 작업**
 
 #### **HDFS 출력 디렉토리 삭제**
+테스트가 완료되면 출력 디렉토리를 삭제하여 공간을 확보
 ```bash
 hdfs dfs -rm -r /user/test/outputs
 ```
 
 ---
 
-### **8. 요약**
-- **Hadoop Streaming**: 텍스트 파일을 처리하는 데 성공적으로 사용됨.
-- **Python Mapper와 Reducer**: 단어 개수를 계산하기 위해 구현 및 테스트 완료.
-- **HDFS**: 입력/출력 데이터를 효율적으로 관리.
-
-이 가이드는 Hadoop Streaming을 사용한 Word Count 작업의 설정, 실행 및 출력 분석에 대한 전체 프로세스를 다룹니다. 추가적인 도움이 필요하면 언제든지 문의하세요!
+### **7. 요약**
+- **Hadoop Streaming**: 텍스트 파일을 처리하는 데 사용됨
+- **Python Mapper와 Reducer**: 단어 개수를 계산하기 위해 구현 및 테스트 완료
+- **HDFS**: 입력/출력 데이터를 효율적으로 관리
 

@@ -61,5 +61,9 @@ COPY reducer.py /usr/local/hadoop/reducer.py
 RUN chmod +x /usr/local/hadoop/mapper.py
 RUN chmod +x /usr/local/hadoop/reducer.py
 
+# WordCount를 위한 전자책 파일 읽어오기
+# Moby Dick; Or, The Whale by Herman Melville - 1.2MB
+RUN wget https://www.gutenberg.org/cache/epub/2701/pg2701.txt -O moby_dick.txt
+
 # 컨테이너 시작 시 스크립트 실행
 CMD ["start-hadoop.sh"]
