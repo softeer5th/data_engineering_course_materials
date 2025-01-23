@@ -1,9 +1,22 @@
 services:
-  hadoop:
+  hadoop-base:
+    build:
+      context: .
+      dockerfile: base.Dockerfile
+      args:
+        HADOOP_DOWNLOAD_URL: ${HADOOP_DOWNLOAD_URL}
+        HADOOP_VERSION: ${HADOOP_VERSION}
+        HADOOP_HOME: ${HADOOP_HOME}
+        HADOOP_DATA: ${HADOOP_DATA}
+    image: hadoop-base:latest
+  hadoop-image:
     build:
       context: .
       dockerfile: Dockerfile
       args:
+        HADOOP_VERSION: ${HADOOP_VERSION}
         HADOOP_HOME: ${HADOOP_HOME}
         HADOOP_DATA: ${HADOOP_DATA}
     image: hadoop-image:latest
+    depends_on:
+      - hadoop-base
