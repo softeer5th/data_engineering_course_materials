@@ -9,14 +9,24 @@
     </property>
     <property>
         <name>yarn.app.mapreduce.am.env</name>
-        <value>HADOOP_MAPRED_HOME=/usr/local/hadoop</value>
+        <value>HADOOP_MAPRED_HOME=${env.HADOOP_HOME}</value>
     </property>
     <property>
         <name>mapreduce.map.env</name>
-        <value>HADOOP_MAPRED_HOME=/usr/local/hadoop</value>
+        <value>HADOOP_MAPRED_HOME=${env.HADOOP_HOME}</value>
     </property>
     <property>
         <name>mapreduce.reduce.env</name>
-        <value>HADOOP_MAPRED_HOME=/usr/local/hadoop</value>
+        <value>HADOOP_MAPRED_HOME=${env.HADOOP_HOME}</value>
+    </property>
+
+    <!-- Job History Server Configurations -->
+    <property>
+        <name>mapreduce.jobhistory.done-dir</name>
+        <value>${HADOOP_DATA}/mr-history/done</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.intermediate-done-dir</name>
+        <value>${HADOOP_DATA}/mr-history/tmp</value>
     </property>
 </configuration>

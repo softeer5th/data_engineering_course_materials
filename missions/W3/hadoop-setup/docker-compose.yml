@@ -7,6 +7,7 @@ services:
     ports:
       - "30000:9870"  # HDFS NameNode Web UI
       - "40000:8088"  # YARN ResourceManager Web UI
+      - "35000:19888" # MapReduce Job History Server Web UI
     volumes:
       - ${HOME}/docker/volumes/hadoop/data/manager:${HADOOP_DATA}
     environment:

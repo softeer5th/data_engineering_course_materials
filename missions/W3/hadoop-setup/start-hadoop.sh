@@ -18,5 +18,11 @@ fi
 hdfs --daemon start ${HADOOP_HDFS_ROLE}
 yarn --daemon start ${HADOOP_YARN_ROLE}
 
+# Job History Server 시작 (ResourceManager 서버에서 실행)
+if [ "${HADOOP_YARN_ROLE}" = "resourcemanager" ]; then
+    echo "Starting MapReduce Job History Server..."
+    mapred --daemon start historyserver
+fi
+
 # 컨테이너가 계속 실행되도록 대기
 tail -f /dev/null
