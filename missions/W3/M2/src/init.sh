@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SSH 서비스 시작 (root 권한으로 실행)
-service ssh start
+sudo service ssh start
 
 if [ "$HADOOP_DATANODE_HOSTNAME" = "master" ]; then
     echo "This is the master node. Proceeding with NameNode setup..."
