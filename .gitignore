@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 **/*.tar.gz
 **/*volume
+twitter_text.csv
+training.1600000.processed.noemoticon.csv
