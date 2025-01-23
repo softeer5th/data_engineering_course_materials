@@ -39,7 +39,7 @@ RUN chmod +x /opt/hadoop/init.sh
 # 사용자 권한 변경
 USER hdfs
 
-EXPOSE 22 9870 9000 9864
+EXPOSE 9870 9000 9864
 
 # 컨테이너 시작 시 초기화 스크립트 실행
 ENTRYPOINT ["/opt/hadoop/init.sh"]

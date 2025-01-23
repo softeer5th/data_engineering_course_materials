@@ -9,8 +9,6 @@ services:
       - "9870:9870"  # NameNode UI 포트
       - "9864:9864"  # DataNode UI 포트
       - "9000:9000"  # HDFS 포트
-      - "8088:8088"  # ResourceManager 포트
-      - "22:22"      # SSH 포트
     volumes:
       - ./volume/dfs/name:/opt/hadoop_data/hdfs/namenode  # 호스트와 컨테이너 볼륨 연결
       - ./volume/dfs/data:/opt/hadoop_data/hdfs/datanode # 호스트와 컨테이너 볼륨 연결
