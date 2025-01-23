@@ -8,10 +8,10 @@ services:
       - "9870:9870" # NameNode HTTP UI
       - "9000:9000" # NameNode IPC
       - "8088:8088" # ResourceManager UI
-      - "8030:8030" # ResourceManager 클라이언트 요청
-      - "8031:8031" # ResourceManager ApplicationMaster 요청
-      - "8032:8032" # ResourceManager Job submission
-      - "8033:8033" # ResourceManager 내부 요청
+      - "8030:8030"
+      - "8031:8031"
+      - "8032:8032"
+      - "8033:8033"
     volumes:
       - ./db/name:/usr/local/hadoop/hdfs/namenode
     command: >
@@ -31,7 +31,7 @@ services:
     container_name: worker-1
     hostname: worker-1
     ports:
-      - "9861:9864"  # DataNode IPC
+      - "9861:9864"
       - "9001:9000"  # DataNode IPC
       - "8042:8042"  # NodeManager
     volumes:
@@ -50,7 +50,7 @@ services:
     container_name: worker-2
     hostname: worker-2
     ports:
-      - "9862:9864"  # DataNode IPC
+      - "9862:9864"
       - "9002:9000"  # DataNode IPC
       - "8043:8042"  # NodeManager
     volumes:
@@ -69,7 +69,7 @@ services:
     container_name: worker-3
     hostname: worker-3
     ports:
-      - "9863:9864"  # DataNode IPC
+      - "9863:9864"
       - "9003:9000"  # DataNode IPC
       - "8044:8042"  # NodeManager
     volumes:

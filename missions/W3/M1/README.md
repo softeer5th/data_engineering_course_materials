@@ -20,8 +20,9 @@ This guide explains how to set up a fully functional Hadoop single-node cluster 
 - Basic knowledge of the Hadoop ecosystem.
 
 ## Step 1: Clone the Repository
-``` bash
-git clone https://github.com/yjy323/data_engineering_course_materials/tree/yjy323-W3 
+```bash
+git clone https://github.com/cleonno3o/softeer_de_repo.git
+git checkout joosumin-w3
 cd missions/W3/M1
 ```
 
@@ -100,12 +101,3 @@ To stop the running container and remove all associated resources:
 ``` bash
 docker-compose down
 ```
-
-## Summary
-With this setup, you now have a fully functional Hadoop single-node cluster running in a Docker container. You can explore Hadoop's features, perform HDFS operations, and develop applications in a controlled local environment.
-
-For any issues, consult the Hadoop logs by accessing the container and navigating to the `$HADOOP_HOME/logs` directory.
-
-## Next Steps
-- Extend this setup to a multi-node cluster.
-- Integrate Hadoop with other tools such as Hive or Spark for additional capabilities.

@@ -31,7 +31,7 @@
 ```bash
 git clone https://github.com/cleonno3o/softeer_de_repo.git
 git checkout joosumin-w3
-cd missions/W3/M6
+cd missions/W3/M5
 ```
 
 ## 2단계: Hadoop 클러스터 빌드 및 시작
@@ -63,4 +63,4 @@ code 폴더에 저장한 파일은 runner.sh 수행 시 업로드 진행
 출력 결과는 /res 폴더에 복사되어 저장
 
 ### 데이터셋 출처
-Amazon Review: https://amazon-reviews-2023.github.io/
+MovieLens: https://grouplens.org/datasets/movielens/20m/
