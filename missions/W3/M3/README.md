@@ -35,3 +35,31 @@ ebook은 텍스트 데이터로서 하둡으로 올려야하기 때문에 하둡
     hdfs dfs -ls /input
 
 ebook.txt가 출력된다면 정상적으로 실행된 것입니다.
+
+## 2. MapReduce
+
+### 1. MapReduce 실행
+Hadoop Streaming JAR 파일을 실행합니다. 이 파일은 Hadoop에서 mapper와 reducer가 python으로 작성된 경우 이를 실행하는데 사용됩니다.
+
+    hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
+    -input /input/ebook.txt \
+    -output <파일 경로명> \
+    -mapper "python3 mapper.py" \
+    -reducer "python3 reducer.py" \
+    -file "<mapper 파일 경로>" \
+    -file "<reducer 파일 경로>"
+
+### 2. 결과 확인
+
+    hdfs dfs -cat <하둡 내 결과 파일 경로>/part-00000
+
+### 3. 결과 파일 가져오기
+
+    hdfs dfs -get <하둡 내 결과 파일 경로>/part-00000 <저장할 로컬 파일 경로>/<파일 이름>
+
+## 3. 참고 사항
+
+### 1. MapReduce 실행 실패 
+MapReduce 실행 실패시 결과 파일 디렉토리 제거해줘야지만, MapReduce 실행 코드를 실행할 수 있다.
+
+    hdfs dfs -rm -r <하둡 내 결과 파일 경로>
