@@ -1,0 +1,18 @@
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value> <!--데이터 복제 개수를 설정하는 속성-->
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>  <!--트랙잭션 로그를 저장 할 네임노드-->
+    <value>file:///usr/local/hadoop/data/namenode</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>  
+    <value>file:///usr/local/hadoop/data/datanode</value>    <!--데이터 노드의 저장 경로-->
+  </property>
+  <property>
+    <name>dfs.permissions.enabled</name>
+    <value>false</value>
+  </property>
+</configuration>

@@ -1,0 +1,55 @@
+services:
+  master:
+    build: .
+    container_name: hadoop-master
+    hostname: hadoop-master
+    volumes:
+      - ./data/namenode:/usr/local/hadoop/dfs/namenode
+    ports:
+      - "9870:9870"  # HDFS Web UI
+      - "8088:8088"  # YARN Web UI
+      - "9000:9000" # HDFS Namenode RPC
+    networks:
+      - hadoop-net
+    command: >
+        sh -c "service ssh start; /usr/local/hadoop/sbin/start-dfs.sh && /usr/local/hadoop/sbin/start-yarn.sh; tail -f /dev/null"
+
+  worker-1:
+    build: .
+    container_name: worker-1
+    hostname: worker-1
+    ports:
+      - "9864:9864" # Datanode Web UI
+    volumes:
+      - ./data/datanode-1:/usr/local/hadoop/dfs/data
+    networks:
+      - hadoop-net
+
+  worker-2:
+    build: .
+    container_name: worker-2
+    hostname: worker-2
+    ports:
+      - "9865:9864" # Datanode Web UI
+    volumes:
+      - ./data/datanode-2:/usr/local/hadoop/dfs/data
+    networks:
+      - hadoop-net
+
+  worker-3:
+    build: .
+    container_name: worker-3
+    hostname: worker-3
+    ports:
+      - "9866:9864" # Datanode Web UI
+    volumes:
+      - ./data/datanode-3:/usr/local/hadoop/dfs/data
+    networks:
+      - hadoop-net
+
+networks:
+  hadoop-net:
+
+
+
+
