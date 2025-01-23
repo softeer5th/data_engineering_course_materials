@@ -1,6 +1,8 @@
 version: "3"
 services:
   master:
+    container_name:
+      hadoop-master
     build:
       context: .
       args:
@@ -16,7 +18,10 @@ services:
       - hadoop-network
     volumes:
       - hdfs-name-node:/hadoop/dfs/name
+      -
   worker1:
+    container_name:
+      hadoop-worker1
     build:
       context: .
       args:
@@ -32,6 +37,8 @@ services:
     volumes:
       - hdfs-data-node1:/hadoop/dfs/data
   worker2:
+    container_name:
+      hadoop-worker2
     build:
       context: .
       args:
