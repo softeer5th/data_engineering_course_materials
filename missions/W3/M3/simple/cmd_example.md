@@ -16,7 +16,7 @@ hadoop fs -rm -r -f /user/root/output
 맵리듀스 실행
 
 ```bash
-hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
+hadoop jar $HADOOP_STREAMING_JAR \
     -file mapper.py -mapper 'python3 mapper.py' \
     -file reducer.py -reducer 'python3 reducer.py' \
     -input /user/root/input/book.txt \
