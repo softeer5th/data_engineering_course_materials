@@ -18,7 +18,7 @@ services:
       - hadoop-network
     volumes:
       - hdfs-name-node:/hadoop/dfs/name
-      -
+      - ./shared-dir:/hadoop/shared
   worker1:
     container_name:
       hadoop-worker1
