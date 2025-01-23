@@ -17,6 +17,7 @@ RUN arch=$(dpkg --print-architecture) && \
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         openjdk-8-jdk-headless \
+        python3-pip \
         curl \
         ssh \
         rsync \
