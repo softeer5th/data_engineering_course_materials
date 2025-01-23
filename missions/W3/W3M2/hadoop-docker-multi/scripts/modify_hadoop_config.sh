@@ -8,24 +8,13 @@ fi
 
 CONFIG_DIR=$1
 
-# 인자 체크
-if [ -z "$CONF_DIR" ]; then
-  echo "[ERROR] Usage: $0 /path/to/hadoop/etc/hadoop"
-  exit 1
-fi
-
-# 디렉터리 존재 여부 확인
-if [ ! -d "$CONF_DIR" ]; then
-  echo "[ERROR] Hadoop configuration directory '$CONF_DIR' not found."
-  exit 1
-fi
 
 create_directories() {
     local directories=("/hadoop/tmp" "/hadoopdata/hdfs/namenode" "/hadoopdata/hdfs/datanode")
     for dir in "${directories[@]}"; do
         if [ ! -d "$dir" ]; then
-            mkdir -p $dir
-            chown -R hdfs:hdfs $dir
+            sudo mkdir -p $dir
+            sudo chown -R hdfs:hdfs $dir
         fi
     done
 }
@@ -60,15 +49,18 @@ restart_hadoop_services() {
         $HADOOP_HOME/bin/hdfs --daemon stop secondarynamenode
         echo "Stopping YARN..."
         $HADOOP_HOME/bin/yarn --daemon stop resourcemanager
-        $HADOOP_HOME/bin/yarn --daemon stop nodemanager
         jps
         echo "Starting Hadoop DFS..."
-        $HADOOP_HOME/bin/hdfs namenode -format -force -nonInteractive
+        if [ ! -f /hadoopdata/hdfs/namenode/current/VERSION ]; then
+            echo "Formatting HDFS NameNode..."
+            $HADOOP_HOME/bin/hdfs namenode -format -force
+        else
+            echo "HDFS NameNode already formatted. Skipping format."
+        fi
         $HADOOP_HOME/bin/hdfs --daemon start namenode
         $HADOOP_HOME/bin/hdfs --daemon start secondarynamenode
         echo "Starting YARN..."
         $HADOOP_HOME/bin/yarn --daemon start resourcemanager
-        $HADOOP_HOME/bin/yarn --daemon start nodemanager
         jps
         su - hdfs -c "$HADOOP_HOME/bin/hdfs dfs -mkdir -p /user/"
         su - hdfs -c "$HADOOP_HOME/bin/hdfs dfs -mkdir -p /user/root/"
@@ -96,8 +88,8 @@ main() {
     backup_file "$CONFIG_DIR/hdfs-site.xml"
     modify_xml "$CONFIG_DIR/hdfs-site.xml" "dfs.replication" "2"
     modify_xml "$CONFIG_DIR/hdfs-site.xml" "dfs.blocksize" "134217728"
-    modify_xml "$CONFIG_DIR/hdfs-site.xml" "dfs.namenode.name.dir" "/hadoop/dfs/name"
-    modify_xml "$CONFIG_DIR/hdfs-site.xml" "dfs.datanode.data.dir" "/hadoop/dfs/data"
+    modify_xml "$CONFIG_DIR/hdfs-site.xml" "dfs.namenode.name.dir" "file:///hadoopdata/hdfs/namenode"
+    modify_xml "$CONFIG_DIR/hdfs-site.xml" "dfs.datanode.data.dir" "file:///hadoopdata/hdfs/datanode"
 
     backup_file "$CONFIG_DIR/mapred-site.xml"
     modify_xml "$CONFIG_DIR/mapred-site.xml" "mapreduce.framework.name" "yarn"
