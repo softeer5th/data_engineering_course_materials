@@ -166,14 +166,23 @@ cython_debug/
 
 missions/W3/M1/data/data/*
 missions/W3/M1/data/name/*
-missions/W3/M2/db/data-1/*
-missions/W3/M2/db/data-2/*
-missions/W3/M2/db/data-3/*
-missions/W3/M2/db/name/*
 
+**/db/data-1/*
+**/db/data-2/*
+**/db/data-3/*
+**/db/name/*
+**/res/*
+
+
+# .gitkeep 제외
 !missions/W3/M1/data/data/.gitkeep
 !missions/W3/M1/data/name/.gitkeep
-!missions/W3/M2/db/data-1/.gitkeep
-!missions/W3/M2/db/data-2/.gitkeep
-!missions/W3/M2/db/data-3/.gitkeep
-!missions/W3/M2/db/name/.gitkeep
+
+!**/db/data-1/.gitkeep
+!**/db/data-2/.gitkeep
+!**/db/data-3/.gitkeep
+!**/db/name/.gitkeep
+!**/res/.gitkeep
+
+# 설치할 라이브러리가 담긴 require.txt도 제외
+!**/require.txt

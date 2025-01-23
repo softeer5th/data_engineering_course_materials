@@ -1,0 +1,87 @@
+services:
+  master:
+    image: hadoop:latest
+    platform: linux/arm64
+    container_name: master
+    hostname: master
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+      - "8088:8088"
+      - "8030:8030" # ResourceManager 클라이언트 요청
+      - "8031:8031" # ResourceManager ApplicationMaster 요청
+      - "8032:8032" # ResourceManager Job submission
+      - "8033:8033" # ResourceManager 내부 요청
+    volumes:
+      - ./db/name:/usr/local/hadoop/hdfs/namenode
+    command: >
+      /bin/bash -c "
+      if [ ! -d /usr/local/hadoop/hdfs/namenode/current ]; then
+        hdfs namenode -format;
+      fi;
+      hdfs --daemon start namenode;
+      yarn --daemon start resourcemanager;
+      tail -f /dev/null"
+    networks:
+      - hadoop_network
+
+  worker-1:
+    image: hadoop:latest
+    platform: linux/arm64
+    container_name: worker-1
+    hostname: worker-1
+    ports:
+      - "9861:9864"
+      - "9001:9000"
+      - "8042:8042"
+    command: >
+      /bin/bash -c "
+      hdfs --daemon start datanode;
+      yarn --daemon start nodemanager;
+      tail -f /dev/null"
+    volumes:
+      - ./db/data-1:/usr/local/hadoop/hdfs/datanode
+    networks:
+      - hadoop_network
+
+  worker-2:
+    image: hadoop:latest
+    platform: linux/arm64
+    container_name: worker-2
+    hostname: worker-2
+    ports:
+      - "9862:9864"
+      - "9002:9000"
+      - "8043:8042"
+    volumes:
+      - ./db/data-2:/usr/local/hadoop/hdfs/datanode
+    command: >
+      /bin/bash -c "
+      hdfs --daemon start datanode;
+      yarn --daemon start nodemanager;
+      tail -f /dev/null"
+    networks:
+      - hadoop_network
+
+  worker-3:
+    image: hadoop:latest
+    platform: linux/arm64
+    container_name: worker-3
+    hostname: worker-3
+    ports:
+      - "9863:9864"
+      - "9003:9000"
+      - "8044:8042"
+    volumes:
+      - ./db/data-3:/usr/local/hadoop/hdfs/datanode
+    command: >
+      /bin/bash -c "
+      hdfs --daemon start datanode;
+      yarn --daemon start nodemanager;
+      tail -f /dev/null"
+    networks:
+      - hadoop_network
+
+networks:
+  hadoop_network:
+    driver: bridge
