@@ -5,14 +5,14 @@
     </property>
     <property>
         <name>dfs.hosts</name>
-        <value>/usr/local/hadoop/etc/hadoop/workers</value>
+        <value>/home/hadoop/etc/hadoop/workers</value>
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>/usr/local/hadoop/hdfs/namenode</value>
+        <value>/home/hadoop/hdfs/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>/usr/local/hadoop/hdfs/datanode</value>
+        <value>/home/hadoop/hdfs/datanode</value>
     </property>
 </configuration>

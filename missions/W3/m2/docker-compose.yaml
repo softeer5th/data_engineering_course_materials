@@ -1,8 +1,7 @@
-version: '3'
 services:
   namenode:
     platform: linux/arm64
-    image: hadoop_fully:0.1.0
+    image: hadoop_fully:0.2.5
     container_name: namenode
     hostname: namenode
     ports:
@@ -14,42 +13,45 @@ services:
       - "19888:19888"  # Job history Server WebUI
       - "10020:10020"  # Job history Server RPC
     volumes:
-      - ./data/namenode:/usr/local/hadoop/hdfs/namenode
+      - ./data/namenode:/home/hadoop/hdfs/namenode
     command: /bin/bash -c "
-      rm -f /usr/local/hadoop/etc/hadoop/workers &&
-      touch /usr/local/hadoop/etc/hadoop/workers &&
-      echo 'datanode-1' >> /usr/local/hadoop/etc/hadoop/workers && 
-      echo 'datanode-2' >> /usr/local/hadoop/etc/hadoop/workers && 
-      echo 'datanode-3' >> /usr/local/hadoop/etc/hadoop/workers && 
-      service ssh start && 
-      /usr/local/hadoop/bin/hdfs namenode -format && 
-      /usr/local/hadoop/sbin/start-dfs.sh && 
-      /usr/local/hadoop/sbin/start-yarn.sh &&
+      sudo chmod 777 /home/hadoop/etc/hadoop/workers &&
+      rm -f /home/hadoop/etc/hadoop/workers &&
+      touch /home/hadoop/etc/hadoop/workers &&
+      echo 'datanode-1' >> /home/hadoop/etc/hadoop/workers && 
+      echo 'datanode-2' >> /home/hadoop/etc/hadoop/workers && 
+      echo 'datanode-3' >> /home/hadoop/etc/hadoop/workers && 
+      sudo service ssh start && 
+      /home/hadoop/bin/hdfs namenode -format -force && 
+      /home/hadoop/sbin/start-dfs.sh && 
+      /home/hadoop/sbin/start-yarn.sh &&
       tail -f /dev/null"
 
   datanode-1:
     platform: linux/arm64
-    image: hadoop_fully:0.1.0
+    image: hadoop_fully:0.2.5
     container_name: datanode-1
     hostname: datanode-1
+    environment:
+      - HADOOP_HOME=/home/hadoop
     volumes:
-      - ./data/datanode-1:/usr/local/hadoop/hdfs/datanode
-    command: /bin/bash -c "service ssh start && tail -f /dev/null"
+      - ./data/datanode-1:/home/hadoop/hdfs/datanode
+    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
 
   datanode-2:
     platform: linux/arm64
-    image: hadoop_fully:0.1.0
+    image: hadoop_fully:0.2.5
     container_name: datanode-2
     hostname: datanode-2
     volumes:
-      - ./data/datanode-2:/usr/local/hadoop/hdfs/datanode
-    command: /bin/bash -c "service ssh start && tail -f /dev/null"
+      - ./data/datanode-2:/home/hadoop/hdfs/datanode
+    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
 
   datanode-3:
     platform: linux/arm64
-    image: hadoop_fully:0.1.0
+    image: hadoop_fully:0.2.5
     container_name: datanode-3
     hostname: datanode-3
     volumes:
-      - ./data/datanode-3:/usr/local/hadoop/hdfs/datanode
-    command: /bin/bash -c "service ssh start && tail -f /dev/null"
+      - ./data/datanode-3:/home/hadoop/hdfs/datanode
+    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
