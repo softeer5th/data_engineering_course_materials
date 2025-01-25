@@ -24,6 +24,10 @@ pytest = "^8.3.4"
 selenium = "^4.27.1"
 openpyxl = "^3.1.5"
 mrjob = "^0.7.4"
+openai = "^1.60.0"
+soynlp = "^0.0.493"
+networkx = "^3.4.2"
+nltk = "^3.9.1"
 
 
 [tool.poetry.group.dev.dependencies]
