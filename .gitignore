@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 training.1600000.processed.noemoticon.csv
 ratings.csv
+All_Beauty.jsonl
