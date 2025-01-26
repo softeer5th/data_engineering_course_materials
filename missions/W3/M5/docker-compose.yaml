@@ -14,13 +14,13 @@ services:
       - "8033:8033"
     volumes:
       - ./db/name:/usr/local/hadoop/hdfs/namenode
+    environment:
+      - HADOOP_ROLE=master
+      - HDFS_NAMENODE_USER=root
+      - YARN_RESOURCEMANAGER_USER=root
     command: >
       /bin/bash -c "
-      if [ ! -d /usr/local/hadoop/hdfs/namenode/current ]; then
-        hdfs namenode -format;
-      fi;
-      hdfs --daemon start namenode;
-      yarn --daemon start resourcemanager;
+      /start-system.sh;
       tail -f /dev/null"
     networks:
       - hadoop_network
@@ -36,10 +36,13 @@ services:
       - "8042:8042"  # NodeManager
     volumes:
       - ./db/data-1:/usr/local/hadoop/hdfs/datanode
+    environment:
+      - HADOOP_ROLE=worker
+      - HDFS_DATANODE_USER=root
+      - YARN_NODEMANAGER_USER=root
     command: >
       /bin/bash -c "
-      hdfs --daemon start datanode;
-      yarn --daemon start nodemanager;
+      /start-system.sh;
       tail -f /dev/null"
     networks:
       - hadoop_network
@@ -55,10 +58,13 @@ services:
       - "8043:8042"  # NodeManager
     volumes:
       - ./db/data-2:/usr/local/hadoop/hdfs/datanode
+    environment:
+      - HADOOP_ROLE=worker
+      - HDFS_DATANODE_USER=root
+      - YARN_NODEMANAGER_USER=root
     command: >
       /bin/bash -c "
-      hdfs --daemon start datanode;
-      yarn --daemon start nodemanager;
+      /start-system.sh;
       tail -f /dev/null"
     networks:
       - hadoop_network
@@ -74,10 +80,13 @@ services:
       - "8044:8042"  # NodeManager
     volumes:
       - ./db/data-3:/usr/local/hadoop/hdfs/datanode
+    environment:
+      - HADOOP_ROLE=worker
+      - HDFS_DATANODE_USER=root
+      - YARN_NODEMANAGER_USER=root      
     command: >
       /bin/bash -c "
-      hdfs --daemon start datanode;
-      yarn --daemon start nodemanager;
+      /start-system.sh;
       tail -f /dev/null"
     networks:
       - hadoop_network

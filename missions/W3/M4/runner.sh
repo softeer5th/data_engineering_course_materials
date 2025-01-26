@@ -12,7 +12,7 @@ docker exec master python /code/get_data.py
 # 데이터 hdfs에 저장
 docker exec master hdfs dfs -rm -r /data
 docker exec master hdfs dfs -mkdir /data
-docker exec master hdfs dfs -put /code/data.txt /data
+docker exec master sh -c "hdfs dfs -put \$(cat /code/path.txt)/* /data"
 
 # mapreduce 수행
 docker exec master chmod +x /code/mapper.py

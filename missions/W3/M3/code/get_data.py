@@ -1,4 +1,9 @@
-from datasets import load_dataset
-dataset = load_dataset("McAuley-Lab/Amazon-Reviews-2023", "raw_review_All_Beauty", trust_remote_code=True)
-dataset['full']
-dataset['full'].to_json('/code/data.json')
+import requests
+
+url = "https://gutenberg.net.au/ebooks01/0100021.txt"
+file_name = "/code/data.txt"
+print("Download")
+response = requests.get(url)
+if response.status_code == 200:
+    with open(file_name, "w") as file:
+        file.write(response.text)

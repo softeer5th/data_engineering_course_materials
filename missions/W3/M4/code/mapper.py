@@ -4,10 +4,10 @@ import csv
 
 lines = csv.reader(sys.stdin)
 for line in lines:
-    user_id, movie_id, rating, timestamp = line
-    try:
-        user_id = int(user_id)
-    except ValueError:
-        continue
+    target, ids, date, flag, user, text = line
+    if target == "0":
+        print("negtative\t1")
+    elif target == "4":
+        print("positive\t1")
     else:
-        print(f'{movie_id}\t{rating}')
+        print("neutral\t1")

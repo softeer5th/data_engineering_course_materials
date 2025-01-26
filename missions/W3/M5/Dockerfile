@@ -7,7 +7,7 @@ ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jre-headless curl rsync sudo vim python3-pip && \
+    apt-get install -y openjdk-11-jdk curl rsync sudo vim python3-pip openssh-server && \
     ln -sf /usr/bin/python3.8 /usr/bin/python && \
     pip install --upgrade pip && \
     apt-get clean
@@ -18,7 +18,10 @@ RUN curl -O https://mirrors.sonic.net/apache/hadoop/common/hadoop-3.3.6/hadoop-3
     rm hadoop-3.3.6-aarch64.tar.gz
 
 
-COPY config/*.xml /usr/local/hadoop/etc/hadoop/
+ENV HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
+COPY config/*.xml $HADOOP_CONF_DIR/
+COPY start-system.sh /
+RUN chmod +x /start-system.sh
 
 RUN echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
