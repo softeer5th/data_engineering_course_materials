@@ -1,0 +1,43 @@
+version: '3.8' #Docker Compose 파일의 버전
+
+services:
+  master:
+    image: hadoop-multi-node
+    container_name: hadoop-master
+    hostname: master
+    ports:
+      - "9870:9870"   # HDFS Web UI
+      - "8088:8088"   # YARN Web UI
+      - "22:22"       # SSH
+    volumes:
+      - hadoop-master-name:/hadoop/dfs/name
+    networks:
+      - hadoop-network
+
+  worker1:
+    image: hadoop-multi-node
+    container_name: hadoop-worker1
+    hostname: worker1
+    volumes:
+      - hadoop-worker1-data:/hadoop/dfs/data
+    networks:
+      - hadoop-network
+
+  worker2:
+    image: hadoop-multi-node
+    container_name: hadoop-worker2
+    hostname: worker2
+    volumes:
+      - hadoop-worker2-data:/hadoop/dfs/data
+    networks:
+      - hadoop-network
+
+volumes:
+  hadoop-master-name:  # 마스터 노드의 메타데이터 저장
+  hadoop-worker1-data: # 워커1 노드의 데이터 저장
+  hadoop-worker2-data: # 워커2 노드의 데이터 저장
+
+#네트워크는 compose up/down 실행시마다 생성 및 삭제됨
+networks:
+  hadoop-network:
+    driver: bridge

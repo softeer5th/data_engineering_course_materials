@@ -1,0 +1,22 @@
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>2</value> <!-- 복제본 수는 Worker 노드 개수를 초과할 수 없음 -->
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:/hadoop/dfs/name</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/hadoop/dfs/data</value>
+  </property>
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>dfs.permissions</name>
+    <value>false</value>
+  </property>
+</configuration>
