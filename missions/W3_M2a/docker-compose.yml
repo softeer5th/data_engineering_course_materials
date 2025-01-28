@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  master:
+    build: .
+    container_name: hadoop-master
+    hostname: master
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+      - "8088:8088"
+    networks:
+      - hadoop-net
+    volumes:
+      - master-data:/usr/local/hadoop/data
+  worker:
+    build: .
+    container_name: hadoop-worker
+    hostname: worker
+    networks:
+      - hadoop-net
+    volumes:
+      - worker-data:/usr/local/hadoop/data
+
+networks:
+  hadoop-net:
+
+volumes:
+  master-data:
+  worker-data:
