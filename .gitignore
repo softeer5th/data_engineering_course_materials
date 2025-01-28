@@ -163,3 +163,4 @@ cython_debug/
 *.db
 *.json
 *.txt
+**/missions/*
