@@ -1,0 +1,8 @@
+<configuration>
+    <!-- HDFS 기본 경로 설정 -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://hadoop-namenode:9000</value>
+    </property>
+</configuration>
+
