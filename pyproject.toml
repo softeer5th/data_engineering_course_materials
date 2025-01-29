@@ -28,6 +28,7 @@ openai = "^1.60.0"
 soynlp = "^0.0.493"
 networkx = "^3.4.2"
 nltk = "^3.9.1"
+pyspark = "^3.5.4"
 
 
 [tool.poetry.group.dev.dependencies]
