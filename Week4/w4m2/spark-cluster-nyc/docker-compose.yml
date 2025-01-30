@@ -1,0 +1,37 @@
+#version: "3"
+services:
+  spark-master:
+    build: .
+    container_name: spark-master
+    hostname: spark-master
+    ports:
+      - "8080:8080" # Spark Master UI
+      - "7077:7077" # Spark Cluster 포트
+      - "8888:8888" # Jupyter Notebook 포트 추가
+    volumes:
+      - ./jobs:/opt/spark/jobs # 호스트의 jobs 디렉토리를 컨테이너 내부로 마운트
+      - ./output:/opt/spark/output # 호스트의 output 디렉토리를 컨테이너 내부로 마운트
+    command: >
+      bash -c "pip install jupyter pandas matplotlib && 
+      jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' & 
+      /start-master.sh"
+
+  spark-worker-1:
+    build: .
+    container_name: spark-worker-1
+    depends_on:
+      - spark-master
+    volumes:
+      - ./jobs:/opt/spark/jobs # Worker에서도 jobs 디렉토리 마운트
+      - ./output:/opt/spark/output # 호스트의 output 디렉토리를 컨테이너 내부로 마운트
+    command: ["/start-worker.sh", "spark://spark-master:7077"]
+
+  spark-worker-2:
+    build: .
+    container_name: spark-worker-2
+    depends_on:
+      - spark-master
+    volumes:
+      - ./jobs:/opt/spark/jobs # Worker에서도 jobs 디렉토리 마운트
+      - ./output:/opt/spark/output # 호스트의 output 디렉토리를 컨테이너 내부로 마운트
+    command: ["/start-worker.sh", "spark://spark-master:7077"]
