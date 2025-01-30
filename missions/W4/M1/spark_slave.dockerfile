@@ -4,12 +4,16 @@ FROM ubuntu:20.04
 # Set environment variables
 ENV HADOOP_VERSION=3.3.6
 ENV HADOOP_HOME=/usr/local/hadoop
+ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+ENV YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 ENV SPARK_VERSION=3.5.4
 ENV SPARK_HOME=/usr/local/spark
-ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME
+ENV PATH=$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH
 
+ENV PYSPARK_PYTHON=python3
+ENV PYSPARK_DRIVER_PYTHON=python3
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
 ENV PATH=$JAVA_HOME/bin:$PATH
@@ -59,15 +63,11 @@ RUN tar -xf /spark-${SPARK_VERSION}-bin-hadoop3.tar && \
     mv spark-$SPARK_VERSION-bin-hadoop3 $SPARK_HOME && \
     rm spark-${SPARK_VERSION}-bin-hadoop3.tar
 
-# Spark Master 실행 스크립트 복사
-COPY start-master.sh /start-worker.sh
-RUN chmod +x /start-worker.sh
-
 # Expose Hadoop ports
 EXPOSE 8088 9870 9864 9866 9867
 
 # Start Hadoop services
-CMD SPARK_MASTER_URL=spark://spark-master:7077 && \
-    $SPARK_HOME/sbin/start-slave.sh $SPARK_MASTER_URL && \
+CMD service ssh start && \
+    $SPARK_HOME/sbin/start-slave.sh spark://master:7077 && \
     tail -f $SPARK_HOME/logs/spark--org.apache.spark.deploy.worker.Worker-*.out && \
     tail -f /dev/null
