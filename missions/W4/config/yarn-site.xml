@@ -1,0 +1,18 @@
+<configuration>
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>namenode:8032</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>8192</value>
+    </property>
+    <property>
+        <name>yarn.schedule.minimum-allocation-mb</name>
+        <value>1024</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>resourcemanager</value>
+    </property>
+</configuration>
