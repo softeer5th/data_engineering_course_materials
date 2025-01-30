@@ -14,8 +14,8 @@ services:
       - "8088:8088"  # ResourceManager 포트
       - "22:22"      # SSH 포트
     volumes:
-      - ./volume/dfs/name:/opt/hadoop_data/hdfs/namenode  # NameNode 데이터 디렉토리
-      - ./volume/dfs/data:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
+      - namenode-volume:/opt/hadoop_data/hdfs/namenode  # NameNode 데이터 디렉토리
+      # - ./volume/dfs/data:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
     restart: always  # 컨테이너 중지 시 자동 재시작
 
   worker1:
@@ -28,7 +28,7 @@ services:
       - "9865:9864"  # DataNode UI 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
       - "23:22"      # SSH 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
     volumes:
-      - ./volume/worker1/data:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
+      - datanode-volume1:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
     restart: always  # 컨테이너 중지 시 자동 재시작
 
   worker2:
@@ -41,5 +41,9 @@ services:
       - "9866:9864"  # DataNode UI 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
       - "24:22"      # SSH 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
     volumes:
-      - ./volume/worker2/data:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
+      - datanode-volume2:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
     restart: always  # 컨테이너 중지 시 자동 재시작
+volumes:
+  namenode-volume:
+  datanode-volume1:
+  datanode-volume2:

@@ -1,0 +1,53 @@
+<configuration>
+    <!-- 실행 프레임워크: YARN -->
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+
+    <!-- JobHistory Server 주소 -->
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>master:10020</value>
+    </property>
+
+    <!-- JobHistory Server 웹 UI 주소 -->
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>master:19888</value>
+    </property>
+
+    <!-- MapReduce의 임시 데이터 디렉토리 -->
+    <property>
+        <name>mapreduce.job.working.dir</name>
+        <value>/tmp/hadoop/mapreduce</value>
+    </property>
+
+    <!-- MapReduce 입력 파일의 기본 복제본 수 -->
+    <property>
+        <name>mapreduce.input.fileinputformat.split.minsize</name>
+        <value>67108864</value> <!-- 64MB -->
+    </property>
+
+    <!-- YARN Application ClassPath -->
+    <property>
+        <name>mapreduce.application.classpath</name>
+        <value>
+          $HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,
+          $HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*
+        </value>
+    </property>
+
+    <property>
+        <name>yarn.app.mapreduce.am.env</name>
+        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+    </property>
+    <property>
+        <name>mapreduce.map.env</name>
+        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.env</name>
+        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+    </property>
+</configuration>
