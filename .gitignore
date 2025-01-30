@@ -161,9 +161,9 @@ cython_debug/
 
 *.gz
 *.jpg
-
+mini/
 data/
-
+temp/
 .DS_Store
 ._.DS_Store
 **/.DS_Store

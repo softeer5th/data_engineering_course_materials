@@ -1,0 +1,29 @@
+FROM ubuntu:20.04
+
+RUN apt-get update
+RUN apt-get install -y vim ssh openjdk-8-jdk python3-pip
+RUN pip3 install pyspark
+
+RUN useradd -d /home/hadoop/ -m -p 1111 -s /bin/bash hadoop && \
+    echo "hadoop ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user1
+
+ENV HADOOP_HOME=/home/hadoop
+ENV PATH=$PATH:$HADOOP_HOME/bin
+ENV PATH=$PATH:$HADOOP_HOME/sbin
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
+
+COPY hadoop-3.4.1.tar.gz /hadoop-3.4.1.tar.gz
+RUN tar -zxf hadoop-3.4.1.tar.gz && \
+    mv hadoop-3.4.1/* $HADOOP_HOME && \
+    rmdir hadoop-3.4.1 && \
+    chown -R hadoop:hadoop $HADOOP_HOME && \
+    rm hadoop-3.4.1.tar.gz
+
+RUN mkdir /hadoop/spark
+RUN apt-get https://dlcdn.apache.org/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz
+RUN tar -xzf spark-3.4.1-bin-hadoop3.tgz
+RUN rm spark-3.4.1-bin-hadoop2.7.tgz
+
+ENV SPARK_HOME=/hadoop/spark/spark-3.1.1-bin-hadoop2.7.tgz
+ENV PATH=$SPARK_HOME/bin:$PATH
+ENV PYSPARK_PYTHON=/usr/bin/python3
