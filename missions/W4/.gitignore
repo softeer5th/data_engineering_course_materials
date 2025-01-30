@@ -1,3 +1,5 @@
 **.*.tar
 NYC_TLC_Trip_Data/
 NewYork_weather.csv
+**.*_checkpoints
+**.*.DS_Store
