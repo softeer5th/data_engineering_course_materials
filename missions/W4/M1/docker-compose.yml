@@ -1,0 +1,40 @@
+services:
+  spark-master:
+    image: ubuntu/spark:latest
+    container_name: spark-master
+    entrypoint: ['./entrypoint.sh', 'master']
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    volumes:
+      - ./logs:/opt/spark/spark-events
+      - ./data/input:/home/spark/spark_input
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"   # Spark Web UI
+      - "7077:7077"   # Spark Master 포트
+    networks:
+      - spark-net
+
+  spark-worker:
+    image: ubuntu/spark:latest
+    # container_name: spark-worker
+    entrypoint: ['./entrypoint.sh', 'worker']
+    depends_on:
+      - spark-master
+    expose:
+      - "8081"
+    volumes:
+      - ./logs:/opt/spark/spark-events
+      - ./data/output:/home/spark/spark_output
+    env_file:
+      - .env
+    networks:
+      - spark-net
+
+networks:
+  spark-net:
+    driver: bridge
