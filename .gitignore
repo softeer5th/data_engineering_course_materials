@@ -163,3 +163,4 @@ cython_debug/
 *.db
 *.json
 *.txt
+missions/W4/M2/yellow_tripdata_2024-01.parquet
