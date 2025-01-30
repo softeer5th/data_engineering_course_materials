@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  spark-master:
+    build: .
+    container_name: spark-master
+    ports:
+      - "8080:8080"  # Spark Web UI
+      - "7077:7077"  # Spark master port
+    volumes:
+      - ./output:/opt/spark/output  # 호스트의 ./output 폴더와 컨테이너 내부 /opt/spark/output 연결
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master
+    command: >
+      bin/spark-class org.apache.spark.deploy.master.Master
+      --host spark-master
+    networks:
+      - spark-network
+
+  spark-worker-1:
+    build: .
+    container_name: spark-worker-1
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    command: >
+      bin/spark-class org.apache.spark.deploy.worker.Worker
+      spark://spark-master:7077
+    networks:
+      - spark-network
+
+  spark-worker-2:
+    build: .
+    container_name: spark-worker-2
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    command: >
+      bin/spark-class org.apache.spark.deploy.worker.Worker
+      spark://spark-master:7077
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
