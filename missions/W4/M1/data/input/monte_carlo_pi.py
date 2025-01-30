@@ -16,7 +16,7 @@ def main(output_path: str, num_samples: int):
     pi_estimate = (count_inside / num_samples) * 4
 
     result_df = spark.createDataFrame([(pi_estimate, num_samples)], ["pi_estimate", "num_samples"])
-    result_df.coalesce(1).write.mode("overwrite").parquet(output_path)
+    result_df.coalesce(1).write.mode("overwrite").option("header", "true").csv(output_path)
 
     print(f"Estimated π value: {pi_estimate} using {num_samples} samples")
     spark.stop()
