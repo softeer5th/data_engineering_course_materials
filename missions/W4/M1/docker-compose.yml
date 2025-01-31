@@ -10,6 +10,8 @@ services:
     environment:
       - SPARK_MASTER_PORT=7077
     command: ["spark-class", "org.apache.spark.deploy.master.Master"]
+    volumes:
+      - ./spark-data:/opt/spark-data
 
   spark-worker-1:
     build: .
@@ -19,6 +21,8 @@ services:
     environment:
       - SPARK_MASTER_URL=spark://spark-master:7077
     command: ["spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+    volumes:
+      - ./spark-data:/opt/spark-data
 
   spark-worker-2:
     build: .
@@ -28,6 +32,8 @@ services:
     environment:
       - SPARK_MASTER_URL=spark://spark-master:7077
     command: ["spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+    volumes:
+      - ./spark-data:/opt/spark-data
 
 networks:
   default:
