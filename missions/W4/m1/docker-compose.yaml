@@ -1,0 +1,54 @@
+services:
+  namenode:
+    platform: linux/arm64
+    image: hadoop_setting:0.0.4
+    container_name: namenode
+    hostname: namenode
+    ports:
+      - "9870:9870"    # namenode webui
+      - "8020:8020"    # namenode RPC
+      - "8088:8088"    # Resource manager WebUI
+      - "8032:8032"    # Resource manager RPC
+      - "8090:8090"    # application master WebUI
+      - "19888:19888"  # Job history Server WebUI
+      - "10020:10020"  # Job history Server RPC
+    volumes:
+      - ./data/namenode:/home/hadoop_user/hadoop/hdfs/namenode
+    command: /bin/bash -c "
+      rm -f /home/hadoop_user/hadoop/etc/hadoop/workers &&
+      touch /home/hadoop_user/hadoop/etc/hadoop/workers &&
+      echo 'datanode-1' >> /home/hadoop_user/hadoop/etc/hadoop/workers && 
+      echo 'datanode-2' >> /home/hadoop_user/hadoop/etc/hadoop/workers && 
+      echo 'datanode-3' >> /home/hadoop_user/hadoop/etc/hadoop/workers && 
+      sudo service ssh start && 
+      /home/hadoop_user/hadoop/bin/hdfs namenode -format -force && 
+      /home/hadoop_user/hadoop/sbin/start-dfs.sh && 
+      /home/hadoop_user/hadoop/sbin/start-yarn.sh &&
+      tail -f /dev/null"
+
+  datanode-1:
+    platform: linux/arm64
+    image: hadoop_setting:0.0.4
+    container_name: datanode-1
+    hostname: datanode-1
+    volumes:
+      - ./data/datanode-1:/home/hadoop_user/hadoop/hdfs/datanode
+    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
+
+  datanode-2:
+    platform: linux/arm64
+    image: hadoop_setting:0.0.4
+    container_name: datanode-2
+    hostname: datanode-2
+    volumes:
+      - ./data/datanode-2:/home/hadoop_user/hadoop/hdfs/datanode
+    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
+
+  datanode-3:
+    platform: linux/arm64
+    image: hadoop_setting:0.0.4
+    container_name: datanode-3
+    hostname: datanode-3
+    volumes:
+      - ./data/datanode-3:/home/hadoop_user/hadoop/hdfs/datanode
+    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"

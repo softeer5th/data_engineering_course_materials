@@ -1,29 +1,57 @@
 FROM ubuntu:20.04
 
 RUN apt-get update
-RUN apt-get install -y vim ssh openjdk-8-jdk python3-pip
-RUN pip3 install pyspark
 
-RUN useradd -d /home/hadoop/ -m -p 1111 -s /bin/bash hadoop && \
-    echo "hadoop ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user1
+# 시간대 설정(패키지 인스톨에 필요)
+RUN ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 
-ENV HADOOP_HOME=/home/hadoop
+RUN apt-get install -y ssh openjdk-8-jdk vim python3-pip sudo && \
+    pip install pyspark
+
+RUN useradd -d /home/hadoop_user/ -m -p 1111 -s /bin/bash hadoop_user && \
+    echo "hadoop_user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/hadoop_user
+
+ # 환경변수
+ENV HADOOP_HOME=/home/hadoop_user/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin
 ENV PATH=$PATH:$HADOOP_HOME/sbin
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
 
 COPY hadoop-3.4.1.tar.gz /hadoop-3.4.1.tar.gz
 RUN tar -zxf hadoop-3.4.1.tar.gz && \
+    mkdir /home/hadoop_user/hadoop && \
     mv hadoop-3.4.1/* $HADOOP_HOME && \
     rmdir hadoop-3.4.1 && \
-    chown -R hadoop:hadoop $HADOOP_HOME && \
     rm hadoop-3.4.1.tar.gz
 
-RUN mkdir /hadoop/spark
-RUN apt-get https://dlcdn.apache.org/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz
-RUN tar -xzf spark-3.4.1-bin-hadoop3.tgz
-RUN rm spark-3.4.1-bin-hadoop2.7.tgz
-
-ENV SPARK_HOME=/hadoop/spark/spark-3.1.1-bin-hadoop2.7.tgz
+ENV SPARK_HOME=/home/hadoop_user/spark
 ENV PATH=$SPARK_HOME/bin:$PATH
 ENV PYSPARK_PYTHON=/usr/bin/python3
+
+COPY spark-3.5.4-bin-hadoop3.tgz /spark-3.5.4-bin-hadoop3.tgz
+RUN mkdir /home/hadoop_user/spark && \
+    tar -xzf spark-3.5.4-bin-hadoop3.tgz && \
+    mv spark-3.5.4-bin-hadoop3/* $SPARK_HOME && \
+    rmdir spark-3.5.4-bin-hadoop3 && \
+    rm spark-3.5.4-bin-hadoop3.tgz
+
+RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    echo "export HDFS_NAMENODE_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    echo "export HDFS_DATANODE_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    echo "export HDFS_SECONDARYNAMENODE_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    echo "export YARN_RESOURCEMANAGER_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    echo "export YARN_NODEMANAGER_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh    
+    
+COPY core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
+COPY hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+COPY yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+
+RUN chown -R hadoop_user /home/hadoop_user
+
+USER hadoop_user
+
+RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
+    chmod 400 ~/.ssh/id_rsa && \
+    echo "Host *\n  StrictHostKeyChecking no" > ~/.ssh/config
