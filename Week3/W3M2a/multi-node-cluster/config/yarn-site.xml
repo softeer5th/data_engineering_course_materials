@@ -1,0 +1,4 @@
+<property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>hadoop-master</value>
+</property>
