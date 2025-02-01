@@ -1,0 +1,49 @@
+version: '3.9'  # Compose 파일 버전
+
+services:
+  master:
+    build:
+      context: .  # 현재 디렉토리에서 Dockerfile을 가져옴
+    container_name: hadoop-master  # Master 컨테이너 이름
+    environment:
+      - NODE_TYPE=master  # Master 역할 지정
+    ports:
+      - "9870:9870"  # NameNode UI 포트
+      - "9864:9864"  # DataNode UI 포트
+      - "9000:9000"  # HDFS 포트
+      - "8088:8088"  # ResourceManager 포트
+      - "22:22"      # SSH 포트
+    volumes:
+      - namenode-volume:/opt/hadoop_data/hdfs/namenode  # NameNode 데이터 디렉토리
+      # - ./volume/dfs/data:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
+    restart: always  # 컨테이너 중지 시 자동 재시작
+
+  worker1:
+    build:
+      context: .  # 현재 디렉토리에서 Dockerfile을 가져옴
+    container_name: hadoop-worker1  # Worker1 컨테이너 이름
+    environment:
+      - NODE_TYPE=worker  # Worker 역할 지정
+    ports:
+      - "9865:9864"  # DataNode UI 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
+      - "23:22"      # SSH 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
+    volumes:
+      - datanode-volume1:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
+    restart: always  # 컨테이너 중지 시 자동 재시작
+
+  worker2:
+    build:
+      context: .  # 현재 디렉토리에서 Dockerfile을 가져옴
+    container_name: hadoop-worker2  # Worker2 컨테이너 이름
+    environment:
+      - NODE_TYPE=worker  # Worker 역할 지정
+    ports:
+      - "9866:9864"  # DataNode UI 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
+      - "24:22"      # SSH 포트 (호스트와 겹치지 않도록 다른 포트 매핑)
+    volumes:
+      - datanode-volume2:/opt/hadoop_data/hdfs/datanode  # DataNode 데이터 디렉토리
+    restart: always  # 컨테이너 중지 시 자동 재시작
+volumes:
+  namenode-volume:
+  datanode-volume1:
+  datanode-volume2:
