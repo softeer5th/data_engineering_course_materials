@@ -16,7 +16,7 @@ if __name__ == "__main__" :
     pi = 4.0 * count / num_samples
     print(f"Pi is roughly {pi}")
 
-    output_path = sys.argv[2] if len(sys.argv) > 2 else "/output/pi_estimate.csv"
+    output_path = "/opt/spark-data/output"
     result = spark.createDataFrame([(pi,)], ["Estimated Pi"])
     result.write.csv(output_path, mode='overwrite', header = True)
 
