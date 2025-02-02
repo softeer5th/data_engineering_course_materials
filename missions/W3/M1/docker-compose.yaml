@@ -1,0 +1,21 @@
+services:
+  hadoop:
+    image: hadoop-single:latest
+    container_name: hadoop-single-node-container
+    ports:
+      - "9870:9870"  # HDFS Web UI
+      - "9000:9000"  # HDFS Default NameNode RPC Address
+    volumes:
+      - ./data/data:/usr/local/hadoop/tmp/dfs/data
+      - ./data/name:/usr/local/hadoop/tmp/dfs/name
+    environment:
+      HDFS_NAMENODE_USER: root
+      HDFS_DATANODE_USER: root
+      HDFS_SECONDARYNAMENODE_USER: root
+    networks:
+      - hadoop-network
+    command: ["/usr/local/bin/entrypoint.sh"]
+
+networks:
+  hadoop-network:
+    driver: bridge
