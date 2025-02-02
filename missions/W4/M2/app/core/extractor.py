@@ -1,60 +1,73 @@
-from app.utils.logging import Logger
-from threading import Thread, Lock
+from threading import Lock, Thread
 
-from .downloader import download_trip_data
+from app.utils.logging import Logger
+
 from .constants import VehicleType
+from .downloader import download_trip_data
+
 
 class _SharedYearMonth:
-    def __init__(self, start_year: int = 2019, start_month: int = 2, end_year: int = 2024, end_month: int = 11):
-        self.lock = Lock()
-        self.year = start_month
-        self.month = start_year
-        self.end_year = end_year
-        self.end_month = end_month
+    def __init__(self, year: int, month: int):
+        self._lock = Lock()
+        self.year = year
+        self.month = month
 
-    def get(self) -> tuple[int, int]:
-        with self.lock:
-            year, month = self.year, self.month
-            self.month += 1
-            if self.month > 12:
-                self.year += 1
-                self.month = 1
-            if self.year > self.end_year or (self.year == self.end_year and self.month > self.end_month):
-                return None, None
-            return year, month
+    @property
+    def lock(self):
+        return self._lock
+
+    def increment(self):
+        self.month += 1
+        if self.month > 12:
+            self.year += 1
+            self.month = 1
 
 
-def extract(start_year: int = 2019, start_month: int = 2, end_year: int = 2024, end_month: int = 11):
-    """
-    멀티 스레딩 방식으로 2019년 2월부터 Request 오류가 날 때까지 데이터를 다운로드한다.
-    공유 변수를 통해서 현재 처리 중인 가장 최신의 year-month를 공유하며 작업을 수행한다.
-    """
+class Extractor:
+    def __init__(
+        self,
+        vehicle_type: VehicleType,
+        start_year_month: tuple[int, int] = (2019, 2),
+        end_year_month: tuple[int, int] = (2024, 11),
+        num_threads: int = 8,
+    ):
+        self.vehicle_type = vehicle_type
+        self.shared = _SharedYearMonth(*start_year_month)
+        self.end_year = end_year_month[0]
+        self.end_month = end_year_month[1]
+        self.num_threads = num_threads
+        self.logger = Logger("extractor")
 
-    logger = Logger()
-
-    year_month = _SharedYearMonth(start_year, start_month, end_year, end_month)
-
-    def _extract():
+    def _extract_worker(self):
         while True:
-            year, month = year_month.get()
-            if year is None:
-                break
-            if not download_trip_data(VehicleType.YELLOW, year, month):
-                logger.error(f"{VehicleType.YELLOW}-{year}-{month:02d} 데이터 추출 실패")
-                break
-            if not download_trip_data(VehicleType.GREEN, year, month):
-                logger.error(f"{VehicleType.GREEN}-{year}-{month:02d} 데이터 추출 실패")
-                break
-            logger.info(f"{year}-{month:02d} 데이터 추출 완료")
+            with self.shared.lock:
+                year, month = self.shared.year, self.shared.month
+                if year > self.end_year or (
+                    year == self.end_year and month > self.end_month
+                ):
+                    break
+                self.shared.increment()
 
-    threads = [Thread(target=_extract) for _ in range(8)]
+            if not download_trip_data(self.vehicle_type, year, month):
+                self.logger.error(
+                    f"{self.vehicle_type}-{year}-{month:02d} 데이터 추출 실패"
+                )
+            self.logger.info(
+                f"{self.vehicle_type}-{year}-{month:02d} 데이터 추출 완료"
+            )
 
-    logger.info("Data extraction is started.")
+    def extract(self):
+        threads = [
+            Thread(target=self._extract_worker)
+            for _ in range(self.num_threads)
+        ]
 
-    for thread in threads:
-        thread.start()
+        self.logger.info("Extracting data...")
 
-    for thread in threads:
-        thread.join()
+        for thread in threads:
+            thread.start()
 
-    logger.info("Data extraction is completed.")
+        for thread in threads:
+            thread.join()
+
+        self.logger.info("Data extraction complete")

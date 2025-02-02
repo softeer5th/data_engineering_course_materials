@@ -1,4 +1,7 @@
 import logging
+import os
+
+from app.core.constants import LOG_DIR
 
 
 class Logger:
@@ -6,45 +9,39 @@ class Logger:
     Logger class for logging messages to a file and console.
     """
 
-    _instance: "Logger" = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance._is_initialized = False
-        return cls._instance
-
-    def __init__(self, log_file_path: str | None = None, *, append: bool = True):
+    def __init__(self, name: str, *, append: bool = True):
         """
         Initialize Logger object with log file path and mode.
-        :param log_file_path: str: Log file path.
+        :param name: str: Name of the log file.
         :param append: bool: Append to log file if True, overwrite if False
         """
+        if not name:
+            raise ValueError("Name must be provided for the logger.")
 
-        if self._is_initialized:
-            if log_file_path is not None:
-                raise ValueError("Logger is already initialized.")
+        # Get or create logger with the given name
+        self.logger = logging.getLogger(name)
+
+        # If handlers are already configured, skip initialization
+        if self.logger.handlers:
             return
-        
-        self._is_initialized = True
-        
-        if log_file_path is None:
-            raise ValueError("log_file_path is required.")
 
-        # Create logger
-        self.logger = logging.getLogger("Logger")
         self.logger.setLevel(logging.DEBUG)
 
-        # Create file handler
+        # Create log directory if it doesn't exist
+        os.makedirs(LOG_DIR, exist_ok=True)
+
+        # Create and configure file handler
         mode = "a" if append else "w"
-        fh = logging.FileHandler(log_file_path, mode=mode)
+        fh = logging.FileHandler(
+            os.path.join(LOG_DIR, name + ".log"), mode=mode
+        )
         fh.setLevel(logging.DEBUG)
 
-        # Create console handler
+        # Create and configure console handler
         ch = logging.StreamHandler()
         ch.setLevel(logging.DEBUG)
 
-        # Create formatter
+        # Create and set formatter for both handlers
         formatter = logging.Formatter(
             "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
