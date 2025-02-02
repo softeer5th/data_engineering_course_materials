@@ -10,11 +10,11 @@ spark = SparkSession.builder \
     .config("spark.executor.memory", "4g") \
     .getOrCreate()
 
-# 데이터 병합 - 2024년 1월~11월 yellow taxi 여행기록
+# 데이터 병합 - 2021년 1월~12월 yellow taxi 여행기록
 # Spark는 경로에 여러 Parquet 파일이 존재할 경우 자동으로 병합한다. 
-df = spark.read.parquet("./dataset/yellow_tripdata_2024-*.parquet")
+df = spark.read.parquet("./dataset/yellow_tripdata_2021-*.parquet")
 
-# 데이터 개수 확인 - 총 37,501,349개
+# 데이터 개수 확인 - 총 30,904,308개
 print(f"총 로드된 레코드 수: {df.count()}")
 
 # 데이터 스키마 확인
@@ -57,8 +57,8 @@ df = df.withColumn("trip_duration_min", col("trip_duration_sec") / 60.0)
 df = df.withColumn("pickup_hour", hour("tpep_pickup_datetime"))
 
 #--------------데이터 저장----------------#
-cleaned_parquet_path = "./dataset/cleaned_yellow_tripdata_2024.parquet"
-cleaned_csv_path = "./dataset/cleaned_yellow_tripdata_2024.csv"
+cleaned_parquet_path = "./dataset/cleaned_yellow_tripdata_2021.parquet"
+cleaned_csv_path = "./dataset/cleaned_yellow_tripdata_2021.csv"
 
 df = df.repartition(20)  # 20개의 파티션으로 나눠서 저장
 df.write.mode("overwrite").parquet(cleaned_parquet_path)
