@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  spark-master:
+    build: .
+    container_name: spark-master
+    ports:
+      - "8080:8080"  # Spark Master Web UI
+      - "7077:7077"  # Spark Master RPC Port
+    environment:
+      - SPARK_MASTER_PORT=7077
+    command: ["spark-class", "org.apache.spark.deploy.master.Master"]
+    volumes:
+      - ./spark-data:/opt/spark-data
+
+  spark-worker-1:
+    build: .
+    container_name: spark-worker-1
+    ports:
+      - "8081:8081"  # Spark Worker Web UI
+    environment:
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    command: ["spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+    volumes:
+      - ./spark-data:/opt/spark-data
+
+  spark-worker-2:
+    build: .
+    container_name: spark-worker-2
+    ports:
+      - "8082:8081"  # Spark Worker Web UI (포트 충돌 방지)
+    environment:
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    command: ["spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+    volumes:
+      - ./spark-data:/opt/spark-data
+
+networks:
+  default:
+    name: spark-network
