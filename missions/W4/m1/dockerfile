@@ -17,6 +17,8 @@ ENV HADOOP_HOME=/home/hadoop_user/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin
 ENV PATH=$PATH:$HADOOP_HOME/sbin
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
+ENV HADOOP_CONF_DIR=/home/hadoop_user/hadoop/etc/hadoop
+ENV YARN_CONF_DIR=/home/hadoop_user/hadoop/etc/hadoop
 
 COPY hadoop-3.4.1.tar.gz /hadoop-3.4.1.tar.gz
 RUN tar -zxf hadoop-3.4.1.tar.gz && \
@@ -36,16 +38,16 @@ RUN mkdir /home/hadoop_user/spark && \
     rmdir spark-3.5.4-bin-hadoop3 && \
     rm spark-3.5.4-bin-hadoop3.tgz
 
+COPY core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
+COPY hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+COPY yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+    
 RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export HDFS_NAMENODE_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export HDFS_DATANODE_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export HDFS_SECONDARYNAMENODE_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export YARN_RESOURCEMANAGER_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
-    echo "export YARN_NODEMANAGER_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh    
-    
-COPY core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
-COPY hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
-COPY yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+    echo "export YARN_NODEMANAGER_USER=hadoop_user" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 RUN chown -R hadoop_user /home/hadoop_user
 

@@ -1,7 +1,7 @@
 services:
   namenode:
     platform: linux/arm64
-    image: hadoop_setting:0.0.4
+    image: hadoop_setting:0.0.7
     container_name: namenode
     hostname: namenode
     ports:
@@ -12,6 +12,7 @@ services:
       - "8090:8090"    # application master WebUI
       - "19888:19888"  # Job history Server WebUI
       - "10020:10020"  # Job history Server RPC
+      - "8080:8080"    # Spark master WebUI
     volumes:
       - ./data/namenode:/home/hadoop_user/hadoop/hdfs/namenode
     command: /bin/bash -c "
@@ -19,36 +20,33 @@ services:
       touch /home/hadoop_user/hadoop/etc/hadoop/workers &&
       echo 'datanode-1' >> /home/hadoop_user/hadoop/etc/hadoop/workers && 
       echo 'datanode-2' >> /home/hadoop_user/hadoop/etc/hadoop/workers && 
-      echo 'datanode-3' >> /home/hadoop_user/hadoop/etc/hadoop/workers && 
+      echo 'datanode-1' > /home/hadoop_user/spark/conf/workers.template && 
+      echo 'datanode-2' >> /home/hadoop_user/spark/conf/workers.template && 
       sudo service ssh start && 
       /home/hadoop_user/hadoop/bin/hdfs namenode -format -force && 
       /home/hadoop_user/hadoop/sbin/start-dfs.sh && 
       /home/hadoop_user/hadoop/sbin/start-yarn.sh &&
+      /home/hadoop_user/spark/sbin/start-master.sh &&
       tail -f /dev/null"
 
   datanode-1:
     platform: linux/arm64
-    image: hadoop_setting:0.0.4
+    image: hadoop_setting:0.0.7
     container_name: datanode-1
     hostname: datanode-1
-    volumes:
+    volumes: 
       - ./data/datanode-1:/home/hadoop_user/hadoop/hdfs/datanode
-    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
+    command: /bin/bash -c "sudo service ssh start &&
+      /home/hadoop_user/spark/sbin/start-worker.sh spark://namenode:7077 --cores 1 &&
+      tail -f /dev/null"
 
   datanode-2:
     platform: linux/arm64
-    image: hadoop_setting:0.0.4
+    image: hadoop_setting:0.0.7
     container_name: datanode-2
     hostname: datanode-2
     volumes:
       - ./data/datanode-2:/home/hadoop_user/hadoop/hdfs/datanode
-    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
-
-  datanode-3:
-    platform: linux/arm64
-    image: hadoop_setting:0.0.4
-    container_name: datanode-3
-    hostname: datanode-3
-    volumes:
-      - ./data/datanode-3:/home/hadoop_user/hadoop/hdfs/datanode
-    command: /bin/bash -c "sudo service ssh start && tail -f /dev/null"
+    command: /bin/bash -c "sudo service ssh start &&
+      /home/hadoop_user/spark/sbin/start-worker.sh spark://namenode:7077 --cores 1 &&
+      tail -f /dev/null"
