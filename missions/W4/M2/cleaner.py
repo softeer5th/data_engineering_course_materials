@@ -10,9 +10,9 @@ def create_spark_session() -> SparkSession:
     return (
         builder.appName("NYC Taxi Data Processing")
         # 메모리 설정
-        .config("spark.executor.memory", "1g")
-        .config("spark.driver.memory", "1g")
-        .config("spark.executor.cores", "1")
+        .config("spark.executor.memory", "2g")
+        .config("spark.driver.memory", "2g")
+        .config("spark.executor.cores", "2")
         # UI 비활성화
         .config("spark.ui.enabled", "false")
         # Parquet 관련 설정
