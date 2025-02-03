@@ -1,3 +1,14 @@
+.vscode
+.DS_Store
+
+**/logs/**
+!**/logs/.gitkeep
+
+**/data/output/**
+missions/W4/M2/data/*
+!missions/W4/M2/data/.gitkeep
+!**/data/output/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
