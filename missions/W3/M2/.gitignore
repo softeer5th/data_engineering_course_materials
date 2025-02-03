@@ -1,0 +1,4 @@
+*.tar.gz
+volume
+.env
+shared-dir
