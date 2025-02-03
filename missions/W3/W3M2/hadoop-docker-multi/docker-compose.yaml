@@ -1,0 +1,68 @@
+services:
+  hadoop-master:
+    build: .
+    container_name: hadoop-master
+    hostname: hadoop-master
+    ports:
+      - "9870:9870"  # HDFS Web UI
+      - "8088:8088"  # YARN Resource Manager Web UI
+      - "9000:9000"  # HDFS RPC
+      - "9864:9864"  # HDFS DataNode Web UI
+      - "8020:8020"  # HDFS NameNode HDFS API
+      - "8042:8042"  # YARN NodeManager Web UI
+    user:
+      hdfs
+    volumes:
+      - hadoop-master-data:/hadoopdata/hdfs
+    networks:
+      - hadoop-net
+
+  hadoop-worker1:
+    build: .
+    container_name: hadoop-worker1
+    hostname: hadoop-worker1
+    depends_on:
+      - hadoop-master
+    user:
+      hdfs
+    volumes:
+      - hadoop-worker1-data:/hadoopdata/hdfs
+    networks:
+      - hadoop-net
+
+  hadoop-worker2:
+    build: .
+    container_name: hadoop-worker2
+    hostname: hadoop-worker2
+    depends_on:
+      - hadoop-master
+    user:
+      hdfs
+    volumes:
+      - hadoop-worker2-data:/hadoopdata/hdfs
+    networks:
+      - hadoop-net
+
+  hadoop-worker3:
+    build: .
+    container_name: hadoop-worker3
+    hostname: hadoop-worker3
+    depends_on:
+      - hadoop-master
+    user:
+      hdfs
+    volumes:
+      - hadoop-worker3-data:/hadoopdata/hdfs
+    networks:
+      - hadoop-net
+  
+networks:
+  hadoop-net:
+    driver: bridge
+
+
+volumes:
+  hadoop-master-data:
+  hadoop-worker1-data:
+  hadoop-worker2-data:
+  hadoop-worker3-data:

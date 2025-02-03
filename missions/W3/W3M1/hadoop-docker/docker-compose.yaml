@@ -1,0 +1,18 @@
+services:
+  hadoop-cluster:
+    build:
+      context: .  # 현재 디렉토리에서 Dockerfile을 사용하여 빌드
+    ports:
+      - "9870:9870"  # HDFS Web UI
+      - "8088:8088"  # YARN Resource Manager Web UI
+      - "9000:9000"  # HDFS RPC
+      - "9864:9864"  # HDFS DataNode Web UI
+    user:
+      hdfs
+    volumes:
+      - hadoop_namenode:/hadoopdata/hdfs/namenode
+      - hadoop_datanode:/hadoopdata/hdfs/datanode
+
+volumes:
+  hadoop_namenode:
+  hadoop_datanode:
