@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+  spark-master:
+    image: spark-standalone
+    container_name: spark-master
+    hostname: spark-master 
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - spark-master:/opt/spark
+      - ./data:/data
+      - ./pi.py:/opt/spark/scripts/pi.py
+    networks:
+      - spark-network
+
+  spark-worker-1:
+    image: spark-standalone
+    container_name: spark-worker-1
+    hostname: spark-worker-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_HOST=spark-master
+    depends_on:
+      - spark-master
+    volumes:
+      - spark-worker-1:/opt/spark
+    networks:
+      - spark-network
+
+  spark-worker-2:
+    image: spark-standalone
+    container_name: spark-worker-2
+    hostname: spark-worker-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_HOST=spark-master
+    depends_on:
+      - spark-master
+    volumes:
+      - spark-worker-2:/opt/spark
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
+    driver: bridge
+
+volumes:
+  spark-master:
+  spark-worker-1:
+  spark-worker-2:

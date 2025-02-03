@@ -1,0 +1,80 @@
+version: '3.9'
+
+services:
+  spark-master:
+    image: w4m2
+    container_name: w4m2-spark-master
+    hostname: spark-master 
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_NETWORK_TIMEOUT=600s  # 타임아웃 증가
+      - SPARK_RPC_MESSAGE_MAXSIZE=512  # RPC 메시지 크기 증가
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - spark-master:/opt/spark
+      - ./spark/work:/usr/local/spark/work
+    networks:
+      - spark-network
+
+  spark-worker-1:
+    image: w4m2
+    container_name: w4m2-spark-worker-1
+    hostname: spark-worker-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_OPTS=-Dspark.network.timeout=600s -Dspark.rpc.message.maxSize=512  # 추가
+    depends_on:
+      - spark-master
+    volumes:
+      - spark-worker-1:/opt/spark
+      - ./spark/work:/usr/local/spark/work
+    networks:
+      - spark-network
+
+  spark-worker-2:
+    image: w4m2
+    container_name: w4m2-spark-worker-2
+    hostname: spark-worker-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_OPTS=-Dspark.network.timeout=600s -Dspark.rpc.message.maxSize=512  # 추가
+    depends_on:
+      - spark-master
+    volumes:
+      - spark-worker-2:/opt/spark
+      - ./spark/work:/usr/local/spark/work
+    networks:
+      - spark-network
+
+  jupyter:
+    image: w4m2
+    container_name: w4m2-jupyter
+    hostname: jupyter
+    environment:
+      - SPARK_MODE=jupyter
+      - SPARK_MASTER_HOST=spark-master
+    ports:
+      - "8888:8888"
+    volumes:
+      - spark-master:/opt/spark
+      - ./data:/data
+    depends_on:
+      - spark-master
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
+    driver: bridge
+
+volumes:
+  spark-master:
+  spark-worker-1:
+  spark-worker-2: 
