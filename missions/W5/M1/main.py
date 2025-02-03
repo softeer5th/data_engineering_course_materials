@@ -40,9 +40,9 @@ def create_spark_session() -> SparkSession:
     builder: SparkSession.Builder = SparkSession.builder
     return (
         builder.appName("NYC Taxi Data Processing")
-        .config(
-            "spark.driver.extraJavaOptions", "-Djava.security.manager=allow"
-        )
+        # .config(
+        #     "spark.driver.extraJavaOptions", "-Djava.security.manager=allow"
+        # )
         .getOrCreate()
     )
 
@@ -61,7 +61,7 @@ def main():
 
     trip_count, total_revenue, total_trip_dist = rdd.map(
         lambda x: (1, x[C.FARE_AMOUNT], x[C.TRIP_DISTANCE])
-    ).reduce(lambda x, y: x + y)
+    ).reduce(lambda x, y: (x[0] + y[0], x[1] + y[1], x[2] + y[2]))
 
     avg_trip_dist = total_trip_dist / trip_count
 
