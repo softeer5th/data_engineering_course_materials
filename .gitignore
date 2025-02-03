@@ -164,3 +164,5 @@ cython_debug/
 *.json
 *.txt
 **/missions/*
+!**/W5/
+*.parquet
