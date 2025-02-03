@@ -1,0 +1,20 @@
+services:
+  hadoop:
+    image: ubuntu/hadoop-pseudo:latest
+    container_name: hadoop-cluster
+    hostname: hadoop-cluster
+    ports:
+      - "9870:9870"  # HDFS Web UI
+    volumes:
+      - ./data/name:/usr/local/hadoop/tmp/dfs/name
+      - ./data/data:/usr/local/hadoop/tmp/dfs/data
+    environment:
+      HDFS_NAMENODE_USER: root
+      HDFS_DATANODE_USER: root
+      HDFS_SECONDARYNAMENODE_USER: root
+    networks:
+      - hadoop-network
+
+networks:
+  hadoop-network:
+    driver: bridge
