@@ -4,10 +4,7 @@ from app.utils.logging import Logger
 
 
 def main():
-    extractor = Extractor(VehicleType.GREEN)
-    extractor.extract()
-
-    extractor = Extractor(VehicleType.YELLOW)
+    extractor = Extractor(VehicleType.YELLOW, (2024, 1), (2024, 11))
     extractor.extract()
 
 
