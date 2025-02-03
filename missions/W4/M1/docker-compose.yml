@@ -6,11 +6,14 @@ services:
     ports:
       - "8080:8080"
       - "7077:7077"
-    command: ${SPARK_HOME}/bin/spark-class org.apache.spark.deploy.master.Master
+      - "4040:4040"
+      - "18080:18080"
+    entrypoint: ["sh", "-c", "${SPARK_HOME}/sbin/start-master.sh && ${SPARK_HOME}/sbin/start-history-server.sh && tail -f /dev/null"]
     environment:
       - SPARK_LOCAL_IP=spark-master
     volumes:
       - ${HOME}/docker/volumes/spark/data:${SPARK_HOME}/data
+      - ${HOME}/workspace/softeer/missions/W5/M1:${SPARK_HOME}/app
     networks:
       - spark-network
 
@@ -22,7 +25,7 @@ services:
       - spark-master
     ports:
       - "8081:8081"
-    command: ${SPARK_HOME}/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    entrypoint: ["sh", "-c", "${SPARK_HOME}/sbin/start-worker.sh spark://spark-master:7077 && tail -f /dev/null"]
     environment:
       - SPARK_LOCAL_IP=spark-worker-1
     volumes:
@@ -38,7 +41,7 @@ services:
       - spark-master
     ports:
       - "8082:8081"
-    command: ${SPARK_HOME}/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    entrypoint: ["sh", "-c", "${SPARK_HOME}/sbin/start-worker.sh spark://spark-master:7077 && tail -f /dev/null"]
     environment:
       - SPARK_LOCAL_IP=spark-worker-2
     volumes:

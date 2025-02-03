@@ -42,6 +42,8 @@ RUN cd /opt && \
     ln -s /opt/spark-${SPARK_VERSION}-bin-hadoop3 ${SPARK_HOME} && \
     rm spark-${SPARK_VERSION}-bin-hadoop3.tgz spark-${SPARK_VERSION}-bin-hadoop3.tgz.sha512
 
+RUN mkdir -p /tmp/spark-events
+
 COPY config/ ${SPARK_HOME}/conf/
 
 CMD ["/bin/bash"]
