@@ -29,6 +29,9 @@ soynlp = "^0.0.493"
 networkx = "^3.4.2"
 nltk = "^3.9.1"
 pyspark = "^3.5.4"
+openmeteo-requests = "^1.3.0"
+requests-cache = "^1.2.1"
+retry-requests = "^2.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
