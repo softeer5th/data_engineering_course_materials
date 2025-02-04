@@ -166,3 +166,4 @@ cython_debug/
 **/missions/*
 !**/W5/
 *.parquet
+.idea
