@@ -13,7 +13,7 @@ services:
       - SPARK_LOCAL_IP=spark-master
     volumes:
       - ${HOME}/docker/volumes/spark/data:${SPARK_HOME}/data
-      - ${HOME}/workspace/softeer/missions/W5/M1:${SPARK_HOME}/app
+      - ${HOME}/workspace/softeer/missions/W5:${SPARK_HOME}/app
     networks:
       - spark-network
 

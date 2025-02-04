@@ -1,3 +1,4 @@
+import json
 import os
 from enum import IntEnum
 
@@ -51,31 +52,52 @@ def main():
     spark = create_spark_session()
 
     df = spark.read.parquet(
+        # 1개월 분량으로 테스트
         os.path.join(SPARK_DATA, "source/yellow_2024_11.parquet")
     )
 
     rdd = df.rdd
 
-    # fare amount가 0보다 큰 row만 남김
-    rdd = rdd.filter(lambda x: x[C.FARE_AMOUNT] > 0)
+    # fare amount가 0보다 크고 pickup_datetime이 2024년인 데이터만 남김
+    rdd = rdd.filter(
+        lambda x: x[C.FARE_AMOUNT] > 0 and x[C.PICKUP_DATETIME].year == 2024
+    )
 
-    trip_count, total_revenue, total_trip_dist = rdd.map(
+    rdd = rdd.cache()
+
+    total_trip, total_revenue, total_trip_distance = rdd.map(
         lambda x: (1, x[C.FARE_AMOUNT], x[C.TRIP_DISTANCE])
     ).reduce(lambda x, y: (x[0] + y[0], x[1] + y[1], x[2] + y[2]))
 
-    avg_trip_dist = total_trip_dist / trip_count
+    average_trip_distance = total_trip_distance / total_trip
 
-    print(trip_count, total_revenue, avg_trip_dist)
+    stats = {
+        "total_trip": total_trip,
+        "total_revenue": total_revenue,
+        "average_trip_distance": average_trip_distance,
+    }
 
-    # total_revenue = rdd.map(lambda x: x[C.FARE_AMOUNT]).sum()
+    os.makedirs(os.path.join(SPARK_DATA, "output/rdd/metrics"), exist_ok=True)
 
-    # avg_trip_dist = rdd.map(lambda x: x[C.TRIP_DISTANCE]).mean()
+    # print(total_trip, total_revenue, avg_trip_dist)
+    with open(
+        os.path.join(SPARK_DATA, "output/rdd/metrics/stats.json"), "w"
+    ) as f:
+        json.dump(stats, f)
 
-    # grouped_rdd = rdd.groupBy(lambda x: x[C.PICKUP_DATETIME])
+    rdd = rdd.map(
+        lambda x: (x[C.PICKUP_DATETIME].date(), (1, x[C.FARE_AMOUNT]))
+    ).reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
 
-    # daily_trips = grouped_rdd.mapValues(len).collectAsMap()
+    df = rdd.map(lambda x: (x[0], x[1][0], x[1][1])).toDF(
+        ["date", "trip_count", "revenue"]
+    )
 
-    # daily_revenues = grouped_rdd.mapValues(lambda x: sum(row[C.FARE_AMOUNT] for row in x)).collectAsMap()
+    df.write.save(
+        os.path.join(SPARK_DATA, "output/rdd/metrics/daily"),
+        "parquet",
+        "overwrite",
+    )
 
 
 if __name__ == "__main__":
