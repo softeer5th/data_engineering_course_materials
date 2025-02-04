@@ -1,0 +1,65 @@
+version: '3'
+services:
+  spark-master:
+    image: spark-python-base:latest
+    user: hduser
+    volumes:
+      - hadoop_namenode1:/hadoop/dfs/name
+    ports:
+      - "8080:8080"  # Spark Web UI
+      - "7077:7077"  # Spark master port
+      - "6066:6066"  # Spark REST API
+      - "9000:9000"  # HDFS IPC
+      - "9870:9870"  # HDFS Web UI
+      # - ENSURE_NAMENODE_DIR=/tmp/hadoop-root/dfs/name
+    hostname: spark-master
+    container_name: spark-master
+    # command: ["/bin/bash"]  # namenode 컨테이너 실행 시 실행할 명령어.
+    command: ["./master-entrypoint.sh"]  # namenode 컨테이너 실행 시 실행할 명령어.
+    networks:
+      - hadoop_network
+        
+  spark-worker-1:
+    image: spark-python-base:latest
+    user: hduser
+    volumes:
+      - hadoop_datanode1:/hadoop/dfs/data
+      # 다른 볼륨 설정...
+    container_name: spark-worker-1
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    environment:
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1g
+    command: ["./worker-entrypoint.sh"]  # worker 컨테이너 실행 시 실행할 명령어.
+    networks:
+      - hadoop_network
+
+  spark-worker-2:
+    container_name: spark-worker-2
+    user: hduser
+    image: spark-python-base:latest
+    environment:
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1g
+    volumes:
+      - hadoop_datanode2:/hadoop/dfs/data
+    depends_on:
+      - spark-master
+    ports:
+    - "8082:8081"
+    command: ["./worker-entrypoint.sh"]  # worker 컨테이너 실행 시 실행할 명령어.
+    networks:
+      - hadoop_network
+
+volumes:
+  hadoop_namenode1:
+  hadoop_datanode1:
+  hadoop_datanode2:
+
+networks:
+  hadoop_network:
+    driver: bridge
+  
