@@ -67,7 +67,8 @@ def main():
 
     df = spark.read.parquet(
         # 1개월 분량으로 테스트
-        os.path.join(SPARK_DATA, "source/yellow_2024_11.parquet")
+        os.path.join(SPARK_DATA, "source/yellow_2023_12.parquet"),
+        os.path.join(SPARK_DATA, "source/yellow_2024_*.parquet"),
     )
 
     weather_df = spark.read.parquet(
