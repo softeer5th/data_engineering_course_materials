@@ -1,0 +1,1262 @@
+[
+    {
+        "Country":"World",
+        "GDP (B USD)":115494.31,
+        "Year":"2025",
+        "Region":null
+    },
+    {
+        "Country":"United States",
+        "GDP (B USD)":30337.16,
+        "Year":"2025",
+        "Region":"North America"
+    },
+    {
+        "Country":"China",
+        "GDP (B USD)":19534.89,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Germany",
+        "GDP (B USD)":4921.56,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Japan",
+        "GDP (B USD)":4389.33,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"India",
+        "GDP (B USD)":4271.92,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"United Kingdom",
+        "GDP (B USD)":3730.26,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"France",
+        "GDP (B USD)":3283.43,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Italy",
+        "GDP (B USD)":2459.6,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Canada",
+        "GDP (B USD)":2330.31,
+        "Year":"2025",
+        "Region":"North America"
+    },
+    {
+        "Country":"Brazil",
+        "GDP (B USD)":2307.16,
+        "Year":"2025",
+        "Region":"South America"
+    },
+    {
+        "Country":"Russia",
+        "GDP (B USD)":2195.71,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"South Korea",
+        "GDP (B USD)":1947.13,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Australia",
+        "GDP (B USD)":1881.14,
+        "Year":"2025",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Spain",
+        "GDP (B USD)":1827.58,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Mexico",
+        "GDP (B USD)":1817.82,
+        "Year":"2025",
+        "Region":"North America"
+    },
+    {
+        "Country":"Indonesia",
+        "GDP (B USD)":1492.62,
+        "Year":"2025",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Turkey",
+        "GDP (B USD)":1455.41,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Netherlands",
+        "GDP (B USD)":1272.96,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Saudi Arabia",
+        "GDP (B USD)":1136.58,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Switzerland",
+        "GDP (B USD)":999.6,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Poland",
+        "GDP (B USD)":915.45,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Taiwan",
+        "GDP (B USD)":814.44,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Belgium",
+        "GDP (B USD)":689.36,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Sweden",
+        "GDP (B USD)":638.78,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Argentina",
+        "GDP (B USD)":604.2,
+        "Year":"2025",
+        "Region":"South America"
+    },
+    {
+        "Country":"Ireland",
+        "GDP (B USD)":587.22,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"United Arab Emirates",
+        "GDP (B USD)":568.57,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Singapore",
+        "GDP (B USD)":561.72,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Austria",
+        "GDP (B USD)":559.22,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Israel",
+        "GDP (B USD)":550.9,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Thailand",
+        "GDP (B USD)":545.34,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Norway",
+        "GDP (B USD)":503.47,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Malaysia",
+        "GDP (B USD)":488.25,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Philippines",
+        "GDP (B USD)":471.52,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Vietnam",
+        "GDP (B USD)":468.4,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Iran",
+        "GDP (B USD)":463.75,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Bangladesh",
+        "GDP (B USD)":455.86,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Czech Republic",
+        "GDP (B USD)":452.23,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Denmark",
+        "GDP (B USD)":431.23,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Hong Kong",
+        "GDP (B USD)":422.06,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Colombia",
+        "GDP (B USD)":419.33,
+        "Year":"2025",
+        "Region":"South America"
+    },
+    {
+        "Country":"South Africa",
+        "GDP (B USD)":418.05,
+        "Year":"2025",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Romania",
+        "GDP (B USD)":406.2,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Egypt",
+        "GDP (B USD)":380.04,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Pakistan",
+        "GDP (B USD)":374.6,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Chile",
+        "GDP (B USD)":362.24,
+        "Year":"2025",
+        "Region":"South America"
+    },
+    {
+        "Country":"Finland",
+        "GDP (B USD)":319.99,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Portugal",
+        "GDP (B USD)":319.93,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Hungary",
+        "GDP (B USD)":312.62,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Kazakhstan",
+        "GDP (B USD)":306.63,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Peru",
+        "GDP (B USD)":294.9,
+        "Year":"2025",
+        "Region":"South America"
+    },
+    {
+        "Country":"Iraq",
+        "GDP (B USD)":270.87,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Greece",
+        "GDP (B USD)":265.17,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Algeria",
+        "GDP (B USD)":264.27,
+        "Year":"2025",
+        "Region":"Africa"
+    },
+    {
+        "Country":"New Zealand",
+        "GDP (B USD)":262.92,
+        "Year":"2025",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Qatar",
+        "GDP (B USD)":240.22,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Ethiopia",
+        "GDP (B USD)":230.03,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Nigeria",
+        "GDP (B USD)":199.72,
+        "Year":"2025",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Ukraine",
+        "GDP (B USD)":189.83,
+        "Year":"2025",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Morocco",
+        "GDP (B USD)":168.6,
+        "Year":"2025",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Kuwait",
+        "GDP (B USD)":161.95,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Slovakia",
+        "GDP (B USD)":142.62,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Dominican Republic",
+        "GDP (B USD)":126.24,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Uzbekistan",
+        "GDP (B USD)":125.51,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Bulgaria",
+        "GDP (B USD)":123.42,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Ecuador",
+        "GDP (B USD)":121.42,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Puerto Rico",
+        "GDP (B USD)":120.97,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Kenya",
+        "GDP (B USD)":116.32,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Angola",
+        "GDP (B USD)":113.29,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Guatemala",
+        "GDP (B USD)":112.37,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Oman",
+        "GDP (B USD)":110.99,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Venezuela",
+        "GDP (B USD)":106.33,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Costa Rica",
+        "GDP (B USD)":95.15,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Luxembourg",
+        "GDP (B USD)":91.21,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Croatia",
+        "GDP (B USD)":89.66,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Panama",
+        "GDP (B USD)":87.35,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Ivory Coast",
+        "GDP (B USD)":86.99,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Turkmenistan",
+        "GDP (B USD)":83.88,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Lithuania",
+        "GDP (B USD)":82.79,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Uruguay",
+        "GDP (B USD)":82.6,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Serbia",
+        "GDP (B USD)":82.55,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Tanzania",
+        "GDP (B USD)":79.87,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Azerbaijan",
+        "GDP (B USD)":75.65,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Ghana",
+        "GDP (B USD)":75.31,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Sri Lanka",
+        "GDP (B USD)":74.85,
+        "Year":"2022",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Slovenia",
+        "GDP (B USD)":73.2,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Belarus",
+        "GDP (B USD)":73.13,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"DR Congo",
+        "GDP (B USD)":72.48,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Myanmar",
+        "GDP (B USD)":64.28,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Uganda",
+        "GDP (B USD)":55.59,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Macau",
+        "GDP (B USD)":55.45,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Cameroon",
+        "GDP (B USD)":53.39,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Jordan",
+        "GDP (B USD)":53.3,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Tunisia",
+        "GDP (B USD)":52.64,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Cambodia",
+        "GDP (B USD)":51.16,
+        "Year":"2025",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Bolivia",
+        "GDP (B USD)":48.17,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Bahrain",
+        "GDP (B USD)":47.81,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Latvia",
+        "GDP (B USD)":45.52,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Paraguay",
+        "GDP (B USD)":44.94,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Libya",
+        "GDP (B USD)":44.81,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Nepal",
+        "GDP (B USD)":43.67,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Estonia",
+        "GDP (B USD)":43.04,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Honduras",
+        "GDP (B USD)":36.74,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Zimbabwe",
+        "GDP (B USD)":35.92,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"El Salvador",
+        "GDP (B USD)":35.85,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Cyprus",
+        "GDP (B USD)":34.79,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Senegal",
+        "GDP (B USD)":33.68,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Georgia",
+        "GDP (B USD)":33.19,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Iceland",
+        "GDP (B USD)":32.92,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Papua New Guinea",
+        "GDP (B USD)":31.72,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Sudan",
+        "GDP (B USD)":30.87,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Zambia",
+        "GDP (B USD)":29.87,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Bosnia and Herzegovina",
+        "GDP (B USD)":29.08,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Trinidad and Tobago",
+        "GDP (B USD)":28.36,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Guinea",
+        "GDP (B USD)":25.45,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Albania",
+        "GDP (B USD)":25.43,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Armenia",
+        "GDP (B USD)":25.41,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Haiti",
+        "GDP (B USD)":24.05,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Mozambique",
+        "GDP (B USD)":22.98,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Malta",
+        "GDP (B USD)":22.74,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Mongolia",
+        "GDP (B USD)":21.94,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Burkina Faso",
+        "GDP (B USD)":21.9,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Lebanon",
+        "GDP (B USD)":21.78,
+        "Year":"2022",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Mali",
+        "GDP (B USD)":21.66,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Botswana",
+        "GDP (B USD)":21.42,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Benin",
+        "GDP (B USD)":21.37,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Guyana",
+        "GDP (B USD)":21.18,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Gabon",
+        "GDP (B USD)":21.01,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Jamaica",
+        "GDP (B USD)":20.1,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Nicaragua",
+        "GDP (B USD)":18.83,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Niger",
+        "GDP (B USD)":18.82,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Chad",
+        "GDP (B USD)":18.7,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Palestine",
+        "GDP (B USD)":18.6,
+        "Year":"2023",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Moldova",
+        "GDP (B USD)":18.36,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Yemen",
+        "GDP (B USD)":16.94,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Madagascar",
+        "GDP (B USD)":16.46,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Mauritius",
+        "GDP (B USD)":16.36,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Brunei",
+        "GDP (B USD)":15.99,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"North Macedonia",
+        "GDP (B USD)":15.87,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Kyrgyzstan",
+        "GDP (B USD)":15.77,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Congo",
+        "GDP (B USD)":15.5,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Laos",
+        "GDP (B USD)":15.19,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Afghanistan",
+        "GDP (B USD)":14.47,
+        "Year":"2022",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Bahamas",
+        "GDP (B USD)":14.39,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Rwanda",
+        "GDP (B USD)":13.7,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Tajikistan",
+        "GDP (B USD)":13.0,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Somalia",
+        "GDP (B USD)":12.8,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Namibia",
+        "GDP (B USD)":12.76,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Kosovo",
+        "GDP (B USD)":11.32,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Malawi",
+        "GDP (B USD)":11.24,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Equatorial Guinea",
+        "GDP (B USD)":10.71,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Mauritania",
+        "GDP (B USD)":10.63,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Togo",
+        "GDP (B USD)":9.83,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Montenegro",
+        "GDP (B USD)":8.01,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Maldives",
+        "GDP (B USD)":7.2,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Barbados",
+        "GDP (B USD)":6.86,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"South Sudan",
+        "GDP (B USD)":6.52,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Fiji",
+        "GDP (B USD)":5.8,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Eswatini",
+        "GDP (B USD)":5.08,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Liberia",
+        "GDP (B USD)":4.75,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Sierra Leone",
+        "GDP (B USD)":4.56,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Djibouti",
+        "GDP (B USD)":4.36,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Suriname",
+        "GDP (B USD)":4.34,
+        "Year":"2024",
+        "Region":"South America"
+    },
+    {
+        "Country":"Aruba",
+        "GDP (B USD)":4.07,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Andorra",
+        "GDP (B USD)":3.9,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Belize",
+        "GDP (B USD)":3.3,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Bhutan",
+        "GDP (B USD)":3.11,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Burundi",
+        "GDP (B USD)":3.08,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Central African Republic",
+        "GDP (B USD)":2.81,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Cape Verde",
+        "GDP (B USD)":2.72,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Gambia",
+        "GDP (B USD)":2.69,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Saint Lucia",
+        "GDP (B USD)":2.58,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Lesotho",
+        "GDP (B USD)":2.4,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Seychelles",
+        "GDP (B USD)":2.2,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Guinea-Bissau",
+        "GDP (B USD)":2.15,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Antigua and Barbuda",
+        "GDP (B USD)":2.13,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"San Marino",
+        "GDP (B USD)":2.03,
+        "Year":"2024",
+        "Region":"Europe"
+    },
+    {
+        "Country":"East Timor",
+        "GDP (B USD)":1.99,
+        "Year":"2024",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Solomon Islands",
+        "GDP (B USD)":1.71,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Comoros",
+        "GDP (B USD)":1.42,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Grenada",
+        "GDP (B USD)":1.41,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Vanuatu",
+        "GDP (B USD)":1.29,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Saint Kitts and Nevis",
+        "GDP (B USD)":1.13,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Saint Vincent and the Grenadines",
+        "GDP (B USD)":1.13,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Samoa",
+        "GDP (B USD)":1.02,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"São Tomé and Príncipe",
+        "GDP (B USD)":0.75,
+        "Year":"2024",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Dominica",
+        "GDP (B USD)":0.71,
+        "Year":"2024",
+        "Region":"North America"
+    },
+    {
+        "Country":"Tonga",
+        "GDP (B USD)":0.58,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Micronesia",
+        "GDP (B USD)":0.48,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Kiribati",
+        "GDP (B USD)":0.31,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Palau",
+        "GDP (B USD)":0.31,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Marshall Islands",
+        "GDP (B USD)":0.3,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Nauru",
+        "GDP (B USD)":0.16,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Tuvalu",
+        "GDP (B USD)":0.07,
+        "Year":"2024",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Turks and Caicos Islands",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"Cuba",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"Sint Maarten",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"Zanzibar",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":null
+    },
+    {
+        "Country":"Eritrea",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Africa"
+    },
+    {
+        "Country":"Greenland",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"Curaçao",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"French Polynesia",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Oceania"
+    },
+    {
+        "Country":"Cayman Islands",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"Liechtenstein",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Europe"
+    },
+    {
+        "Country":"Bermuda",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"North America"
+    },
+    {
+        "Country":"Monaco",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Europe"
+    },
+    {
+        "Country":"North Korea",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Asia"
+    },
+    {
+        "Country":"Syria",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Asia"
+    },
+    {
+        "Country":"New Caledonia",
+        "GDP (B USD)":0.0,
+        "Year":"—",
+        "Region":"Oceania"
+    }
+]

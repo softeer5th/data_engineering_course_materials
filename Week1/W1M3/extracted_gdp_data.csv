@@ -1,0 +1,211 @@
+Country,GDP (B USD),Year
+World,115494.312,2025
+United States,30337.162,2025
+China,19534.894,2025
+Germany,4921.563,2025
+Japan,4389.326,2025
+India,4271.922,2025
+United Kingdom,3730.261,2025
+France,3283.429,2025
+Italy,2459.597,2025
+Canada,2330.308,2025
+Brazil,2307.162,2025
+Russia,2195.708,2025
+South Korea,1947.133,2025
+Australia,1881.14,2025
+Spain,1827.576,2025
+Mexico,1817.818,2025
+Indonesia,1492.618,2025
+Turkey,1455.413,2025
+Netherlands,1272.96,2025
+Saudi Arabia,1136.58,2025
+Switzerland,999.604,2025
+Poland,915.451,2025
+Taiwan,814.438,2025
+Belgium,689.364,2025
+Sweden,638.78,2025
+Argentina,604.201,2025
+Ireland,587.225,2025
+United Arab Emirates,568.567,2025
+Singapore,561.725,2025
+Austria,559.218,2025
+Israel,550.905,2025
+Thailand,545.341,2025
+Norway,503.466,2025
+Malaysia,488.25,2025
+Philippines,471.516,2025
+Vietnam,468.4,2025
+Iran,463.747,2025
+Bangladesh,455.856,2025
+Czech Republic,452.233,2025
+Denmark,431.228,2025
+Hong Kong,422.057,2025
+Colombia,419.331,2025
+South Africa,418.046,2025
+Romania,406.202,2025
+Egypt,380.044,2025
+Pakistan,374.595,2024
+Chile,362.24,2025
+Finland,319.989,2025
+Portugal,319.934,2025
+Hungary,312.619,2025
+Kazakhstan,306.629,2025
+Peru,294.898,2025
+Iraq,270.874,2025
+Greece,265.171,2025
+Algeria,264.27,2025
+New Zealand,262.924,2025
+Qatar,240.217,2025
+Ethiopia,230.031,2024
+Nigeria,199.72,2025
+Ukraine,189.827,2025
+Morocco,168.597,2025
+Kuwait,161.95,2025
+Cuba,0.0,—
+Slovakia,142.617,2024
+Dominican Republic,126.238,2024
+Uzbekistan,125.511,2024
+Bulgaria,123.425,2024
+Ecuador,121.425,2024
+Puerto Rico,120.971,2024
+Kenya,116.321,2024
+Angola,113.286,2024
+Guatemala,112.369,2024
+Oman,110.993,2024
+Venezuela,106.327,2024
+Costa Rica,95.149,2024
+Luxembourg,91.21,2024
+Croatia,89.665,2024
+Panama,87.347,2024
+Ivory Coast,86.993,2024
+Sri Lanka,74.846,2022
+Turkmenistan,83.883,2024
+Lithuania,82.789,2024
+Uruguay,82.605,2024
+Serbia,82.55,2024
+Tanzania,79.867,2024
+Azerbaijan,75.649,2024
+Ghana,75.307,2024
+Slovenia,73.198,2024
+Belarus,73.129,2024
+DR Congo,72.483,2024
+Myanmar,64.284,2024
+Uganda,55.587,2024
+Macau,55.447,2024
+Cameroon,53.391,2024
+Jordan,53.305,2024
+Tunisia,52.636,2024
+Cambodia,51.159,2025
+Bolivia,48.172,2024
+Bahrain,47.812,2024
+Latvia,45.521,2024
+Paraguay,44.937,2024
+Libya,44.812,2024
+Nepal,43.673,2024
+Estonia,43.044,2024
+Honduras,36.735,2024
+Zimbabwe,35.919,2024
+El Salvador,35.848,2024
+Cyprus,34.79,2024
+Senegal,33.685,2024
+Georgia,33.191,2024
+Iceland,32.919,2024
+Papua New Guinea,31.716,2024
+Sudan,30.873,2024
+Zambia,29.872,2024
+Bosnia and Herzegovina,29.078,2024
+Trinidad and Tobago,28.365,2024
+Guinea,25.447,2024
+Albania,25.431,2024
+Armenia,25.408,2024
+Haiti,24.046,2024
+Mozambique,22.975,2024
+Malta,22.737,2024
+Mongolia,21.943,2024
+Burkina Faso,21.902,2024
+Mali,21.662,2024
+Botswana,21.418,2024
+Benin,21.371,2024
+Guyana,21.178,2024
+Gabon,21.013,2024
+Jamaica,20.098,2024
+Nicaragua,18.829,2024
+Niger,18.816,2024
+Chad,18.697,2024
+Palestine,18.602,2023
+Syria,0.0,—
+Moldova,18.356,2024
+Lebanon,21.78,2022
+Yemen,16.94,2024
+Madagascar,16.465,2024
+Mauritius,16.359,2024
+Brunei,15.988,2024
+North Macedonia,15.873,2024
+Kyrgyzstan,15.77,2024
+Congo,15.501,2024
+Laos,15.19,2024
+North Korea,0.0,—
+Afghanistan,14.467,2022
+Bahamas,14.39,2024
+Rwanda,13.701,2024
+Tajikistan,13.0,2024
+Somalia,12.804,2024
+Namibia,12.765,2024
+Kosovo,11.318,2024
+Malawi,11.241,2024
+Equatorial Guinea,10.708,2024
+Mauritania,10.628,2024
+Togo,9.832,2024
+New Caledonia,0.0,—
+Monaco,0.0,—
+Montenegro,8.01,2024
+Bermuda,0.0,—
+Liechtenstein,0.0,—
+Maldives,7.199,2024
+Barbados,6.863,2024
+Cayman Islands,0.0,—
+South Sudan,6.517,2024
+French Polynesia,0.0,—
+Fiji,5.801,2024
+Eswatini,5.085,2024
+Liberia,4.754,2024
+Sierra Leone,4.558,2024
+Djibouti,4.364,2024
+Suriname,4.337,2024
+Aruba,4.069,2024
+Andorra,3.897,2024
+Belize,3.296,2024
+Bhutan,3.11,2024
+Burundi,3.075,2024
+Curaçao,0.0,—
+Greenland,0.0,—
+Central African Republic,2.81,2024
+Cape Verde,2.718,2024
+Gambia,2.694,2024
+Saint Lucia,2.582,2024
+Lesotho,2.395,2024
+Eritrea,0.0,—
+Zanzibar,0.0,—
+Seychelles,2.203,2024
+Guinea-Bissau,2.151,2024
+Antigua and Barbuda,2.127,2024
+San Marino,2.033,2024
+East Timor,1.992,2024
+Solomon Islands,1.707,2024
+Sint Maarten,0.0,—
+Comoros,1.422,2024
+Grenada,1.406,2024
+Turks and Caicos Islands,0.0,—
+Vanuatu,1.289,2024
+Saint Kitts and Nevis,1.134,2024
+Saint Vincent and the Grenadines,1.128,2024
+Samoa,1.024,2024
+São Tomé and Príncipe,0.751,2024
+Dominica,0.708,2024
+Tonga,0.581,2024
+Micronesia,0.484,2024
+Kiribati,0.311,2024
+Palau,0.308,2024
+Marshall Islands,0.305,2024
+Nauru,0.161,2024
+Tuvalu,0.066,2024
