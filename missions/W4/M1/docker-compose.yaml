@@ -1,0 +1,33 @@
+services:
+  spark-master:
+    image: spark
+    container_name: spark-master
+    hostname: spark-master
+    ports:
+      - "8080:8080"  # Spark Web UI
+      - "7077:7077"  # Spark Master Port
+    environment:
+      - SPARK_MODE=master
+    volumes:
+      - ./db/master:/usr/local/spark
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master", "--host", "spark-master"]
+
+  spark-worker-1:
+    image: spark
+    container_name: spark-worker-1
+    hostname: spark-worker-1
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+    volumes:
+      - ./db/worker-1:/usr/local/spark
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+
+  spark-worker-2:
+    image: spark
+    container_name: spark-worker-2
+    hostname: spark-worker-2
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+    volumes:
+      - ./db/worker-2:/usr/local/spark      
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
