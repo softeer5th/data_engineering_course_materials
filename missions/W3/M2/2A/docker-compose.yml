@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  masternode :
+    image : multi_node_cluster:5.0
+    container_name : masternode
+    hostname : masternode
+    user : root
+    volumes:
+      - mastervolume:/usr/local/hadoop/hdfs
+    networks : 
+      - hadoop-net
+    ports : 
+      - "9870:9870"
+      - "8088:8088"
+      - "9000:9000" 
+      - "9864:9864"
+    command : ["/bin/bash", "-c", "service ssh start && /usr/local/hadoop/sbin/start-dfs.sh && /usr/local/hadoop/sbin/start-yarn.sh  && tail -f /usr/local/hadoop/logs/* "]
+
+  workernode1 :
+    image : multi_node_cluster:5.0
+    container_name : workernode1
+    hostname : workernode1
+    user : root
+    volumes:
+      - workervolume1:/usr/local/hadoop/hdfs
+    networks : 
+      - hadoop-net
+    depends_on : 
+      - masternode
+    command: ["/bin/bash", "-c", "service ssh start && tail -f /usr/local/hadoop/logs/*"]
+
+  workernode2 :
+    image : multi_node_cluster:5.0
+    container_name : workernode2
+    hostname : workernode2
+    user : root
+    volumes:
+      - workervolume2:/usr/local/hadoop/hdfs
+    networks : 
+      - hadoop-net
+    depends_on : 
+      - masternode
+    command: ["/bin/bash", "-c", "service ssh start && tail -f /usr/local/hadoop/logs/*"]
+
+networks:
+  hadoop-net:
+    driver: bridge
+
+volumes:
+  mastervolume:
+  workervolume1:
+  workervolume2:
