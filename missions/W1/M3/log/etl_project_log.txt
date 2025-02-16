@@ -1,0 +1,1094 @@
+[2025-01-07-13-56-18], 데이터 추출 시작
+[2025-01-07-13-56-18], 데이터 변환 시작
+[2025-01-07-13-56-18], 데이터 로드 시작
+[2025-01-07-13-56-18], 데이터 로드 완료
+[2025-01-07-15-24-25], 에러 발생: list index out of range
+[2025-01-07-15-24-25], 에러 발생: No tbody found
+[2025-01-07-15-26-59], 에러 발생: list index out of range
+[2025-01-07-15-26-59], 에러 발생: No tbody found
+[2025-01-07-15-27-06], 에러 발생: list index out of range
+[2025-01-07-15-27-06], 에러 발생: No tbody found
+[2025-01-07-15-45-02], 데이터 추출 시작
+[2025-01-07-15-45-02], 데이터 변환 시작
+[2025-01-07-15-45-02], 데이터 로드 시작
+[2025-01-07-15-45-02], 데이터 로드 완료
+[2025-01-07-15-45-50], 에러 발생: argument of type 'NoneType' is not iterable
+[2025-01-07-15-45-50], 에러 발생: Parsing error!
+[2025-01-07-15-46-29], 에러 발생: argument of type 'NoneType' is not iterable
+[2025-01-07-15-46-45], 에러 발생: argument of type 'NoneType' is not iterable
+[2025-01-07-15-47-38], 데이터 추출 시작
+[2025-01-07-15-47-38], 데이터 변환 시작
+[2025-01-07-15-47-38], 데이터 로드 시작
+[2025-01-07-15-47-38], 데이터 로드 완료
+[2025-01-07-16-20-40], 데이터 추출 시작
+[2025-01-07-16-20-41], 데이터 변환 시작
+[2025-01-07-16-20-44], 데이터 변환 종료
+[2025-01-07-16-20-44], 데이터 저장 완료
+[2025-01-07-16-35-36], 데이터 추출 시작
+[2025-01-07-16-35-37], 데이터 변환 시작
+[2025-01-07-16-35-39], 데이터 변환 종료
+[2025-01-07-16-35-39], 데이터 저장 시작
+[2025-01-07-16-35-40], 데이터 저장 완료
+[2025-01-07-16-37-48], 데이터 추출 시작
+[2025-01-07-16-37-48], 데이터 변환 시작
+[2025-01-07-16-37-51], 데이터 변환 종료
+[2025-01-07-16-37-52], 데이터 저장 시작
+[2025-01-07-16-37-52], 데이터 저장 완료
+INFO - [2025-01-07-18-18-34], 데이터 추출 시작
+INFO - [2025-01-07-18-18-35], 데이터 변환 시작
+INFO - [2025-01-07-18-18-40], 데이터 변환 종료
+INFO - [2025-01-07-18-18-40], 데이터 저장 시작
+INFO - [2025-01-07-18-18-40], 데이터 저장 완료
+[2025-01-07-18-26-54], ETL 프로세스 시작
+[2025-01-07-18-26-54], 데이터 추출 중...
+[2025-01-07-18-26-54], 중복 데이터 발견
+[2025-01-07-18-26-54], 변환 과정에서 오류 발생
+[2025-01-17-12-13-02], 데이터 추출 시작
+[2025-01-17-12-13-02], 페이지 요청 시작
+[2025-01-17-12-13-02], 페이지 요청 완료
+[2025-01-17-12-13-02], 페이지 파싱 시작
+[2025-01-17-12-13-03], 페이지 파싱 완료
+[2025-01-17-12-13-03], 페이지 로드 및 soup 파싱 성공
+[2025-01-17-12-13-03], 테이블 찾기 시작
+[2025-01-17-12-13-03], 테이블 찾기 완료
+[2025-01-17-12-13-03], 테이블 로드 성공
+[2025-01-17-12-13-03], 테이블 파싱 시작
+[2025-01-17-12-13-03], 테이블 헤더 찾기 시작
+[2025-01-17-12-13-03], Country/Territory
+
+[2025-01-17-12-13-03], IMF[1][13]
+
+[2025-01-17-12-13-03], World Bank[14]
+
+[2025-01-17-12-13-03], United Nations[15]
+
+[2025-01-17-12-13-03], Forecast
+[2025-01-17-12-13-03], Year
+[2025-01-17-12-13-03], Estimate
+[2025-01-17-12-13-03], Year
+[2025-01-17-12-13-03], Estimate
+[2025-01-17-12-13-03], Year
+
+[2025-01-17-12-13-03], 테이블 헤더 찾기 완료
+[2025-01-17-12-13-03], [현재 미사용!] 테이블 헤더 파싱 성공
+[2025-01-17-12-13-03], 테이블 바디 찾기 시작
+[2025-01-17-12-13-06], tr 스킵 중... Country/Territory
+
+IMF[1][13]
+
+World Bank[14]
+
+United Nations[15]
+[2025-01-17-12-13-07], tr 스킵 중... Forecast
+Year
+Estimate
+Year
+Estimate
+Year
+[2025-01-17-12-13-10], tr 스킵 중... World
+115,494,312 
+2025
+105,435,540
+2023
+100,834,796
+2022
+[2025-01-17-12-13-10], 테이블 바디 찾기 완료
+[2025-01-17-12-13-10], 테이블 바디 파싱 성공
+[2025-01-17-12-13-10], 테이블 파싱 시작
+[2025-01-17-12-13-10], delete sup tag in Country:  China
+[2025-01-17-12-13-10], delete sup tag in Country:  China
+[2025-01-17-12-13-10], delete sup tag in Country:  China
+[2025-01-17-12-13-10], delete sup tag in Country:  Taiwan
+[2025-01-17-12-13-10], delete sup tag in Country:  Hong Kong
+[2025-01-17-12-13-10], delete sup tag in Country:  Ukraine
+[2025-01-17-12-13-10], delete sup tag in Country:  Ukraine
+[2025-01-17-12-13-10], delete sup tag in Country:  Ukraine
+[2025-01-17-12-13-10], null data in Country:  Cuba
+[2025-01-17-12-13-10], delete sup tag in Country:  Tanzania
+[2025-01-17-12-13-10], delete sup tag in Country:  Macau
+[2025-01-17-12-13-10], delete sup tag in Country:  Cyprus
+[2025-01-17-12-13-10], delete sup tag in Country:  Cyprus
+[2025-01-17-12-13-10], delete sup tag in Country:  Cyprus
+[2025-01-17-12-13-10], delete sup tag in Country:  Georgia
+[2025-01-17-12-13-10], delete sup tag in Country:  Georgia
+[2025-01-17-12-13-10], delete sup tag in Country:  Georgia
+[2025-01-17-12-13-10], delete sup tag in Country:  Palestine
+[2025-01-17-12-13-10], delete sup tag in Country:  Palestine
+[2025-01-17-12-13-10], delete sup tag in Country:  Palestine
+[2025-01-17-12-13-10], null data in Country:  Syria
+[2025-01-17-12-13-10], delete sup tag in Country:  Moldova
+[2025-01-17-12-13-10], delete sup tag in Country:  Moldova
+[2025-01-17-12-13-10], delete sup tag in Country:  Moldova
+[2025-01-17-12-13-10], null data in Country:  North Korea
+[2025-01-17-12-13-10], null data in Country:  New Caledonia
+[2025-01-17-12-13-10], null data in Country:  Monaco
+[2025-01-17-12-13-10], null data in Country:  Bermuda
+[2025-01-17-12-13-10], null data in Country:  Liechtenstein
+[2025-01-17-12-13-10], null data in Country:  Cayman Islands
+[2025-01-17-12-13-10], null data in Country:  French Polynesia
+[2025-01-17-12-13-10], null data in Country:  Curaçao
+[2025-01-17-12-13-10], null data in Country:  Greenland
+[2025-01-17-12-13-10], null data in Country:  Eritrea
+[2025-01-17-12-13-10], null data in Country:  Zanzibar
+[2025-01-17-12-13-10], null data in Country:  Sint Maarten
+[2025-01-17-12-13-10], null data in Country:  Turks and Caicos Islands
+[2025-01-17-12-13-10], 테이블 파싱 완료
+[2025-01-17-12-13-10], 테이블 파싱 성공
+[2025-01-17-12-13-10], 데이터 저장 시작
+[2025-01-17-12-13-10], JSON으로 변환 시작 / 경로: missions/W1/M3/data/Countries_by_GDP.json
+[2025-01-17-12-13-10], JSON으로 변환 완료
+[2025-01-17-12-13-10], 데이터 저장 완료
+[2025-01-17-12-13-10], Extract 성공
+[2025-01-17-12-16-33], GDP JSON 로드 시도
+[2025-01-17-12-16-33], GDP JSON 데이터 로드 성공
+[2025-01-17-12-16-33], 데이터 변환 시도
+[2025-01-17-12-16-33], 데이터 변환 성공
+[2025-01-17-12-17-29], GDP JSON 로드 시도
+[2025-01-17-12-17-29], GDP JSON 데이터 로드 성공
+[2025-01-17-12-17-29], 데이터 변환 시도
+[2025-01-17-12-17-29], 데이터 변환 성공
+[2025-01-17-12-17-35], GDP JSON 로드 시도
+[2025-01-17-12-17-35], GDP JSON 데이터 로드 성공
+[2025-01-17-12-17-35], 데이터 변환 시도
+[2025-01-17-12-17-35], 데이터 변환 성공
+[2025-01-17-12-28-33], GDP JSON 로드 시도
+[2025-01-17-12-28-33], GDP JSON 로드 중 에러 발생: File missions/W1/M3/data/Countries_by_GDP_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion.json does not exist
+[2025-01-17-12-28-33], Full message: Traceback (most recent call last):
+  File "/Users/admin/workspace/python/DE/missions/W1/M3/utils/transform/transformer.py", line 356, in load_df_from_json
+    df = pd.read_json(json_path, orient='records', encoding='utf-8')
+  File "/Users/admin/workspace/python/DE/.venv/lib/python3.10/site-packages/pandas/io/json/_json.py", line 791, in read_json
+    json_reader = JsonReader(
+  File "/Users/admin/workspace/python/DE/.venv/lib/python3.10/site-packages/pandas/io/json/_json.py", line 904, in __init__
+    data = self._get_data_from_filepath(filepath_or_buffer)
+  File "/Users/admin/workspace/python/DE/.venv/lib/python3.10/site-packages/pandas/io/json/_json.py", line 960, in _get_data_from_filepath
+    raise FileNotFoundError(f"File {filepath_or_buffer} does not exist")
+FileNotFoundError: File missions/W1/M3/data/Countries_by_GDP_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion.json does not exist
+
+[2025-01-17-12-28-33], Short message: FileNotFoundError: File missions/W1/M3/data/Countries_by_GDP_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion_USD_Billion.json does not exist
+[2025-01-17-12-28-33], Transform 과정 중 에러 발생: GDP JSON 데이터 로드 실패
+[2025-01-17-12-28-59], GDP JSON 로드 시도
+[2025-01-17-12-28-59], GDP JSON 데이터 로드 성공
+[2025-01-17-12-28-59], 데이터 변환 시도
+[2025-01-17-12-28-59], 데이터 변환 성공
+[2025-01-17-13-55-25], GDP JSON 로드 시도
+[2025-01-17-13-55-25], GDP JSON 데이터 로드 성공
+[2025-01-17-13-55-25], 데이터 변환 시도
+[2025-01-17-13-55-25], 데이터 변환 성공
+[2025-01-17-13-55-25], Transform 성공
+[2025-01-17-13-55-25], 분석 시작
+[2025-01-17-13-55-25], 분석 완료
+[2025-01-17-14-00-15], GDP JSON 로드 시도
+[2025-01-17-14-00-15], GDP JSON 데이터 로드 성공
+[2025-01-17-14-00-15], 데이터 변환 시도
+[2025-01-17-14-00-15], 데이터 변환 성공
+[2025-01-17-14-00-15], Transform 성공
+[2025-01-17-14-00-15], 분석 시작
+[2025-01-17-14-00-15], GDP가 1000억 달러 이상인 국가
+[2025-01-17-14-00-15], ['United States' 'China' 'Germany' 'Japan' 'India' 'United Kingdom'
+ 'France' 'Italy' 'Canada' 'Brazil' 'Russia' 'South Korea' 'Australia'
+ 'Spain' 'Mexico' 'Indonesia' 'Turkey' 'Netherlands' 'Saudi Arabia'
+ 'Switzerland' 'Poland' 'Taiwan' 'Belgium' 'Sweden' 'Argentina' 'Ireland'
+ 'United Arab Emirates' 'Singapore' 'Austria' 'Israel' 'Thailand'
+ 'Philippines' 'Vietnam' 'Norway' 'Malaysia' 'Iran' 'Bangladesh'
+ 'Czech Republic' 'Denmark' 'Hong Kong' 'Colombia' 'South Africa'
+ 'Romania' 'Egypt' 'Pakistan' 'Chile' 'Finland' 'Portugal' 'Hungary'
+ 'Kazakhstan' 'Peru' 'Iraq' 'Greece' 'Algeria' 'New Zealand' 'Qatar'
+ 'Ethiopia' 'Nigeria' 'Ukraine' 'Morocco' 'Kuwait' 'Slovakia'
+ 'Dominican Republic' 'Uzbekistan' 'Bulgaria' 'Ecuador' 'Puerto Rico'
+ 'Kenya' 'Angola' 'Guatemala' 'Oman' 'Venezuela']
+[2025-01-17-14-00-15], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-14-00-15],                 Region                                            Country  GDP_USD_Billion
+6        North America    [United States, Canada, Mexico, Aruba, Bermuda]         8622.340
+1            East Asia     [China, Japan, South Korea, Taiwan, Hong Kong]         5421.570
+11      Western Europe    [Germany, United Kingdom, France, Italy, Spain]         3244.486
+2       Eastern Europe  [Russia, Turkey, Poland, Czech Republic, Romania]         1085.000
+8           South Asia    [India, Bangladesh, Pakistan, Sri Lanka, Nepal]         1044.180
+3        Latin America         [Brazil, Argentina, Colombia, Chile, Peru]          797.566
+9       Southeast Asia  [Indonesia, Singapore, Thailand, Philippines, ...          722.756
+4          Middle East  [Saudi Arabia, United Arab Emirates, Israel, I...          598.134
+7              Oceania  [Australia, New Zealand, Papua New Guinea, Fij...          436.658
+10  Sub-Saharan Africa   [South Africa, Ethiopia, Nigeria, Kenya, Angola]          215.482
+5         North Africa          [Egypt, Algeria, Morocco, Tunisia, Libya]          182.072
+0         Central Asia  [Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzs...          108.958
+[2025-01-17-14-00-15], 분석 완료
+[2025-01-17-14-00-49], GDP JSON 로드 시도
+[2025-01-17-14-00-49], GDP JSON 데이터 로드 성공
+[2025-01-17-14-00-49], 데이터 변환 시도
+[2025-01-17-14-00-49], 데이터 변환 성공
+[2025-01-17-14-00-49], Transform 성공
+[2025-01-17-14-00-49], 분석 시작
+[2025-01-17-14-00-49], GDP가 1000억 달러 이상인 국가
+[2025-01-17-14-00-49], gdp가 1000억 달러 이상인 국가 출력 중 에러 발생: Logger.info() takes 2 positional arguments but 73 were given
+[2025-01-17-14-00-49], Full message: Traceback (most recent call last):
+  File "/Users/admin/workspace/python/DE/missions/W1/M3/utils/analyze/analyzer.py", line 16, in over100b_countries
+    logger.info(*df[df['GDP_USD_Billion'] > 100]["Country"].values)
+TypeError: Logger.info() takes 2 positional arguments but 73 were given
+
+[2025-01-17-14-00-49], Short message: TypeError: Logger.info() takes 2 positional arguments but 73 were given
+[2025-01-17-14-00-49], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-14-00-49],                 Region                                            Country  GDP_USD_Billion
+6        North America    [United States, Canada, Mexico, Aruba, Bermuda]         8622.340
+1            East Asia     [China, Japan, South Korea, Taiwan, Hong Kong]         5421.570
+11      Western Europe    [Germany, United Kingdom, France, Italy, Spain]         3244.486
+2       Eastern Europe  [Russia, Turkey, Poland, Czech Republic, Romania]         1085.000
+8           South Asia    [India, Bangladesh, Pakistan, Sri Lanka, Nepal]         1044.180
+3        Latin America         [Brazil, Argentina, Colombia, Chile, Peru]          797.566
+9       Southeast Asia  [Indonesia, Singapore, Thailand, Philippines, ...          722.756
+4          Middle East  [Saudi Arabia, United Arab Emirates, Israel, I...          598.134
+7              Oceania  [Australia, New Zealand, Papua New Guinea, Fij...          436.658
+10  Sub-Saharan Africa   [South Africa, Ethiopia, Nigeria, Kenya, Angola]          215.482
+5         North Africa          [Egypt, Algeria, Morocco, Tunisia, Libya]          182.072
+0         Central Asia  [Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzs...          108.958
+[2025-01-17-14-00-49], 분석 완료
+[2025-01-17-14-02-11], GDP JSON 로드 시도
+[2025-01-17-14-02-11], GDP JSON 데이터 로드 성공
+[2025-01-17-14-02-11], 데이터 변환 시도
+[2025-01-17-14-02-11], 데이터 변환 성공
+[2025-01-17-14-02-11], Transform 성공
+[2025-01-17-14-02-11], 분석 시작
+[2025-01-17-14-02-11], GDP가 1000억 달러 이상인 국가
+[2025-01-17-14-02-11], United States China Germany Japan India United Kingdom France Italy Canada Brazil Russia South Korea Australia Spain Mexico Indonesia Turkey Netherlands Saudi Arabia Switzerland Poland Taiwan Belgium Sweden Argentina Ireland United Arab Emirates Singapore Austria Israel Thailand Philippines Vietnam Norway Malaysia Iran Bangladesh Czech Republic Denmark Hong Kong Colombia South Africa Romania Egypt Pakistan Chile Finland Portugal Hungary Kazakhstan Peru Iraq Greece Algeria New Zealand Qatar Ethiopia Nigeria Ukraine Morocco Kuwait Slovakia Dominican Republic Uzbekistan Bulgaria Ecuador Puerto Rico Kenya Angola Guatemala Oman Venezuela
+[2025-01-17-14-02-11], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-14-02-11],                 Region                                            Country  GDP_USD_Billion
+6        North America    [United States, Canada, Mexico, Aruba, Bermuda]         8622.340
+1            East Asia     [China, Japan, South Korea, Taiwan, Hong Kong]         5421.570
+11      Western Europe    [Germany, United Kingdom, France, Italy, Spain]         3244.486
+2       Eastern Europe  [Russia, Turkey, Poland, Czech Republic, Romania]         1085.000
+8           South Asia    [India, Bangladesh, Pakistan, Sri Lanka, Nepal]         1044.180
+3        Latin America         [Brazil, Argentina, Colombia, Chile, Peru]          797.566
+9       Southeast Asia  [Indonesia, Singapore, Thailand, Philippines, ...          722.756
+4          Middle East  [Saudi Arabia, United Arab Emirates, Israel, I...          598.134
+7              Oceania  [Australia, New Zealand, Papua New Guinea, Fij...          436.658
+10  Sub-Saharan Africa   [South Africa, Ethiopia, Nigeria, Kenya, Angola]          215.482
+5         North Africa          [Egypt, Algeria, Morocco, Tunisia, Libya]          182.072
+0         Central Asia  [Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzs...          108.958
+[2025-01-17-14-02-11], 분석 완료
+[2025-01-17-14-02-31], GDP JSON 로드 시도
+[2025-01-17-14-02-31], GDP JSON 데이터 로드 성공
+[2025-01-17-14-02-31], 데이터 변환 시도
+[2025-01-17-14-02-31], 데이터 변환 성공
+[2025-01-17-14-02-31], Transform 성공
+[2025-01-17-14-02-31], 분석 시작
+[2025-01-17-14-02-31], GDP가 1000억 달러 이상인 국가
+[2025-01-17-14-02-31], United States, China, Germany, Japan, India, United Kingdom, France, Italy, Canada, Brazil, Russia, South Korea, Australia, Spain, Mexico, Indonesia, Turkey, Netherlands, Saudi Arabia, Switzerland, Poland, Taiwan, Belgium, Sweden, Argentina, Ireland, United Arab Emirates, Singapore, Austria, Israel, Thailand, Philippines, Vietnam, Norway, Malaysia, Iran, Bangladesh, Czech Republic, Denmark, Hong Kong, Colombia, South Africa, Romania, Egypt, Pakistan, Chile, Finland, Portugal, Hungary, Kazakhstan, Peru, Iraq, Greece, Algeria, New Zealand, Qatar, Ethiopia, Nigeria, Ukraine, Morocco, Kuwait, Slovakia, Dominican Republic, Uzbekistan, Bulgaria, Ecuador, Puerto Rico, Kenya, Angola, Guatemala, Oman, Venezuela
+[2025-01-17-14-02-31], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-14-02-31],                 Region                                            Country  GDP_USD_Billion
+6        North America    [United States, Canada, Mexico, Aruba, Bermuda]         8622.340
+1            East Asia     [China, Japan, South Korea, Taiwan, Hong Kong]         5421.570
+11      Western Europe    [Germany, United Kingdom, France, Italy, Spain]         3244.486
+2       Eastern Europe  [Russia, Turkey, Poland, Czech Republic, Romania]         1085.000
+8           South Asia    [India, Bangladesh, Pakistan, Sri Lanka, Nepal]         1044.180
+3        Latin America         [Brazil, Argentina, Colombia, Chile, Peru]          797.566
+9       Southeast Asia  [Indonesia, Singapore, Thailand, Philippines, ...          722.756
+4          Middle East  [Saudi Arabia, United Arab Emirates, Israel, I...          598.134
+7              Oceania  [Australia, New Zealand, Papua New Guinea, Fij...          436.658
+10  Sub-Saharan Africa   [South Africa, Ethiopia, Nigeria, Kenya, Angola]          215.482
+5         North Africa          [Egypt, Algeria, Morocco, Tunisia, Libya]          182.072
+0         Central Asia  [Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzs...          108.958
+[2025-01-17-14-02-31], 분석 완료
+[2025-01-17-14-06-06], GDP JSON 로드 시도
+[2025-01-17-14-06-06], GDP JSON 데이터 로드 성공
+[2025-01-17-14-06-06], 데이터 변환 시도
+[2025-01-17-14-06-06], 데이터 변환 성공
+[2025-01-17-14-06-06], Transform 성공
+[2025-01-17-14-06-06], 분석 시작
+[2025-01-17-14-06-06], GDP가 1000억 달러 이상인 국가
+[2025-01-17-14-06-06], United States, China, Germany, Japan, India, United Kingdom, France, Italy, Canada, Brazil, Russia, South Korea, Australia, Spain, Mexico, Indonesia, Turkey, Netherlands, Saudi Arabia, Switzerland, Poland, Taiwan, Belgium, Sweden, Argentina, Ireland, United Arab Emirates, Singapore, Austria, Israel, Thailand, Philippines, Vietnam, Norway, Malaysia, Iran, Bangladesh, Czech Republic, Denmark, Hong Kong, Colombia, South Africa, Romania, Egypt, Pakistan, Chile, Finland, Portugal, Hungary, Kazakhstan, Peru, Iraq, Greece, Algeria, New Zealand, Qatar, Ethiopia, Nigeria, Ukraine, Morocco, Kuwait, Slovakia, Dominican Republic, Uzbekistan, Bulgaria, Ecuador, Puerto Rico, Kenya, Angola, Guatemala, Oman, Venezuela
+[2025-01-17-14-06-06], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-14-06-06],                 Region                                            Country  GDP_USD_Billion
+6        North America    [United States, Canada, Mexico, Aruba, Bermuda]         8622.340
+1            East Asia     [China, Japan, South Korea, Taiwan, Hong Kong]         5421.570
+11      Western Europe    [Germany, United Kingdom, France, Italy, Spain]         3244.486
+2       Eastern Europe  [Russia, Turkey, Poland, Czech Republic, Romania]         1085.000
+8           South Asia    [India, Bangladesh, Pakistan, Sri Lanka, Nepal]         1044.180
+3        Latin America         [Brazil, Argentina, Colombia, Chile, Peru]          797.566
+9       Southeast Asia  [Indonesia, Singapore, Thailand, Philippines, ...          722.756
+4          Middle East  [Saudi Arabia, United Arab Emirates, Israel, I...          598.134
+7              Oceania  [Australia, New Zealand, Papua New Guinea, Fij...          436.658
+10  Sub-Saharan Africa   [South Africa, Ethiopia, Nigeria, Kenya, Angola]          215.482
+5         North Africa          [Egypt, Algeria, Morocco, Tunisia, Libya]          182.072
+0         Central Asia  [Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzs...          108.958
+[2025-01-17-14-06-06], 분석 완료
+[2025-01-17-18-38-35], GDP JSON 로드 시도
+[2025-01-17-18-38-35], GDP JSON 데이터 로드 성공
+[2025-01-17-18-38-35], 데이터 변환 시도
+[2025-01-17-18-38-35], 데이터 변환 성공
+[2025-01-17-18-38-35], Transform 성공
+[2025-01-17-18-38-35], 데이터 로드 시작
+[2025-01-17-18-38-35], 데이터베이스 연결 시도
+[2025-01-17-18-38-35], 데이터베이스 연결 성공
+[2025-01-17-18-38-35], sql문 읽기 시도
+[2025-01-17-18-38-35], sql문 읽기 성공
+[2025-01-17-18-38-35], 테이블 생성 시도
+[2025-01-17-18-38-35], DB 테이블 생성 성공
+[2025-01-17-18-38-35], 데이터 삽입 시도
+[2025-01-17-18-38-35], gdp 테이블에 데이터 삽입 성공
+[2025-01-17-18-38-35], Load 성공
+[2025-01-17-18-38-54], GDP JSON 로드 시도
+[2025-01-17-18-38-54], GDP JSON 데이터 로드 성공
+[2025-01-17-18-38-54], 데이터 변환 시도
+[2025-01-17-18-38-54], 데이터 변환 성공
+[2025-01-17-18-38-54], Transform 성공
+[2025-01-17-18-38-54], 데이터 로드 시작
+[2025-01-17-18-38-54], 데이터베이스 연결 시도
+[2025-01-17-18-38-54], 데이터베이스 연결 성공
+[2025-01-17-18-38-54], sql문 읽기 시도
+[2025-01-17-18-38-54], sql문 읽기 성공
+[2025-01-17-18-38-54], 테이블 생성 시도
+[2025-01-17-18-38-54], DB 테이블 생성 성공
+[2025-01-17-18-38-54], 데이터 삽입 시도
+[2025-01-17-18-39-43], GDP JSON 로드 시도
+[2025-01-17-18-39-43], GDP JSON 데이터 로드 성공
+[2025-01-17-18-39-43], 데이터 변환 시도
+[2025-01-17-18-39-43], 데이터 변환 성공
+[2025-01-17-18-39-43], Transform 성공
+[2025-01-17-18-39-43], 데이터 로드 시작
+[2025-01-17-18-39-43], 데이터베이스 연결 시도
+[2025-01-17-18-39-43], 데이터베이스 연결 성공
+[2025-01-17-18-39-43], sql문 읽기 시도
+[2025-01-17-18-39-43], sql문 읽기 성공
+[2025-01-17-18-39-43], 테이블 생성 시도
+[2025-01-17-18-39-43], DB 테이블 생성 성공
+[2025-01-17-18-39-43], 데이터 삽입 시도
+[2025-01-17-18-42-35], GDP JSON 로드 시도
+[2025-01-17-18-42-35], GDP JSON 데이터 로드 성공
+[2025-01-17-18-42-35], 데이터 변환 시도
+[2025-01-17-18-42-35], 데이터 변환 성공
+[2025-01-17-18-42-35], Transform 성공
+[2025-01-17-18-42-35], 데이터 로드 시작
+[2025-01-17-18-42-35], 데이터베이스 연결 시도
+[2025-01-17-18-42-35], 데이터베이스 연결 성공
+[2025-01-17-18-42-35], sql문 읽기 시도
+[2025-01-17-18-42-35], sql문 읽기 성공
+[2025-01-17-18-42-35], 테이블 생성 시도
+[2025-01-17-18-42-35], DB 테이블 생성 성공
+[2025-01-17-18-42-35], 데이터 삽입 시도
+[2025-01-17-18-42-42], 데이터 삽입 중 에러 발생: 'tuple' object has no attribute 'values'
+[2025-01-17-18-42-43], Full message: Traceback (most recent call last):
+  File "/Users/admin/workspace/python/DE/missions/W1/M3/utils/load/loader.py", line 49, in bulk_insert_gdp_data
+    [tuple(row.values()) for row in transformed_df.to_records(index=False).tolist()]
+  File "/Users/admin/workspace/python/DE/missions/W1/M3/utils/load/loader.py", line 49, in <listcomp>
+    [tuple(row.values()) for row in transformed_df.to_records(index=False).tolist()]
+AttributeError: 'tuple' object has no attribute 'values'
+
+[2025-01-17-18-42-56], GDP JSON 로드 시도
+[2025-01-17-18-42-56], GDP JSON 데이터 로드 성공
+[2025-01-17-18-42-56], 데이터 변환 시도
+[2025-01-17-18-42-56], 데이터 변환 성공
+[2025-01-17-18-42-56], Transform 성공
+[2025-01-17-18-42-56], 데이터 로드 시작
+[2025-01-17-18-42-56], 데이터베이스 연결 시도
+[2025-01-17-18-42-56], 데이터베이스 연결 성공
+[2025-01-17-18-42-56], sql문 읽기 시도
+[2025-01-17-18-42-56], sql문 읽기 성공
+[2025-01-17-18-42-56], 테이블 생성 시도
+[2025-01-17-18-42-56], DB 테이블 생성 성공
+[2025-01-17-18-42-56], 데이터 삽입 시도
+[2025-01-17-18-43-02], gdp 테이블에 데이터 삽입 성공
+[2025-01-17-18-43-04], Load 성공
+[2025-01-17-18-49-24], GDP JSON 로드 시도
+[2025-01-17-18-49-24], GDP JSON 데이터 로드 성공
+[2025-01-17-18-49-24], 데이터 변환 시도
+[2025-01-17-18-49-24], 데이터 변환 성공
+[2025-01-17-18-49-24], Transform 성공
+[2025-01-17-18-49-24], 데이터 로드 시작
+[2025-01-17-18-49-24], 데이터베이스 연결 시도
+[2025-01-17-18-49-24], 데이터베이스 연결 성공
+[2025-01-17-18-49-24], sql문 읽기 시도
+[2025-01-17-18-49-24], sql문 읽기 성공
+[2025-01-17-18-49-24], 테이블 생성 시도
+[2025-01-17-18-49-24], DB 테이블 생성 성공
+[2025-01-17-18-49-24], 데이터 삽입 시도
+[2025-01-17-18-49-29], gdp 테이블에 데이터 삽입 성공
+[2025-01-17-18-49-29], Load 성공
+[2025-01-17-18-49-29], GDP가 100B USD이상이 되는 국가 수: 288
+[2025-01-17-18-49-29], (1, 'United States', 'North America', 30337.16, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (210, 'United States', 'North America', 30337.16, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (419, 'United States', 'North America', 30337.16, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (628, 'United States', 'North America', 30337.16, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (2, 'China', 'East Asia', 19534.89, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (211, 'China', 'East Asia', 19534.89, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (420, 'China', 'East Asia', 19534.89, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (629, 'China', 'East Asia', 19534.89, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (3, 'Germany', 'Western Europe', 4921.56, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (212, 'Germany', 'Western Europe', 4921.56, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (421, 'Germany', 'Western Europe', 4921.56, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (630, 'Germany', 'Western Europe', 4921.56, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (4, 'Japan', 'East Asia', 4389.33, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (213, 'Japan', 'East Asia', 4389.33, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (422, 'Japan', 'East Asia', 4389.33, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (631, 'Japan', 'East Asia', 4389.33, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (5, 'India', 'South Asia', 4271.92, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (214, 'India', 'South Asia', 4271.92, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (423, 'India', 'South Asia', 4271.92, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (632, 'India', 'South Asia', 4271.92, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (6, 'United Kingdom', 'Western Europe', 3730.26, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (215, 'United Kingdom', 'Western Europe', 3730.26, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (424, 'United Kingdom', 'Western Europe', 3730.26, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (633, 'United Kingdom', 'Western Europe', 3730.26, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (7, 'France', 'Western Europe', 3283.43, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (216, 'France', 'Western Europe', 3283.43, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (425, 'France', 'Western Europe', 3283.43, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (634, 'France', 'Western Europe', 3283.43, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (8, 'Italy', 'Western Europe', 2459.6, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (217, 'Italy', 'Western Europe', 2459.6, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (426, 'Italy', 'Western Europe', 2459.6, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (635, 'Italy', 'Western Europe', 2459.6, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (9, 'Canada', 'North America', 2330.31, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (218, 'Canada', 'North America', 2330.31, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (427, 'Canada', 'North America', 2330.31, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (636, 'Canada', 'North America', 2330.31, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (10, 'Brazil', 'Latin America', 2307.16, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (219, 'Brazil', 'Latin America', 2307.16, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (428, 'Brazil', 'Latin America', 2307.16, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (637, 'Brazil', 'Latin America', 2307.16, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (11, 'Russia', 'Eastern Europe', 2195.71, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (220, 'Russia', 'Eastern Europe', 2195.71, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (429, 'Russia', 'Eastern Europe', 2195.71, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (638, 'Russia', 'Eastern Europe', 2195.71, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (12, 'South Korea', 'East Asia', 1947.13, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (221, 'South Korea', 'East Asia', 1947.13, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (430, 'South Korea', 'East Asia', 1947.13, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (639, 'South Korea', 'East Asia', 1947.13, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (13, 'Australia', 'Oceania', 1881.14, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (222, 'Australia', 'Oceania', 1881.14, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (431, 'Australia', 'Oceania', 1881.14, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (640, 'Australia', 'Oceania', 1881.14, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (14, 'Spain', 'Western Europe', 1827.58, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (223, 'Spain', 'Western Europe', 1827.58, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (432, 'Spain', 'Western Europe', 1827.58, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (641, 'Spain', 'Western Europe', 1827.58, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (15, 'Mexico', 'North America', 1817.82, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (224, 'Mexico', 'North America', 1817.82, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (433, 'Mexico', 'North America', 1817.82, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (642, 'Mexico', 'North America', 1817.82, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (16, 'Indonesia', 'Southeast Asia', 1492.62, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (225, 'Indonesia', 'Southeast Asia', 1492.62, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (434, 'Indonesia', 'Southeast Asia', 1492.62, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (643, 'Indonesia', 'Southeast Asia', 1492.62, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (17, 'Turkey', 'Eastern Europe', 1455.41, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (226, 'Turkey', 'Eastern Europe', 1455.41, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (435, 'Turkey', 'Eastern Europe', 1455.41, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (644, 'Turkey', 'Eastern Europe', 1455.41, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (18, 'Netherlands', 'Western Europe', 1272.96, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (227, 'Netherlands', 'Western Europe', 1272.96, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (436, 'Netherlands', 'Western Europe', 1272.96, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (645, 'Netherlands', 'Western Europe', 1272.96, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (19, 'Saudi Arabia', 'Middle East', 1136.58, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (228, 'Saudi Arabia', 'Middle East', 1136.58, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (437, 'Saudi Arabia', 'Middle East', 1136.58, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (646, 'Saudi Arabia', 'Middle East', 1136.58, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (20, 'Switzerland', 'Western Europe', 999.6, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (229, 'Switzerland', 'Western Europe', 999.6, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (438, 'Switzerland', 'Western Europe', 999.6, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (647, 'Switzerland', 'Western Europe', 999.6, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (21, 'Poland', 'Eastern Europe', 915.45, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (230, 'Poland', 'Eastern Europe', 915.45, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (439, 'Poland', 'Eastern Europe', 915.45, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (648, 'Poland', 'Eastern Europe', 915.45, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (22, 'Taiwan', 'East Asia', 814.44, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (231, 'Taiwan', 'East Asia', 814.44, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (440, 'Taiwan', 'East Asia', 814.44, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (649, 'Taiwan', 'East Asia', 814.44, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (23, 'Belgium', 'Western Europe', 689.36, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (232, 'Belgium', 'Western Europe', 689.36, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (441, 'Belgium', 'Western Europe', 689.36, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (650, 'Belgium', 'Western Europe', 689.36, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (24, 'Sweden', 'Western Europe', 638.78, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (233, 'Sweden', 'Western Europe', 638.78, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (442, 'Sweden', 'Western Europe', 638.78, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (651, 'Sweden', 'Western Europe', 638.78, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (25, 'Argentina', 'Latin America', 604.2, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (234, 'Argentina', 'Latin America', 604.2, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (443, 'Argentina', 'Latin America', 604.2, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (652, 'Argentina', 'Latin America', 604.2, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (26, 'Ireland', 'Western Europe', 587.23, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (235, 'Ireland', 'Western Europe', 587.22, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (444, 'Ireland', 'Western Europe', 587.22, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (653, 'Ireland', 'Western Europe', 587.22, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (27, 'United Arab Emirates', 'Middle East', 568.57, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (236, 'United Arab Emirates', 'Middle East', 568.57, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (445, 'United Arab Emirates', 'Middle East', 568.57, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (654, 'United Arab Emirates', 'Middle East', 568.57, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (28, 'Singapore', 'Southeast Asia', 561.73, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (237, 'Singapore', 'Southeast Asia', 561.72, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (446, 'Singapore', 'Southeast Asia', 561.72, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (655, 'Singapore', 'Southeast Asia', 561.72, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (29, 'Austria', 'Western Europe', 559.22, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (238, 'Austria', 'Western Europe', 559.22, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (447, 'Austria', 'Western Europe', 559.22, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (656, 'Austria', 'Western Europe', 559.22, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (30, 'Israel', 'Middle East', 550.9, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (239, 'Israel', 'Middle East', 550.9, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (448, 'Israel', 'Middle East', 550.9, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (657, 'Israel', 'Middle East', 550.9, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (31, 'Thailand', 'Southeast Asia', 545.34, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (240, 'Thailand', 'Southeast Asia', 545.34, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (449, 'Thailand', 'Southeast Asia', 545.34, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (658, 'Thailand', 'Southeast Asia', 545.34, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (244, 'Philippines', 'Southeast Asia', 507.67, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (453, 'Philippines', 'Southeast Asia', 507.67, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (662, 'Philippines', 'Southeast Asia', 507.67, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (241, 'Vietnam', 'Southeast Asia', 506.43, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (450, 'Vietnam', 'Southeast Asia', 506.43, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (659, 'Vietnam', 'Southeast Asia', 506.43, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (32, 'Norway', 'Western Europe', 503.47, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (242, 'Norway', 'Western Europe', 503.47, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (451, 'Norway', 'Western Europe', 503.47, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (660, 'Norway', 'Western Europe', 503.47, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (33, 'Malaysia', 'Southeast Asia', 488.25, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (243, 'Malaysia', 'Southeast Asia', 488.25, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (452, 'Malaysia', 'Southeast Asia', 488.25, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (661, 'Malaysia', 'Southeast Asia', 488.25, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (34, 'Philippines', 'Southeast Asia', 471.52, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (35, 'Vietnam', 'Southeast Asia', 468.4, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (36, 'Iran', 'Middle East', 463.75, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (245, 'Iran', 'Middle East', 463.75, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (454, 'Iran', 'Middle East', 463.75, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (663, 'Iran', 'Middle East', 463.75, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (37, 'Bangladesh', 'South Asia', 455.86, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (246, 'Bangladesh', 'South Asia', 455.86, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (455, 'Bangladesh', 'South Asia', 455.86, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (664, 'Bangladesh', 'South Asia', 455.86, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (38, 'Czech Republic', 'Eastern Europe', 452.23, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (247, 'Czech Republic', 'Eastern Europe', 452.23, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (456, 'Czech Republic', 'Eastern Europe', 452.23, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (665, 'Czech Republic', 'Eastern Europe', 452.23, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (39, 'Denmark', 'Western Europe', 431.23, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (248, 'Denmark', 'Western Europe', 431.23, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (457, 'Denmark', 'Western Europe', 431.23, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (666, 'Denmark', 'Western Europe', 431.23, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (40, 'Hong Kong', 'East Asia', 422.06, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (249, 'Hong Kong', 'East Asia', 422.06, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (458, 'Hong Kong', 'East Asia', 422.06, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (667, 'Hong Kong', 'East Asia', 422.06, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (41, 'Colombia', 'Latin America', 419.33, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (250, 'Colombia', 'Latin America', 419.33, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (459, 'Colombia', 'Latin America', 419.33, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (668, 'Colombia', 'Latin America', 419.33, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (42, 'South Africa', 'Sub-Saharan Africa', 418.05, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (251, 'South Africa', 'Sub-Saharan Africa', 418.05, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (460, 'South Africa', 'Sub-Saharan Africa', 418.05, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (669, 'South Africa', 'Sub-Saharan Africa', 418.05, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (43, 'Romania', 'Eastern Europe', 406.2, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (252, 'Romania', 'Eastern Europe', 406.2, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (461, 'Romania', 'Eastern Europe', 406.2, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (670, 'Romania', 'Eastern Europe', 406.2, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (44, 'Egypt', 'North Africa', 380.04, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (253, 'Egypt', 'North Africa', 380.04, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (462, 'Egypt', 'North Africa', 380.04, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (671, 'Egypt', 'North Africa', 380.04, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (45, 'Pakistan', 'South Asia', 374.6, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (254, 'Pakistan', 'South Asia', 374.6, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (463, 'Pakistan', 'South Asia', 374.6, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (672, 'Pakistan', 'South Asia', 374.6, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (46, 'Chile', 'Latin America', 362.24, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (255, 'Chile', 'Latin America', 362.24, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (464, 'Chile', 'Latin America', 362.24, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (673, 'Chile', 'Latin America', 362.24, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (47, 'Finland', 'Western Europe', 319.99, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (256, 'Finland', 'Western Europe', 319.99, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (465, 'Finland', 'Western Europe', 319.99, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (674, 'Finland', 'Western Europe', 319.99, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (48, 'Portugal', 'Western Europe', 319.93, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (257, 'Portugal', 'Western Europe', 319.93, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (466, 'Portugal', 'Western Europe', 319.93, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (675, 'Portugal', 'Western Europe', 319.93, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (49, 'Hungary', 'Eastern Europe', 312.62, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (258, 'Hungary', 'Eastern Europe', 312.62, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (467, 'Hungary', 'Eastern Europe', 312.62, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (676, 'Hungary', 'Eastern Europe', 312.62, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (50, 'Kazakhstan', 'Central Asia', 306.63, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (259, 'Kazakhstan', 'Central Asia', 306.63, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (468, 'Kazakhstan', 'Central Asia', 306.63, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (677, 'Kazakhstan', 'Central Asia', 306.63, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (51, 'Peru', 'Latin America', 294.9, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (260, 'Peru', 'Latin America', 294.9, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (469, 'Peru', 'Latin America', 294.9, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (678, 'Peru', 'Latin America', 294.9, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (52, 'Iraq', 'Middle East', 270.87, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (261, 'Iraq', 'Middle East', 270.87, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (470, 'Iraq', 'Middle East', 270.87, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (679, 'Iraq', 'Middle East', 270.87, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (53, 'Greece', 'Western Europe', 265.17, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (262, 'Greece', 'Western Europe', 265.17, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (471, 'Greece', 'Western Europe', 265.17, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (680, 'Greece', 'Western Europe', 265.17, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (54, 'Algeria', 'North Africa', 264.27, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (263, 'Algeria', 'North Africa', 264.27, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (472, 'Algeria', 'North Africa', 264.27, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (681, 'Algeria', 'North Africa', 264.27, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (55, 'New Zealand', 'Oceania', 262.92, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (264, 'New Zealand', 'Oceania', 262.92, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (473, 'New Zealand', 'Oceania', 262.92, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (682, 'New Zealand', 'Oceania', 262.92, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (56, 'Qatar', 'Middle East', 240.22, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (265, 'Qatar', 'Middle East', 240.22, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (474, 'Qatar', 'Middle East', 240.22, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (683, 'Qatar', 'Middle East', 240.22, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (57, 'Ethiopia', 'Sub-Saharan Africa', 230.03, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (266, 'Ethiopia', 'Sub-Saharan Africa', 230.03, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (475, 'Ethiopia', 'Sub-Saharan Africa', 230.03, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (684, 'Ethiopia', 'Sub-Saharan Africa', 230.03, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (58, 'Nigeria', 'Sub-Saharan Africa', 199.72, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (267, 'Nigeria', 'Sub-Saharan Africa', 199.72, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (476, 'Nigeria', 'Sub-Saharan Africa', 199.72, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (685, 'Nigeria', 'Sub-Saharan Africa', 199.72, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (59, 'Ukraine', 'Eastern Europe', 189.83, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (268, 'Ukraine', 'Eastern Europe', 189.83, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (477, 'Ukraine', 'Eastern Europe', 189.83, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (686, 'Ukraine', 'Eastern Europe', 189.83, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (60, 'Morocco', 'North Africa', 168.6, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (269, 'Morocco', 'North Africa', 168.6, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (478, 'Morocco', 'North Africa', 168.6, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (687, 'Morocco', 'North Africa', 168.6, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (61, 'Kuwait', 'Middle East', 161.95, 2025, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (270, 'Kuwait', 'Middle East', 161.95, 2025, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (479, 'Kuwait', 'Middle East', 161.95, 2025, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (688, 'Kuwait', 'Middle East', 161.95, 2025, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (63, 'Slovakia', 'Eastern Europe', 142.62, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (272, 'Slovakia', 'Eastern Europe', 142.62, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (481, 'Slovakia', 'Eastern Europe', 142.62, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (690, 'Slovakia', 'Eastern Europe', 142.62, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (64, 'Dominican Republic', 'Latin America', 126.24, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (273, 'Dominican Republic', 'Latin America', 126.24, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (482, 'Dominican Republic', 'Latin America', 126.24, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (691, 'Dominican Republic', 'Latin America', 126.24, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (65, 'Uzbekistan', 'Central Asia', 125.51, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (274, 'Uzbekistan', 'Central Asia', 125.51, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (483, 'Uzbekistan', 'Central Asia', 125.51, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (692, 'Uzbekistan', 'Central Asia', 125.51, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (66, 'Bulgaria', 'Eastern Europe', 123.42, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (275, 'Bulgaria', 'Eastern Europe', 123.42, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (484, 'Bulgaria', 'Eastern Europe', 123.42, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (693, 'Bulgaria', 'Eastern Europe', 123.42, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (67, 'Ecuador', 'Latin America', 121.42, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (276, 'Ecuador', 'Latin America', 121.42, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (485, 'Ecuador', 'Latin America', 121.42, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (694, 'Ecuador', 'Latin America', 121.42, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (68, 'Puerto Rico', 'Latin America', 120.97, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (277, 'Puerto Rico', 'Latin America', 120.97, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (486, 'Puerto Rico', 'Latin America', 120.97, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (695, 'Puerto Rico', 'Latin America', 120.97, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (69, 'Kenya', 'Sub-Saharan Africa', 116.32, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (278, 'Kenya', 'Sub-Saharan Africa', 116.32, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (487, 'Kenya', 'Sub-Saharan Africa', 116.32, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (696, 'Kenya', 'Sub-Saharan Africa', 116.32, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (70, 'Angola', 'Sub-Saharan Africa', 113.29, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (279, 'Angola', 'Sub-Saharan Africa', 113.29, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (488, 'Angola', 'Sub-Saharan Africa', 113.29, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (697, 'Angola', 'Sub-Saharan Africa', 113.29, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (71, 'Guatemala', 'Latin America', 112.37, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (280, 'Guatemala', 'Latin America', 112.37, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (489, 'Guatemala', 'Latin America', 112.37, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (698, 'Guatemala', 'Latin America', 112.37, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (72, 'Oman', 'Middle East', 110.99, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (281, 'Oman', 'Middle East', 110.99, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (490, 'Oman', 'Middle East', 110.99, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (699, 'Oman', 'Middle East', 110.99, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], (73, 'Venezuela', 'Latin America', 106.33, 2024, 'IMF', '2025-01-08 10:16:46')
+[2025-01-17-18-49-29], (282, 'Venezuela', 'Latin America', 106.33, 2024, 'IMF', '2025-01-17 09:38:35')
+[2025-01-17-18-49-29], (491, 'Venezuela', 'Latin America', 106.33, 2024, 'IMF', '2025-01-17 09:43:00')
+[2025-01-17-18-49-29], (700, 'Venezuela', 'Latin America', 106.33, 2024, 'IMF', '2025-01-17 09:49:29')
+[2025-01-17-18-49-29], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-18-49-29], ('North America', 24735.79)
+[2025-01-17-18-49-29], ('East Asia', 16505.78)
+[2025-01-17-18-49-29], ('Western Europe', 4683.3)
+[2025-01-17-18-49-29], ('South Asia', 3508.71)
+[2025-01-17-18-49-29], ('Eastern Europe', 2047.65)
+[2025-01-17-18-49-29], ('Latin America', 1966.57)
+[2025-01-17-18-49-29], ('Oceania', 1557.5)
+[2025-01-17-18-49-29], ('Southeast Asia', 1306.44)
+[2025-01-17-18-49-29], ('Middle East', 1022.98)
+[2025-01-17-18-49-29], ('Sub-Saharan Africa', 380.45)
+[2025-01-17-18-49-29], ('North Africa', 356.89)
+[2025-01-17-18-49-29], ('Central Asia', 270.41)
+[2025-01-17-18-49-59], GDP JSON 로드 시도
+[2025-01-17-18-49-59], GDP JSON 데이터 로드 성공
+[2025-01-17-18-49-59], 데이터 변환 시도
+[2025-01-17-18-49-59], 데이터 변환 성공
+[2025-01-17-18-49-59], Transform 성공
+[2025-01-17-18-49-59], 데이터 로드 시작
+[2025-01-17-18-49-59], 데이터베이스 연결 시도
+[2025-01-17-18-49-59], 데이터베이스 연결 성공
+[2025-01-17-18-49-59], sql문 읽기 시도
+[2025-01-17-18-49-59], sql문 읽기 성공
+[2025-01-17-18-49-59], 테이블 생성 시도
+[2025-01-17-18-49-59], DB 테이블 생성 성공
+[2025-01-17-18-49-59], 데이터 삽입 시도
+[2025-01-17-18-49-59], gdp 테이블에 데이터 삽입 성공
+[2025-01-17-18-49-59], Load 성공
+[2025-01-17-18-49-59], GDP가 100B USD이상이 되는 국가 수: 360
+[2025-01-17-18-49-59], ('United States',)
+[2025-01-17-18-49-59], ('United States',)
+[2025-01-17-18-49-59], ('United States',)
+[2025-01-17-18-49-59], ('United States',)
+[2025-01-17-18-49-59], ('United States',)
+[2025-01-17-18-49-59], ('China',)
+[2025-01-17-18-49-59], ('China',)
+[2025-01-17-18-49-59], ('China',)
+[2025-01-17-18-49-59], ('China',)
+[2025-01-17-18-49-59], ('China',)
+[2025-01-17-18-49-59], ('Germany',)
+[2025-01-17-18-49-59], ('Germany',)
+[2025-01-17-18-49-59], ('Germany',)
+[2025-01-17-18-49-59], ('Germany',)
+[2025-01-17-18-49-59], ('Germany',)
+[2025-01-17-18-49-59], ('Japan',)
+[2025-01-17-18-49-59], ('Japan',)
+[2025-01-17-18-49-59], ('Japan',)
+[2025-01-17-18-49-59], ('Japan',)
+[2025-01-17-18-49-59], ('Japan',)
+[2025-01-17-18-49-59], ('India',)
+[2025-01-17-18-49-59], ('India',)
+[2025-01-17-18-49-59], ('India',)
+[2025-01-17-18-49-59], ('India',)
+[2025-01-17-18-49-59], ('India',)
+[2025-01-17-18-49-59], ('United Kingdom',)
+[2025-01-17-18-49-59], ('United Kingdom',)
+[2025-01-17-18-49-59], ('United Kingdom',)
+[2025-01-17-18-49-59], ('United Kingdom',)
+[2025-01-17-18-49-59], ('United Kingdom',)
+[2025-01-17-18-49-59], ('France',)
+[2025-01-17-18-49-59], ('France',)
+[2025-01-17-18-49-59], ('France',)
+[2025-01-17-18-49-59], ('France',)
+[2025-01-17-18-49-59], ('France',)
+[2025-01-17-18-49-59], ('Italy',)
+[2025-01-17-18-49-59], ('Italy',)
+[2025-01-17-18-49-59], ('Italy',)
+[2025-01-17-18-49-59], ('Italy',)
+[2025-01-17-18-49-59], ('Italy',)
+[2025-01-17-18-49-59], ('Canada',)
+[2025-01-17-18-49-59], ('Canada',)
+[2025-01-17-18-49-59], ('Canada',)
+[2025-01-17-18-49-59], ('Canada',)
+[2025-01-17-18-49-59], ('Canada',)
+[2025-01-17-18-49-59], ('Brazil',)
+[2025-01-17-18-49-59], ('Brazil',)
+[2025-01-17-18-49-59], ('Brazil',)
+[2025-01-17-18-49-59], ('Brazil',)
+[2025-01-17-18-49-59], ('Brazil',)
+[2025-01-17-18-49-59], ('Russia',)
+[2025-01-17-18-49-59], ('Russia',)
+[2025-01-17-18-49-59], ('Russia',)
+[2025-01-17-18-49-59], ('Russia',)
+[2025-01-17-18-49-59], ('Russia',)
+[2025-01-17-18-49-59], ('South Korea',)
+[2025-01-17-18-49-59], ('South Korea',)
+[2025-01-17-18-49-59], ('South Korea',)
+[2025-01-17-18-49-59], ('South Korea',)
+[2025-01-17-18-49-59], ('South Korea',)
+[2025-01-17-18-49-59], ('Australia',)
+[2025-01-17-18-49-59], ('Australia',)
+[2025-01-17-18-49-59], ('Australia',)
+[2025-01-17-18-49-59], ('Australia',)
+[2025-01-17-18-49-59], ('Australia',)
+[2025-01-17-18-49-59], ('Spain',)
+[2025-01-17-18-49-59], ('Spain',)
+[2025-01-17-18-49-59], ('Spain',)
+[2025-01-17-18-49-59], ('Spain',)
+[2025-01-17-18-49-59], ('Spain',)
+[2025-01-17-18-49-59], ('Mexico',)
+[2025-01-17-18-49-59], ('Mexico',)
+[2025-01-17-18-49-59], ('Mexico',)
+[2025-01-17-18-49-59], ('Mexico',)
+[2025-01-17-18-49-59], ('Mexico',)
+[2025-01-17-18-49-59], ('Indonesia',)
+[2025-01-17-18-49-59], ('Indonesia',)
+[2025-01-17-18-49-59], ('Indonesia',)
+[2025-01-17-18-49-59], ('Indonesia',)
+[2025-01-17-18-49-59], ('Indonesia',)
+[2025-01-17-18-49-59], ('Turkey',)
+[2025-01-17-18-49-59], ('Turkey',)
+[2025-01-17-18-49-59], ('Turkey',)
+[2025-01-17-18-49-59], ('Turkey',)
+[2025-01-17-18-49-59], ('Turkey',)
+[2025-01-17-18-49-59], ('Netherlands',)
+[2025-01-17-18-49-59], ('Netherlands',)
+[2025-01-17-18-49-59], ('Netherlands',)
+[2025-01-17-18-49-59], ('Netherlands',)
+[2025-01-17-18-49-59], ('Netherlands',)
+[2025-01-17-18-49-59], ('Saudi Arabia',)
+[2025-01-17-18-49-59], ('Saudi Arabia',)
+[2025-01-17-18-49-59], ('Saudi Arabia',)
+[2025-01-17-18-49-59], ('Saudi Arabia',)
+[2025-01-17-18-49-59], ('Saudi Arabia',)
+[2025-01-17-18-49-59], ('Switzerland',)
+[2025-01-17-18-49-59], ('Switzerland',)
+[2025-01-17-18-49-59], ('Switzerland',)
+[2025-01-17-18-49-59], ('Switzerland',)
+[2025-01-17-18-49-59], ('Switzerland',)
+[2025-01-17-18-49-59], ('Poland',)
+[2025-01-17-18-49-59], ('Poland',)
+[2025-01-17-18-49-59], ('Poland',)
+[2025-01-17-18-49-59], ('Poland',)
+[2025-01-17-18-49-59], ('Poland',)
+[2025-01-17-18-49-59], ('Taiwan',)
+[2025-01-17-18-49-59], ('Taiwan',)
+[2025-01-17-18-49-59], ('Taiwan',)
+[2025-01-17-18-49-59], ('Taiwan',)
+[2025-01-17-18-49-59], ('Taiwan',)
+[2025-01-17-18-49-59], ('Belgium',)
+[2025-01-17-18-49-59], ('Belgium',)
+[2025-01-17-18-49-59], ('Belgium',)
+[2025-01-17-18-49-59], ('Belgium',)
+[2025-01-17-18-49-59], ('Belgium',)
+[2025-01-17-18-49-59], ('Sweden',)
+[2025-01-17-18-49-59], ('Sweden',)
+[2025-01-17-18-49-59], ('Sweden',)
+[2025-01-17-18-49-59], ('Sweden',)
+[2025-01-17-18-49-59], ('Sweden',)
+[2025-01-17-18-49-59], ('Argentina',)
+[2025-01-17-18-49-59], ('Argentina',)
+[2025-01-17-18-49-59], ('Argentina',)
+[2025-01-17-18-49-59], ('Argentina',)
+[2025-01-17-18-49-59], ('Argentina',)
+[2025-01-17-18-49-59], ('Ireland',)
+[2025-01-17-18-49-59], ('Ireland',)
+[2025-01-17-18-49-59], ('Ireland',)
+[2025-01-17-18-49-59], ('Ireland',)
+[2025-01-17-18-49-59], ('Ireland',)
+[2025-01-17-18-49-59], ('United Arab Emirates',)
+[2025-01-17-18-49-59], ('United Arab Emirates',)
+[2025-01-17-18-49-59], ('United Arab Emirates',)
+[2025-01-17-18-49-59], ('United Arab Emirates',)
+[2025-01-17-18-49-59], ('United Arab Emirates',)
+[2025-01-17-18-49-59], ('Singapore',)
+[2025-01-17-18-49-59], ('Singapore',)
+[2025-01-17-18-49-59], ('Singapore',)
+[2025-01-17-18-49-59], ('Singapore',)
+[2025-01-17-18-49-59], ('Singapore',)
+[2025-01-17-18-49-59], ('Austria',)
+[2025-01-17-18-49-59], ('Austria',)
+[2025-01-17-18-49-59], ('Austria',)
+[2025-01-17-18-49-59], ('Austria',)
+[2025-01-17-18-49-59], ('Austria',)
+[2025-01-17-18-49-59], ('Israel',)
+[2025-01-17-18-49-59], ('Israel',)
+[2025-01-17-18-49-59], ('Israel',)
+[2025-01-17-18-49-59], ('Israel',)
+[2025-01-17-18-49-59], ('Israel',)
+[2025-01-17-18-49-59], ('Thailand',)
+[2025-01-17-18-49-59], ('Thailand',)
+[2025-01-17-18-49-59], ('Thailand',)
+[2025-01-17-18-49-59], ('Thailand',)
+[2025-01-17-18-49-59], ('Thailand',)
+[2025-01-17-18-49-59], ('Philippines',)
+[2025-01-17-18-49-59], ('Philippines',)
+[2025-01-17-18-49-59], ('Philippines',)
+[2025-01-17-18-49-59], ('Philippines',)
+[2025-01-17-18-49-59], ('Vietnam',)
+[2025-01-17-18-49-59], ('Vietnam',)
+[2025-01-17-18-49-59], ('Vietnam',)
+[2025-01-17-18-49-59], ('Vietnam',)
+[2025-01-17-18-49-59], ('Norway',)
+[2025-01-17-18-49-59], ('Norway',)
+[2025-01-17-18-49-59], ('Norway',)
+[2025-01-17-18-49-59], ('Norway',)
+[2025-01-17-18-49-59], ('Norway',)
+[2025-01-17-18-49-59], ('Malaysia',)
+[2025-01-17-18-49-59], ('Malaysia',)
+[2025-01-17-18-49-59], ('Malaysia',)
+[2025-01-17-18-49-59], ('Malaysia',)
+[2025-01-17-18-49-59], ('Malaysia',)
+[2025-01-17-18-49-59], ('Philippines',)
+[2025-01-17-18-49-59], ('Vietnam',)
+[2025-01-17-18-49-59], ('Iran',)
+[2025-01-17-18-49-59], ('Iran',)
+[2025-01-17-18-49-59], ('Iran',)
+[2025-01-17-18-49-59], ('Iran',)
+[2025-01-17-18-49-59], ('Iran',)
+[2025-01-17-18-49-59], ('Bangladesh',)
+[2025-01-17-18-49-59], ('Bangladesh',)
+[2025-01-17-18-49-59], ('Bangladesh',)
+[2025-01-17-18-49-59], ('Bangladesh',)
+[2025-01-17-18-49-59], ('Bangladesh',)
+[2025-01-17-18-49-59], ('Czech Republic',)
+[2025-01-17-18-49-59], ('Czech Republic',)
+[2025-01-17-18-49-59], ('Czech Republic',)
+[2025-01-17-18-49-59], ('Czech Republic',)
+[2025-01-17-18-49-59], ('Czech Republic',)
+[2025-01-17-18-49-59], ('Denmark',)
+[2025-01-17-18-49-59], ('Denmark',)
+[2025-01-17-18-49-59], ('Denmark',)
+[2025-01-17-18-49-59], ('Denmark',)
+[2025-01-17-18-49-59], ('Denmark',)
+[2025-01-17-18-49-59], ('Hong Kong',)
+[2025-01-17-18-49-59], ('Hong Kong',)
+[2025-01-17-18-49-59], ('Hong Kong',)
+[2025-01-17-18-49-59], ('Hong Kong',)
+[2025-01-17-18-49-59], ('Hong Kong',)
+[2025-01-17-18-49-59], ('Colombia',)
+[2025-01-17-18-49-59], ('Colombia',)
+[2025-01-17-18-49-59], ('Colombia',)
+[2025-01-17-18-49-59], ('Colombia',)
+[2025-01-17-18-49-59], ('Colombia',)
+[2025-01-17-18-49-59], ('South Africa',)
+[2025-01-17-18-49-59], ('South Africa',)
+[2025-01-17-18-49-59], ('South Africa',)
+[2025-01-17-18-49-59], ('South Africa',)
+[2025-01-17-18-49-59], ('South Africa',)
+[2025-01-17-18-49-59], ('Romania',)
+[2025-01-17-18-49-59], ('Romania',)
+[2025-01-17-18-49-59], ('Romania',)
+[2025-01-17-18-49-59], ('Romania',)
+[2025-01-17-18-49-59], ('Romania',)
+[2025-01-17-18-49-59], ('Egypt',)
+[2025-01-17-18-49-59], ('Egypt',)
+[2025-01-17-18-49-59], ('Egypt',)
+[2025-01-17-18-49-59], ('Egypt',)
+[2025-01-17-18-49-59], ('Egypt',)
+[2025-01-17-18-49-59], ('Pakistan',)
+[2025-01-17-18-49-59], ('Pakistan',)
+[2025-01-17-18-49-59], ('Pakistan',)
+[2025-01-17-18-49-59], ('Pakistan',)
+[2025-01-17-18-49-59], ('Pakistan',)
+[2025-01-17-18-49-59], ('Chile',)
+[2025-01-17-18-49-59], ('Chile',)
+[2025-01-17-18-49-59], ('Chile',)
+[2025-01-17-18-49-59], ('Chile',)
+[2025-01-17-18-49-59], ('Chile',)
+[2025-01-17-18-49-59], ('Finland',)
+[2025-01-17-18-49-59], ('Finland',)
+[2025-01-17-18-49-59], ('Finland',)
+[2025-01-17-18-49-59], ('Finland',)
+[2025-01-17-18-49-59], ('Finland',)
+[2025-01-17-18-49-59], ('Portugal',)
+[2025-01-17-18-49-59], ('Portugal',)
+[2025-01-17-18-49-59], ('Portugal',)
+[2025-01-17-18-49-59], ('Portugal',)
+[2025-01-17-18-49-59], ('Portugal',)
+[2025-01-17-18-49-59], ('Hungary',)
+[2025-01-17-18-49-59], ('Hungary',)
+[2025-01-17-18-49-59], ('Hungary',)
+[2025-01-17-18-49-59], ('Hungary',)
+[2025-01-17-18-49-59], ('Hungary',)
+[2025-01-17-18-49-59], ('Kazakhstan',)
+[2025-01-17-18-49-59], ('Kazakhstan',)
+[2025-01-17-18-49-59], ('Kazakhstan',)
+[2025-01-17-18-49-59], ('Kazakhstan',)
+[2025-01-17-18-49-59], ('Kazakhstan',)
+[2025-01-17-18-49-59], ('Peru',)
+[2025-01-17-18-49-59], ('Peru',)
+[2025-01-17-18-49-59], ('Peru',)
+[2025-01-17-18-49-59], ('Peru',)
+[2025-01-17-18-49-59], ('Peru',)
+[2025-01-17-18-49-59], ('Iraq',)
+[2025-01-17-18-49-59], ('Iraq',)
+[2025-01-17-18-49-59], ('Iraq',)
+[2025-01-17-18-49-59], ('Iraq',)
+[2025-01-17-18-49-59], ('Iraq',)
+[2025-01-17-18-49-59], ('Greece',)
+[2025-01-17-18-49-59], ('Greece',)
+[2025-01-17-18-49-59], ('Greece',)
+[2025-01-17-18-49-59], ('Greece',)
+[2025-01-17-18-49-59], ('Greece',)
+[2025-01-17-18-49-59], ('Algeria',)
+[2025-01-17-18-49-59], ('Algeria',)
+[2025-01-17-18-49-59], ('Algeria',)
+[2025-01-17-18-49-59], ('Algeria',)
+[2025-01-17-18-49-59], ('Algeria',)
+[2025-01-17-18-49-59], ('New Zealand',)
+[2025-01-17-18-49-59], ('New Zealand',)
+[2025-01-17-18-49-59], ('New Zealand',)
+[2025-01-17-18-49-59], ('New Zealand',)
+[2025-01-17-18-49-59], ('New Zealand',)
+[2025-01-17-18-49-59], ('Qatar',)
+[2025-01-17-18-49-59], ('Qatar',)
+[2025-01-17-18-49-59], ('Qatar',)
+[2025-01-17-18-49-59], ('Qatar',)
+[2025-01-17-18-49-59], ('Qatar',)
+[2025-01-17-18-49-59], ('Ethiopia',)
+[2025-01-17-18-49-59], ('Ethiopia',)
+[2025-01-17-18-49-59], ('Ethiopia',)
+[2025-01-17-18-49-59], ('Ethiopia',)
+[2025-01-17-18-49-59], ('Ethiopia',)
+[2025-01-17-18-49-59], ('Nigeria',)
+[2025-01-17-18-49-59], ('Nigeria',)
+[2025-01-17-18-49-59], ('Nigeria',)
+[2025-01-17-18-49-59], ('Nigeria',)
+[2025-01-17-18-49-59], ('Nigeria',)
+[2025-01-17-18-49-59], ('Ukraine',)
+[2025-01-17-18-49-59], ('Ukraine',)
+[2025-01-17-18-49-59], ('Ukraine',)
+[2025-01-17-18-49-59], ('Ukraine',)
+[2025-01-17-18-49-59], ('Ukraine',)
+[2025-01-17-18-49-59], ('Morocco',)
+[2025-01-17-18-49-59], ('Morocco',)
+[2025-01-17-18-49-59], ('Morocco',)
+[2025-01-17-18-49-59], ('Morocco',)
+[2025-01-17-18-49-59], ('Morocco',)
+[2025-01-17-18-49-59], ('Kuwait',)
+[2025-01-17-18-49-59], ('Kuwait',)
+[2025-01-17-18-49-59], ('Kuwait',)
+[2025-01-17-18-49-59], ('Kuwait',)
+[2025-01-17-18-49-59], ('Kuwait',)
+[2025-01-17-18-49-59], ('Slovakia',)
+[2025-01-17-18-49-59], ('Slovakia',)
+[2025-01-17-18-49-59], ('Slovakia',)
+[2025-01-17-18-49-59], ('Slovakia',)
+[2025-01-17-18-49-59], ('Slovakia',)
+[2025-01-17-18-49-59], ('Dominican Republic',)
+[2025-01-17-18-49-59], ('Dominican Republic',)
+[2025-01-17-18-49-59], ('Dominican Republic',)
+[2025-01-17-18-49-59], ('Dominican Republic',)
+[2025-01-17-18-49-59], ('Dominican Republic',)
+[2025-01-17-18-49-59], ('Uzbekistan',)
+[2025-01-17-18-49-59], ('Uzbekistan',)
+[2025-01-17-18-49-59], ('Uzbekistan',)
+[2025-01-17-18-49-59], ('Uzbekistan',)
+[2025-01-17-18-49-59], ('Uzbekistan',)
+[2025-01-17-18-49-59], ('Bulgaria',)
+[2025-01-17-18-49-59], ('Bulgaria',)
+[2025-01-17-18-49-59], ('Bulgaria',)
+[2025-01-17-18-49-59], ('Bulgaria',)
+[2025-01-17-18-49-59], ('Bulgaria',)
+[2025-01-17-18-49-59], ('Ecuador',)
+[2025-01-17-18-49-59], ('Ecuador',)
+[2025-01-17-18-49-59], ('Ecuador',)
+[2025-01-17-18-49-59], ('Ecuador',)
+[2025-01-17-18-49-59], ('Ecuador',)
+[2025-01-17-18-49-59], ('Puerto Rico',)
+[2025-01-17-18-49-59], ('Puerto Rico',)
+[2025-01-17-18-49-59], ('Puerto Rico',)
+[2025-01-17-18-49-59], ('Puerto Rico',)
+[2025-01-17-18-49-59], ('Puerto Rico',)
+[2025-01-17-18-49-59], ('Kenya',)
+[2025-01-17-18-49-59], ('Kenya',)
+[2025-01-17-18-49-59], ('Kenya',)
+[2025-01-17-18-49-59], ('Kenya',)
+[2025-01-17-18-49-59], ('Kenya',)
+[2025-01-17-18-49-59], ('Angola',)
+[2025-01-17-18-49-59], ('Angola',)
+[2025-01-17-18-49-59], ('Angola',)
+[2025-01-17-18-49-59], ('Angola',)
+[2025-01-17-18-49-59], ('Angola',)
+[2025-01-17-18-49-59], ('Guatemala',)
+[2025-01-17-18-49-59], ('Guatemala',)
+[2025-01-17-18-49-59], ('Guatemala',)
+[2025-01-17-18-49-59], ('Guatemala',)
+[2025-01-17-18-49-59], ('Guatemala',)
+[2025-01-17-18-49-59], ('Oman',)
+[2025-01-17-18-49-59], ('Oman',)
+[2025-01-17-18-49-59], ('Oman',)
+[2025-01-17-18-49-59], ('Oman',)
+[2025-01-17-18-49-59], ('Oman',)
+[2025-01-17-18-49-59], ('Venezuela',)
+[2025-01-17-18-49-59], ('Venezuela',)
+[2025-01-17-18-49-59], ('Venezuela',)
+[2025-01-17-18-49-59], ('Venezuela',)
+[2025-01-17-18-49-59], ('Venezuela',)
+[2025-01-17-18-49-59], 각 지역별 상위 5개 국가 및 평균 GDP
+[2025-01-17-18-49-59], ('North America', 30337.16)
+[2025-01-17-18-49-59], ('East Asia', 19534.89)
+[2025-01-17-18-49-59], ('Western Europe', 4921.56)
+[2025-01-17-18-49-59], ('South Asia', 4271.92)
+[2025-01-17-18-49-59], ('Latin America', 2307.16)
+[2025-01-17-18-49-59], ('Eastern Europe', 2195.71)
+[2025-01-17-18-49-59], ('Oceania', 1881.14)
+[2025-01-17-18-49-59], ('Southeast Asia', 1492.62)
+[2025-01-17-18-49-59], ('Middle East', 1136.58)
+[2025-01-17-18-49-59], ('Sub-Saharan Africa', 418.05)
+[2025-01-17-18-49-59], ('North Africa', 380.04)
+[2025-01-17-18-49-59], ('Central Asia', 306.63)
