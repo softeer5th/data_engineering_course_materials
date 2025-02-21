@@ -1,0 +1,12 @@
+<configuration>
+    <!-- HDFS 기본 경로 설정 -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://hadoop-namenode:9000</value>
+    </property>
+    <property>
+        <name>ipc.maximum.data.length</name>
+        <value>268435456</value>  <!-- 기본값 64MB에서 128MB로 증가 -->
+    </property>
+</configuration>
+

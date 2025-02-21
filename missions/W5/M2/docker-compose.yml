@@ -1,0 +1,86 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  spark-master:
+    image: spark-cluster:latest
+    container_name: spark-master
+    hostname: spark-master
+    ports:
+      - "8080:8080" # Spark Web UI
+      - "7077:7077" # Spark Master Port
+      - "4040:4040" # Spark Driver UI 추가
+      - "18080:18080"
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_PORT=7077
+    volumes:
+      - spark-master-data:/opt/spark-data
+    networks:
+      - spark-cluster-net
+
+  spark-worker-1:
+    image: spark-cluster:latest
+    container_name: spark-worker-1
+    hostname: spark-worker-1
+    ports:
+      - "4041:4040"  # Worker 1의 Spark UI 포트
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    volumes:
+      - spark-worker1-data:/opt/spark-data
+    networks:
+      - spark-cluster-net
+
+  spark-worker-2:
+    image: spark-cluster:latest
+    container_name: spark-worker-2
+    hostname: spark-worker-2
+    ports:
+      - "4042:4040"  # Worker 2의 Spark UI 포트
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    volumes:
+      - spark-worker2-data:/opt/spark-data 
+    networks:
+      - spark-cluster-net
+
+  hadoop-namenode:
+    image: hadoop-cluster:latest
+    container_name: hadoop-namenode
+    hostname: hadoop-namenode
+    environment:
+      - HDFS_NAMENODE_USER=root
+    ports:
+      - "9870:9870" # HDFS Namenode Web UI
+    volumes:
+      - namenode-data:/hadoop/dfs/name
+    networks:
+      - spark-cluster-net
+
+  hadoop-datanode:
+    image: hadoop-cluster:latest
+    container_name: hadoop-datanode
+    hostname: hadoop-datanode
+    environment:
+      - HDFS_DATANODE_USER=root
+    ports:
+      - "9864:9864" # HDFS Datanode Web UI
+    volumes:
+      - datanode-data:/hadoop/dfs/data
+    networks:
+      - spark-cluster-net
+
+volumes:
+  spark-master-data:
+  spark-worker1-data:
+  spark-worker2-data:
+  namenode-data:
+  datanode-data:
+
+networks:
+  spark-cluster-net:
+    driver: bridge
