@@ -1,0 +1,58 @@
+services:
+  masternode:
+    image: ubuntu/hadoop:latest
+    container_name: masternode
+    hostname: masternode
+    ports:
+      - "9870:9870"  # HDFS Web UI
+      - "8088:8088"  # YARN ResourceManager Web UI
+    environment:
+      HDFS_NAMENODE_USER: hadoop
+      HDFS_SECONDARYNAMENODE_USER: hadoop
+      YARN_RESOURCEMANAGER_USER: hadoop
+    networks:
+      - hadoop-network
+
+  workernode1:
+    image: ubuntu/hadoop:latest
+    container_name: workernode1
+    hostname: workernode1
+    environment:
+      HDFS_DATANODE_USER: hadoop
+      YARN_NODEMANAGER_USER: hadoop
+    networks:
+      - hadoop-network
+
+  workernode2:
+    image: ubuntu/hadoop:latest
+    container_name: workernode2
+    hostname: workernode2
+    environment:
+      HDFS_DATANODE_USER: hadoop
+      YARN_NODEMANAGER_USER: hadoop
+    networks:
+      - hadoop-network
+
+  spark:
+    image: ubuntu/spark:latest
+    container_name: spark
+    hostname: spark
+    ports:
+    - "8080:8080"
+    - "4040:4040"
+    networks:
+      - hadoop-network
+
+  spark-history-server:
+    image: ubuntu/spark:latest
+    container_name: spark-history-server
+    hostname: spark-history-server
+    command: ["/opt/spark/sbin/start-history-server.sh"]
+    ports:
+    - "18080:18080"
+    networks:
+      - hadoop-network
+
+networks:
+  hadoop-network:
+    driver: bridge
