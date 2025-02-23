@@ -1,0 +1,51 @@
+version: "3"
+services:
+  spark-master:
+    build:
+      context: .
+    hostname:
+      spark-master
+    user: "spark"
+    entrypoint:
+      - "supervisord"
+      - "-c"
+      - "/opt/spark/work-dir/supervisord.conf"
+    ports:
+      - "8080:8080" # Spark Master Web UI
+      - "7077:7077" # Spark Master Port
+      - "4040:4040" # Detailed Spark info
+      - "18080:18080" # Spark History Server
+      - "22:22"
+    networks:
+      - spark-network
+    volumes:
+      - ./share:/opt/spark/work-dir/share
+  spark-worker1:
+    build:
+      context: .
+    hostname:
+      spark-worker1
+    user: "spark"
+    entrypoint: ["/opt/spark/sbin/start-worker.sh", "spark://spark-master:7077"]
+    depends_on:
+      - spark-master
+    networks:
+      - spark-network
+    volumes:
+      - ./share:/opt/spark/work-dir/share
+  spark-worker2:
+    build:
+      context: .
+    hostname:
+      spark-worker2
+    user: "spark"
+    entrypoint: [ "/opt/spark/sbin/start-worker.sh", "spark://spark-master:7077"]
+    depends_on:
+      - spark-master
+    networks:
+      - spark-network
+    volumes:
+      - ./share:/opt/spark/work-dir/share
+networks:
+  spark-network:
+    driver: bridge
